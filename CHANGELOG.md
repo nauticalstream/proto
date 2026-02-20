@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/nauticalstream/proto/compare/v1.0.1...v1.0.2) (2026-02-20)
+
+
+### Bug Fixes
+
+* change package access to restricted for private use ([7b79426](https://github.com/nauticalstream/proto/commit/7b79426f11008381a0175707c66e828382611842))
+
 ## [1.0.1](https://github.com/nauticalstream/proto/compare/v1.0.0...v1.0.1) (2026-02-20)
 
 
