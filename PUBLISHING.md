@@ -1,106 +1,96 @@
 # Publishing @nauticalstream/proto
 
-This repository publishes to three package registries from a single Git repo.
+This repository uses **semantic-release** for fully automated versioning and publishing.
 
-## 📝 Before Publishing
+## 🤖 How It Works
 
-1. Update proto definitions in `proto/*/`
-2. Run `npm run buf:generate` to regenerate code
-3. Update version in all three configs:
-   - `package.json` (npm)
-   - Git tag (Go)
-   - `pyproject.toml` (Python)
-4. Commit all changes including generated code
+Every push to `main` branch automatically:
 
-## 📦 Publishing Process
+1. Analyzes commit messages since last release
+2. Determines version bump (major/minor/patch)
+3. Generates proto files with Buf
+4. Updates `package.json` version
+5. Creates `CHANGELOG.md`
+6. Creates Git tag
+7. Publishes to npm with provenance
+8. Creates GitHub release
 
-### 1. JavaScript/TypeScript → npm
+**No manual versioning needed!** Just use proper commit messages.
+
+## 📝 Commit Message Format
+
+Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```bash
-# Bump version
-npm version patch  # or minor, major
+# Patch release (0.0.1 → 0.0.2)
+fix: correct error code mapping
+fix(auth): handle empty token gracefully
 
-# Publish to npm
-npm publish
+# Minor release (0.0.1 → 0.1.0)
+feat: add new payment event types
+feat(platform): introduce device linking proto
+
+# Major release (0.0.1 → 1.0.0) - BREAKING CHANGE
+feat!: redesign error response structure
+
+# Or with footer:
+feat: add new field to User message
+
+BREAKING CHANGE: removed deprecated `legacy_id` field
+
+# No release (documentation, chores, etc.)
+docs: update README
+chore: update dependencies
+ci: fix workflow permissions
 ```
 
-Consumers install:
+## 🚀 Publishing Workflow
+
+1. **Make changes to proto files**
+
+   ```bash
+   vim proto/error/v1/error.proto
+   ```
+
+2. **Commit with conventional message**
+
+   ```bash
+   git add .
+   git commit -m "feat: add retry error codes"
+   ```
+
+3. **Push to main**
+
+   ```bash
+   git push origin main
+   ```
+
+4. **Wait for automatic release**
+   - GitHub Action runs
+   - Version is bumped automatically
+   - Package published to npm
+   - GitHub release created
+
+## 📋 Version Bump Rules
+
+| Commit Type                    | Example                          | Version Impact |
+| ------------------------------ | -------------------------------- | -------------- |
+| `fix:`                         | `fix: correct enum value`        | Patch (0.0.X)  |
+| `feat:`                        | `feat: add new message type`     | Minor (0.X.0)  |
+| `feat!:` or `BREAKING CHANGE:` | `feat!: remove deprecated field` | Major (X.0.0)  |
+| `docs:`, `chore:`, `ci:`       | `docs: update examples`          | No release     |
+
+## 📦 Manual Publishing (if needed)
+
+If you need to publish manually:
 
 ```bash
-npm install @nauticalstream/proto
-```
-
-### 2. Go → GitHub (Go Modules)
-
-```bash
-# Tag the version
-git tag v0.0.2
-git push origin v0.0.2
-```
-
-Consumers install:
-
-```bash
-go get github.com/nauticalstream/proto@v0.0.2
-```
-
-### 3. Python → PyPI
-
-```bash
-# Update version in pyproject.toml manually first
-
-# Build package
-python -m build
-
-# Publish to PyPI
-python -m twine upload dist/*
-```
-
-Consumers install:
-
-```bash
-pip install nauticalstream-proto
-```
-
-## 🔄 Complete Release Workflow
-
-```bash
-# 1. Update proto files
-vim proto/error/v1/error.proto
-
-# 2. Regenerate code
+# Generate proto files
 npm run buf:generate
 
-# 3. Update all versions
-npm version patch
-# Manually update pyproject.toml version to match
-
-# 4. Commit
-git add .
-git commit -m "chore: release v0.0.2"
-
-# 5. Tag for Go
-git tag v0.0.2
-
-# 6. Push
-git push origin main
-git push origin v0.0.2
-
-# 7. Publish npm
+# Publish
 npm publish
-
-# 8. Publish Python
-python -m build
-python -m twine upload dist/*
 ```
-
-## 🎯 Version Management
-
-Keep versions in sync across all three packages:
-
-- `package.json` → `"version": "0.0.2"`
-- Git tag → `v0.0.2`
-- `pyproject.toml` → `version = "0.0.2"`
 
 ## 📋 Prerequisites
 
@@ -115,3 +105,54 @@ npm whoami  # Check npm login
 
 # Go (no tools needed, uses Git tags)
 ```
+
+## 🤖 Automated Publishing (GitHub Actions)
+
+### Setup npm CI/CD with Granular Access Token
+
+**Why Granular Tokens?** npm recommends granular access tokens for CI/CD instead of classic automation tokens because they:
+
+- Can be scoped to specific packages only
+- Have configurable expiration dates
+- Support IP address restrictions
+- Enable package provenance verification
+
+**Setup Steps:**
+
+1. **Create Granular Access Token**
+
+   Visit: https://www.npmjs.com/settings/[your-username]/tokens
+   - Click "Generate New Token" → "Granular Access Token"
+   - **Token name**: `nauticalstream-proto-ci`
+   - **Expiration**: 1 year (or preferred duration)
+   - **Packages and scopes**:
+     - Permissions: "Read and write"
+     - Packages: Select `@nauticalstream/proto` (or "All packages" if not yet published)
+   - **Organizations**: Select organizations if applicable
+   - (Optional) **IP Allowlist**: Add GitHub Actions IPs for extra security
+
+   Copy the generated token (won't be shown again)
+
+2. **Add Token to GitHub Secrets**
+
+   ```bash
+   gh secret set NPM_TOKEN --repo nauticalstream/proto
+   # Paste your granular access token when prompted
+   ```
+
+3. **Verify Setup**
+   ```bash
+   gh secret list --repo nauticalstream/proto
+   ```
+
+**Publishing**: Push a Git tag to trigger automated publishing:
+
+```bash
+npm version patch && git push --follow-tags
+```
+
+The GitHub Action will automatically:
+
+- Generate proto files with Buf
+- Publish to npm with provenance
+- Verify package integrity with OIDC
