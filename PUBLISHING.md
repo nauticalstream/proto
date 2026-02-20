@@ -25,6 +25,7 @@ npm publish
 ```
 
 Consumers install:
+
 ```bash
 npm install @nauticalstream/proto
 ```
@@ -38,6 +39,7 @@ git push origin v0.0.2
 ```
 
 Consumers install:
+
 ```bash
 go get github.com/nauticalstream/proto@v0.0.2
 ```
@@ -55,6 +57,7 @@ python -m twine upload dist/*
 ```
 
 Consumers install:
+
 ```bash
 pip install nauticalstream-proto
 ```
@@ -94,6 +97,7 @@ python -m twine upload dist/*
 ## 🎯 Version Management
 
 Keep versions in sync across all three packages:
+
 - `package.json` → `"version": "0.0.2"`
 - Git tag → `v0.0.2`
 - `pyproject.toml` → `version = "0.0.2"`
@@ -101,6 +105,7 @@ Keep versions in sync across all three packages:
 ## 📋 Prerequisites
 
 Install tools:
+
 ```bash
 # Python publishing
 pip install build twine
