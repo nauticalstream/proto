@@ -1,6 +1,6 @@
 {
   "name": "@nauticalstream/proto",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Protocol Buffer definitions for Nauticalstream services",
   "type": "module",
   "exports": {

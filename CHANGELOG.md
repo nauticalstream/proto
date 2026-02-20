@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/nauticalstream/proto/compare/v1.0.0...v1.0.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* trigger npm publication with updated token ([b968324](https://github.com/nauticalstream/proto/commit/b968324c83d627c1ff8b101cfcb377425f37214a))
+
 # 1.0.0 (2026-02-20)
 
 
