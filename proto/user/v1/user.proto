@@ -1,0 +1,131 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/user/v1";
+
+import "common/v1/address.proto";
+import "common/v1/date.proto";
+
+// ============================================
+// SHARED TYPES
+// ============================================
+
+// User - Minimal user data for event enrichment
+message User {
+  string id = 1;
+  string full_name = 2;
+  string username = 3;
+  string email = 4;
+  optional string avatar = 5;
+}
+
+// Verification metadata (status of verification process)
+message UserVerification {
+  bool onboarding_completed = 1;
+  repeated string onboarding_missing_fields = 2;
+  optional string verified_at = 3;
+  optional string verification_status = 4;
+}
+
+// ============================================
+// USER - Full payload matching GraphQL schema
+// ============================================
+
+message UserDetails {
+  string id = 1;
+  string email = 2;
+  string username = 3;
+  optional string first_name = 4;
+  optional string last_name = 5;
+  optional string full_name = 6;
+  bool enabled = 7;
+  optional string created_at = 8;
+
+  // Identity/KYC data
+  optional string phone = 9;
+  optional common.v1.Address address = 10;
+  optional common.v1.DateOfBirth date_of_birth = 11;
+  optional string ssn_last4 = 12;
+
+  // Verification status (metadata)
+  optional UserVerification verification = 13;
+}
+
+// ============================================
+// REQUEST/RESPONSE (EventBus Query Patterns)
+// ============================================
+
+// Query user by ID or email
+message QueryUserRequest {
+  optional string id = 1;
+  optional string email = 2;
+}
+
+message QueryUserResponse {
+  optional User user = 1;
+}
+
+// Query multiple users by IDs
+message QueryUsersRequest {
+  repeated string ids = 1;
+}
+
+message QueryUsersResponse {
+  repeated User users = 1;
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: User created
+message UserCreatedEvent {
+  string user_id = 1;
+  string username = 2;
+  string email = 3;
+  optional string first_name = 4;
+  optional string last_name = 5;
+  string created_at = 6; // ISO 8601 datetime string
+}
+
+// Event: User updated
+message UserUpdatedEvent {
+  string user_id = 1;
+  optional string username = 2;
+  optional string email = 3;
+  optional string first_name = 4;
+  optional string last_name = 5;
+
+  // Identity/KYC data updates
+  optional string phone = 6;
+  optional common.v1.Address address = 7;
+  optional common.v1.DateOfBirth date_of_birth = 8;
+  optional string ssn_last4 = 9;
+
+  // Verification updates
+  optional UserVerification verification = 10;
+
+  string updated_at = 11;
+}
+
+// Event: User deleted
+message UserDeletedEvent {
+  string user_id = 1;
+  string deleted_at = 2; // ISO 8601 datetime string
+}
+
+// Event: User profile updated
+message UserProfileUpdatedEvent {
+  string user_id = 1;
+  optional string avatar = 2;
+  string updated_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Onboarding status changed
+message UserOnboardingStatusEvent {
+  string user_id = 1;
+  bool onboarding_completed = 2;
+  repeated string missing_fields = 3;
+  string updated_at = 4; // ISO 8601 datetime string
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nauticalstream-proto"
+version = "0.0.1"
+description = "Protocol Buffer definitions for Nauticalstream services"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Nauticalstream Team" }
+]
+keywords = ["protobuf", "grpc", "nauticalstream"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "protobuf>=5.29.0",
+    "grpcio>=1.68.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/nauticalstream/proto"
+Repository = "https://github.com/nauticalstream/proto"
+Issues = "https://github.com/nauticalstream/proto/issues"
+
+[tool.setuptools]
+packages = ["nauticalstream_proto"]
+package-dir = {"nauticalstream_proto" = "gen/python"}
+
+[tool.setuptools.package-data]
+nauticalstream_proto = ["**/*.py", "py.typed"]

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+import "storage/v1/shared.proto";
+
+message Video {
+  string id = 1;
+  string filename = 2;
+  string original_name = 3;
+  string mime_type = 4;
+  int32 size = 5;             // File size in bytes
+  optional int32 duration = 6; // Duration in seconds
+  string url = 7;
+  string storage_key = 8;
+
+  ImageVariant variant = 9;
+  optional string original_video_id = 10; // Set if this is a variant
+
+  optional string alt = 11;
+  FileStatus status = 12;
+
+  string uploaded_by = 13;
+  optional string workspace_id = 14;
+  string created_at = 15; // ISO 8601 datetime string
+  string updated_at = 16; // ISO 8601 datetime string
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Video uploaded (status = PENDING, transcoding not started yet)
+message VideoUploadedEvent {
+  string video_id = 1;
+}
+
+// Event: Video transcoded (status = ACTIVE, HLS/variants ready)
+message VideoProcessedEvent {
+  string video_id = 1;
+}
+
+// Event: Video deleted
+message VideoDeletedEvent {
+  string video_id = 1;
+}

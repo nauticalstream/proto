@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+import "storage/v1/shared.proto";
+
+// ============================================
+// REQUEST / RESPONSE
+// ============================================
+
+// Request: Check if an entity has at least one file of any type attached
+message HasFileRequest {
+  FileReferenceType reference_type = 1;
+  string reference_id = 2;
+}
+
+message HasFileResponse {
+  bool has_file = 1;
+}
+
+message HasFileBatchRequest {
+  repeated HasFileRequest items = 1;
+}
+
+message HasFileBatchResult {
+  FileReferenceType reference_type = 1;
+  string reference_id = 2;
+  bool has_file = 3;
+}
+
+message HasFileBatchResponse {
+  repeated HasFileBatchResult results = 1;
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: A file was attached to an entity
+message FileReferencedEvent {
+  string file_reference_id = 1;
+}
+
+// Event: A file was detached from an entity
+message FileUnreferencedEvent {
+  string file_reference_id = 1;
+}

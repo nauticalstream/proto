@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+*.pyc
+__pycache__/
+
+# Build outputs (we DO commit generated code for multi-language support)
+# gen/ is committed so Go/Python/JS can all use it
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python build
+dist/
+build/
+*.egg-info/
+
+# Temporary files
+.tmp/
+*.tmp

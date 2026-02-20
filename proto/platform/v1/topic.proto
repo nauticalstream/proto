@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package platform.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/platform/v1";
+
+/**
+ * Request / reply for fetching all conversation IDs a user belongs to.
+ * Used by MQTT clients on connect to subscribe to topics.
+ *
+ * Subject: chat.user.get-topics  (core NATS request/reply)
+ */
+message GetUserTopicsRequest {
+  string user_id = 1;
+}
+
+message GetUserTopicsResponse {
+  repeated string topic_ids = 1;  // e.g. ["convId1", "convId2", ...]
+}

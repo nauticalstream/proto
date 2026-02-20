@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+import "storage/v1/shared.proto";
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Collection created
+message CollectionCreatedEvent {
+  string collection_id = 1;
+}
+
+// Event: Collection deleted
+message CollectionDeletedEvent {
+  string collection_id = 1;
+}
+
+// Event: Collection attached to an entity
+message CollectionReferencedEvent {
+  string collection_id = 1;
+  FileReferenceType reference_type = 2;
+  string reference_id = 3;
+}
+
+// Event: Collection detached from an entity
+message CollectionUnreferencedEvent {
+  string collection_id = 1;
+  FileReferenceType reference_type = 2;
+  string reference_id = 3;
+}

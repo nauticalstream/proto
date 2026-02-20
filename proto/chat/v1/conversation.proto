@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package chat.v1;
+
+import "user/v1/user.proto";
+import "workspace/v1/workspace.proto";
+
+option go_package = "github.com/nauticalstream/proto/gen/go/chat/v1";
+
+enum ConversationType {
+  CONVERSATION_TYPE_UNSPECIFIED = 0;
+  CONVERSATION_TYPE_DIRECT = 1;
+  CONVERSATION_TYPE_GROUP = 2;
+  CONVERSATION_TYPE_CHANNEL = 3;
+}
+
+enum ConversationStatus {
+  CONVERSATION_STATUS_UNSPECIFIED = 0;
+  CONVERSATION_STATUS_ACTIVE = 1;
+  CONVERSATION_STATUS_ARCHIVED = 2;
+  CONVERSATION_STATUS_DELETED = 3;
+}
+
+message Conversation {
+  optional string id = 1;
+  string workspace_id = 2;
+  string type = 3;
+  optional string name = 4;
+  optional string description = 5;
+  optional string avatar_url = 6;
+  optional int32 participant_count = 7;
+  optional string created_by = 8;
+  optional string created_at = 9;
+  optional string updated_at = 10;
+  optional string archived_at = 11;
+  optional string status = 12;
+  repeated string participant_ids = 13;
+  optional string correlation_id = 16; // Server-generated for idempotency, tracing, and optimistic UI
+
+  // Enriched by backend
+  optional workspace.v1.Workspace workspace = 14;
+  optional user.v1.User creator = 15;
+}
+
+message ConversationCreatedEvent {
+  string conversation_id = 1;
+  Conversation conversation = 2;
+  string created_by = 3;
+  string created_at = 4;
+  optional user.v1.User creator = 5;
+  optional workspace.v1.Workspace workspace = 6;
+}
+
+message ConversationUpdatedEvent {
+  string conversation_id = 1;
+  Conversation conversation = 2;
+  string updated_at = 3;
+  optional user.v1.User updated_by_user = 4;
+  optional workspace.v1.Workspace workspace = 5;
+}
+
+message ConversationDeletedEvent {
+  string conversation_id = 1;
+  string deleted_at = 2;
+}
+
+message GetConversationRequest {
+  string conversation_id = 1;
+  string user_id = 2;
+}
+
+message GetConversationResponse {
+  Conversation conversation = 1;
+}
+
+message QueryConversationsRequest {
+  string user_id = 1;
+  optional int32 first = 2;
+  optional string after = 3;
+  optional int32 last = 4;
+  optional string before = 5;
+}
+
+message QueryConversationsResponse {
+  repeated ConversationEdge edges = 1;
+  ConversationPageInfo page_info = 2;
+}
+
+message ConversationEdge {
+  string cursor = 1;
+  Conversation node = 2;
+}
+
+message ConversationPageInfo {
+  bool has_next_page = 1;
+  bool has_previous_page = 2;
+  optional string start_cursor = 3;
+  optional string end_cursor = 4;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package platform.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/platform/v1";
+
+/**
+ * Generic platform event envelope.
+ * Published to NATS Core for analytics (BigQuery ingestion).
+ *
+ * type           – Event type (e.g., "message.created", "user.online")
+ * payload        – Domain-specific proto bytes
+ * correlation_id – Trace ID for distributed tracing (same across related events)
+ * timestamp      – ISO 8601 when event occurred
+ * source         – Service that published (e.g., "chat-service")
+ */
+message Event {
+  string type           = 1;
+  bytes  payload        = 2;
+  string correlation_id = 3;
+  string timestamp      = 4;
+  string source         = 5;
+}

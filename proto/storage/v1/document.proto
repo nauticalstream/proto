@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+import "storage/v1/shared.proto";
+
+message Document {
+  string id = 1;
+  string filename = 2;
+  string original_name = 3;
+  string mime_type = 4;
+  int32 size = 5; // File size in bytes
+  string url = 6;
+  string storage_key = 7;
+
+  FileStatus status = 8;
+
+  string uploaded_by = 9;
+  optional string workspace_id = 10;
+  string created_at = 11; // ISO 8601 datetime string
+  string updated_at = 12; // ISO 8601 datetime string
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Document uploaded
+message DocumentUploadedEvent {
+  string document_id = 1;
+}
+
+// Event: Document deleted
+message DocumentDeletedEvent {
+  string document_id = 1;
+}

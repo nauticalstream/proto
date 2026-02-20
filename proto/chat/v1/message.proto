@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package chat.v1;
+
+import "chat/v1/conversation.proto";
+import "workspace/v1/workspace.proto";
+
+option go_package = "github.com/nauticalstream/proto/gen/go/chat/v1";
+
+enum MessageType {
+  MESSAGE_TYPE_UNSPECIFIED = 0;
+  MESSAGE_TYPE_TEXT = 1;
+  MESSAGE_TYPE_SYSTEM = 2;
+}
+
+enum MessageStatus {
+  MESSAGE_STATUS_UNSPECIFIED = 0;
+  MESSAGE_STATUS_SENT = 1;
+  MESSAGE_STATUS_DELIVERED = 2;
+  MESSAGE_STATUS_READ = 3;
+  MESSAGE_STATUS_FAILED = 4;
+}
+
+enum ChatMessageAttachmentType {
+  CHAT_MESSAGE_ATTACHMENT_TYPE_UNSPECIFIED = 0;
+  CHAT_MESSAGE_ATTACHMENT_TYPE_IMAGE = 1;
+  CHAT_MESSAGE_ATTACHMENT_TYPE_VIDEO = 2;
+  CHAT_MESSAGE_ATTACHMENT_TYPE_DOCUMENT = 3;
+}
+
+message ChatMessageAttachment {
+  string id = 1;
+  ChatMessageAttachmentType type = 2;
+}
+
+message ChatMessageSender {
+  string id = 1;
+  string full_name = 2;
+  string username = 3;
+  optional string avatar = 4;
+}
+
+message ChatMessageReplyInfo {
+  string id = 1;
+  string sender_id = 2;
+  optional string sender_name = 3;
+  string content_preview = 4;
+}
+
+message ChatMessage {
+  optional string id = 1;
+  string conversation_id = 2;
+  optional string sender_id = 3;
+  optional ChatMessageSender sender = 4;
+  string content = 5;
+  optional string type = 6;
+  optional string status = 7;
+  optional string created_at = 8;
+  optional string updated_at = 9;
+  optional string reply_to_id = 10;
+  repeated ChatMessageAttachment attachments = 11;
+  optional string correlation_id = 13; // Server-generated for idempotency, tracing, and optimistic UI
+  optional string on_behalf_of_id = 14;
+
+  // Enriched by backend
+  optional Conversation conversation = 15;
+  optional workspace.v1.Workspace on_behalf_of_workspace = 16;
+  optional ChatMessageReplyInfo reply_to = 17;
+}
+
+message ChatMessageSentEvent {
+  ChatMessage message = 1;
+}
+
+message ChatMessageDeliveredEvent {
+  string id = 1;
+  string conversation_id = 2;
+  string user_id = 3;
+  string delivered_at = 4;
+}
+
+message ChatMessageReadEvent {
+  string id = 1;
+  string conversation_id = 2;
+  string user_id = 3;
+  string read_at = 4;
+}
+
+message ChatMessageStatusUpdatedEvent {
+  string id = 1;
+  string conversation_id = 2;
+  string status = 3;
+  string updated_at = 4;
+}
+
+message ChatMessageMarkReadCommand {
+  string id = 1;
+  string conversation_id = 2;
+  string user_id = 3;
+  string created_at = 4;
+}
+
+message GetChatMessageRequest {
+  string id = 1;
+  string user_id = 2;
+}
+
+message GetChatMessageResponse {
+  ChatMessage message = 1;
+}
+
+message QueryChatMessagesRequest {
+  string conversation_id = 1;
+  string user_id = 2;
+  optional int32 first = 3;
+  optional string after = 4;
+  optional int32 last = 5;
+  optional string before = 6;
+}
+
+message QueryChatMessagesResponse {
+  repeated ChatMessageEdge edges = 1;
+  ChatMessagePageInfo page_info = 2;
+}
+
+message ChatMessageEdge {
+  string cursor = 1;
+  ChatMessage node = 2;
+}
+
+message ChatMessagePageInfo {
+  bool has_next_page = 1;
+  bool has_previous_page = 2;
+  optional string start_cursor = 3;
+  optional string end_cursor = 4;
+}

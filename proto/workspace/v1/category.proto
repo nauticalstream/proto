@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/workspace/v1";
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum WorkspaceCategoryStatus {
+  WORKSPACE_CATEGORY_STATUS_UNSPECIFIED = 0;
+  WORKSPACE_CATEGORY_STATUS_ACTIVE = 1;
+  WORKSPACE_CATEGORY_STATUS_INACTIVE = 2;
+  WORKSPACE_CATEGORY_STATUS_DEPRECATED = 3;
+}
+
+// ============================================
+// CATEGORY FULL MODEL
+// ============================================
+
+// Full category model (matches Prisma schema and used for enrichment)
+message WorkspaceCategory {
+  int32 id = 1;
+  string name = 2;
+  string key = 3;
+  optional string description = 4;
+  optional string icon = 5;
+  WorkspaceCategoryStatus status = 6;
+  string created_by = 7;
+  string created_at = 8; // ISO 8601 datetime string
+  string updated_at = 9; // ISO 8601 datetime string
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Category created
+message WorkspaceCategoryCreatedEvent {
+  int32 id = 1;
+  string name = 2;
+  string created_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Category updated
+message WorkspaceCategoryUpdatedEvent {
+  int32 id = 1;
+  string updated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Category deleted
+message WorkspaceCategoryDeletedEvent {
+  int32 id = 1;
+  string deleted_by = 2;
+  string deleted_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Category activated
+message WorkspaceCategoryActivatedEvent {
+  int32 id = 1;
+  string activated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Category deactivated
+message WorkspaceCategoryDeactivatedEvent {
+  int32 id = 1;
+  string deactivated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Category deprecated
+message WorkspaceCategoryDeprecatedEvent {
+  int32 id = 1;
+  string deprecated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Amenity assigned to category
+message WorkspaceCategoryAmenityAssignedEvent {
+  int32 category_id = 1;
+  int32 amenity_id = 2;
+  string assigned_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Amenity removed from category
+message WorkspaceCategoryAmenityRemovedEvent {
+  int32 category_id = 1;
+  int32 amenity_id = 2;
+  string deleted_by = 3;
+  string deleted_at = 4; // ISO 8601 datetime string
+}

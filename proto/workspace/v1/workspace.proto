@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/workspace/v1";
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum WorkspaceStatus {
+  WORKSPACE_STATUS_UNSPECIFIED = 0;
+  WORKSPACE_STATUS_DRAFT = 1;
+  WORKSPACE_STATUS_PUBLISHED = 2;
+  WORKSPACE_STATUS_UNPUBLISHED = 3;
+  WORKSPACE_STATUS_SUSPENDED = 4;
+}
+
+enum WorkspaceType {
+  WORKSPACE_TYPE_UNSPECIFIED = 0;
+  WORKSPACE_TYPE_INDIVIDUAL = 1;
+  WORKSPACE_TYPE_COMPANY = 2;
+}
+
+// ============================================
+// WORKSPACE FULL MODEL
+// ============================================
+
+// Full workspace model (matches Prisma schema and used for enrichment)
+message Workspace {
+  string id = 1;
+  string name = 2;
+  string handle = 3;
+  optional string description = 4;
+  WorkspaceStatus status = 5;
+  WorkspaceType type = 6;
+  optional int32 category_id = 7;
+  string created_by = 8;
+  string created_at = 9; // ISO 8601 datetime string
+  string updated_at = 10; // ISO 8601 datetime string
+  optional string website = 11;
+  optional string avatar = 14; // For enrichment display
+  optional double latitude = 15; // Workspace location latitude
+  optional double longitude = 16; // Workspace location longitude
+}
+
+// ============================================
+// REQUEST/RESPONSE (EventBus Query Patterns)
+// ============================================
+
+// Query workspace by ID
+message QueryWorkspaceRequest {
+  optional string id = 1;
+}
+
+message QueryWorkspaceResponse {
+  optional Workspace workspace = 1;
+}
+
+// Query multiple workspaces by IDs
+message QueryWorkspacesRequest {
+  repeated string ids = 1;
+}
+
+message QueryWorkspacesResponse {
+  repeated Workspace workspaces = 1;
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Workspace created
+message WorkspaceCreatedEvent {
+  Workspace workspace = 1;
+}
+
+// Event: Workspace updated
+message WorkspaceUpdatedEvent {
+  Workspace workspace = 1;
+}
+
+// Event: Workspace deleted
+message WorkspaceDeletedEvent {
+  string id = 1;
+  string deleted_by = 2;
+  string deleted_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Workspace published
+message WorkspacePublishedEvent {
+  string id = 1;
+  string published_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Workspace unpublished
+message WorkspaceUnpublishedEvent {
+  string id = 1;
+  string unpublished_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Workspace suspended
+message WorkspaceSuspendedEvent {
+  string id = 1;
+  string suspended_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Company info updated
+message WorkspaceCompanyInfoUpdatedEvent {
+  string id = 1;
+  string updated_at = 2; // ISO 8601 datetime string
+}

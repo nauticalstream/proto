@@ -1,0 +1,157 @@
+syntax = "proto3";
+
+package chat.v1;
+
+import "chat/v1/conversation.proto";
+import "user/v1/user.proto";
+import "workspace/v1/workspace.proto";
+
+option go_package = "github.com/nauticalstream/proto/gen/go/chat/v1";
+
+enum ConversationParticipantStatus {
+  CONVERSATION_PARTICIPANT_STATUS_UNSPECIFIED = 0;
+  CONVERSATION_PARTICIPANT_STATUS_ACTIVE = 1;
+  CONVERSATION_PARTICIPANT_STATUS_LEFT = 2;
+  CONVERSATION_PARTICIPANT_STATUS_REMOVED = 3;
+}
+
+message ConversationParticipantAddedEvent {
+  string conversation_id = 1;
+  string user_id = 2;
+  string added_by = 3;
+  string status = 4;
+  string joined_at = 5;
+  optional user.v1.User user = 6;
+  optional user.v1.User added_by_user = 7;
+  optional Conversation conversation = 8;
+}
+
+message ConversationParticipantRemovedEvent {
+  string conversation_id = 1;
+  string user_id = 2;
+  string removed_by = 3;
+  string left_at = 4;
+  optional user.v1.User user = 5;
+  optional user.v1.User removed_by_user = 6;
+  optional Conversation conversation = 7;
+}
+
+message ConversationParticipantUpdatedEvent {
+  string conversation_id = 1;
+  string user_id = 2;
+  int32 unread_count = 3;
+  optional string last_read_at = 4;
+  optional string last_read_message_id = 5;
+  string updated_at = 6;
+  optional user.v1.User user = 7;
+  optional Conversation conversation = 8;
+}
+
+message ChatUserOnlineEvent {
+  string user_id = 1;
+  string timestamp = 2;
+}
+
+message ChatUserOfflineEvent {
+  string user_id = 1;
+  string timestamp = 2;
+}
+
+message ChatUserTypingEvent {
+  string conversation_id = 1;
+  string user_id = 2;
+  bool is_typing = 3;
+  string timestamp = 4;
+}
+
+enum ConversationParticipantRole {
+  CONVERSATION_PARTICIPANT_ROLE_UNSPECIFIED = 0;
+  CONVERSATION_PARTICIPANT_ROLE_OWNER = 1;
+  CONVERSATION_PARTICIPANT_ROLE_ADMIN = 2;
+  CONVERSATION_PARTICIPANT_ROLE_MEMBER = 3;
+}
+
+message ConversationParticipant {
+  optional string id = 1;
+  string conversation_id = 2;
+  string user_id = 3;
+  optional string on_behalf_of_id = 4;
+  optional string role = 5;
+  optional string status = 6;
+  optional bool muted = 7;
+  optional string muted_until = 8;
+  optional string last_read_at = 9;
+  optional string last_read_message_id = 10;
+  optional int32 unread_count = 11;
+  optional string joined_at = 12;
+  optional string left_at = 13;
+  optional string added_by_id = 14;
+  optional string created_at = 15;
+  optional string updated_at = 16;
+  optional string correlation_id = 21; // Server-generated for idempotency, tracing, and optimistic UI
+
+  // Enriched by backend
+  optional user.v1.User user = 17;
+  optional Conversation conversation = 18;
+  optional workspace.v1.Workspace on_behalf_of_workspace = 19;
+  optional user.v1.User added_by_user = 20;
+}
+
+// ============================================
+// REQUEST/RESPONSE (EventBus Query Patterns)
+// ============================================
+
+// Query conversation participants
+message QueryConversationParticipantsRequest {
+  optional string id = 1; // conversation_id
+}
+
+message QueryConversationParticipantsResponse {
+  repeated ConversationParticipant participants = 1;
+}
+
+// Query if user is participant in conversation
+message QueryIsParticipantRequest {
+  string id = 1; // user_id
+  string conversation_id = 2;
+}
+
+message QueryIsParticipantResponse {
+  bool is_participant = 1;
+}
+
+// Query user's conversation topics (for WebSocket rooms)
+message QueryUserTopicsRequest {
+  string id = 1; // user_id
+}
+
+message QueryUserTopicsResponse {
+  repeated string topic_ids = 1; // conversation IDs
+}
+
+// Legacy naming - kept for backward compatibility
+message GetConversationParticipantsRequest {
+  string conversation_id = 1;
+  string user_id = 2;
+}
+
+message GetConversationParticipantsResponse {
+  repeated ConversationParticipant participants = 1;
+}
+
+message GetConversationParticipantIdsRequest {
+  string conversation_id = 1;
+}
+
+message GetConversationParticipantIdsResponse {
+  repeated string user_ids = 1;
+}
+
+message IsParticipantRequest {
+  string user_id = 1;
+  string conversation_id = 2;
+}
+
+message IsParticipantResponse {
+  bool is_participant = 1;
+}

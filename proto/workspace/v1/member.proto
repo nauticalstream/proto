@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/workspace/v1";
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum WorkspaceMemberRole {
+  WORKSPACE_MEMBER_ROLE_UNSPECIFIED = 0;
+  WORKSPACE_MEMBER_ROLE_OWNER = 1;
+  WORKSPACE_MEMBER_ROLE_ADMIN = 2;
+  WORKSPACE_MEMBER_ROLE_MEMBER = 3;
+}
+
+// ============================================
+// MEMBER FULL MODEL
+// ============================================
+
+// Full member model (matches Prisma schema and used for enrichment)
+message WorkspaceMember {
+  string id = 1;
+  string workspace_id = 2;
+  string user_id = 3;
+  WorkspaceMemberRole role = 4;
+  optional string title = 5; // Job title for Stripe representative
+  bool representative = 6; // Stripe representative flag
+  string created_by = 7;
+  string created_at = 8; // ISO 8601 datetime string
+  string updated_at = 9; // ISO 8601 datetime string
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Member added to workspace
+message WorkspaceMemberAddedEvent {
+  string id = 1;
+  string workspace_id = 2;
+  string user_id = 3;
+  string role = 4; // OWNER, ADMIN, MEMBER
+  string added_at = 5; // ISO 8601 datetime string
+}
+
+// Event: Member updated in workspace
+message WorkspaceMemberUpdatedEvent {
+  string id = 1;
+  string workspace_id = 2;
+  string user_id = 3;
+  optional string role = 4;
+  string updated_at = 5; // ISO 8601 datetime string
+}
+
+// Event: Member removed from workspace
+message WorkspaceMemberRemovedEvent {
+  string id = 1;
+  string workspace_id = 2;
+  string user_id = 3;
+  string removed_by = 4;
+  string removed_at = 5; // ISO 8601 datetime string
+}

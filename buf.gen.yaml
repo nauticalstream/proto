@@ -1,0 +1,21 @@
+version: v2
+plugins:
+  # Go protobuf + paths
+  - remote: buf.build/protocolbuffers/go
+    out: gen/go
+    opt:
+      - module=github.com/nauticalstream/proto/gen/go
+
+  # Go gRPC
+  - remote: buf.build/grpc/go
+    out: gen/go
+    opt:
+      - module=github.com/nauticalstream/proto/gen/go
+
+  # TypeScript/JavaScript with Protobuf‑ES
+  - remote: buf.build/bufbuild/es
+    out: gen/ts
+
+  # Python protobuf
+  - remote: buf.build/protocolbuffers/python
+    out: gen/python

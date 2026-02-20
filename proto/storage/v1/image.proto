@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+import "storage/v1/shared.proto";
+
+message Image {
+  string id = 1;
+  string filename = 2;
+  string original_name = 3;
+  string mime_type = 4;
+  int32 size = 5;           // File size in bytes
+  optional int32 width = 6;
+  optional int32 height = 7;
+  optional int32 orientation = 8; // EXIF orientation (1-8)
+  string url = 9;
+  string storage_key = 10;
+
+  ImageVariant variant = 11;
+  optional string original_image_id = 12; // Set if this is a variant
+
+  optional string alt = 13;
+  FileStatus status = 14;
+
+  string uploaded_by = 15;
+  optional string workspace_id = 16;
+  string created_at = 17; // ISO 8601 datetime string
+  string updated_at = 18; // ISO 8601 datetime string
+}
+
+// ============================================
+// REQUEST / RESPONSE
+// ============================================
+
+message HasImageRequest {
+  FileReferenceType reference_type = 1;
+  string reference_id = 2;
+}
+
+message HasImageResponse {
+  bool has_image = 1;
+}
+
+message HasImageBatchRequest {
+  repeated HasImageRequest items = 1;
+}
+
+message HasImageBatchResult {
+  FileReferenceType reference_type = 1;
+  string reference_id = 2;
+  bool has_image = 3;
+}
+
+message HasImageBatchResponse {
+  repeated HasImageBatchResult results = 1;
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Image uploaded (status = PENDING, processing not started yet)
+message ImageUploadedEvent {
+  string image_id = 1;
+}
+
+// Event: Image processed (status = ACTIVE, variants ready)
+message ImageProcessedEvent {
+  string image_id = 1;
+}
+
+// Event: Image deleted
+message ImageDeletedEvent {
+  string image_id = 1;
+}

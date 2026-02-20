@@ -1,0 +1,14 @@
+# Only ship TypeScript generated code to npm
+# Exclude everything except gen/ts
+
+proto/
+gen/go/
+gen/python/
+buf.yaml
+buf.gen.yaml
+go.mod
+go.sum
+pyproject.toml
+.git/
+.github/
+*.proto

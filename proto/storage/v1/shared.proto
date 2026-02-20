@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package storage.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/storage/v1";
+
+// Shared enums for all storage models
+
+enum FileStatus {
+  FILE_STATUS_UNSPECIFIED = 0;
+  FILE_STATUS_PENDING = 1;   // Uploaded, waiting for processing
+  FILE_STATUS_ACTIVE = 2;    // Ready to use
+  FILE_STATUS_DELETED = 3;
+}
+
+enum FileRole {
+  FILE_ROLE_UNSPECIFIED = 0;
+  FILE_ROLE_COVER = 1;   // Main entity image
+  FILE_ROLE_AVATAR = 2;  // Profile picture
+}
+
+enum ImageVariant {
+  IMAGE_VARIANT_UNSPECIFIED = 0;
+  IMAGE_VARIANT_ORIGINAL = 1;
+  IMAGE_VARIANT_THUMBNAIL = 2;
+  IMAGE_VARIANT_PREVIEW = 3;
+  IMAGE_VARIANT_OPTIMIZED = 4;
+  IMAGE_VARIANT_WEBP = 5;
+  IMAGE_VARIANT_AVIF = 6;
+}
+
+enum FileReferenceType {
+  FILE_REFERENCE_TYPE_UNSPECIFIED = 0;
+  FILE_REFERENCE_TYPE_USER = 1;
+  FILE_REFERENCE_TYPE_WORKSPACE = 2;
+  FILE_REFERENCE_TYPE_POST_ITEM = 3;
+  FILE_REFERENCE_TYPE_ARTICLE = 4;
+  FILE_REFERENCE_TYPE_BOAT = 5;
+  FILE_REFERENCE_TYPE_EVENT = 6;
+  FILE_REFERENCE_TYPE_CRUISE = 7;
+  FILE_REFERENCE_TYPE_TOUR = 8;
+  FILE_REFERENCE_TYPE_RENTAL = 9;
+  FILE_REFERENCE_TYPE_CABIN = 10;
+  FILE_REFERENCE_TYPE_GENERAL = 11;
+}

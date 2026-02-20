@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package workspace.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/workspace/v1";
+
+// ============================================
+// ENUMS
+// ============================================
+
+enum WorkspaceAmenityType {
+  WORKSPACE_AMENITY_TYPE_UNSPECIFIED = 0;
+  WORKSPACE_AMENITY_TYPE_BOOLEAN = 1;
+  WORKSPACE_AMENITY_TYPE_JSON = 2;
+  WORKSPACE_AMENITY_TYPE_STANDALONE = 3;
+}
+
+enum WorkspaceAmenityStatus {
+  WORKSPACE_AMENITY_STATUS_UNSPECIFIED = 0;
+  WORKSPACE_AMENITY_STATUS_ACTIVE = 1;
+  WORKSPACE_AMENITY_STATUS_INACTIVE = 2;
+  WORKSPACE_AMENITY_STATUS_DEPRECATED = 3;
+}
+
+// ============================================
+// AMENITY FULL MODEL
+// ============================================
+
+// Full amenity model (matches Prisma schema and used for enrichment)
+message WorkspaceAmenity {
+  int32 id = 1;
+  string name = 2;
+  string key = 3;
+  WorkspaceAmenityType type = 4;
+  optional string description = 5;
+  optional string icon = 6;
+  WorkspaceAmenityStatus status = 7;
+  string created_by = 8;
+  string created_at = 9; // ISO 8601 datetime string
+  string updated_at = 10; // ISO 8601 datetime string
+}
+
+// ============================================
+// EVENTS
+// ============================================
+
+// Event: Amenity created
+message WorkspaceAmenityCreatedEvent {
+  int32 id = 1;
+  string name = 2;
+  string created_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Amenity updated
+message WorkspaceAmenityUpdatedEvent {
+  int32 id = 1;
+  string updated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Amenity deleted
+message WorkspaceAmenityDeletedEvent {
+  int32 id = 1;
+  string deleted_by = 2;
+  string deleted_at = 3; // ISO 8601 datetime string
+}
+
+// Event: Amenity activated
+message WorkspaceAmenityActivatedEvent {
+  int32 id = 1;
+  string activated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Amenity deactivated
+message WorkspaceAmenityDeactivatedEvent {
+  int32 id = 1;
+  string deactivated_at = 2; // ISO 8601 datetime string
+}
+
+// Event: Amenity deprecated
+message WorkspaceAmenityDeprecatedEvent {
+  int32 id = 1;
+  string deprecated_at = 2; // ISO 8601 datetime string
+}

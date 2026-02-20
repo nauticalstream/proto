@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package common.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/common/v1";
+
+// Date of birth for identity verification, KYC compliance, age verification.
+// Follows google.type.Date pattern but specialized for DOB use cases.
+message DateOfBirth {
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}

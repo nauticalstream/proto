@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package error.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/error/v1";
+
+import "google/protobuf/timestamp.proto";
+import "error/v1/codes.proto";
+
+/**
+ * Error
+ * Unified error message used across all transports (GraphQL, MQTT, WebSocket, HTTP)
+ * Single source of truth for error handling across the entire system
+ * 
+ * Usage:
+ * - GraphQL: Include in error extensions
+ * - MQTT: Publish to user/{userId}/errors topic
+ * - WebSocket: Send via realtime gateway subscription
+ * - HTTP: Return in error response body
+ * 
+ * Allows frontend to:
+ * - Remove failed optimistic messages by optimistic_id
+ * - Determine retry strategy based on severity
+ * - Display user-friendly error messages
+ * - Track errors for analytics
+ */
+message Error {
+  /**
+   * Correlation ID for request tracing across all logs
+   * Same as correlationId from original request
+   * Allows matching errors to requests in logs and monitoring
+   */
+  string correlation_id = 1;
+  
+  /**
+   * CRITICAL: Optimistic message ID
+   * Frontend uses this to find and remove the temporary optimistic UI message
+   * When set, client removes message with this optimistic_id from local state
+   * Only set for message/operation-specific errors
+   */
+  string optimistic_id = 2;
+  
+  /**
+   * Standard error code for machine-readable handling
+   * Hierarchical ranges indicate severity and category
+   * Allows client to:
+   *   - Determine retry strategy
+   *   - Display appropriate UI (error alert, toast, inline message)
+   *   - Route to appropriate error handler
+   */
+  ErrorCode code = 3;
+  
+  /**
+   * Error severity level
+   * Tells client whether error is retryable
+   *   - CLIENT_ERROR: Don't retry (invalid input, permissions, etc.)
+   *   - RETRYABLE: Safe to retry (temporary service issues)
+   *   - FATAL: Permanent failure (don't retry)
+   */
+  ErrorSeverity severity = 4;
+  
+  /**
+   * Human-readable error message for display to user
+   * Should be user-friendly, not technical
+   * Examples:
+   *   - "You don't have permission to send messages in this conversation"
+   *   - "This conversation no longer exists"
+   *   - "Please try again in a moment"
+   */
+  string message = 5;
+  
+  /**
+   * Type of resource that failed (message, conversation, participant, etc.)
+   * Provides context about what the error relates to
+   */
+  ResourceType resource_type = 6;
+  
+  /**
+   * ID of the resource that failed (conversationId, messageId, etc.)
+   * Optional - may not be present for all error types
+   */
+  string resource_id = 7;
+  
+  /**
+   * Timestamp when error occurred (server time)
+   * Useful for:
+   *   - Client-side error deduplication
+   *   - Timeline reconstruction in logs
+   *   - Error correlation across systems
+   */
+  google.protobuf.Timestamp timestamp = 8;
+  
+  /**
+   * Retry hint for rate limiting
+   * When code is RATE_LIMIT_EXCEEDED, tells client how long to wait before retrying
+   * In seconds. Example: 60 means "retry after 60 seconds"
+   * Only set when severity is RETRYABLE
+   */
+  optional int32 retry_after_seconds = 9;
+}

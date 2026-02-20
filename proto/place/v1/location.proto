@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package places.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/place/v1";
+
+// Entity types that can have a location assigned
+enum LocationReferenceType {
+  LOCATION_REFERENCE_TYPE_UNSPECIFIED = 0;
+  LOCATION_REFERENCE_TYPE_POST = 1;
+  LOCATION_REFERENCE_TYPE_EVENT = 2;
+  LOCATION_REFERENCE_TYPE_BOAT = 3;
+  LOCATION_REFERENCE_TYPE_WORKSPACE = 4;
+  LOCATION_REFERENCE_TYPE_EXPERIENCE = 5;
+  LOCATION_REFERENCE_TYPE_TOUR = 6;
+  LOCATION_REFERENCE_TYPE_CRUISE = 7;
+}
+
+// Request: Check if an entity has a location assigned
+message HasLocationRequest {
+  LocationReferenceType reference_type = 1;
+  string reference_id = 2;
+}
+
+// Response: Whether the entity has a location
+message HasLocationResponse {
+  bool has_location = 1;
+}
+
+// Request: Check if multiple entities have a location assigned
+message HasLocationBatchRequest {
+  repeated HasLocationRequest items = 1;
+}
+
+// Single result entry for batch response
+message HasLocationBatchResult {
+  LocationReferenceType reference_type = 1;
+  string reference_id = 2;
+  bool has_location = 3;
+}
+
+// Response: Results for each item, in the same order as the request
+message HasLocationBatchResponse {
+  repeated HasLocationBatchResult results = 1;
+}
+
+// Event: Location deleted (entity unassigned from a place)
+message LocationDeletedEvent {
+  string location_id = 1;
+}
