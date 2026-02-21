@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/nauticalstream/proto/compare/v1.0.6...v1.0.7) (2026-02-21)
+
+
+### Bug Fixes
+
+* add UserEnabled and UserDisabled events ([f74e39e](https://github.com/nauticalstream/proto/commit/f74e39e3d39b6c60a8b78b405b261ab8c895431c))
+
 ## [1.0.6](https://github.com/nauticalstream/proto/compare/v1.0.5...v1.0.6) (2026-02-21)
 
 
