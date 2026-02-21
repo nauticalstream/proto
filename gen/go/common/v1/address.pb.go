@@ -24,21 +24,22 @@ const (
 // Postal address for users, workspaces, organizations, billing, shipping, etc.
 // Follows Google's postal address pattern simplified for business needs.
 // Based on google.type.PostalAddress but streamlined for our domain.
+// All fields are optional to accommodate partial address data during onboarding.
 type Address struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// First line of the address (street number, street name)
-	Line1 string `protobuf:"bytes,1,opt,name=line1,proto3" json:"line1,omitempty"`
+	Line1 *string `protobuf:"bytes,1,opt,name=line1,proto3,oneof" json:"line1,omitempty"`
 	// Optional second line (apartment, suite, unit)
 	Line2 *string `protobuf:"bytes,2,opt,name=line2,proto3,oneof" json:"line2,omitempty"`
 	// City/locality name
-	City string `protobuf:"bytes,3,opt,name=city,proto3" json:"city,omitempty"`
+	City *string `protobuf:"bytes,3,opt,name=city,proto3,oneof" json:"city,omitempty"`
 	// State/province/region (optional for countries without states)
 	State *string `protobuf:"bytes,4,opt,name=state,proto3,oneof" json:"state,omitempty"`
 	// Postal code / ZIP code
-	PostalCode string `protobuf:"bytes,5,opt,name=postal_code,json=postalCode,proto3" json:"postal_code,omitempty"`
+	PostalCode *string `protobuf:"bytes,5,opt,name=postal_code,json=postalCode,proto3,oneof" json:"postal_code,omitempty"`
 	// ISO 3166-1 alpha-2 country code (e.g., "US", "GB", "FR")
 	// https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-	Country       string `protobuf:"bytes,6,opt,name=country,proto3" json:"country,omitempty"`
+	Country       *string `protobuf:"bytes,6,opt,name=country,proto3,oneof" json:"country,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -74,8 +75,8 @@ func (*Address) Descriptor() ([]byte, []int) {
 }
 
 func (x *Address) GetLine1() string {
-	if x != nil {
-		return x.Line1
+	if x != nil && x.Line1 != nil {
+		return *x.Line1
 	}
 	return ""
 }
@@ -88,8 +89,8 @@ func (x *Address) GetLine2() string {
 }
 
 func (x *Address) GetCity() string {
-	if x != nil {
-		return x.City
+	if x != nil && x.City != nil {
+		return *x.City
 	}
 	return ""
 }
@@ -102,15 +103,15 @@ func (x *Address) GetState() string {
 }
 
 func (x *Address) GetPostalCode() string {
-	if x != nil {
-		return x.PostalCode
+	if x != nil && x.PostalCode != nil {
+		return *x.PostalCode
 	}
 	return ""
 }
 
 func (x *Address) GetCountry() string {
-	if x != nil {
-		return x.Country
+	if x != nil && x.Country != nil {
+		return *x.Country
 	}
 	return ""
 }
@@ -119,17 +120,22 @@ var File_common_v1_address_proto protoreflect.FileDescriptor
 
 const file_common_v1_address_proto_rawDesc = "" +
 	"\n" +
-	"\x17common/v1/address.proto\x12\tcommon.v1\"\xb8\x01\n" +
-	"\aAddress\x12\x14\n" +
-	"\x05line1\x18\x01 \x01(\tR\x05line1\x12\x19\n" +
-	"\x05line2\x18\x02 \x01(\tH\x00R\x05line2\x88\x01\x01\x12\x12\n" +
-	"\x04city\x18\x03 \x01(\tR\x04city\x12\x19\n" +
-	"\x05state\x18\x04 \x01(\tH\x01R\x05state\x88\x01\x01\x12\x1f\n" +
-	"\vpostal_code\x18\x05 \x01(\tR\n" +
-	"postalCode\x12\x18\n" +
-	"\acountry\x18\x06 \x01(\tR\acountryB\b\n" +
-	"\x06_line2B\b\n" +
-	"\x06_stateB2Z0github.com/nauticalstream/proto/gen/go/common/v1b\x06proto3"
+	"\x17common/v1/address.proto\x12\tcommon.v1\"\xfb\x01\n" +
+	"\aAddress\x12\x19\n" +
+	"\x05line1\x18\x01 \x01(\tH\x00R\x05line1\x88\x01\x01\x12\x19\n" +
+	"\x05line2\x18\x02 \x01(\tH\x01R\x05line2\x88\x01\x01\x12\x17\n" +
+	"\x04city\x18\x03 \x01(\tH\x02R\x04city\x88\x01\x01\x12\x19\n" +
+	"\x05state\x18\x04 \x01(\tH\x03R\x05state\x88\x01\x01\x12$\n" +
+	"\vpostal_code\x18\x05 \x01(\tH\x04R\n" +
+	"postalCode\x88\x01\x01\x12\x1d\n" +
+	"\acountry\x18\x06 \x01(\tH\x05R\acountry\x88\x01\x01B\b\n" +
+	"\x06_line1B\b\n" +
+	"\x06_line2B\a\n" +
+	"\x05_cityB\b\n" +
+	"\x06_stateB\x0e\n" +
+	"\f_postal_codeB\n" +
+	"\n" +
+	"\b_countryB2Z0github.com/nauticalstream/proto/gen/go/common/v1b\x06proto3"
 
 var (
 	file_common_v1_address_proto_rawDescOnce sync.Once

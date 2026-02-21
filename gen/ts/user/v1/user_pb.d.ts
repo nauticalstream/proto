@@ -2,7 +2,7 @@
 // @generated from file user/v1/user.proto (package user.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 import type { Address } from "../../common/v1/address_pb";
 import type { DateOfBirth } from "../../common/v1/date_pb";
@@ -52,6 +52,7 @@ export declare const UserSchema: GenMessage<User>;
 
 /**
  * Verification metadata (status of verification process)
+ * This is embedded metadata for events, not a standalone entity
  *
  * @generated from message user.v1.UserVerification
  */
@@ -67,14 +68,16 @@ export declare type UserVerification = Message<"user.v1.UserVerification"> & {
   onboardingMissingFields: string[];
 
   /**
+   * ISO 8601 datetime string
+   *
    * @generated from field: optional string verified_at = 3;
    */
   verifiedAt?: string;
 
   /**
-   * @generated from field: optional string verification_status = 4;
+   * @generated from field: optional user.v1.VerificationStatus verification_status = 4;
    */
-  verificationStatus?: string;
+  verificationStatus?: VerificationStatus;
 };
 
 /**
@@ -123,36 +126,46 @@ export declare type UserDetails = Message<"user.v1.UserDetails"> & {
   enabled: boolean;
 
   /**
-   * @generated from field: optional string created_at = 8;
+   * @generated from field: optional bool email_verified = 8;
+   */
+  emailVerified?: boolean;
+
+  /**
+   * @generated from field: optional string created_at = 9;
    */
   createdAt?: string;
 
   /**
    * Identity/KYC data
    *
-   * @generated from field: optional string phone = 9;
+   * @generated from field: optional string phone = 10;
    */
   phone?: string;
 
   /**
-   * @generated from field: optional common.v1.Address address = 10;
+   * @generated from field: optional string nationality = 11;
+   */
+  nationality?: string;
+
+  /**
+   * @generated from field: optional common.v1.Address address = 12;
    */
   address?: Address;
 
   /**
-   * @generated from field: optional common.v1.DateOfBirth date_of_birth = 11;
+   * @generated from field: optional common.v1.DateOfBirth date_of_birth = 13;
    */
   dateOfBirth?: DateOfBirth;
 
   /**
-   * @generated from field: optional string ssn_last4 = 12;
+   * @generated from field: optional string ssn_last4 = 14;
    */
   ssnLast4?: string;
 
   /**
    * Verification status (metadata)
    *
-   * @generated from field: optional user.v1.UserVerification verification = 13;
+   * @generated from field: optional user.v1.UserVerification verification = 15;
    */
   verification?: UserVerification;
 };
@@ -298,26 +311,26 @@ export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
   username?: string;
 
   /**
-   * @generated from field: optional string email = 3;
-   */
-  email?: string;
-
-  /**
-   * @generated from field: optional string first_name = 4;
+   * @generated from field: optional string first_name = 3;
    */
   firstName?: string;
 
   /**
-   * @generated from field: optional string last_name = 5;
+   * @generated from field: optional string last_name = 4;
    */
   lastName?: string;
 
   /**
    * Identity/KYC data updates
    *
-   * @generated from field: optional string phone = 6;
+   * @generated from field: optional string phone = 5;
    */
   phone?: string;
+
+  /**
+   * @generated from field: optional string nationality = 6;
+   */
+  nationality?: string;
 
   /**
    * @generated from field: optional common.v1.Address address = 7;
@@ -442,4 +455,41 @@ export declare type UserOnboardingStatus = Message<"user.v1.UserOnboardingStatus
  * Use `create(UserOnboardingStatusSchema)` to create a new message.
  */
 export declare const UserOnboardingStatusSchema: GenMessage<UserOnboardingStatus>;
+
+/**
+ * Verification status enum
+ *
+ * @generated from enum user.v1.VerificationStatus
+ */
+export enum VerificationStatus {
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_PENDING = 1;
+   */
+  PENDING = 1,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_VERIFIED = 2;
+   */
+  VERIFIED = 2,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_REJECTED = 3;
+   */
+  REJECTED = 3,
+
+  /**
+   * @generated from enum value: VERIFICATION_STATUS_NEEDS_UPDATE = 4;
+   */
+  NEEDS_UPDATE = 4,
+}
+
+/**
+ * Describes the enum user.v1.VerificationStatus.
+ */
+export declare const VerificationStatusSchema: GenEnum<VerificationStatus>;
 

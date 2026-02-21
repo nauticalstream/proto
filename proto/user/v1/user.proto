@@ -2,10 +2,10 @@ syntax = "proto3";
 
 package user.v1;
 
-option go_package = "github.com/nauticalstream/proto/gen/go/user/v1";
-
 import "common/v1/address.proto";
 import "common/v1/date.proto";
+
+option go_package = "github.com/nauticalstream/proto/gen/go/user/v1";
 
 // ============================================
 // SHARED TYPES
@@ -20,12 +20,22 @@ message User {
   optional string avatar = 5;
 }
 
+// Verification status enum
+enum VerificationStatus {
+  VERIFICATION_STATUS_UNSPECIFIED = 0;
+  VERIFICATION_STATUS_PENDING = 1;
+  VERIFICATION_STATUS_VERIFIED = 2;
+  VERIFICATION_STATUS_REJECTED = 3;
+  VERIFICATION_STATUS_NEEDS_UPDATE = 4;
+}
+
 // Verification metadata (status of verification process)
+// This is embedded metadata for events, not a standalone entity
 message UserVerification {
   bool onboarding_completed = 1;
   repeated string onboarding_missing_fields = 2;
-  optional string verified_at = 3;
-  optional string verification_status = 4;
+  optional string verified_at = 3; // ISO 8601 datetime string
+  optional VerificationStatus verification_status = 4;
 }
 
 // ============================================
@@ -40,16 +50,18 @@ message UserDetails {
   optional string last_name = 5;
   optional string full_name = 6;
   bool enabled = 7;
-  optional string created_at = 8;
+  optional bool email_verified = 8;
+  optional string created_at = 9;
 
   // Identity/KYC data
-  optional string phone = 9;
-  optional common.v1.Address address = 10;
-  optional common.v1.DateOfBirth date_of_birth = 11;
-  optional string ssn_last4 = 12;
+  optional string phone = 10;
+  optional string nationality = 11;
+  optional common.v1.Address address = 12;
+  optional common.v1.DateOfBirth date_of_birth = 13;
+  optional string ssn_last4 = 14;
 
   // Verification status (metadata)
-  optional UserVerification verification = 13;
+  optional UserVerification verification = 15;
 }
 
 // ============================================
@@ -93,12 +105,12 @@ message UserCreated {
 message UserUpdated {
   string user_id = 1;
   optional string username = 2;
-  optional string email = 3;
-  optional string first_name = 4;
-  optional string last_name = 5;
+  optional string first_name = 3;
+  optional string last_name = 4;
 
   // Identity/KYC data updates
-  optional string phone = 6;
+  optional string phone = 5;
+  optional string nationality = 6;
   optional common.v1.Address address = 7;
   optional common.v1.DateOfBirth date_of_birth = 8;
   optional string ssn_last4 = 9;

@@ -14,6 +14,7 @@ export declare const file_common_v1_address: GenFile;
  * Postal address for users, workspaces, organizations, billing, shipping, etc.
  * Follows Google's postal address pattern simplified for business needs.
  * Based on google.type.PostalAddress but streamlined for our domain.
+ * All fields are optional to accommodate partial address data during onboarding.
  *
  * @generated from message common.v1.Address
  */
@@ -21,9 +22,9 @@ export declare type Address = Message<"common.v1.Address"> & {
   /**
    * First line of the address (street number, street name)
    *
-   * @generated from field: string line1 = 1;
+   * @generated from field: optional string line1 = 1;
    */
-  line1: string;
+  line1?: string;
 
   /**
    * Optional second line (apartment, suite, unit)
@@ -35,9 +36,9 @@ export declare type Address = Message<"common.v1.Address"> & {
   /**
    * City/locality name
    *
-   * @generated from field: string city = 3;
+   * @generated from field: optional string city = 3;
    */
-  city: string;
+  city?: string;
 
   /**
    * State/province/region (optional for countries without states)
@@ -49,17 +50,17 @@ export declare type Address = Message<"common.v1.Address"> & {
   /**
    * Postal code / ZIP code
    *
-   * @generated from field: string postal_code = 5;
+   * @generated from field: optional string postal_code = 5;
    */
-  postalCode: string;
+  postalCode?: string;
 
   /**
    * ISO 3166-1 alpha-2 country code (e.g., "US", "GB", "FR")
    * https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
    *
-   * @generated from field: string country = 6;
+   * @generated from field: optional string country = 6;
    */
-  country: string;
+  country?: string;
 };
 
 /**

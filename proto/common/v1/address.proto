@@ -7,23 +7,24 @@ option go_package = "github.com/nauticalstream/proto/gen/go/common/v1";
 // Postal address for users, workspaces, organizations, billing, shipping, etc.
 // Follows Google's postal address pattern simplified for business needs.
 // Based on google.type.PostalAddress but streamlined for our domain.
+// All fields are optional to accommodate partial address data during onboarding.
 message Address {
   // First line of the address (street number, street name)
-  string line1 = 1;
+  optional string line1 = 1;
 
   // Optional second line (apartment, suite, unit)
   optional string line2 = 2;
 
   // City/locality name
-  string city = 3;
+  optional string city = 3;
 
   // State/province/region (optional for countries without states)
   optional string state = 4;
 
   // Postal code / ZIP code
-  string postal_code = 5;
+  optional string postal_code = 5;
 
   // ISO 3166-1 alpha-2 country code (e.g., "US", "GB", "FR")
   // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-  string country = 6;
+  optional string country = 6;
 }

@@ -22,6 +22,62 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Verification status enum
+type VerificationStatus int32
+
+const (
+	VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED  VerificationStatus = 0
+	VerificationStatus_VERIFICATION_STATUS_PENDING      VerificationStatus = 1
+	VerificationStatus_VERIFICATION_STATUS_VERIFIED     VerificationStatus = 2
+	VerificationStatus_VERIFICATION_STATUS_REJECTED     VerificationStatus = 3
+	VerificationStatus_VERIFICATION_STATUS_NEEDS_UPDATE VerificationStatus = 4
+)
+
+// Enum value maps for VerificationStatus.
+var (
+	VerificationStatus_name = map[int32]string{
+		0: "VERIFICATION_STATUS_UNSPECIFIED",
+		1: "VERIFICATION_STATUS_PENDING",
+		2: "VERIFICATION_STATUS_VERIFIED",
+		3: "VERIFICATION_STATUS_REJECTED",
+		4: "VERIFICATION_STATUS_NEEDS_UPDATE",
+	}
+	VerificationStatus_value = map[string]int32{
+		"VERIFICATION_STATUS_UNSPECIFIED":  0,
+		"VERIFICATION_STATUS_PENDING":      1,
+		"VERIFICATION_STATUS_VERIFIED":     2,
+		"VERIFICATION_STATUS_REJECTED":     3,
+		"VERIFICATION_STATUS_NEEDS_UPDATE": 4,
+	}
+)
+
+func (x VerificationStatus) Enum() *VerificationStatus {
+	p := new(VerificationStatus)
+	*p = x
+	return p
+}
+
+func (x VerificationStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VerificationStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_user_v1_user_proto_enumTypes[0].Descriptor()
+}
+
+func (VerificationStatus) Type() protoreflect.EnumType {
+	return &file_user_v1_user_proto_enumTypes[0]
+}
+
+func (x VerificationStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VerificationStatus.Descriptor instead.
+func (VerificationStatus) EnumDescriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{0}
+}
+
 // User - Minimal user data for event enrichment
 type User struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -100,12 +156,13 @@ func (x *User) GetAvatar() string {
 }
 
 // Verification metadata (status of verification process)
+// This is embedded metadata for events, not a standalone entity
 type UserVerification struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
 	OnboardingCompleted     bool                   `protobuf:"varint,1,opt,name=onboarding_completed,json=onboardingCompleted,proto3" json:"onboarding_completed,omitempty"`
 	OnboardingMissingFields []string               `protobuf:"bytes,2,rep,name=onboarding_missing_fields,json=onboardingMissingFields,proto3" json:"onboarding_missing_fields,omitempty"`
-	VerifiedAt              *string                `protobuf:"bytes,3,opt,name=verified_at,json=verifiedAt,proto3,oneof" json:"verified_at,omitempty"`
-	VerificationStatus      *string                `protobuf:"bytes,4,opt,name=verification_status,json=verificationStatus,proto3,oneof" json:"verification_status,omitempty"`
+	VerifiedAt              *string                `protobuf:"bytes,3,opt,name=verified_at,json=verifiedAt,proto3,oneof" json:"verified_at,omitempty"` // ISO 8601 datetime string
+	VerificationStatus      *VerificationStatus    `protobuf:"varint,4,opt,name=verification_status,json=verificationStatus,proto3,enum=user.v1.VerificationStatus,oneof" json:"verification_status,omitempty"`
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -161,30 +218,32 @@ func (x *UserVerification) GetVerifiedAt() string {
 	return ""
 }
 
-func (x *UserVerification) GetVerificationStatus() string {
+func (x *UserVerification) GetVerificationStatus() VerificationStatus {
 	if x != nil && x.VerificationStatus != nil {
 		return *x.VerificationStatus
 	}
-	return ""
+	return VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED
 }
 
 type UserDetails struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	Id        string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Email     string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Username  string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
-	FirstName *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
-	LastName  *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
-	FullName  *string                `protobuf:"bytes,6,opt,name=full_name,json=fullName,proto3,oneof" json:"full_name,omitempty"`
-	Enabled   bool                   `protobuf:"varint,7,opt,name=enabled,proto3" json:"enabled,omitempty"`
-	CreatedAt *string                `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	Username      string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
+	FirstName     *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
+	LastName      *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
+	FullName      *string                `protobuf:"bytes,6,opt,name=full_name,json=fullName,proto3,oneof" json:"full_name,omitempty"`
+	Enabled       bool                   `protobuf:"varint,7,opt,name=enabled,proto3" json:"enabled,omitempty"`
+	EmailVerified *bool                  `protobuf:"varint,8,opt,name=email_verified,json=emailVerified,proto3,oneof" json:"email_verified,omitempty"`
+	CreatedAt     *string                `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
 	// Identity/KYC data
-	Phone       *string         `protobuf:"bytes,9,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
-	Address     *v1.Address     `protobuf:"bytes,10,opt,name=address,proto3,oneof" json:"address,omitempty"`
-	DateOfBirth *v1.DateOfBirth `protobuf:"bytes,11,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
-	SsnLast4    *string         `protobuf:"bytes,12,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
+	Phone       *string         `protobuf:"bytes,10,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
+	Nationality *string         `protobuf:"bytes,11,opt,name=nationality,proto3,oneof" json:"nationality,omitempty"`
+	Address     *v1.Address     `protobuf:"bytes,12,opt,name=address,proto3,oneof" json:"address,omitempty"`
+	DateOfBirth *v1.DateOfBirth `protobuf:"bytes,13,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
+	SsnLast4    *string         `protobuf:"bytes,14,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
 	// Verification status (metadata)
-	Verification  *UserVerification `protobuf:"bytes,13,opt,name=verification,proto3,oneof" json:"verification,omitempty"`
+	Verification  *UserVerification `protobuf:"bytes,15,opt,name=verification,proto3,oneof" json:"verification,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -268,6 +327,13 @@ func (x *UserDetails) GetEnabled() bool {
 	return false
 }
 
+func (x *UserDetails) GetEmailVerified() bool {
+	if x != nil && x.EmailVerified != nil {
+		return *x.EmailVerified
+	}
+	return false
+}
+
 func (x *UserDetails) GetCreatedAt() string {
 	if x != nil && x.CreatedAt != nil {
 		return *x.CreatedAt
@@ -278,6 +344,13 @@ func (x *UserDetails) GetCreatedAt() string {
 func (x *UserDetails) GetPhone() string {
 	if x != nil && x.Phone != nil {
 		return *x.Phone
+	}
+	return ""
+}
+
+func (x *UserDetails) GetNationality() string {
+	if x != nil && x.Nationality != nil {
+		return *x.Nationality
 	}
 	return ""
 }
@@ -586,11 +659,11 @@ type UserUpdated struct {
 	state     protoimpl.MessageState `protogen:"open.v1"`
 	UserId    string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Username  *string                `protobuf:"bytes,2,opt,name=username,proto3,oneof" json:"username,omitempty"`
-	Email     *string                `protobuf:"bytes,3,opt,name=email,proto3,oneof" json:"email,omitempty"`
-	FirstName *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
-	LastName  *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
+	FirstName *string                `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
+	LastName  *string                `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
 	// Identity/KYC data updates
-	Phone       *string         `protobuf:"bytes,6,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
+	Phone       *string         `protobuf:"bytes,5,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
+	Nationality *string         `protobuf:"bytes,6,opt,name=nationality,proto3,oneof" json:"nationality,omitempty"`
 	Address     *v1.Address     `protobuf:"bytes,7,opt,name=address,proto3,oneof" json:"address,omitempty"`
 	DateOfBirth *v1.DateOfBirth `protobuf:"bytes,8,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
 	SsnLast4    *string         `protobuf:"bytes,9,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
@@ -645,13 +718,6 @@ func (x *UserUpdated) GetUsername() string {
 	return ""
 }
 
-func (x *UserUpdated) GetEmail() string {
-	if x != nil && x.Email != nil {
-		return *x.Email
-	}
-	return ""
-}
-
 func (x *UserUpdated) GetFirstName() string {
 	if x != nil && x.FirstName != nil {
 		return *x.FirstName
@@ -669,6 +735,13 @@ func (x *UserUpdated) GetLastName() string {
 func (x *UserUpdated) GetPhone() string {
 	if x != nil && x.Phone != nil {
 		return *x.Phone
+	}
+	return ""
+}
+
+func (x *UserUpdated) GetNationality() string {
+	if x != nil && x.Nationality != nil {
+		return *x.Nationality
 	}
 	return ""
 }
@@ -902,15 +975,15 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\busername\x18\x03 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x04 \x01(\tR\x05email\x12\x1b\n" +
 	"\x06avatar\x18\x05 \x01(\tH\x00R\x06avatar\x88\x01\x01B\t\n" +
-	"\a_avatar\"\x85\x02\n" +
+	"\a_avatar\"\xa2\x02\n" +
 	"\x10UserVerification\x121\n" +
 	"\x14onboarding_completed\x18\x01 \x01(\bR\x13onboardingCompleted\x12:\n" +
 	"\x19onboarding_missing_fields\x18\x02 \x03(\tR\x17onboardingMissingFields\x12$\n" +
 	"\vverified_at\x18\x03 \x01(\tH\x00R\n" +
-	"verifiedAt\x88\x01\x01\x124\n" +
-	"\x13verification_status\x18\x04 \x01(\tH\x01R\x12verificationStatus\x88\x01\x01B\x0e\n" +
+	"verifiedAt\x88\x01\x01\x12Q\n" +
+	"\x13verification_status\x18\x04 \x01(\x0e2\x1b.user.v1.VerificationStatusH\x01R\x12verificationStatus\x88\x01\x01B\x0e\n" +
 	"\f_verified_atB\x16\n" +
-	"\x14_verification_status\"\xeb\x04\n" +
+	"\x14_verification_status\"\xe1\x05\n" +
 	"\vUserDetails\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
@@ -919,22 +992,27 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"first_name\x18\x04 \x01(\tH\x00R\tfirstName\x88\x01\x01\x12 \n" +
 	"\tlast_name\x18\x05 \x01(\tH\x01R\blastName\x88\x01\x01\x12 \n" +
 	"\tfull_name\x18\x06 \x01(\tH\x02R\bfullName\x88\x01\x01\x12\x18\n" +
-	"\aenabled\x18\a \x01(\bR\aenabled\x12\"\n" +
+	"\aenabled\x18\a \x01(\bR\aenabled\x12*\n" +
+	"\x0eemail_verified\x18\b \x01(\bH\x03R\remailVerified\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"created_at\x18\b \x01(\tH\x03R\tcreatedAt\x88\x01\x01\x12\x19\n" +
-	"\x05phone\x18\t \x01(\tH\x04R\x05phone\x88\x01\x01\x121\n" +
-	"\aaddress\x18\n" +
-	" \x01(\v2\x12.common.v1.AddressH\x05R\aaddress\x88\x01\x01\x12?\n" +
-	"\rdate_of_birth\x18\v \x01(\v2\x16.common.v1.DateOfBirthH\x06R\vdateOfBirth\x88\x01\x01\x12 \n" +
-	"\tssn_last4\x18\f \x01(\tH\aR\bssnLast4\x88\x01\x01\x12B\n" +
-	"\fverification\x18\r \x01(\v2\x19.user.v1.UserVerificationH\bR\fverification\x88\x01\x01B\r\n" +
+	"created_at\x18\t \x01(\tH\x04R\tcreatedAt\x88\x01\x01\x12\x19\n" +
+	"\x05phone\x18\n" +
+	" \x01(\tH\x05R\x05phone\x88\x01\x01\x12%\n" +
+	"\vnationality\x18\v \x01(\tH\x06R\vnationality\x88\x01\x01\x121\n" +
+	"\aaddress\x18\f \x01(\v2\x12.common.v1.AddressH\aR\aaddress\x88\x01\x01\x12?\n" +
+	"\rdate_of_birth\x18\r \x01(\v2\x16.common.v1.DateOfBirthH\bR\vdateOfBirth\x88\x01\x01\x12 \n" +
+	"\tssn_last4\x18\x0e \x01(\tH\tR\bssnLast4\x88\x01\x01\x12B\n" +
+	"\fverification\x18\x0f \x01(\v2\x19.user.v1.UserVerificationH\n" +
+	"R\fverification\x88\x01\x01B\r\n" +
 	"\v_first_nameB\f\n" +
 	"\n" +
 	"_last_nameB\f\n" +
 	"\n" +
-	"_full_nameB\r\n" +
+	"_full_nameB\x11\n" +
+	"\x0f_email_verifiedB\r\n" +
 	"\v_created_atB\b\n" +
-	"\x06_phoneB\n" +
+	"\x06_phoneB\x0e\n" +
+	"\f_nationalityB\n" +
 	"\n" +
 	"\b_addressB\x10\n" +
 	"\x0e_date_of_birthB\f\n" +
@@ -964,15 +1042,15 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\tR\tcreatedAtB\r\n" +
 	"\v_first_nameB\f\n" +
 	"\n" +
-	"_last_name\"\xb7\x04\n" +
+	"_last_name\"\xc9\x04\n" +
 	"\vUserUpdated\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
-	"\busername\x18\x02 \x01(\tH\x00R\busername\x88\x01\x01\x12\x19\n" +
-	"\x05email\x18\x03 \x01(\tH\x01R\x05email\x88\x01\x01\x12\"\n" +
+	"\busername\x18\x02 \x01(\tH\x00R\busername\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"first_name\x18\x04 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12 \n" +
-	"\tlast_name\x18\x05 \x01(\tH\x03R\blastName\x88\x01\x01\x12\x19\n" +
-	"\x05phone\x18\x06 \x01(\tH\x04R\x05phone\x88\x01\x01\x121\n" +
+	"first_name\x18\x03 \x01(\tH\x01R\tfirstName\x88\x01\x01\x12 \n" +
+	"\tlast_name\x18\x04 \x01(\tH\x02R\blastName\x88\x01\x01\x12\x19\n" +
+	"\x05phone\x18\x05 \x01(\tH\x03R\x05phone\x88\x01\x01\x12%\n" +
+	"\vnationality\x18\x06 \x01(\tH\x04R\vnationality\x88\x01\x01\x121\n" +
 	"\aaddress\x18\a \x01(\v2\x12.common.v1.AddressH\x05R\aaddress\x88\x01\x01\x12?\n" +
 	"\rdate_of_birth\x18\b \x01(\v2\x16.common.v1.DateOfBirthH\x06R\vdateOfBirth\x88\x01\x01\x12 \n" +
 	"\tssn_last4\x18\t \x01(\tH\aR\bssnLast4\x88\x01\x01\x12B\n" +
@@ -980,12 +1058,12 @@ const file_user_v1_user_proto_rawDesc = "" +
 	" \x01(\v2\x19.user.v1.UserVerificationH\bR\fverification\x88\x01\x01\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\v \x01(\tR\tupdatedAtB\v\n" +
-	"\t_usernameB\b\n" +
-	"\x06_emailB\r\n" +
+	"\t_usernameB\r\n" +
 	"\v_first_nameB\f\n" +
 	"\n" +
 	"_last_nameB\b\n" +
-	"\x06_phoneB\n" +
+	"\x06_phoneB\x0e\n" +
+	"\f_nationalityB\n" +
 	"\n" +
 	"\b_addressB\x10\n" +
 	"\x0e_date_of_birthB\f\n" +
@@ -1007,7 +1085,13 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x14onboarding_completed\x18\x02 \x01(\bR\x13onboardingCompleted\x12%\n" +
 	"\x0emissing_fields\x18\x03 \x03(\tR\rmissingFields\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x04 \x01(\tR\tupdatedAtB0Z.github.com/nauticalstream/proto/gen/go/user/v1b\x06proto3"
+	"updated_at\x18\x04 \x01(\tR\tupdatedAt*\xc4\x01\n" +
+	"\x12VerificationStatus\x12#\n" +
+	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
+	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
+	"\x1cVERIFICATION_STATUS_VERIFIED\x10\x02\x12 \n" +
+	"\x1cVERIFICATION_STATUS_REJECTED\x10\x03\x12$\n" +
+	" VERIFICATION_STATUS_NEEDS_UPDATE\x10\x04B0Z.github.com/nauticalstream/proto/gen/go/user/v1b\x06proto3"
 
 var (
 	file_user_v1_user_proto_rawDescOnce sync.Once
@@ -1021,37 +1105,40 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
+var file_user_v1_user_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_user_v1_user_proto_goTypes = []any{
-	(*User)(nil),                 // 0: user.v1.User
-	(*UserVerification)(nil),     // 1: user.v1.UserVerification
-	(*UserDetails)(nil),          // 2: user.v1.UserDetails
-	(*GetUserRequest)(nil),       // 3: user.v1.GetUserRequest
-	(*GetUserResponse)(nil),      // 4: user.v1.GetUserResponse
-	(*ListUsersRequest)(nil),     // 5: user.v1.ListUsersRequest
-	(*ListUsersResponse)(nil),    // 6: user.v1.ListUsersResponse
-	(*UserCreated)(nil),          // 7: user.v1.UserCreated
-	(*UserUpdated)(nil),          // 8: user.v1.UserUpdated
-	(*UserDeleted)(nil),          // 9: user.v1.UserDeleted
-	(*UserProfileUpdated)(nil),   // 10: user.v1.UserProfileUpdated
-	(*UserOnboardingStatus)(nil), // 11: user.v1.UserOnboardingStatus
-	(*v1.Address)(nil),           // 12: common.v1.Address
-	(*v1.DateOfBirth)(nil),       // 13: common.v1.DateOfBirth
+	(VerificationStatus)(0),      // 0: user.v1.VerificationStatus
+	(*User)(nil),                 // 1: user.v1.User
+	(*UserVerification)(nil),     // 2: user.v1.UserVerification
+	(*UserDetails)(nil),          // 3: user.v1.UserDetails
+	(*GetUserRequest)(nil),       // 4: user.v1.GetUserRequest
+	(*GetUserResponse)(nil),      // 5: user.v1.GetUserResponse
+	(*ListUsersRequest)(nil),     // 6: user.v1.ListUsersRequest
+	(*ListUsersResponse)(nil),    // 7: user.v1.ListUsersResponse
+	(*UserCreated)(nil),          // 8: user.v1.UserCreated
+	(*UserUpdated)(nil),          // 9: user.v1.UserUpdated
+	(*UserDeleted)(nil),          // 10: user.v1.UserDeleted
+	(*UserProfileUpdated)(nil),   // 11: user.v1.UserProfileUpdated
+	(*UserOnboardingStatus)(nil), // 12: user.v1.UserOnboardingStatus
+	(*v1.Address)(nil),           // 13: common.v1.Address
+	(*v1.DateOfBirth)(nil),       // 14: common.v1.DateOfBirth
 }
 var file_user_v1_user_proto_depIdxs = []int32{
-	12, // 0: user.v1.UserDetails.address:type_name -> common.v1.Address
-	13, // 1: user.v1.UserDetails.date_of_birth:type_name -> common.v1.DateOfBirth
-	1,  // 2: user.v1.UserDetails.verification:type_name -> user.v1.UserVerification
-	0,  // 3: user.v1.GetUserResponse.user:type_name -> user.v1.User
-	0,  // 4: user.v1.ListUsersResponse.users:type_name -> user.v1.User
-	12, // 5: user.v1.UserUpdated.address:type_name -> common.v1.Address
-	13, // 6: user.v1.UserUpdated.date_of_birth:type_name -> common.v1.DateOfBirth
-	1,  // 7: user.v1.UserUpdated.verification:type_name -> user.v1.UserVerification
-	8,  // [8:8] is the sub-list for method output_type
-	8,  // [8:8] is the sub-list for method input_type
-	8,  // [8:8] is the sub-list for extension type_name
-	8,  // [8:8] is the sub-list for extension extendee
-	0,  // [0:8] is the sub-list for field type_name
+	0,  // 0: user.v1.UserVerification.verification_status:type_name -> user.v1.VerificationStatus
+	13, // 1: user.v1.UserDetails.address:type_name -> common.v1.Address
+	14, // 2: user.v1.UserDetails.date_of_birth:type_name -> common.v1.DateOfBirth
+	2,  // 3: user.v1.UserDetails.verification:type_name -> user.v1.UserVerification
+	1,  // 4: user.v1.GetUserResponse.user:type_name -> user.v1.User
+	1,  // 5: user.v1.ListUsersResponse.users:type_name -> user.v1.User
+	13, // 6: user.v1.UserUpdated.address:type_name -> common.v1.Address
+	14, // 7: user.v1.UserUpdated.date_of_birth:type_name -> common.v1.DateOfBirth
+	2,  // 8: user.v1.UserUpdated.verification:type_name -> user.v1.UserVerification
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_user_v1_user_proto_init() }
@@ -1072,13 +1159,14 @@ func file_user_v1_user_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
-			NumEnums:      0,
+			NumEnums:      1,
 			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_user_v1_user_proto_goTypes,
 		DependencyIndexes: file_user_v1_user_proto_depIdxs,
+		EnumInfos:         file_user_v1_user_proto_enumTypes,
 		MessageInfos:      file_user_v1_user_proto_msgTypes,
 	}.Build()
 	File_user_v1_user_proto = out.File

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63ommon/v1/address.proto\x12\tcommon.v1\"\xb8\x01\n\x07\x41\x64\x64ress\x12\x14\n\x05line1\x18\x01 \x01(\tR\x05line1\x12\x19\n\x05line2\x18\x02 \x01(\tH\x00R\x05line2\x88\x01\x01\x12\x12\n\x04\x63ity\x18\x03 \x01(\tR\x04\x63ity\x12\x19\n\x05state\x18\x04 \x01(\tH\x01R\x05state\x88\x01\x01\x12\x1f\n\x0bpostal_code\x18\x05 \x01(\tR\npostalCode\x12\x18\n\x07\x63ountry\x18\x06 \x01(\tR\x07\x63ountryB\x08\n\x06_line2B\x08\n\x06_stateB2Z0github.com/nauticalstream/proto/gen/go/common/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x63ommon/v1/address.proto\x12\tcommon.v1\"\xfb\x01\n\x07\x41\x64\x64ress\x12\x19\n\x05line1\x18\x01 \x01(\tH\x00R\x05line1\x88\x01\x01\x12\x19\n\x05line2\x18\x02 \x01(\tH\x01R\x05line2\x88\x01\x01\x12\x17\n\x04\x63ity\x18\x03 \x01(\tH\x02R\x04\x63ity\x88\x01\x01\x12\x19\n\x05state\x18\x04 \x01(\tH\x03R\x05state\x88\x01\x01\x12$\n\x0bpostal_code\x18\x05 \x01(\tH\x04R\npostalCode\x88\x01\x01\x12\x1d\n\x07\x63ountry\x18\x06 \x01(\tH\x05R\x07\x63ountry\x88\x01\x01\x42\x08\n\x06_line1B\x08\n\x06_line2B\x07\n\x05_cityB\x08\n\x06_stateB\x0e\n\x0c_postal_codeB\n\n\x08_countryB2Z0github.com/nauticalstream/proto/gen/go/common/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z0github.com/nauticalstream/proto/gen/go/common/v1'
   _globals['_ADDRESS']._serialized_start=39
-  _globals['_ADDRESS']._serialized_end=223
+  _globals['_ADDRESS']._serialized_end=290
 # @@protoc_insertion_point(module_scope)
