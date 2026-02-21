@@ -33,16 +33,16 @@ message Video {
 // ============================================
 
 // Event: Video uploaded (status = PENDING, transcoding not started yet)
-message VideoUploadedEvent {
+message VideoUploaded {
   string video_id = 1;
 }
 
 // Event: Video transcoded (status = ACTIVE, HLS/variants ready)
-message VideoProcessedEvent {
+message VideoProcessed {
   string video_id = 1;
 }
 
 // Event: Video deleted
-message VideoDeletedEvent {
+message VideoDeleted {
   string video_id = 1;
 }

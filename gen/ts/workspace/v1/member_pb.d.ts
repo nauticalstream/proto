@@ -79,9 +79,9 @@ export declare const WorkspaceMemberSchema: GenMessage<WorkspaceMember>;
 /**
  * Event: Member added to workspace
  *
- * @generated from message workspace.v1.WorkspaceMemberAddedEvent
+ * @generated from message workspace.v1.WorkspaceMemberAdded
  */
-export declare type WorkspaceMemberAddedEvent = Message<"workspace.v1.WorkspaceMemberAddedEvent"> & {
+export declare type WorkspaceMemberAdded = Message<"workspace.v1.WorkspaceMemberAdded"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -113,17 +113,17 @@ export declare type WorkspaceMemberAddedEvent = Message<"workspace.v1.WorkspaceM
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberAddedEvent.
- * Use `create(WorkspaceMemberAddedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberAdded.
+ * Use `create(WorkspaceMemberAddedSchema)` to create a new message.
  */
-export declare const WorkspaceMemberAddedEventSchema: GenMessage<WorkspaceMemberAddedEvent>;
+export declare const WorkspaceMemberAddedSchema: GenMessage<WorkspaceMemberAdded>;
 
 /**
  * Event: Member updated in workspace
  *
- * @generated from message workspace.v1.WorkspaceMemberUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceMemberUpdated
  */
-export declare type WorkspaceMemberUpdatedEvent = Message<"workspace.v1.WorkspaceMemberUpdatedEvent"> & {
+export declare type WorkspaceMemberUpdated = Message<"workspace.v1.WorkspaceMemberUpdated"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -153,17 +153,17 @@ export declare type WorkspaceMemberUpdatedEvent = Message<"workspace.v1.Workspac
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberUpdatedEvent.
- * Use `create(WorkspaceMemberUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberUpdated.
+ * Use `create(WorkspaceMemberUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceMemberUpdatedEventSchema: GenMessage<WorkspaceMemberUpdatedEvent>;
+export declare const WorkspaceMemberUpdatedSchema: GenMessage<WorkspaceMemberUpdated>;
 
 /**
  * Event: Member removed from workspace
  *
- * @generated from message workspace.v1.WorkspaceMemberRemovedEvent
+ * @generated from message workspace.v1.WorkspaceMemberRemoved
  */
-export declare type WorkspaceMemberRemovedEvent = Message<"workspace.v1.WorkspaceMemberRemovedEvent"> & {
+export declare type WorkspaceMemberRemoved = Message<"workspace.v1.WorkspaceMemberRemoved"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -193,10 +193,10 @@ export declare type WorkspaceMemberRemovedEvent = Message<"workspace.v1.Workspac
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberRemovedEvent.
- * Use `create(WorkspaceMemberRemovedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberRemoved.
+ * Use `create(WorkspaceMemberRemovedSchema)` to create a new message.
  */
-export declare const WorkspaceMemberRemovedEventSchema: GenMessage<WorkspaceMemberRemovedEvent>;
+export declare const WorkspaceMemberRemovedSchema: GenMessage<WorkspaceMemberRemoved>;
 
 /**
  * @generated from enum workspace.v1.WorkspaceMemberRole

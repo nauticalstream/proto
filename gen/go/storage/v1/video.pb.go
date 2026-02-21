@@ -186,27 +186,27 @@ func (x *Video) GetUpdatedAt() string {
 }
 
 // Event: Video uploaded (status = PENDING, transcoding not started yet)
-type VideoUploadedEvent struct {
+type VideoUploaded struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	VideoId       string                 `protobuf:"bytes,1,opt,name=video_id,json=videoId,proto3" json:"video_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *VideoUploadedEvent) Reset() {
-	*x = VideoUploadedEvent{}
+func (x *VideoUploaded) Reset() {
+	*x = VideoUploaded{}
 	mi := &file_storage_v1_video_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VideoUploadedEvent) String() string {
+func (x *VideoUploaded) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VideoUploadedEvent) ProtoMessage() {}
+func (*VideoUploaded) ProtoMessage() {}
 
-func (x *VideoUploadedEvent) ProtoReflect() protoreflect.Message {
+func (x *VideoUploaded) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_video_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -218,12 +218,12 @@ func (x *VideoUploadedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VideoUploadedEvent.ProtoReflect.Descriptor instead.
-func (*VideoUploadedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use VideoUploaded.ProtoReflect.Descriptor instead.
+func (*VideoUploaded) Descriptor() ([]byte, []int) {
 	return file_storage_v1_video_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *VideoUploadedEvent) GetVideoId() string {
+func (x *VideoUploaded) GetVideoId() string {
 	if x != nil {
 		return x.VideoId
 	}
@@ -231,27 +231,27 @@ func (x *VideoUploadedEvent) GetVideoId() string {
 }
 
 // Event: Video transcoded (status = ACTIVE, HLS/variants ready)
-type VideoProcessedEvent struct {
+type VideoProcessed struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	VideoId       string                 `protobuf:"bytes,1,opt,name=video_id,json=videoId,proto3" json:"video_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *VideoProcessedEvent) Reset() {
-	*x = VideoProcessedEvent{}
+func (x *VideoProcessed) Reset() {
+	*x = VideoProcessed{}
 	mi := &file_storage_v1_video_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VideoProcessedEvent) String() string {
+func (x *VideoProcessed) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VideoProcessedEvent) ProtoMessage() {}
+func (*VideoProcessed) ProtoMessage() {}
 
-func (x *VideoProcessedEvent) ProtoReflect() protoreflect.Message {
+func (x *VideoProcessed) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_video_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -263,12 +263,12 @@ func (x *VideoProcessedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VideoProcessedEvent.ProtoReflect.Descriptor instead.
-func (*VideoProcessedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use VideoProcessed.ProtoReflect.Descriptor instead.
+func (*VideoProcessed) Descriptor() ([]byte, []int) {
 	return file_storage_v1_video_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *VideoProcessedEvent) GetVideoId() string {
+func (x *VideoProcessed) GetVideoId() string {
 	if x != nil {
 		return x.VideoId
 	}
@@ -276,27 +276,27 @@ func (x *VideoProcessedEvent) GetVideoId() string {
 }
 
 // Event: Video deleted
-type VideoDeletedEvent struct {
+type VideoDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	VideoId       string                 `protobuf:"bytes,1,opt,name=video_id,json=videoId,proto3" json:"video_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *VideoDeletedEvent) Reset() {
-	*x = VideoDeletedEvent{}
+func (x *VideoDeleted) Reset() {
+	*x = VideoDeleted{}
 	mi := &file_storage_v1_video_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *VideoDeletedEvent) String() string {
+func (x *VideoDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*VideoDeletedEvent) ProtoMessage() {}
+func (*VideoDeleted) ProtoMessage() {}
 
-func (x *VideoDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *VideoDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_video_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -308,12 +308,12 @@ func (x *VideoDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use VideoDeletedEvent.ProtoReflect.Descriptor instead.
-func (*VideoDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use VideoDeleted.ProtoReflect.Descriptor instead.
+func (*VideoDeleted) Descriptor() ([]byte, []int) {
 	return file_storage_v1_video_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *VideoDeletedEvent) GetVideoId() string {
+func (x *VideoDeleted) GetVideoId() string {
 	if x != nil {
 		return x.VideoId
 	}
@@ -351,12 +351,12 @@ const file_storage_v1_video_proto_rawDesc = "" +
 	"\t_durationB\x14\n" +
 	"\x12_original_video_idB\x06\n" +
 	"\x04_altB\x0f\n" +
-	"\r_workspace_id\"/\n" +
-	"\x12VideoUploadedEvent\x12\x19\n" +
-	"\bvideo_id\x18\x01 \x01(\tR\avideoId\"0\n" +
-	"\x13VideoProcessedEvent\x12\x19\n" +
-	"\bvideo_id\x18\x01 \x01(\tR\avideoId\".\n" +
-	"\x11VideoDeletedEvent\x12\x19\n" +
+	"\r_workspace_id\"*\n" +
+	"\rVideoUploaded\x12\x19\n" +
+	"\bvideo_id\x18\x01 \x01(\tR\avideoId\"+\n" +
+	"\x0eVideoProcessed\x12\x19\n" +
+	"\bvideo_id\x18\x01 \x01(\tR\avideoId\")\n" +
+	"\fVideoDeleted\x12\x19\n" +
 	"\bvideo_id\x18\x01 \x01(\tR\avideoIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3"
 
 var (
@@ -373,12 +373,12 @@ func file_storage_v1_video_proto_rawDescGZIP() []byte {
 
 var file_storage_v1_video_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_storage_v1_video_proto_goTypes = []any{
-	(*Video)(nil),               // 0: storage.v1.Video
-	(*VideoUploadedEvent)(nil),  // 1: storage.v1.VideoUploadedEvent
-	(*VideoProcessedEvent)(nil), // 2: storage.v1.VideoProcessedEvent
-	(*VideoDeletedEvent)(nil),   // 3: storage.v1.VideoDeletedEvent
-	(ImageVariant)(0),           // 4: storage.v1.ImageVariant
-	(FileStatus)(0),             // 5: storage.v1.FileStatus
+	(*Video)(nil),          // 0: storage.v1.Video
+	(*VideoUploaded)(nil),  // 1: storage.v1.VideoUploaded
+	(*VideoProcessed)(nil), // 2: storage.v1.VideoProcessed
+	(*VideoDeleted)(nil),   // 3: storage.v1.VideoDeleted
+	(ImageVariant)(0),      // 4: storage.v1.ImageVariant
+	(FileStatus)(0),        // 5: storage.v1.FileStatus
 }
 var file_storage_v1_video_proto_depIdxs = []int32{
 	4, // 0: storage.v1.Video.variant:type_name -> storage.v1.ImageVariant

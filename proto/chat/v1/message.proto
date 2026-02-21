@@ -68,25 +68,25 @@ message ChatMessage {
   optional ChatMessageReplyInfo reply_to = 17;
 }
 
-message ChatMessageSentEvent {
+message ChatMessageSent {
   ChatMessage message = 1;
 }
 
-message ChatMessageDeliveredEvent {
+message ChatMessageDelivered {
   string id = 1;
   string conversation_id = 2;
   string user_id = 3;
   string delivered_at = 4;
 }
 
-message ChatMessageReadEvent {
+message ChatMessageRead {
   string id = 1;
   string conversation_id = 2;
   string user_id = 3;
   string read_at = 4;
 }
 
-message ChatMessageStatusUpdatedEvent {
+message ChatMessageStatusUpdated {
   string id = 1;
   string conversation_id = 2;
   string status = 3;
@@ -109,7 +109,7 @@ message GetChatMessageResponse {
   ChatMessage message = 1;
 }
 
-message QueryChatMessagesRequest {
+message ListChatMessagesRequest {
   string conversation_id = 1;
   string user_id = 2;
   optional int32 first = 3;
@@ -118,7 +118,7 @@ message QueryChatMessagesRequest {
   optional string before = 6;
 }
 
-message QueryChatMessagesResponse {
+message ListChatMessagesResponse {
   repeated ChatMessageEdge edges = 1;
   ChatMessagePageInfo page_info = 2;
 }

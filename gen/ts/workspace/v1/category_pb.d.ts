@@ -75,9 +75,9 @@ export declare const WorkspaceCategorySchema: GenMessage<WorkspaceCategory>;
 /**
  * Event: Category created
  *
- * @generated from message workspace.v1.WorkspaceCategoryCreatedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryCreated
  */
-export declare type WorkspaceCategoryCreatedEvent = Message<"workspace.v1.WorkspaceCategoryCreatedEvent"> & {
+export declare type WorkspaceCategoryCreated = Message<"workspace.v1.WorkspaceCategoryCreated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -97,17 +97,17 @@ export declare type WorkspaceCategoryCreatedEvent = Message<"workspace.v1.Worksp
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryCreatedEvent.
- * Use `create(WorkspaceCategoryCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryCreated.
+ * Use `create(WorkspaceCategoryCreatedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryCreatedEventSchema: GenMessage<WorkspaceCategoryCreatedEvent>;
+export declare const WorkspaceCategoryCreatedSchema: GenMessage<WorkspaceCategoryCreated>;
 
 /**
  * Event: Category updated
  *
- * @generated from message workspace.v1.WorkspaceCategoryUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryUpdated
  */
-export declare type WorkspaceCategoryUpdatedEvent = Message<"workspace.v1.WorkspaceCategoryUpdatedEvent"> & {
+export declare type WorkspaceCategoryUpdated = Message<"workspace.v1.WorkspaceCategoryUpdated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -122,17 +122,17 @@ export declare type WorkspaceCategoryUpdatedEvent = Message<"workspace.v1.Worksp
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryUpdatedEvent.
- * Use `create(WorkspaceCategoryUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryUpdated.
+ * Use `create(WorkspaceCategoryUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryUpdatedEventSchema: GenMessage<WorkspaceCategoryUpdatedEvent>;
+export declare const WorkspaceCategoryUpdatedSchema: GenMessage<WorkspaceCategoryUpdated>;
 
 /**
  * Event: Category deleted
  *
- * @generated from message workspace.v1.WorkspaceCategoryDeletedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryDeleted
  */
-export declare type WorkspaceCategoryDeletedEvent = Message<"workspace.v1.WorkspaceCategoryDeletedEvent"> & {
+export declare type WorkspaceCategoryDeleted = Message<"workspace.v1.WorkspaceCategoryDeleted"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -152,17 +152,17 @@ export declare type WorkspaceCategoryDeletedEvent = Message<"workspace.v1.Worksp
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeletedEvent.
- * Use `create(WorkspaceCategoryDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeleted.
+ * Use `create(WorkspaceCategoryDeletedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryDeletedEventSchema: GenMessage<WorkspaceCategoryDeletedEvent>;
+export declare const WorkspaceCategoryDeletedSchema: GenMessage<WorkspaceCategoryDeleted>;
 
 /**
  * Event: Category activated
  *
- * @generated from message workspace.v1.WorkspaceCategoryActivatedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryActivated
  */
-export declare type WorkspaceCategoryActivatedEvent = Message<"workspace.v1.WorkspaceCategoryActivatedEvent"> & {
+export declare type WorkspaceCategoryActivated = Message<"workspace.v1.WorkspaceCategoryActivated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -177,17 +177,17 @@ export declare type WorkspaceCategoryActivatedEvent = Message<"workspace.v1.Work
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryActivatedEvent.
- * Use `create(WorkspaceCategoryActivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryActivated.
+ * Use `create(WorkspaceCategoryActivatedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryActivatedEventSchema: GenMessage<WorkspaceCategoryActivatedEvent>;
+export declare const WorkspaceCategoryActivatedSchema: GenMessage<WorkspaceCategoryActivated>;
 
 /**
  * Event: Category deactivated
  *
- * @generated from message workspace.v1.WorkspaceCategoryDeactivatedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryDeactivated
  */
-export declare type WorkspaceCategoryDeactivatedEvent = Message<"workspace.v1.WorkspaceCategoryDeactivatedEvent"> & {
+export declare type WorkspaceCategoryDeactivated = Message<"workspace.v1.WorkspaceCategoryDeactivated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -202,17 +202,17 @@ export declare type WorkspaceCategoryDeactivatedEvent = Message<"workspace.v1.Wo
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeactivatedEvent.
- * Use `create(WorkspaceCategoryDeactivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeactivated.
+ * Use `create(WorkspaceCategoryDeactivatedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryDeactivatedEventSchema: GenMessage<WorkspaceCategoryDeactivatedEvent>;
+export declare const WorkspaceCategoryDeactivatedSchema: GenMessage<WorkspaceCategoryDeactivated>;
 
 /**
  * Event: Category deprecated
  *
- * @generated from message workspace.v1.WorkspaceCategoryDeprecatedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryDeprecated
  */
-export declare type WorkspaceCategoryDeprecatedEvent = Message<"workspace.v1.WorkspaceCategoryDeprecatedEvent"> & {
+export declare type WorkspaceCategoryDeprecated = Message<"workspace.v1.WorkspaceCategoryDeprecated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -227,17 +227,17 @@ export declare type WorkspaceCategoryDeprecatedEvent = Message<"workspace.v1.Wor
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeprecatedEvent.
- * Use `create(WorkspaceCategoryDeprecatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeprecated.
+ * Use `create(WorkspaceCategoryDeprecatedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryDeprecatedEventSchema: GenMessage<WorkspaceCategoryDeprecatedEvent>;
+export declare const WorkspaceCategoryDeprecatedSchema: GenMessage<WorkspaceCategoryDeprecated>;
 
 /**
  * Event: Amenity assigned to category
  *
- * @generated from message workspace.v1.WorkspaceCategoryAmenityAssignedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryAmenityAssigned
  */
-export declare type WorkspaceCategoryAmenityAssignedEvent = Message<"workspace.v1.WorkspaceCategoryAmenityAssignedEvent"> & {
+export declare type WorkspaceCategoryAmenityAssigned = Message<"workspace.v1.WorkspaceCategoryAmenityAssigned"> & {
   /**
    * @generated from field: int32 category_id = 1;
    */
@@ -257,17 +257,17 @@ export declare type WorkspaceCategoryAmenityAssignedEvent = Message<"workspace.v
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryAmenityAssignedEvent.
- * Use `create(WorkspaceCategoryAmenityAssignedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryAmenityAssigned.
+ * Use `create(WorkspaceCategoryAmenityAssignedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryAmenityAssignedEventSchema: GenMessage<WorkspaceCategoryAmenityAssignedEvent>;
+export declare const WorkspaceCategoryAmenityAssignedSchema: GenMessage<WorkspaceCategoryAmenityAssigned>;
 
 /**
  * Event: Amenity removed from category
  *
- * @generated from message workspace.v1.WorkspaceCategoryAmenityRemovedEvent
+ * @generated from message workspace.v1.WorkspaceCategoryAmenityRemoved
  */
-export declare type WorkspaceCategoryAmenityRemovedEvent = Message<"workspace.v1.WorkspaceCategoryAmenityRemovedEvent"> & {
+export declare type WorkspaceCategoryAmenityRemoved = Message<"workspace.v1.WorkspaceCategoryAmenityRemoved"> & {
   /**
    * @generated from field: int32 category_id = 1;
    */
@@ -292,10 +292,10 @@ export declare type WorkspaceCategoryAmenityRemovedEvent = Message<"workspace.v1
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryAmenityRemovedEvent.
- * Use `create(WorkspaceCategoryAmenityRemovedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryAmenityRemoved.
+ * Use `create(WorkspaceCategoryAmenityRemovedSchema)` to create a new message.
  */
-export declare const WorkspaceCategoryAmenityRemovedEventSchema: GenMessage<WorkspaceCategoryAmenityRemovedEvent>;
+export declare const WorkspaceCategoryAmenityRemovedSchema: GenMessage<WorkspaceCategoryAmenityRemoved>;
 
 /**
  * @generated from enum workspace.v1.WorkspaceCategoryStatus

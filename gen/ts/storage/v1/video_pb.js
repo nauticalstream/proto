@@ -9,7 +9,7 @@ import { file_storage_v1_shared } from "./shared_pb";
  * Describes the file storage/v1/video.proto.
  */
 export const file_storage_v1_video = /*@__PURE__*/
-  fileDesc("ChZzdG9yYWdlL3YxL3ZpZGVvLnByb3RvEgpzdG9yYWdlLnYxIq8DCgVWaWRlbxIKCgJpZBgBIAEoCRIQCghmaWxlbmFtZRgCIAEoCRIVCg1vcmlnaW5hbF9uYW1lGAMgASgJEhEKCW1pbWVfdHlwZRgEIAEoCRIMCgRzaXplGAUgASgFEhUKCGR1cmF0aW9uGAYgASgFSACIAQESCwoDdXJsGAcgASgJEhMKC3N0b3JhZ2Vfa2V5GAggASgJEikKB3ZhcmlhbnQYCSABKA4yGC5zdG9yYWdlLnYxLkltYWdlVmFyaWFudBIeChFvcmlnaW5hbF92aWRlb19pZBgKIAEoCUgBiAEBEhAKA2FsdBgLIAEoCUgCiAEBEiYKBnN0YXR1cxgMIAEoDjIWLnN0b3JhZ2UudjEuRmlsZVN0YXR1cxITCgt1cGxvYWRlZF9ieRgNIAEoCRIZCgx3b3Jrc3BhY2VfaWQYDiABKAlIA4gBARISCgpjcmVhdGVkX2F0GA8gASgJEhIKCnVwZGF0ZWRfYXQYECABKAlCCwoJX2R1cmF0aW9uQhQKEl9vcmlnaW5hbF92aWRlb19pZEIGCgRfYWx0Qg8KDV93b3Jrc3BhY2VfaWQiJgoSVmlkZW9VcGxvYWRlZEV2ZW50EhAKCHZpZGVvX2lkGAEgASgJIicKE1ZpZGVvUHJvY2Vzc2VkRXZlbnQSEAoIdmlkZW9faWQYASABKAkiJQoRVmlkZW9EZWxldGVkRXZlbnQSEAoIdmlkZW9faWQYASABKAlCM1oxZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vc3RvcmFnZS92MWIGcHJvdG8z", [file_storage_v1_shared]);
+  fileDesc("ChZzdG9yYWdlL3YxL3ZpZGVvLnByb3RvEgpzdG9yYWdlLnYxIq8DCgVWaWRlbxIKCgJpZBgBIAEoCRIQCghmaWxlbmFtZRgCIAEoCRIVCg1vcmlnaW5hbF9uYW1lGAMgASgJEhEKCW1pbWVfdHlwZRgEIAEoCRIMCgRzaXplGAUgASgFEhUKCGR1cmF0aW9uGAYgASgFSACIAQESCwoDdXJsGAcgASgJEhMKC3N0b3JhZ2Vfa2V5GAggASgJEikKB3ZhcmlhbnQYCSABKA4yGC5zdG9yYWdlLnYxLkltYWdlVmFyaWFudBIeChFvcmlnaW5hbF92aWRlb19pZBgKIAEoCUgBiAEBEhAKA2FsdBgLIAEoCUgCiAEBEiYKBnN0YXR1cxgMIAEoDjIWLnN0b3JhZ2UudjEuRmlsZVN0YXR1cxITCgt1cGxvYWRlZF9ieRgNIAEoCRIZCgx3b3Jrc3BhY2VfaWQYDiABKAlIA4gBARISCgpjcmVhdGVkX2F0GA8gASgJEhIKCnVwZGF0ZWRfYXQYECABKAlCCwoJX2R1cmF0aW9uQhQKEl9vcmlnaW5hbF92aWRlb19pZEIGCgRfYWx0Qg8KDV93b3Jrc3BhY2VfaWQiIQoNVmlkZW9VcGxvYWRlZBIQCgh2aWRlb19pZBgBIAEoCSIiCg5WaWRlb1Byb2Nlc3NlZBIQCgh2aWRlb19pZBgBIAEoCSIgCgxWaWRlb0RlbGV0ZWQSEAoIdmlkZW9faWQYASABKAlCM1oxZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vc3RvcmFnZS92MWIGcHJvdG8z", [file_storage_v1_shared]);
 
 /**
  * Describes the message storage.v1.Video.
@@ -19,23 +19,23 @@ export const VideoSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_video, 0);
 
 /**
- * Describes the message storage.v1.VideoUploadedEvent.
- * Use `create(VideoUploadedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoUploaded.
+ * Use `create(VideoUploadedSchema)` to create a new message.
  */
-export const VideoUploadedEventSchema = /*@__PURE__*/
+export const VideoUploadedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_video, 1);
 
 /**
- * Describes the message storage.v1.VideoProcessedEvent.
- * Use `create(VideoProcessedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoProcessed.
+ * Use `create(VideoProcessedSchema)` to create a new message.
  */
-export const VideoProcessedEventSchema = /*@__PURE__*/
+export const VideoProcessedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_video, 2);
 
 /**
- * Describes the message storage.v1.VideoDeletedEvent.
- * Use `create(VideoDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoDeleted.
+ * Use `create(VideoDeletedSchema)` to create a new message.
  */
-export const VideoDeletedEventSchema = /*@__PURE__*/
+export const VideoDeletedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_video, 3);
 

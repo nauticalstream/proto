@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bworkspace/v1/category.proto\x12\x0cworkspace.v1\"\xbe\x02\n\x11WorkspaceCategory\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03key\x18\x03 \x01(\tR\x03key\x12%\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x17\n\x04icon\x18\x05 \x01(\tH\x01R\x04icon\x88\x01\x01\x12=\n\x06status\x18\x06 \x01(\x0e\x32%.workspace.v1.WorkspaceCategoryStatusR\x06status\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAtB\x0e\n\x0c_descriptionB\x07\n\x05_icon\"b\n\x1dWorkspaceCategoryCreatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\ncreated_at\x18\x03 \x01(\tR\tcreatedAt\"N\n\x1dWorkspaceCategoryUpdatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"m\n\x1dWorkspaceCategoryDeletedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"T\n\x1fWorkspaceCategoryActivatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12!\n\x0c\x61\x63tivated_at\x18\x02 \x01(\tR\x0b\x61\x63tivatedAt\"Z\n!WorkspaceCategoryDeactivatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12%\n\x0e\x64\x65\x61\x63tivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"W\n WorkspaceCategoryDeprecatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12#\n\rdeprecated_at\x18\x02 \x01(\tR\x0c\x64\x65precatedAt\"\x88\x01\n%WorkspaceCategoryAmenityAssignedEvent\x12\x1f\n\x0b\x63\x61tegory_id\x18\x01 \x01(\x05R\ncategoryId\x12\x1d\n\namenity_id\x18\x02 \x01(\x05R\tamenityId\x12\x1f\n\x0b\x61ssigned_at\x18\x03 \x01(\tR\nassignedAt\"\xa4\x01\n$WorkspaceCategoryAmenityRemovedEvent\x12\x1f\n\x0b\x63\x61tegory_id\x18\x01 \x01(\x05R\ncategoryId\x12\x1d\n\namenity_id\x18\x02 \x01(\x05R\tamenityId\x12\x1d\n\ndeleted_by\x18\x03 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x04 \x01(\tR\tdeletedAt*\xbc\x01\n\x17WorkspaceCategoryStatus\x12)\n%WORKSPACE_CATEGORY_STATUS_UNSPECIFIED\x10\x00\x12$\n WORKSPACE_CATEGORY_STATUS_ACTIVE\x10\x01\x12&\n\"WORKSPACE_CATEGORY_STATUS_INACTIVE\x10\x02\x12(\n$WORKSPACE_CATEGORY_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bworkspace/v1/category.proto\x12\x0cworkspace.v1\"\xbe\x02\n\x11WorkspaceCategory\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03key\x18\x03 \x01(\tR\x03key\x12%\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x17\n\x04icon\x18\x05 \x01(\tH\x01R\x04icon\x88\x01\x01\x12=\n\x06status\x18\x06 \x01(\x0e\x32%.workspace.v1.WorkspaceCategoryStatusR\x06status\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAtB\x0e\n\x0c_descriptionB\x07\n\x05_icon\"]\n\x18WorkspaceCategoryCreated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\ncreated_at\x18\x03 \x01(\tR\tcreatedAt\"I\n\x18WorkspaceCategoryUpdated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"h\n\x18WorkspaceCategoryDeleted\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"O\n\x1aWorkspaceCategoryActivated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12!\n\x0c\x61\x63tivated_at\x18\x02 \x01(\tR\x0b\x61\x63tivatedAt\"U\n\x1cWorkspaceCategoryDeactivated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12%\n\x0e\x64\x65\x61\x63tivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"R\n\x1bWorkspaceCategoryDeprecated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12#\n\rdeprecated_at\x18\x02 \x01(\tR\x0c\x64\x65precatedAt\"\x83\x01\n WorkspaceCategoryAmenityAssigned\x12\x1f\n\x0b\x63\x61tegory_id\x18\x01 \x01(\x05R\ncategoryId\x12\x1d\n\namenity_id\x18\x02 \x01(\x05R\tamenityId\x12\x1f\n\x0b\x61ssigned_at\x18\x03 \x01(\tR\nassignedAt\"\x9f\x01\n\x1fWorkspaceCategoryAmenityRemoved\x12\x1f\n\x0b\x63\x61tegory_id\x18\x01 \x01(\x05R\ncategoryId\x12\x1d\n\namenity_id\x18\x02 \x01(\x05R\tamenityId\x12\x1d\n\ndeleted_by\x18\x03 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x04 \x01(\tR\tdeletedAt*\xbc\x01\n\x17WorkspaceCategoryStatus\x12)\n%WORKSPACE_CATEGORY_STATUS_UNSPECIFIED\x10\x00\x12$\n WORKSPACE_CATEGORY_STATUS_ACTIVE\x10\x01\x12&\n\"WORKSPACE_CATEGORY_STATUS_INACTIVE\x10\x02\x12(\n$WORKSPACE_CATEGORY_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,24 +32,24 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'workspace.v1.category_pb2',
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/nauticalstream/proto/gen/go/workspace/v1'
-  _globals['_WORKSPACECATEGORYSTATUS']._serialized_start=1231
-  _globals['_WORKSPACECATEGORYSTATUS']._serialized_end=1419
+  _globals['_WORKSPACECATEGORYSTATUS']._serialized_start=1191
+  _globals['_WORKSPACECATEGORYSTATUS']._serialized_end=1379
   _globals['_WORKSPACECATEGORY']._serialized_start=46
   _globals['_WORKSPACECATEGORY']._serialized_end=364
-  _globals['_WORKSPACECATEGORYCREATEDEVENT']._serialized_start=366
-  _globals['_WORKSPACECATEGORYCREATEDEVENT']._serialized_end=464
-  _globals['_WORKSPACECATEGORYUPDATEDEVENT']._serialized_start=466
-  _globals['_WORKSPACECATEGORYUPDATEDEVENT']._serialized_end=544
-  _globals['_WORKSPACECATEGORYDELETEDEVENT']._serialized_start=546
-  _globals['_WORKSPACECATEGORYDELETEDEVENT']._serialized_end=655
-  _globals['_WORKSPACECATEGORYACTIVATEDEVENT']._serialized_start=657
-  _globals['_WORKSPACECATEGORYACTIVATEDEVENT']._serialized_end=741
-  _globals['_WORKSPACECATEGORYDEACTIVATEDEVENT']._serialized_start=743
-  _globals['_WORKSPACECATEGORYDEACTIVATEDEVENT']._serialized_end=833
-  _globals['_WORKSPACECATEGORYDEPRECATEDEVENT']._serialized_start=835
-  _globals['_WORKSPACECATEGORYDEPRECATEDEVENT']._serialized_end=922
-  _globals['_WORKSPACECATEGORYAMENITYASSIGNEDEVENT']._serialized_start=925
-  _globals['_WORKSPACECATEGORYAMENITYASSIGNEDEVENT']._serialized_end=1061
-  _globals['_WORKSPACECATEGORYAMENITYREMOVEDEVENT']._serialized_start=1064
-  _globals['_WORKSPACECATEGORYAMENITYREMOVEDEVENT']._serialized_end=1228
+  _globals['_WORKSPACECATEGORYCREATED']._serialized_start=366
+  _globals['_WORKSPACECATEGORYCREATED']._serialized_end=459
+  _globals['_WORKSPACECATEGORYUPDATED']._serialized_start=461
+  _globals['_WORKSPACECATEGORYUPDATED']._serialized_end=534
+  _globals['_WORKSPACECATEGORYDELETED']._serialized_start=536
+  _globals['_WORKSPACECATEGORYDELETED']._serialized_end=640
+  _globals['_WORKSPACECATEGORYACTIVATED']._serialized_start=642
+  _globals['_WORKSPACECATEGORYACTIVATED']._serialized_end=721
+  _globals['_WORKSPACECATEGORYDEACTIVATED']._serialized_start=723
+  _globals['_WORKSPACECATEGORYDEACTIVATED']._serialized_end=808
+  _globals['_WORKSPACECATEGORYDEPRECATED']._serialized_start=810
+  _globals['_WORKSPACECATEGORYDEPRECATED']._serialized_end=892
+  _globals['_WORKSPACECATEGORYAMENITYASSIGNED']._serialized_start=895
+  _globals['_WORKSPACECATEGORYAMENITYASSIGNED']._serialized_end=1026
+  _globals['_WORKSPACECATEGORYAMENITYREMOVED']._serialized_start=1029
+  _globals['_WORKSPACECATEGORYAMENITYREMOVED']._serialized_end=1188
 # @@protoc_insertion_point(module_scope)

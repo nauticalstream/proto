@@ -10,7 +10,7 @@ import { file_common_v1_date } from "../../common/v1/date_pb";
  * Describes the file user/v1/user.proto.
  */
 export const file_user_v1_user = /*@__PURE__*/
-  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiZgoEVXNlchIKCgJpZBgBIAEoCRIRCglmdWxsX25hbWUYAiABKAkSEAoIdXNlcm5hbWUYAyABKAkSDQoFZW1haWwYBCABKAkSEwoGYXZhdGFyGAUgASgJSACIAQFCCQoHX2F2YXRhciK3AQoQVXNlclZlcmlmaWNhdGlvbhIcChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgBIAEoCBIhChlvbmJvYXJkaW5nX21pc3NpbmdfZmllbGRzGAIgAygJEhgKC3ZlcmlmaWVkX2F0GAMgASgJSACIAQESIAoTdmVyaWZpY2F0aW9uX3N0YXR1cxgEIAEoCUgBiAEBQg4KDF92ZXJpZmllZF9hdEIWChRfdmVyaWZpY2F0aW9uX3N0YXR1cyLuAwoLVXNlckRldGFpbHMSCgoCaWQYASABKAkSDQoFZW1haWwYAiABKAkSEAoIdXNlcm5hbWUYAyABKAkSFwoKZmlyc3RfbmFtZRgEIAEoCUgAiAEBEhYKCWxhc3RfbmFtZRgFIAEoCUgBiAEBEhYKCWZ1bGxfbmFtZRgGIAEoCUgCiAEBEg8KB2VuYWJsZWQYByABKAgSFwoKY3JlYXRlZF9hdBgIIAEoCUgDiAEBEhIKBXBob25lGAkgASgJSASIAQESKAoHYWRkcmVzcxgKIAEoCzISLmNvbW1vbi52MS5BZGRyZXNzSAWIAQESMgoNZGF0ZV9vZl9iaXJ0aBgLIAEoCzIWLmNvbW1vbi52MS5EYXRlT2ZCaXJ0aEgGiAEBEhYKCXNzbl9sYXN0NBgMIAEoCUgHiAEBEjQKDHZlcmlmaWNhdGlvbhgNIAEoCzIZLnVzZXIudjEuVXNlclZlcmlmaWNhdGlvbkgIiAEBQg0KC19maXJzdF9uYW1lQgwKCl9sYXN0X25hbWVCDAoKX2Z1bGxfbmFtZUINCgtfY3JlYXRlZF9hdEIICgZfcGhvbmVCCgoIX2FkZHJlc3NCEAoOX2RhdGVfb2ZfYmlydGhCDAoKX3Nzbl9sYXN0NEIPCg1fdmVyaWZpY2F0aW9uIkgKEFF1ZXJ5VXNlclJlcXVlc3QSDwoCaWQYASABKAlIAIgBARISCgVlbWFpbBgCIAEoCUgBiAEBQgUKA19pZEIICgZfZW1haWwiPgoRUXVlcnlVc2VyUmVzcG9uc2USIAoEdXNlchgBIAEoCzINLnVzZXIudjEuVXNlckgAiAEBQgcKBV91c2VyIiAKEVF1ZXJ5VXNlcnNSZXF1ZXN0EgsKA2lkcxgBIAMoCSIyChJRdWVyeVVzZXJzUmVzcG9uc2USHAoFdXNlcnMYASADKAsyDS51c2VyLnYxLlVzZXIipgEKEFVzZXJDcmVhdGVkRXZlbnQSDwoHdXNlcl9pZBgBIAEoCRIQCgh1c2VybmFtZRgCIAEoCRINCgVlbWFpbBgDIAEoCRIXCgpmaXJzdF9uYW1lGAQgASgJSACIAQESFgoJbGFzdF9uYW1lGAUgASgJSAGIAQESEgoKY3JlYXRlZF9hdBgGIAEoCUINCgtfZmlyc3RfbmFtZUIMCgpfbGFzdF9uYW1lIs4DChBVc2VyVXBkYXRlZEV2ZW50Eg8KB3VzZXJfaWQYASABKAkSFQoIdXNlcm5hbWUYAiABKAlIAIgBARISCgVlbWFpbBgDIAEoCUgBiAEBEhcKCmZpcnN0X25hbWUYBCABKAlIAogBARIWCglsYXN0X25hbWUYBSABKAlIA4gBARISCgVwaG9uZRgGIAEoCUgEiAEBEigKB2FkZHJlc3MYByABKAsyEi5jb21tb24udjEuQWRkcmVzc0gFiAEBEjIKDWRhdGVfb2ZfYmlydGgYCCABKAsyFi5jb21tb24udjEuRGF0ZU9mQmlydGhIBogBARIWCglzc25fbGFzdDQYCSABKAlIB4gBARI0Cgx2ZXJpZmljYXRpb24YCiABKAsyGS51c2VyLnYxLlVzZXJWZXJpZmljYXRpb25ICIgBARISCgp1cGRhdGVkX2F0GAsgASgJQgsKCV91c2VybmFtZUIICgZfZW1haWxCDQoLX2ZpcnN0X25hbWVCDAoKX2xhc3RfbmFtZUIICgZfcGhvbmVCCgoIX2FkZHJlc3NCEAoOX2RhdGVfb2ZfYmlydGhCDAoKX3Nzbl9sYXN0NEIPCg1fdmVyaWZpY2F0aW9uIjcKEFVzZXJEZWxldGVkRXZlbnQSDwoHdXNlcl9pZBgBIAEoCRISCgpkZWxldGVkX2F0GAIgASgJIl4KF1VzZXJQcm9maWxlVXBkYXRlZEV2ZW50Eg8KB3VzZXJfaWQYASABKAkSEwoGYXZhdGFyGAIgASgJSACIAQESEgoKdXBkYXRlZF9hdBgDIAEoCUIJCgdfYXZhdGFyInYKGVVzZXJPbmJvYXJkaW5nU3RhdHVzRXZlbnQSDwoHdXNlcl9pZBgBIAEoCRIcChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgCIAEoCBIWCg5taXNzaW5nX2ZpZWxkcxgDIAMoCRISCgp1cGRhdGVkX2F0GAQgASgJQjBaLmdpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3VzZXIvdjFiBnByb3RvMw", [file_common_v1_address, file_common_v1_date]);
+  fileDesc("ChJ1c2VyL3YxL3VzZXIucHJvdG8SB3VzZXIudjEiZgoEVXNlchIKCgJpZBgBIAEoCRIRCglmdWxsX25hbWUYAiABKAkSEAoIdXNlcm5hbWUYAyABKAkSDQoFZW1haWwYBCABKAkSEwoGYXZhdGFyGAUgASgJSACIAQFCCQoHX2F2YXRhciK3AQoQVXNlclZlcmlmaWNhdGlvbhIcChRvbmJvYXJkaW5nX2NvbXBsZXRlZBgBIAEoCBIhChlvbmJvYXJkaW5nX21pc3NpbmdfZmllbGRzGAIgAygJEhgKC3ZlcmlmaWVkX2F0GAMgASgJSACIAQESIAoTdmVyaWZpY2F0aW9uX3N0YXR1cxgEIAEoCUgBiAEBQg4KDF92ZXJpZmllZF9hdEIWChRfdmVyaWZpY2F0aW9uX3N0YXR1cyLuAwoLVXNlckRldGFpbHMSCgoCaWQYASABKAkSDQoFZW1haWwYAiABKAkSEAoIdXNlcm5hbWUYAyABKAkSFwoKZmlyc3RfbmFtZRgEIAEoCUgAiAEBEhYKCWxhc3RfbmFtZRgFIAEoCUgBiAEBEhYKCWZ1bGxfbmFtZRgGIAEoCUgCiAEBEg8KB2VuYWJsZWQYByABKAgSFwoKY3JlYXRlZF9hdBgIIAEoCUgDiAEBEhIKBXBob25lGAkgASgJSASIAQESKAoHYWRkcmVzcxgKIAEoCzISLmNvbW1vbi52MS5BZGRyZXNzSAWIAQESMgoNZGF0ZV9vZl9iaXJ0aBgLIAEoCzIWLmNvbW1vbi52MS5EYXRlT2ZCaXJ0aEgGiAEBEhYKCXNzbl9sYXN0NBgMIAEoCUgHiAEBEjQKDHZlcmlmaWNhdGlvbhgNIAEoCzIZLnVzZXIudjEuVXNlclZlcmlmaWNhdGlvbkgIiAEBQg0KC19maXJzdF9uYW1lQgwKCl9sYXN0X25hbWVCDAoKX2Z1bGxfbmFtZUINCgtfY3JlYXRlZF9hdEIICgZfcGhvbmVCCgoIX2FkZHJlc3NCEAoOX2RhdGVfb2ZfYmlydGhCDAoKX3Nzbl9sYXN0NEIPCg1fdmVyaWZpY2F0aW9uIkYKDkdldFVzZXJSZXF1ZXN0Eg8KAmlkGAEgASgJSACIAQESEgoFZW1haWwYAiABKAlIAYgBAUIFCgNfaWRCCAoGX2VtYWlsIjwKD0dldFVzZXJSZXNwb25zZRIgCgR1c2VyGAEgASgLMg0udXNlci52MS5Vc2VySACIAQFCBwoFX3VzZXIiHwoQTGlzdFVzZXJzUmVxdWVzdBILCgNpZHMYASADKAkiMQoRTGlzdFVzZXJzUmVzcG9uc2USHAoFdXNlcnMYASADKAsyDS51c2VyLnYxLlVzZXIioQEKC1VzZXJDcmVhdGVkEg8KB3VzZXJfaWQYASABKAkSEAoIdXNlcm5hbWUYAiABKAkSDQoFZW1haWwYAyABKAkSFwoKZmlyc3RfbmFtZRgEIAEoCUgAiAEBEhYKCWxhc3RfbmFtZRgFIAEoCUgBiAEBEhIKCmNyZWF0ZWRfYXQYBiABKAlCDQoLX2ZpcnN0X25hbWVCDAoKX2xhc3RfbmFtZSLJAwoLVXNlclVwZGF0ZWQSDwoHdXNlcl9pZBgBIAEoCRIVCgh1c2VybmFtZRgCIAEoCUgAiAEBEhIKBWVtYWlsGAMgASgJSAGIAQESFwoKZmlyc3RfbmFtZRgEIAEoCUgCiAEBEhYKCWxhc3RfbmFtZRgFIAEoCUgDiAEBEhIKBXBob25lGAYgASgJSASIAQESKAoHYWRkcmVzcxgHIAEoCzISLmNvbW1vbi52MS5BZGRyZXNzSAWIAQESMgoNZGF0ZV9vZl9iaXJ0aBgIIAEoCzIWLmNvbW1vbi52MS5EYXRlT2ZCaXJ0aEgGiAEBEhYKCXNzbl9sYXN0NBgJIAEoCUgHiAEBEjQKDHZlcmlmaWNhdGlvbhgKIAEoCzIZLnVzZXIudjEuVXNlclZlcmlmaWNhdGlvbkgIiAEBEhIKCnVwZGF0ZWRfYXQYCyABKAlCCwoJX3VzZXJuYW1lQggKBl9lbWFpbEINCgtfZmlyc3RfbmFtZUIMCgpfbGFzdF9uYW1lQggKBl9waG9uZUIKCghfYWRkcmVzc0IQCg5fZGF0ZV9vZl9iaXJ0aEIMCgpfc3NuX2xhc3Q0Qg8KDV92ZXJpZmljYXRpb24iMgoLVXNlckRlbGV0ZWQSDwoHdXNlcl9pZBgBIAEoCRISCgpkZWxldGVkX2F0GAIgASgJIlkKElVzZXJQcm9maWxlVXBkYXRlZBIPCgd1c2VyX2lkGAEgASgJEhMKBmF2YXRhchgCIAEoCUgAiAEBEhIKCnVwZGF0ZWRfYXQYAyABKAlCCQoHX2F2YXRhciJxChRVc2VyT25ib2FyZGluZ1N0YXR1cxIPCgd1c2VyX2lkGAEgASgJEhwKFG9uYm9hcmRpbmdfY29tcGxldGVkGAIgASgIEhYKDm1pc3NpbmdfZmllbGRzGAMgAygJEhIKCnVwZGF0ZWRfYXQYBCABKAlCMFouZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vdXNlci92MWIGcHJvdG8z", [file_common_v1_address, file_common_v1_date]);
 
 /**
  * Describes the message user.v1.User.
@@ -34,65 +34,65 @@ export const UserDetailsSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 2);
 
 /**
- * Describes the message user.v1.QueryUserRequest.
- * Use `create(QueryUserRequestSchema)` to create a new message.
+ * Describes the message user.v1.GetUserRequest.
+ * Use `create(GetUserRequestSchema)` to create a new message.
  */
-export const QueryUserRequestSchema = /*@__PURE__*/
+export const GetUserRequestSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 3);
 
 /**
- * Describes the message user.v1.QueryUserResponse.
- * Use `create(QueryUserResponseSchema)` to create a new message.
+ * Describes the message user.v1.GetUserResponse.
+ * Use `create(GetUserResponseSchema)` to create a new message.
  */
-export const QueryUserResponseSchema = /*@__PURE__*/
+export const GetUserResponseSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 4);
 
 /**
- * Describes the message user.v1.QueryUsersRequest.
- * Use `create(QueryUsersRequestSchema)` to create a new message.
+ * Describes the message user.v1.ListUsersRequest.
+ * Use `create(ListUsersRequestSchema)` to create a new message.
  */
-export const QueryUsersRequestSchema = /*@__PURE__*/
+export const ListUsersRequestSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 5);
 
 /**
- * Describes the message user.v1.QueryUsersResponse.
- * Use `create(QueryUsersResponseSchema)` to create a new message.
+ * Describes the message user.v1.ListUsersResponse.
+ * Use `create(ListUsersResponseSchema)` to create a new message.
  */
-export const QueryUsersResponseSchema = /*@__PURE__*/
+export const ListUsersResponseSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 6);
 
 /**
- * Describes the message user.v1.UserCreatedEvent.
- * Use `create(UserCreatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserCreated.
+ * Use `create(UserCreatedSchema)` to create a new message.
  */
-export const UserCreatedEventSchema = /*@__PURE__*/
+export const UserCreatedSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 7);
 
 /**
- * Describes the message user.v1.UserUpdatedEvent.
- * Use `create(UserUpdatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserUpdated.
+ * Use `create(UserUpdatedSchema)` to create a new message.
  */
-export const UserUpdatedEventSchema = /*@__PURE__*/
+export const UserUpdatedSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 8);
 
 /**
- * Describes the message user.v1.UserDeletedEvent.
- * Use `create(UserDeletedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserDeleted.
+ * Use `create(UserDeletedSchema)` to create a new message.
  */
-export const UserDeletedEventSchema = /*@__PURE__*/
+export const UserDeletedSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 9);
 
 /**
- * Describes the message user.v1.UserProfileUpdatedEvent.
- * Use `create(UserProfileUpdatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserProfileUpdated.
+ * Use `create(UserProfileUpdatedSchema)` to create a new message.
  */
-export const UserProfileUpdatedEventSchema = /*@__PURE__*/
+export const UserProfileUpdatedSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 10);
 
 /**
- * Describes the message user.v1.UserOnboardingStatusEvent.
- * Use `create(UserOnboardingStatusEventSchema)` to create a new message.
+ * Describes the message user.v1.UserOnboardingStatus.
+ * Use `create(UserOnboardingStatusSchema)` to create a new message.
  */
-export const UserOnboardingStatusEventSchema = /*@__PURE__*/
+export const UserOnboardingStatusSchema = /*@__PURE__*/
   messageDesc(file_user_v1_user, 11);
 

@@ -65,9 +65,9 @@ export declare const WorkspaceFeatureSchema: GenMessage<WorkspaceFeature>;
 /**
  * Event: Feature created
  *
- * @generated from message workspace.v1.WorkspaceFeatureCreatedEvent
+ * @generated from message workspace.v1.WorkspaceFeatureCreated
  */
-export declare type WorkspaceFeatureCreatedEvent = Message<"workspace.v1.WorkspaceFeatureCreatedEvent"> & {
+export declare type WorkspaceFeatureCreated = Message<"workspace.v1.WorkspaceFeatureCreated"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -92,17 +92,17 @@ export declare type WorkspaceFeatureCreatedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureCreatedEvent.
- * Use `create(WorkspaceFeatureCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureCreated.
+ * Use `create(WorkspaceFeatureCreatedSchema)` to create a new message.
  */
-export declare const WorkspaceFeatureCreatedEventSchema: GenMessage<WorkspaceFeatureCreatedEvent>;
+export declare const WorkspaceFeatureCreatedSchema: GenMessage<WorkspaceFeatureCreated>;
 
 /**
  * Event: Feature updated
  *
- * @generated from message workspace.v1.WorkspaceFeatureUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceFeatureUpdated
  */
-export declare type WorkspaceFeatureUpdatedEvent = Message<"workspace.v1.WorkspaceFeatureUpdatedEvent"> & {
+export declare type WorkspaceFeatureUpdated = Message<"workspace.v1.WorkspaceFeatureUpdated"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -117,17 +117,17 @@ export declare type WorkspaceFeatureUpdatedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureUpdatedEvent.
- * Use `create(WorkspaceFeatureUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureUpdated.
+ * Use `create(WorkspaceFeatureUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceFeatureUpdatedEventSchema: GenMessage<WorkspaceFeatureUpdatedEvent>;
+export declare const WorkspaceFeatureUpdatedSchema: GenMessage<WorkspaceFeatureUpdated>;
 
 /**
  * Event: Feature deleted
  *
- * @generated from message workspace.v1.WorkspaceFeatureDeletedEvent
+ * @generated from message workspace.v1.WorkspaceFeatureDeleted
  */
-export declare type WorkspaceFeatureDeletedEvent = Message<"workspace.v1.WorkspaceFeatureDeletedEvent"> & {
+export declare type WorkspaceFeatureDeleted = Message<"workspace.v1.WorkspaceFeatureDeleted"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -147,10 +147,10 @@ export declare type WorkspaceFeatureDeletedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureDeletedEvent.
- * Use `create(WorkspaceFeatureDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureDeleted.
+ * Use `create(WorkspaceFeatureDeletedSchema)` to create a new message.
  */
-export declare const WorkspaceFeatureDeletedEventSchema: GenMessage<WorkspaceFeatureDeletedEvent>;
+export declare const WorkspaceFeatureDeletedSchema: GenMessage<WorkspaceFeatureDeleted>;
 
 /**
  * @generated from enum workspace.v1.WorkspaceFeatureStatus

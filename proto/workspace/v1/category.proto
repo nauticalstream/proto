@@ -37,52 +37,52 @@ message WorkspaceCategory {
 // ============================================
 
 // Event: Category created
-message WorkspaceCategoryCreatedEvent {
+message WorkspaceCategoryCreated {
   int32 id = 1;
   string name = 2;
   string created_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Category updated
-message WorkspaceCategoryUpdatedEvent {
+message WorkspaceCategoryUpdated {
   int32 id = 1;
   string updated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Category deleted
-message WorkspaceCategoryDeletedEvent {
+message WorkspaceCategoryDeleted {
   int32 id = 1;
   string deleted_by = 2;
   string deleted_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Category activated
-message WorkspaceCategoryActivatedEvent {
+message WorkspaceCategoryActivated {
   int32 id = 1;
   string activated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Category deactivated
-message WorkspaceCategoryDeactivatedEvent {
+message WorkspaceCategoryDeactivated {
   int32 id = 1;
   string deactivated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Category deprecated
-message WorkspaceCategoryDeprecatedEvent {
+message WorkspaceCategoryDeprecated {
   int32 id = 1;
   string deprecated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Amenity assigned to category
-message WorkspaceCategoryAmenityAssignedEvent {
+message WorkspaceCategoryAmenityAssigned {
   int32 category_id = 1;
   int32 amenity_id = 2;
   string assigned_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Amenity removed from category
-message WorkspaceCategoryAmenityRemovedEvent {
+message WorkspaceCategoryAmenityRemoved {
   int32 category_id = 1;
   int32 amenity_id = 2;
   string deleted_by = 3;

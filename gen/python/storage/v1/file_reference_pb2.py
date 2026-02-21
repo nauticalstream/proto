@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from storage.v1 import shared_pb2 as storage_dot_v1_dot_shared__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fstorage/v1/file_reference.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"y\n\x0eHasFileRequest\x12\x44\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\",\n\x0fHasFileResponse\x12\x19\n\x08has_file\x18\x01 \x01(\x08R\x07hasFile\"G\n\x13HasFileBatchRequest\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32\x1a.storage.v1.HasFileRequestR\x05items\"\x98\x01\n\x12HasFileBatchResult\x12\x44\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\x12\x19\n\x08has_file\x18\x03 \x01(\x08R\x07hasFile\"P\n\x14HasFileBatchResponse\x12\x38\n\x07results\x18\x01 \x03(\x0b\x32\x1e.storage.v1.HasFileBatchResultR\x07results\"A\n\x13\x46ileReferencedEvent\x12*\n\x11\x66ile_reference_id\x18\x01 \x01(\tR\x0f\x66ileReferenceId\"C\n\x15\x46ileUnreferencedEvent\x12*\n\x11\x66ile_reference_id\x18\x01 \x01(\tR\x0f\x66ileReferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fstorage/v1/file_reference.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"y\n\x0eHasFileRequest\x12\x44\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\",\n\x0fHasFileResponse\x12\x19\n\x08has_file\x18\x01 \x01(\x08R\x07hasFile\"G\n\x13HasFileBatchRequest\x12\x30\n\x05items\x18\x01 \x03(\x0b\x32\x1a.storage.v1.HasFileRequestR\x05items\"\x98\x01\n\x12HasFileBatchResult\x12\x44\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\x12\x19\n\x08has_file\x18\x03 \x01(\x08R\x07hasFile\"P\n\x14HasFileBatchResponse\x12\x38\n\x07results\x18\x01 \x03(\x0b\x32\x1e.storage.v1.HasFileBatchResultR\x07results\"<\n\x0e\x46ileReferenced\x12*\n\x11\x66ile_reference_id\x18\x01 \x01(\tR\x0f\x66ileReferenceId\">\n\x10\x46ileUnreferenced\x12*\n\x11\x66ile_reference_id\x18\x01 \x01(\tR\x0f\x66ileReferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,8 +43,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HASFILEBATCHRESULT']._serialized_end=467
   _globals['_HASFILEBATCHRESPONSE']._serialized_start=469
   _globals['_HASFILEBATCHRESPONSE']._serialized_end=549
-  _globals['_FILEREFERENCEDEVENT']._serialized_start=551
-  _globals['_FILEREFERENCEDEVENT']._serialized_end=616
-  _globals['_FILEUNREFERENCEDEVENT']._serialized_start=618
-  _globals['_FILEUNREFERENCEDEVENT']._serialized_end=685
+  _globals['_FILEREFERENCED']._serialized_start=551
+  _globals['_FILEREFERENCED']._serialized_end=611
+  _globals['_FILEUNREFERENCED']._serialized_start=613
+  _globals['_FILEUNREFERENCED']._serialized_end=675
 # @@protoc_insertion_point(module_scope)

@@ -45,24 +45,24 @@ message Workspace {
 }
 
 // ============================================
-// REQUEST/RESPONSE (EventBus Query Patterns)
+// REQUEST/RESPONSE (EventBus RPC Patterns)
 // ============================================
 
-// Query workspace by ID
-message QueryWorkspaceRequest {
+// Get workspace by ID
+message GetWorkspaceRequest {
   optional string id = 1;
 }
 
-message QueryWorkspaceResponse {
+message GetWorkspaceResponse {
   optional Workspace workspace = 1;
 }
 
-// Query multiple workspaces by IDs
-message QueryWorkspacesRequest {
+// List multiple workspaces by IDs
+message ListWorkspacesRequest {
   repeated string ids = 1;
 }
 
-message QueryWorkspacesResponse {
+message ListWorkspacesResponse {
   repeated Workspace workspaces = 1;
 }
 
@@ -71,42 +71,42 @@ message QueryWorkspacesResponse {
 // ============================================
 
 // Event: Workspace created
-message WorkspaceCreatedEvent {
+message WorkspaceCreated {
   Workspace workspace = 1;
 }
 
 // Event: Workspace updated
-message WorkspaceUpdatedEvent {
+message WorkspaceUpdated {
   Workspace workspace = 1;
 }
 
 // Event: Workspace deleted
-message WorkspaceDeletedEvent {
+message WorkspaceDeleted {
   string id = 1;
   string deleted_by = 2;
   string deleted_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Workspace published
-message WorkspacePublishedEvent {
+message WorkspacePublished {
   string id = 1;
   string published_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Workspace unpublished
-message WorkspaceUnpublishedEvent {
+message WorkspaceUnpublished {
   string id = 1;
   string unpublished_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Workspace suspended
-message WorkspaceSuspendedEvent {
+message WorkspaceSuspended {
   string id = 1;
   string suspended_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Company info updated
-message WorkspaceCompanyInfoUpdatedEvent {
+message WorkspaceCompanyInfoUpdated {
   string id = 1;
   string updated_at = 2; // ISO 8601 datetime string
 }

@@ -11,24 +11,24 @@ import "storage/v1/shared.proto";
 // ============================================
 
 // Event: Collection created
-message CollectionCreatedEvent {
+message CollectionCreated {
   string collection_id = 1;
 }
 
 // Event: Collection deleted
-message CollectionDeletedEvent {
+message CollectionDeleted {
   string collection_id = 1;
 }
 
 // Event: Collection attached to an entity
-message CollectionReferencedEvent {
+message CollectionReferenced {
   string collection_id = 1;
   FileReferenceType reference_type = 2;
   string reference_id = 3;
 }
 
 // Event: Collection detached from an entity
-message CollectionUnreferencedEvent {
+message CollectionUnreferenced {
   string collection_id = 1;
   FileReferenceType reference_type = 2;
   string reference_id = 3;

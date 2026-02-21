@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from storage.v1 import shared_pb2 as storage_dot_v1_dot_shared__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16storage/v1/video.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"\xcc\x04\n\x05Video\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n\x08\x66ilename\x18\x02 \x01(\tR\x08\x66ilename\x12#\n\roriginal_name\x18\x03 \x01(\tR\x0coriginalName\x12\x1b\n\tmime_type\x18\x04 \x01(\tR\x08mimeType\x12\x12\n\x04size\x18\x05 \x01(\x05R\x04size\x12\x1f\n\x08\x64uration\x18\x06 \x01(\x05H\x00R\x08\x64uration\x88\x01\x01\x12\x10\n\x03url\x18\x07 \x01(\tR\x03url\x12\x1f\n\x0bstorage_key\x18\x08 \x01(\tR\nstorageKey\x12\x32\n\x07variant\x18\t \x01(\x0e\x32\x18.storage.v1.ImageVariantR\x07variant\x12/\n\x11original_video_id\x18\n \x01(\tH\x01R\x0foriginalVideoId\x88\x01\x01\x12\x15\n\x03\x61lt\x18\x0b \x01(\tH\x02R\x03\x61lt\x88\x01\x01\x12.\n\x06status\x18\x0c \x01(\x0e\x32\x16.storage.v1.FileStatusR\x06status\x12\x1f\n\x0buploaded_by\x18\r \x01(\tR\nuploadedBy\x12&\n\x0cworkspace_id\x18\x0e \x01(\tH\x03R\x0bworkspaceId\x88\x01\x01\x12\x1d\n\ncreated_at\x18\x0f \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x10 \x01(\tR\tupdatedAtB\x0b\n\t_durationB\x14\n\x12_original_video_idB\x06\n\x04_altB\x0f\n\r_workspace_id\"/\n\x12VideoUploadedEvent\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoId\"0\n\x13VideoProcessedEvent\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoId\".\n\x11VideoDeletedEvent\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16storage/v1/video.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"\xcc\x04\n\x05Video\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n\x08\x66ilename\x18\x02 \x01(\tR\x08\x66ilename\x12#\n\roriginal_name\x18\x03 \x01(\tR\x0coriginalName\x12\x1b\n\tmime_type\x18\x04 \x01(\tR\x08mimeType\x12\x12\n\x04size\x18\x05 \x01(\x05R\x04size\x12\x1f\n\x08\x64uration\x18\x06 \x01(\x05H\x00R\x08\x64uration\x88\x01\x01\x12\x10\n\x03url\x18\x07 \x01(\tR\x03url\x12\x1f\n\x0bstorage_key\x18\x08 \x01(\tR\nstorageKey\x12\x32\n\x07variant\x18\t \x01(\x0e\x32\x18.storage.v1.ImageVariantR\x07variant\x12/\n\x11original_video_id\x18\n \x01(\tH\x01R\x0foriginalVideoId\x88\x01\x01\x12\x15\n\x03\x61lt\x18\x0b \x01(\tH\x02R\x03\x61lt\x88\x01\x01\x12.\n\x06status\x18\x0c \x01(\x0e\x32\x16.storage.v1.FileStatusR\x06status\x12\x1f\n\x0buploaded_by\x18\r \x01(\tR\nuploadedBy\x12&\n\x0cworkspace_id\x18\x0e \x01(\tH\x03R\x0bworkspaceId\x88\x01\x01\x12\x1d\n\ncreated_at\x18\x0f \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x10 \x01(\tR\tupdatedAtB\x0b\n\t_durationB\x14\n\x12_original_video_idB\x06\n\x04_altB\x0f\n\r_workspace_id\"*\n\rVideoUploaded\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoId\"+\n\x0eVideoProcessed\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoId\")\n\x0cVideoDeleted\x12\x19\n\x08video_id\x18\x01 \x01(\tR\x07videoIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,10 +35,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/nauticalstream/proto/gen/go/storage/v1'
   _globals['_VIDEO']._serialized_start=64
   _globals['_VIDEO']._serialized_end=652
-  _globals['_VIDEOUPLOADEDEVENT']._serialized_start=654
-  _globals['_VIDEOUPLOADEDEVENT']._serialized_end=701
-  _globals['_VIDEOPROCESSEDEVENT']._serialized_start=703
-  _globals['_VIDEOPROCESSEDEVENT']._serialized_end=751
-  _globals['_VIDEODELETEDEVENT']._serialized_start=753
-  _globals['_VIDEODELETEDEVENT']._serialized_end=799
+  _globals['_VIDEOUPLOADED']._serialized_start=654
+  _globals['_VIDEOUPLOADED']._serialized_end=696
+  _globals['_VIDEOPROCESSED']._serialized_start=698
+  _globals['_VIDEOPROCESSED']._serialized_end=741
+  _globals['_VIDEODELETED']._serialized_start=743
+  _globals['_VIDEODELETED']._serialized_end=784
 # @@protoc_insertion_point(module_scope)

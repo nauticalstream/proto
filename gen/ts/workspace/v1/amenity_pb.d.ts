@@ -80,9 +80,9 @@ export declare const WorkspaceAmenitySchema: GenMessage<WorkspaceAmenity>;
 /**
  * Event: Amenity created
  *
- * @generated from message workspace.v1.WorkspaceAmenityCreatedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityCreated
  */
-export declare type WorkspaceAmenityCreatedEvent = Message<"workspace.v1.WorkspaceAmenityCreatedEvent"> & {
+export declare type WorkspaceAmenityCreated = Message<"workspace.v1.WorkspaceAmenityCreated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -102,17 +102,17 @@ export declare type WorkspaceAmenityCreatedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityCreatedEvent.
- * Use `create(WorkspaceAmenityCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityCreated.
+ * Use `create(WorkspaceAmenityCreatedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityCreatedEventSchema: GenMessage<WorkspaceAmenityCreatedEvent>;
+export declare const WorkspaceAmenityCreatedSchema: GenMessage<WorkspaceAmenityCreated>;
 
 /**
  * Event: Amenity updated
  *
- * @generated from message workspace.v1.WorkspaceAmenityUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityUpdated
  */
-export declare type WorkspaceAmenityUpdatedEvent = Message<"workspace.v1.WorkspaceAmenityUpdatedEvent"> & {
+export declare type WorkspaceAmenityUpdated = Message<"workspace.v1.WorkspaceAmenityUpdated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -127,17 +127,17 @@ export declare type WorkspaceAmenityUpdatedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityUpdatedEvent.
- * Use `create(WorkspaceAmenityUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityUpdated.
+ * Use `create(WorkspaceAmenityUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityUpdatedEventSchema: GenMessage<WorkspaceAmenityUpdatedEvent>;
+export declare const WorkspaceAmenityUpdatedSchema: GenMessage<WorkspaceAmenityUpdated>;
 
 /**
  * Event: Amenity deleted
  *
- * @generated from message workspace.v1.WorkspaceAmenityDeletedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityDeleted
  */
-export declare type WorkspaceAmenityDeletedEvent = Message<"workspace.v1.WorkspaceAmenityDeletedEvent"> & {
+export declare type WorkspaceAmenityDeleted = Message<"workspace.v1.WorkspaceAmenityDeleted"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -157,17 +157,17 @@ export declare type WorkspaceAmenityDeletedEvent = Message<"workspace.v1.Workspa
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeletedEvent.
- * Use `create(WorkspaceAmenityDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeleted.
+ * Use `create(WorkspaceAmenityDeletedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityDeletedEventSchema: GenMessage<WorkspaceAmenityDeletedEvent>;
+export declare const WorkspaceAmenityDeletedSchema: GenMessage<WorkspaceAmenityDeleted>;
 
 /**
  * Event: Amenity activated
  *
- * @generated from message workspace.v1.WorkspaceAmenityActivatedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityActivated
  */
-export declare type WorkspaceAmenityActivatedEvent = Message<"workspace.v1.WorkspaceAmenityActivatedEvent"> & {
+export declare type WorkspaceAmenityActivated = Message<"workspace.v1.WorkspaceAmenityActivated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -182,17 +182,17 @@ export declare type WorkspaceAmenityActivatedEvent = Message<"workspace.v1.Works
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityActivatedEvent.
- * Use `create(WorkspaceAmenityActivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityActivated.
+ * Use `create(WorkspaceAmenityActivatedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityActivatedEventSchema: GenMessage<WorkspaceAmenityActivatedEvent>;
+export declare const WorkspaceAmenityActivatedSchema: GenMessage<WorkspaceAmenityActivated>;
 
 /**
  * Event: Amenity deactivated
  *
- * @generated from message workspace.v1.WorkspaceAmenityDeactivatedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityDeactivated
  */
-export declare type WorkspaceAmenityDeactivatedEvent = Message<"workspace.v1.WorkspaceAmenityDeactivatedEvent"> & {
+export declare type WorkspaceAmenityDeactivated = Message<"workspace.v1.WorkspaceAmenityDeactivated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -207,17 +207,17 @@ export declare type WorkspaceAmenityDeactivatedEvent = Message<"workspace.v1.Wor
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeactivatedEvent.
- * Use `create(WorkspaceAmenityDeactivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeactivated.
+ * Use `create(WorkspaceAmenityDeactivatedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityDeactivatedEventSchema: GenMessage<WorkspaceAmenityDeactivatedEvent>;
+export declare const WorkspaceAmenityDeactivatedSchema: GenMessage<WorkspaceAmenityDeactivated>;
 
 /**
  * Event: Amenity deprecated
  *
- * @generated from message workspace.v1.WorkspaceAmenityDeprecatedEvent
+ * @generated from message workspace.v1.WorkspaceAmenityDeprecated
  */
-export declare type WorkspaceAmenityDeprecatedEvent = Message<"workspace.v1.WorkspaceAmenityDeprecatedEvent"> & {
+export declare type WorkspaceAmenityDeprecated = Message<"workspace.v1.WorkspaceAmenityDeprecated"> & {
   /**
    * @generated from field: int32 id = 1;
    */
@@ -232,10 +232,10 @@ export declare type WorkspaceAmenityDeprecatedEvent = Message<"workspace.v1.Work
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeprecatedEvent.
- * Use `create(WorkspaceAmenityDeprecatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeprecated.
+ * Use `create(WorkspaceAmenityDeprecatedSchema)` to create a new message.
  */
-export declare const WorkspaceAmenityDeprecatedEventSchema: GenMessage<WorkspaceAmenityDeprecatedEvent>;
+export declare const WorkspaceAmenityDeprecatedSchema: GenMessage<WorkspaceAmenityDeprecated>;
 
 /**
  * @generated from enum workspace.v1.WorkspaceAmenityType

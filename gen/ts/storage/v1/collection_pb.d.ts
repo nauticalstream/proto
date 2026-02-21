@@ -14,9 +14,9 @@ export declare const file_storage_v1_collection: GenFile;
 /**
  * Event: Collection created
  *
- * @generated from message storage.v1.CollectionCreatedEvent
+ * @generated from message storage.v1.CollectionCreated
  */
-export declare type CollectionCreatedEvent = Message<"storage.v1.CollectionCreatedEvent"> & {
+export declare type CollectionCreated = Message<"storage.v1.CollectionCreated"> & {
   /**
    * @generated from field: string collection_id = 1;
    */
@@ -24,17 +24,17 @@ export declare type CollectionCreatedEvent = Message<"storage.v1.CollectionCreat
 };
 
 /**
- * Describes the message storage.v1.CollectionCreatedEvent.
- * Use `create(CollectionCreatedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionCreated.
+ * Use `create(CollectionCreatedSchema)` to create a new message.
  */
-export declare const CollectionCreatedEventSchema: GenMessage<CollectionCreatedEvent>;
+export declare const CollectionCreatedSchema: GenMessage<CollectionCreated>;
 
 /**
  * Event: Collection deleted
  *
- * @generated from message storage.v1.CollectionDeletedEvent
+ * @generated from message storage.v1.CollectionDeleted
  */
-export declare type CollectionDeletedEvent = Message<"storage.v1.CollectionDeletedEvent"> & {
+export declare type CollectionDeleted = Message<"storage.v1.CollectionDeleted"> & {
   /**
    * @generated from field: string collection_id = 1;
    */
@@ -42,17 +42,17 @@ export declare type CollectionDeletedEvent = Message<"storage.v1.CollectionDelet
 };
 
 /**
- * Describes the message storage.v1.CollectionDeletedEvent.
- * Use `create(CollectionDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionDeleted.
+ * Use `create(CollectionDeletedSchema)` to create a new message.
  */
-export declare const CollectionDeletedEventSchema: GenMessage<CollectionDeletedEvent>;
+export declare const CollectionDeletedSchema: GenMessage<CollectionDeleted>;
 
 /**
  * Event: Collection attached to an entity
  *
- * @generated from message storage.v1.CollectionReferencedEvent
+ * @generated from message storage.v1.CollectionReferenced
  */
-export declare type CollectionReferencedEvent = Message<"storage.v1.CollectionReferencedEvent"> & {
+export declare type CollectionReferenced = Message<"storage.v1.CollectionReferenced"> & {
   /**
    * @generated from field: string collection_id = 1;
    */
@@ -70,17 +70,17 @@ export declare type CollectionReferencedEvent = Message<"storage.v1.CollectionRe
 };
 
 /**
- * Describes the message storage.v1.CollectionReferencedEvent.
- * Use `create(CollectionReferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionReferenced.
+ * Use `create(CollectionReferencedSchema)` to create a new message.
  */
-export declare const CollectionReferencedEventSchema: GenMessage<CollectionReferencedEvent>;
+export declare const CollectionReferencedSchema: GenMessage<CollectionReferenced>;
 
 /**
  * Event: Collection detached from an entity
  *
- * @generated from message storage.v1.CollectionUnreferencedEvent
+ * @generated from message storage.v1.CollectionUnreferenced
  */
-export declare type CollectionUnreferencedEvent = Message<"storage.v1.CollectionUnreferencedEvent"> & {
+export declare type CollectionUnreferenced = Message<"storage.v1.CollectionUnreferenced"> & {
   /**
    * @generated from field: string collection_id = 1;
    */
@@ -98,8 +98,8 @@ export declare type CollectionUnreferencedEvent = Message<"storage.v1.Collection
 };
 
 /**
- * Describes the message storage.v1.CollectionUnreferencedEvent.
- * Use `create(CollectionUnreferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionUnreferenced.
+ * Use `create(CollectionUnreferencedSchema)` to create a new message.
  */
-export declare const CollectionUnreferencedEventSchema: GenMessage<CollectionUnreferencedEvent>;
+export declare const CollectionUnreferencedSchema: GenMessage<CollectionUnreferenced>;
 

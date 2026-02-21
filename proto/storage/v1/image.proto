@@ -62,16 +62,16 @@ message HasImageBatchResponse {
 // ============================================
 
 // Event: Image uploaded (status = PENDING, processing not started yet)
-message ImageUploadedEvent {
+message ImageUploaded {
   string image_id = 1;
 }
 
 // Event: Image processed (status = ACTIVE, variants ready)
-message ImageProcessedEvent {
+message ImageProcessed {
   string image_id = 1;
 }
 
 // Event: Image deleted
-message ImageDeletedEvent {
+message ImageDeleted {
   string image_id = 1;
 }

@@ -183,7 +183,7 @@ func (x *WorkspaceCategory) GetUpdatedAt() string {
 }
 
 // Event: Category created
-type WorkspaceCategoryCreatedEvent struct {
+type WorkspaceCategoryCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -192,20 +192,20 @@ type WorkspaceCategoryCreatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryCreatedEvent) Reset() {
-	*x = WorkspaceCategoryCreatedEvent{}
+func (x *WorkspaceCategoryCreated) Reset() {
+	*x = WorkspaceCategoryCreated{}
 	mi := &file_workspace_v1_category_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryCreatedEvent) String() string {
+func (x *WorkspaceCategoryCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryCreatedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryCreated) ProtoMessage() {}
 
-func (x *WorkspaceCategoryCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -217,26 +217,26 @@ func (x *WorkspaceCategoryCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryCreatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryCreated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryCreated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *WorkspaceCategoryCreatedEvent) GetId() int32 {
+func (x *WorkspaceCategoryCreated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryCreatedEvent) GetName() string {
+func (x *WorkspaceCategoryCreated) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *WorkspaceCategoryCreatedEvent) GetCreatedAt() string {
+func (x *WorkspaceCategoryCreated) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -244,7 +244,7 @@ func (x *WorkspaceCategoryCreatedEvent) GetCreatedAt() string {
 }
 
 // Event: Category updated
-type WorkspaceCategoryUpdatedEvent struct {
+type WorkspaceCategoryUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	UpdatedAt     string                 `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
@@ -252,20 +252,20 @@ type WorkspaceCategoryUpdatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryUpdatedEvent) Reset() {
-	*x = WorkspaceCategoryUpdatedEvent{}
+func (x *WorkspaceCategoryUpdated) Reset() {
+	*x = WorkspaceCategoryUpdated{}
 	mi := &file_workspace_v1_category_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryUpdatedEvent) String() string {
+func (x *WorkspaceCategoryUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryUpdated) ProtoMessage() {}
 
-func (x *WorkspaceCategoryUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -277,19 +277,19 @@ func (x *WorkspaceCategoryUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *WorkspaceCategoryUpdatedEvent) GetId() int32 {
+func (x *WorkspaceCategoryUpdated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryUpdatedEvent) GetUpdatedAt() string {
+func (x *WorkspaceCategoryUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
@@ -297,7 +297,7 @@ func (x *WorkspaceCategoryUpdatedEvent) GetUpdatedAt() string {
 }
 
 // Event: Category deleted
-type WorkspaceCategoryDeletedEvent struct {
+type WorkspaceCategoryDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeletedBy     string                 `protobuf:"bytes,2,opt,name=deleted_by,json=deletedBy,proto3" json:"deleted_by,omitempty"`
@@ -306,20 +306,20 @@ type WorkspaceCategoryDeletedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryDeletedEvent) Reset() {
-	*x = WorkspaceCategoryDeletedEvent{}
+func (x *WorkspaceCategoryDeleted) Reset() {
+	*x = WorkspaceCategoryDeleted{}
 	mi := &file_workspace_v1_category_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryDeletedEvent) String() string {
+func (x *WorkspaceCategoryDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryDeletedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryDeleted) ProtoMessage() {}
 
-func (x *WorkspaceCategoryDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -331,26 +331,26 @@ func (x *WorkspaceCategoryDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryDeletedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryDeleted.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryDeleted) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *WorkspaceCategoryDeletedEvent) GetId() int32 {
+func (x *WorkspaceCategoryDeleted) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryDeletedEvent) GetDeletedBy() string {
+func (x *WorkspaceCategoryDeleted) GetDeletedBy() string {
 	if x != nil {
 		return x.DeletedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceCategoryDeletedEvent) GetDeletedAt() string {
+func (x *WorkspaceCategoryDeleted) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -358,7 +358,7 @@ func (x *WorkspaceCategoryDeletedEvent) GetDeletedAt() string {
 }
 
 // Event: Category activated
-type WorkspaceCategoryActivatedEvent struct {
+type WorkspaceCategoryActivated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	ActivatedAt   string                 `protobuf:"bytes,2,opt,name=activated_at,json=activatedAt,proto3" json:"activated_at,omitempty"` // ISO 8601 datetime string
@@ -366,20 +366,20 @@ type WorkspaceCategoryActivatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryActivatedEvent) Reset() {
-	*x = WorkspaceCategoryActivatedEvent{}
+func (x *WorkspaceCategoryActivated) Reset() {
+	*x = WorkspaceCategoryActivated{}
 	mi := &file_workspace_v1_category_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryActivatedEvent) String() string {
+func (x *WorkspaceCategoryActivated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryActivatedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryActivated) ProtoMessage() {}
 
-func (x *WorkspaceCategoryActivatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryActivated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -391,19 +391,19 @@ func (x *WorkspaceCategoryActivatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryActivatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryActivatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryActivated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryActivated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *WorkspaceCategoryActivatedEvent) GetId() int32 {
+func (x *WorkspaceCategoryActivated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryActivatedEvent) GetActivatedAt() string {
+func (x *WorkspaceCategoryActivated) GetActivatedAt() string {
 	if x != nil {
 		return x.ActivatedAt
 	}
@@ -411,7 +411,7 @@ func (x *WorkspaceCategoryActivatedEvent) GetActivatedAt() string {
 }
 
 // Event: Category deactivated
-type WorkspaceCategoryDeactivatedEvent struct {
+type WorkspaceCategoryDeactivated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeactivatedAt string                 `protobuf:"bytes,2,opt,name=deactivated_at,json=deactivatedAt,proto3" json:"deactivated_at,omitempty"` // ISO 8601 datetime string
@@ -419,20 +419,20 @@ type WorkspaceCategoryDeactivatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryDeactivatedEvent) Reset() {
-	*x = WorkspaceCategoryDeactivatedEvent{}
+func (x *WorkspaceCategoryDeactivated) Reset() {
+	*x = WorkspaceCategoryDeactivated{}
 	mi := &file_workspace_v1_category_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryDeactivatedEvent) String() string {
+func (x *WorkspaceCategoryDeactivated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryDeactivatedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryDeactivated) ProtoMessage() {}
 
-func (x *WorkspaceCategoryDeactivatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryDeactivated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -444,19 +444,19 @@ func (x *WorkspaceCategoryDeactivatedEvent) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryDeactivatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryDeactivatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryDeactivated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryDeactivated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *WorkspaceCategoryDeactivatedEvent) GetId() int32 {
+func (x *WorkspaceCategoryDeactivated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryDeactivatedEvent) GetDeactivatedAt() string {
+func (x *WorkspaceCategoryDeactivated) GetDeactivatedAt() string {
 	if x != nil {
 		return x.DeactivatedAt
 	}
@@ -464,7 +464,7 @@ func (x *WorkspaceCategoryDeactivatedEvent) GetDeactivatedAt() string {
 }
 
 // Event: Category deprecated
-type WorkspaceCategoryDeprecatedEvent struct {
+type WorkspaceCategoryDeprecated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeprecatedAt  string                 `protobuf:"bytes,2,opt,name=deprecated_at,json=deprecatedAt,proto3" json:"deprecated_at,omitempty"` // ISO 8601 datetime string
@@ -472,20 +472,20 @@ type WorkspaceCategoryDeprecatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryDeprecatedEvent) Reset() {
-	*x = WorkspaceCategoryDeprecatedEvent{}
+func (x *WorkspaceCategoryDeprecated) Reset() {
+	*x = WorkspaceCategoryDeprecated{}
 	mi := &file_workspace_v1_category_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryDeprecatedEvent) String() string {
+func (x *WorkspaceCategoryDeprecated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryDeprecatedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryDeprecated) ProtoMessage() {}
 
-func (x *WorkspaceCategoryDeprecatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryDeprecated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -497,19 +497,19 @@ func (x *WorkspaceCategoryDeprecatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryDeprecatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryDeprecatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryDeprecated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryDeprecated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *WorkspaceCategoryDeprecatedEvent) GetId() int32 {
+func (x *WorkspaceCategoryDeprecated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryDeprecatedEvent) GetDeprecatedAt() string {
+func (x *WorkspaceCategoryDeprecated) GetDeprecatedAt() string {
 	if x != nil {
 		return x.DeprecatedAt
 	}
@@ -517,7 +517,7 @@ func (x *WorkspaceCategoryDeprecatedEvent) GetDeprecatedAt() string {
 }
 
 // Event: Amenity assigned to category
-type WorkspaceCategoryAmenityAssignedEvent struct {
+type WorkspaceCategoryAmenityAssigned struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CategoryId    int32                  `protobuf:"varint,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
 	AmenityId     int32                  `protobuf:"varint,2,opt,name=amenity_id,json=amenityId,proto3" json:"amenity_id,omitempty"`
@@ -526,20 +526,20 @@ type WorkspaceCategoryAmenityAssignedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) Reset() {
-	*x = WorkspaceCategoryAmenityAssignedEvent{}
+func (x *WorkspaceCategoryAmenityAssigned) Reset() {
+	*x = WorkspaceCategoryAmenityAssigned{}
 	mi := &file_workspace_v1_category_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) String() string {
+func (x *WorkspaceCategoryAmenityAssigned) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryAmenityAssignedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryAmenityAssigned) ProtoMessage() {}
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryAmenityAssigned) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -551,26 +551,26 @@ func (x *WorkspaceCategoryAmenityAssignedEvent) ProtoReflect() protoreflect.Mess
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryAmenityAssignedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryAmenityAssignedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryAmenityAssigned.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryAmenityAssigned) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) GetCategoryId() int32 {
+func (x *WorkspaceCategoryAmenityAssigned) GetCategoryId() int32 {
 	if x != nil {
 		return x.CategoryId
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) GetAmenityId() int32 {
+func (x *WorkspaceCategoryAmenityAssigned) GetAmenityId() int32 {
 	if x != nil {
 		return x.AmenityId
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryAmenityAssignedEvent) GetAssignedAt() string {
+func (x *WorkspaceCategoryAmenityAssigned) GetAssignedAt() string {
 	if x != nil {
 		return x.AssignedAt
 	}
@@ -578,7 +578,7 @@ func (x *WorkspaceCategoryAmenityAssignedEvent) GetAssignedAt() string {
 }
 
 // Event: Amenity removed from category
-type WorkspaceCategoryAmenityRemovedEvent struct {
+type WorkspaceCategoryAmenityRemoved struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CategoryId    int32                  `protobuf:"varint,1,opt,name=category_id,json=categoryId,proto3" json:"category_id,omitempty"`
 	AmenityId     int32                  `protobuf:"varint,2,opt,name=amenity_id,json=amenityId,proto3" json:"amenity_id,omitempty"`
@@ -588,20 +588,20 @@ type WorkspaceCategoryAmenityRemovedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) Reset() {
-	*x = WorkspaceCategoryAmenityRemovedEvent{}
+func (x *WorkspaceCategoryAmenityRemoved) Reset() {
+	*x = WorkspaceCategoryAmenityRemoved{}
 	mi := &file_workspace_v1_category_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) String() string {
+func (x *WorkspaceCategoryAmenityRemoved) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCategoryAmenityRemovedEvent) ProtoMessage() {}
+func (*WorkspaceCategoryAmenityRemoved) ProtoMessage() {}
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCategoryAmenityRemoved) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_category_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -613,33 +613,33 @@ func (x *WorkspaceCategoryAmenityRemovedEvent) ProtoReflect() protoreflect.Messa
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCategoryAmenityRemovedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCategoryAmenityRemovedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCategoryAmenityRemoved.ProtoReflect.Descriptor instead.
+func (*WorkspaceCategoryAmenityRemoved) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_category_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) GetCategoryId() int32 {
+func (x *WorkspaceCategoryAmenityRemoved) GetCategoryId() int32 {
 	if x != nil {
 		return x.CategoryId
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) GetAmenityId() int32 {
+func (x *WorkspaceCategoryAmenityRemoved) GetAmenityId() int32 {
 	if x != nil {
 		return x.AmenityId
 	}
 	return 0
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) GetDeletedBy() string {
+func (x *WorkspaceCategoryAmenityRemoved) GetDeletedBy() string {
 	if x != nil {
 		return x.DeletedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceCategoryAmenityRemovedEvent) GetDeletedAt() string {
+func (x *WorkspaceCategoryAmenityRemoved) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -665,39 +665,39 @@ const file_workspace_v1_category_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\t \x01(\tR\tupdatedAtB\x0e\n" +
 	"\f_descriptionB\a\n" +
-	"\x05_icon\"b\n" +
-	"\x1dWorkspaceCategoryCreatedEvent\x12\x0e\n" +
+	"\x05_icon\"]\n" +
+	"\x18WorkspaceCategoryCreated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x03 \x01(\tR\tcreatedAt\"N\n" +
-	"\x1dWorkspaceCategoryUpdatedEvent\x12\x0e\n" +
+	"created_at\x18\x03 \x01(\tR\tcreatedAt\"I\n" +
+	"\x18WorkspaceCategoryUpdated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"m\n" +
-	"\x1dWorkspaceCategoryDeletedEvent\x12\x0e\n" +
+	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"h\n" +
+	"\x18WorkspaceCategoryDeleted\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n" +
 	"\n" +
 	"deleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n" +
 	"\n" +
-	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"T\n" +
-	"\x1fWorkspaceCategoryActivatedEvent\x12\x0e\n" +
+	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"O\n" +
+	"\x1aWorkspaceCategoryActivated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12!\n" +
-	"\factivated_at\x18\x02 \x01(\tR\vactivatedAt\"Z\n" +
-	"!WorkspaceCategoryDeactivatedEvent\x12\x0e\n" +
+	"\factivated_at\x18\x02 \x01(\tR\vactivatedAt\"U\n" +
+	"\x1cWorkspaceCategoryDeactivated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12%\n" +
-	"\x0edeactivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"W\n" +
-	" WorkspaceCategoryDeprecatedEvent\x12\x0e\n" +
+	"\x0edeactivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"R\n" +
+	"\x1bWorkspaceCategoryDeprecated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12#\n" +
-	"\rdeprecated_at\x18\x02 \x01(\tR\fdeprecatedAt\"\x88\x01\n" +
-	"%WorkspaceCategoryAmenityAssignedEvent\x12\x1f\n" +
+	"\rdeprecated_at\x18\x02 \x01(\tR\fdeprecatedAt\"\x83\x01\n" +
+	" WorkspaceCategoryAmenityAssigned\x12\x1f\n" +
 	"\vcategory_id\x18\x01 \x01(\x05R\n" +
 	"categoryId\x12\x1d\n" +
 	"\n" +
 	"amenity_id\x18\x02 \x01(\x05R\tamenityId\x12\x1f\n" +
 	"\vassigned_at\x18\x03 \x01(\tR\n" +
-	"assignedAt\"\xa4\x01\n" +
-	"$WorkspaceCategoryAmenityRemovedEvent\x12\x1f\n" +
+	"assignedAt\"\x9f\x01\n" +
+	"\x1fWorkspaceCategoryAmenityRemoved\x12\x1f\n" +
 	"\vcategory_id\x18\x01 \x01(\x05R\n" +
 	"categoryId\x12\x1d\n" +
 	"\n" +
@@ -727,16 +727,16 @@ func file_workspace_v1_category_proto_rawDescGZIP() []byte {
 var file_workspace_v1_category_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_workspace_v1_category_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_workspace_v1_category_proto_goTypes = []any{
-	(WorkspaceCategoryStatus)(0),                  // 0: workspace.v1.WorkspaceCategoryStatus
-	(*WorkspaceCategory)(nil),                     // 1: workspace.v1.WorkspaceCategory
-	(*WorkspaceCategoryCreatedEvent)(nil),         // 2: workspace.v1.WorkspaceCategoryCreatedEvent
-	(*WorkspaceCategoryUpdatedEvent)(nil),         // 3: workspace.v1.WorkspaceCategoryUpdatedEvent
-	(*WorkspaceCategoryDeletedEvent)(nil),         // 4: workspace.v1.WorkspaceCategoryDeletedEvent
-	(*WorkspaceCategoryActivatedEvent)(nil),       // 5: workspace.v1.WorkspaceCategoryActivatedEvent
-	(*WorkspaceCategoryDeactivatedEvent)(nil),     // 6: workspace.v1.WorkspaceCategoryDeactivatedEvent
-	(*WorkspaceCategoryDeprecatedEvent)(nil),      // 7: workspace.v1.WorkspaceCategoryDeprecatedEvent
-	(*WorkspaceCategoryAmenityAssignedEvent)(nil), // 8: workspace.v1.WorkspaceCategoryAmenityAssignedEvent
-	(*WorkspaceCategoryAmenityRemovedEvent)(nil),  // 9: workspace.v1.WorkspaceCategoryAmenityRemovedEvent
+	(WorkspaceCategoryStatus)(0),             // 0: workspace.v1.WorkspaceCategoryStatus
+	(*WorkspaceCategory)(nil),                // 1: workspace.v1.WorkspaceCategory
+	(*WorkspaceCategoryCreated)(nil),         // 2: workspace.v1.WorkspaceCategoryCreated
+	(*WorkspaceCategoryUpdated)(nil),         // 3: workspace.v1.WorkspaceCategoryUpdated
+	(*WorkspaceCategoryDeleted)(nil),         // 4: workspace.v1.WorkspaceCategoryDeleted
+	(*WorkspaceCategoryActivated)(nil),       // 5: workspace.v1.WorkspaceCategoryActivated
+	(*WorkspaceCategoryDeactivated)(nil),     // 6: workspace.v1.WorkspaceCategoryDeactivated
+	(*WorkspaceCategoryDeprecated)(nil),      // 7: workspace.v1.WorkspaceCategoryDeprecated
+	(*WorkspaceCategoryAmenityAssigned)(nil), // 8: workspace.v1.WorkspaceCategoryAmenityAssigned
+	(*WorkspaceCategoryAmenityRemoved)(nil),  // 9: workspace.v1.WorkspaceCategoryAmenityRemoved
 }
 var file_workspace_v1_category_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.WorkspaceCategory.status:type_name -> workspace.v1.WorkspaceCategoryStatus

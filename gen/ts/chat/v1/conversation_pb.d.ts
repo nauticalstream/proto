@@ -108,9 +108,9 @@ export declare type Conversation = Message<"chat.v1.Conversation"> & {
 export declare const ConversationSchema: GenMessage<Conversation>;
 
 /**
- * @generated from message chat.v1.ConversationCreatedEvent
+ * @generated from message chat.v1.ConversationCreated
  */
-export declare type ConversationCreatedEvent = Message<"chat.v1.ConversationCreatedEvent"> & {
+export declare type ConversationCreated = Message<"chat.v1.ConversationCreated"> & {
   /**
    * @generated from field: string conversation_id = 1;
    */
@@ -143,15 +143,15 @@ export declare type ConversationCreatedEvent = Message<"chat.v1.ConversationCrea
 };
 
 /**
- * Describes the message chat.v1.ConversationCreatedEvent.
- * Use `create(ConversationCreatedEventSchema)` to create a new message.
+ * Describes the message chat.v1.ConversationCreated.
+ * Use `create(ConversationCreatedSchema)` to create a new message.
  */
-export declare const ConversationCreatedEventSchema: GenMessage<ConversationCreatedEvent>;
+export declare const ConversationCreatedSchema: GenMessage<ConversationCreated>;
 
 /**
- * @generated from message chat.v1.ConversationUpdatedEvent
+ * @generated from message chat.v1.ConversationUpdated
  */
-export declare type ConversationUpdatedEvent = Message<"chat.v1.ConversationUpdatedEvent"> & {
+export declare type ConversationUpdated = Message<"chat.v1.ConversationUpdated"> & {
   /**
    * @generated from field: string conversation_id = 1;
    */
@@ -179,15 +179,15 @@ export declare type ConversationUpdatedEvent = Message<"chat.v1.ConversationUpda
 };
 
 /**
- * Describes the message chat.v1.ConversationUpdatedEvent.
- * Use `create(ConversationUpdatedEventSchema)` to create a new message.
+ * Describes the message chat.v1.ConversationUpdated.
+ * Use `create(ConversationUpdatedSchema)` to create a new message.
  */
-export declare const ConversationUpdatedEventSchema: GenMessage<ConversationUpdatedEvent>;
+export declare const ConversationUpdatedSchema: GenMessage<ConversationUpdated>;
 
 /**
- * @generated from message chat.v1.ConversationDeletedEvent
+ * @generated from message chat.v1.ConversationDeleted
  */
-export declare type ConversationDeletedEvent = Message<"chat.v1.ConversationDeletedEvent"> & {
+export declare type ConversationDeleted = Message<"chat.v1.ConversationDeleted"> & {
   /**
    * @generated from field: string conversation_id = 1;
    */
@@ -200,10 +200,10 @@ export declare type ConversationDeletedEvent = Message<"chat.v1.ConversationDele
 };
 
 /**
- * Describes the message chat.v1.ConversationDeletedEvent.
- * Use `create(ConversationDeletedEventSchema)` to create a new message.
+ * Describes the message chat.v1.ConversationDeleted.
+ * Use `create(ConversationDeletedSchema)` to create a new message.
  */
-export declare const ConversationDeletedEventSchema: GenMessage<ConversationDeletedEvent>;
+export declare const ConversationDeletedSchema: GenMessage<ConversationDeleted>;
 
 /**
  * @generated from message chat.v1.GetConversationRequest
@@ -243,9 +243,9 @@ export declare type GetConversationResponse = Message<"chat.v1.GetConversationRe
 export declare const GetConversationResponseSchema: GenMessage<GetConversationResponse>;
 
 /**
- * @generated from message chat.v1.QueryConversationsRequest
+ * @generated from message chat.v1.ListConversationsRequest
  */
-export declare type QueryConversationsRequest = Message<"chat.v1.QueryConversationsRequest"> & {
+export declare type ListConversationsRequest = Message<"chat.v1.ListConversationsRequest"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -273,15 +273,15 @@ export declare type QueryConversationsRequest = Message<"chat.v1.QueryConversati
 };
 
 /**
- * Describes the message chat.v1.QueryConversationsRequest.
- * Use `create(QueryConversationsRequestSchema)` to create a new message.
+ * Describes the message chat.v1.ListConversationsRequest.
+ * Use `create(ListConversationsRequestSchema)` to create a new message.
  */
-export declare const QueryConversationsRequestSchema: GenMessage<QueryConversationsRequest>;
+export declare const ListConversationsRequestSchema: GenMessage<ListConversationsRequest>;
 
 /**
- * @generated from message chat.v1.QueryConversationsResponse
+ * @generated from message chat.v1.ListConversationsResponse
  */
-export declare type QueryConversationsResponse = Message<"chat.v1.QueryConversationsResponse"> & {
+export declare type ListConversationsResponse = Message<"chat.v1.ListConversationsResponse"> & {
   /**
    * @generated from field: repeated chat.v1.ConversationEdge edges = 1;
    */
@@ -294,10 +294,10 @@ export declare type QueryConversationsResponse = Message<"chat.v1.QueryConversat
 };
 
 /**
- * Describes the message chat.v1.QueryConversationsResponse.
- * Use `create(QueryConversationsResponseSchema)` to create a new message.
+ * Describes the message chat.v1.ListConversationsResponse.
+ * Use `create(ListConversationsResponseSchema)` to create a new message.
  */
-export declare const QueryConversationsResponseSchema: GenMessage<QueryConversationsResponse>;
+export declare const ListConversationsResponseSchema: GenMessage<ListConversationsResponse>;
 
 /**
  * @generated from message chat.v1.ConversationEdge

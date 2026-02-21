@@ -37,7 +37,7 @@ message WorkspaceMember {
 // ============================================
 
 // Event: Member added to workspace
-message WorkspaceMemberAddedEvent {
+message WorkspaceMemberAdded {
   string id = 1;
   string workspace_id = 2;
   string user_id = 3;
@@ -46,7 +46,7 @@ message WorkspaceMemberAddedEvent {
 }
 
 // Event: Member updated in workspace
-message WorkspaceMemberUpdatedEvent {
+message WorkspaceMemberUpdated {
   string id = 1;
   string workspace_id = 2;
   string user_id = 3;
@@ -55,7 +55,7 @@ message WorkspaceMemberUpdatedEvent {
 }
 
 // Event: Member removed from workspace
-message WorkspaceMemberRemovedEvent {
+message WorkspaceMemberRemoved {
   string id = 1;
   string workspace_id = 2;
   string user_id = 3;

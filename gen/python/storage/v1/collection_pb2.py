@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from storage.v1 import shared_pb2 as storage_dot_v1_dot_shared__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstorage/v1/collection.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"=\n\x16\x43ollectionCreatedEvent\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\"=\n\x16\x43ollectionDeletedEvent\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\"\xa9\x01\n\x19\x43ollectionReferencedEvent\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\x12\x44\n\x0ereference_type\x18\x02 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x03 \x01(\tR\x0breferenceId\"\xab\x01\n\x1b\x43ollectionUnreferencedEvent\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\x12\x44\n\x0ereference_type\x18\x02 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x03 \x01(\tR\x0breferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bstorage/v1/collection.proto\x12\nstorage.v1\x1a\x17storage/v1/shared.proto\"8\n\x11\x43ollectionCreated\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\"8\n\x11\x43ollectionDeleted\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\"\xa4\x01\n\x14\x43ollectionReferenced\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\x12\x44\n\x0ereference_type\x18\x02 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x03 \x01(\tR\x0breferenceId\"\xa6\x01\n\x16\x43ollectionUnreferenced\x12#\n\rcollection_id\x18\x01 \x01(\tR\x0c\x63ollectionId\x12\x44\n\x0ereference_type\x18\x02 \x01(\x0e\x32\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x03 \x01(\tR\x0breferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'storage.v1.collection_pb2',
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z1github.com/nauticalstream/proto/gen/go/storage/v1'
-  _globals['_COLLECTIONCREATEDEVENT']._serialized_start=68
-  _globals['_COLLECTIONCREATEDEVENT']._serialized_end=129
-  _globals['_COLLECTIONDELETEDEVENT']._serialized_start=131
-  _globals['_COLLECTIONDELETEDEVENT']._serialized_end=192
-  _globals['_COLLECTIONREFERENCEDEVENT']._serialized_start=195
-  _globals['_COLLECTIONREFERENCEDEVENT']._serialized_end=364
-  _globals['_COLLECTIONUNREFERENCEDEVENT']._serialized_start=367
-  _globals['_COLLECTIONUNREFERENCEDEVENT']._serialized_end=538
+  _globals['_COLLECTIONCREATED']._serialized_start=68
+  _globals['_COLLECTIONCREATED']._serialized_end=124
+  _globals['_COLLECTIONDELETED']._serialized_start=126
+  _globals['_COLLECTIONDELETED']._serialized_end=182
+  _globals['_COLLECTIONREFERENCED']._serialized_start=185
+  _globals['_COLLECTIONREFERENCED']._serialized_end=349
+  _globals['_COLLECTIONUNREFERENCED']._serialized_start=352
+  _globals['_COLLECTIONUNREFERENCED']._serialized_end=518
 # @@protoc_insertion_point(module_scope)

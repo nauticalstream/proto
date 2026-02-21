@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file workspace/v1/amenity.proto.
  */
 export const file_workspace_v1_amenity = /*@__PURE__*/
-  fileDesc("Chp3b3Jrc3BhY2UvdjEvYW1lbml0eS5wcm90bxIMd29ya3NwYWNlLnYxIqMCChBXb3Jrc3BhY2VBbWVuaXR5EgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSCwoDa2V5GAMgASgJEjAKBHR5cGUYBCABKA4yIi53b3Jrc3BhY2UudjEuV29ya3NwYWNlQW1lbml0eVR5cGUSGAoLZGVzY3JpcHRpb24YBSABKAlIAIgBARIRCgRpY29uGAYgASgJSAGIAQESNAoGc3RhdHVzGAcgASgOMiQud29ya3NwYWNlLnYxLldvcmtzcGFjZUFtZW5pdHlTdGF0dXMSEgoKY3JlYXRlZF9ieRgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJEhIKCnVwZGF0ZWRfYXQYCiABKAlCDgoMX2Rlc2NyaXB0aW9uQgcKBV9pY29uIkwKHFdvcmtzcGFjZUFtZW5pdHlDcmVhdGVkRXZlbnQSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRISCgpjcmVhdGVkX2F0GAMgASgJIj4KHFdvcmtzcGFjZUFtZW5pdHlVcGRhdGVkRXZlbnQSCgoCaWQYASABKAUSEgoKdXBkYXRlZF9hdBgCIAEoCSJSChxXb3Jrc3BhY2VBbWVuaXR5RGVsZXRlZEV2ZW50EgoKAmlkGAEgASgFEhIKCmRlbGV0ZWRfYnkYAiABKAkSEgoKZGVsZXRlZF9hdBgDIAEoCSJCCh5Xb3Jrc3BhY2VBbWVuaXR5QWN0aXZhdGVkRXZlbnQSCgoCaWQYASABKAUSFAoMYWN0aXZhdGVkX2F0GAIgASgJIkYKIFdvcmtzcGFjZUFtZW5pdHlEZWFjdGl2YXRlZEV2ZW50EgoKAmlkGAEgASgFEhYKDmRlYWN0aXZhdGVkX2F0GAIgASgJIkQKH1dvcmtzcGFjZUFtZW5pdHlEZXByZWNhdGVkRXZlbnQSCgoCaWQYASABKAUSFQoNZGVwcmVjYXRlZF9hdBgCIAEoCSqqAQoUV29ya3NwYWNlQW1lbml0eVR5cGUSJgoiV09SS1NQQUNFX0FNRU5JVFlfVFlQRV9VTlNQRUNJRklFRBAAEiIKHldPUktTUEFDRV9BTUVOSVRZX1RZUEVfQk9PTEVBThABEh8KG1dPUktTUEFDRV9BTUVOSVRZX1RZUEVfSlNPThACEiUKIVdPUktTUEFDRV9BTUVOSVRZX1RZUEVfU1RBTkRBTE9ORRADKrcBChZXb3Jrc3BhY2VBbWVuaXR5U3RhdHVzEigKJFdPUktTUEFDRV9BTUVOSVRZX1NUQVRVU19VTlNQRUNJRklFRBAAEiMKH1dPUktTUEFDRV9BTUVOSVRZX1NUQVRVU19BQ1RJVkUQARIlCiFXT1JLU1BBQ0VfQU1FTklUWV9TVEFUVVNfSU5BQ1RJVkUQAhInCiNXT1JLU1BBQ0VfQU1FTklUWV9TVEFUVVNfREVQUkVDQVRFRBADQjVaM2dpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3dvcmtzcGFjZS92MWIGcHJvdG8z");
+  fileDesc("Chp3b3Jrc3BhY2UvdjEvYW1lbml0eS5wcm90bxIMd29ya3NwYWNlLnYxIqMCChBXb3Jrc3BhY2VBbWVuaXR5EgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSCwoDa2V5GAMgASgJEjAKBHR5cGUYBCABKA4yIi53b3Jrc3BhY2UudjEuV29ya3NwYWNlQW1lbml0eVR5cGUSGAoLZGVzY3JpcHRpb24YBSABKAlIAIgBARIRCgRpY29uGAYgASgJSAGIAQESNAoGc3RhdHVzGAcgASgOMiQud29ya3NwYWNlLnYxLldvcmtzcGFjZUFtZW5pdHlTdGF0dXMSEgoKY3JlYXRlZF9ieRgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJEhIKCnVwZGF0ZWRfYXQYCiABKAlCDgoMX2Rlc2NyaXB0aW9uQgcKBV9pY29uIkcKF1dvcmtzcGFjZUFtZW5pdHlDcmVhdGVkEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSEgoKY3JlYXRlZF9hdBgDIAEoCSI5ChdXb3Jrc3BhY2VBbWVuaXR5VXBkYXRlZBIKCgJpZBgBIAEoBRISCgp1cGRhdGVkX2F0GAIgASgJIk0KF1dvcmtzcGFjZUFtZW5pdHlEZWxldGVkEgoKAmlkGAEgASgFEhIKCmRlbGV0ZWRfYnkYAiABKAkSEgoKZGVsZXRlZF9hdBgDIAEoCSI9ChlXb3Jrc3BhY2VBbWVuaXR5QWN0aXZhdGVkEgoKAmlkGAEgASgFEhQKDGFjdGl2YXRlZF9hdBgCIAEoCSJBChtXb3Jrc3BhY2VBbWVuaXR5RGVhY3RpdmF0ZWQSCgoCaWQYASABKAUSFgoOZGVhY3RpdmF0ZWRfYXQYAiABKAkiPwoaV29ya3NwYWNlQW1lbml0eURlcHJlY2F0ZWQSCgoCaWQYASABKAUSFQoNZGVwcmVjYXRlZF9hdBgCIAEoCSqqAQoUV29ya3NwYWNlQW1lbml0eVR5cGUSJgoiV09SS1NQQUNFX0FNRU5JVFlfVFlQRV9VTlNQRUNJRklFRBAAEiIKHldPUktTUEFDRV9BTUVOSVRZX1RZUEVfQk9PTEVBThABEh8KG1dPUktTUEFDRV9BTUVOSVRZX1RZUEVfSlNPThACEiUKIVdPUktTUEFDRV9BTUVOSVRZX1RZUEVfU1RBTkRBTE9ORRADKrcBChZXb3Jrc3BhY2VBbWVuaXR5U3RhdHVzEigKJFdPUktTUEFDRV9BTUVOSVRZX1NUQVRVU19VTlNQRUNJRklFRBAAEiMKH1dPUktTUEFDRV9BTUVOSVRZX1NUQVRVU19BQ1RJVkUQARIlCiFXT1JLU1BBQ0VfQU1FTklUWV9TVEFUVVNfSU5BQ1RJVkUQAhInCiNXT1JLU1BBQ0VfQU1FTklUWV9TVEFUVVNfREVQUkVDQVRFRBADQjVaM2dpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3dvcmtzcGFjZS92MWIGcHJvdG8z");
 
 /**
  * Describes the message workspace.v1.WorkspaceAmenity.
@@ -18,45 +18,45 @@ export const WorkspaceAmenitySchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 0);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityCreatedEvent.
- * Use `create(WorkspaceAmenityCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityCreated.
+ * Use `create(WorkspaceAmenityCreatedSchema)` to create a new message.
  */
-export const WorkspaceAmenityCreatedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityCreatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 1);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityUpdatedEvent.
- * Use `create(WorkspaceAmenityUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityUpdated.
+ * Use `create(WorkspaceAmenityUpdatedSchema)` to create a new message.
  */
-export const WorkspaceAmenityUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 2);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeletedEvent.
- * Use `create(WorkspaceAmenityDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeleted.
+ * Use `create(WorkspaceAmenityDeletedSchema)` to create a new message.
  */
-export const WorkspaceAmenityDeletedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityDeletedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 3);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityActivatedEvent.
- * Use `create(WorkspaceAmenityActivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityActivated.
+ * Use `create(WorkspaceAmenityActivatedSchema)` to create a new message.
  */
-export const WorkspaceAmenityActivatedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityActivatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 4);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeactivatedEvent.
- * Use `create(WorkspaceAmenityDeactivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeactivated.
+ * Use `create(WorkspaceAmenityDeactivatedSchema)` to create a new message.
  */
-export const WorkspaceAmenityDeactivatedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityDeactivatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 5);
 
 /**
- * Describes the message workspace.v1.WorkspaceAmenityDeprecatedEvent.
- * Use `create(WorkspaceAmenityDeprecatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceAmenityDeprecated.
+ * Use `create(WorkspaceAmenityDeprecatedSchema)` to create a new message.
  */
-export const WorkspaceAmenityDeprecatedEventSchema = /*@__PURE__*/
+export const WorkspaceAmenityDeprecatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_amenity, 6);
 
 /**

@@ -45,6 +45,6 @@ message HasLocationBatchResponse {
 }
 
 // Event: Location deleted (entity unassigned from a place)
-message LocationDeletedEvent {
+message LocationDeleted {
   string location_id = 1;
 }

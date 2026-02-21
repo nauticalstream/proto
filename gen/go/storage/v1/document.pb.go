@@ -154,27 +154,27 @@ func (x *Document) GetUpdatedAt() string {
 }
 
 // Event: Document uploaded
-type DocumentUploadedEvent struct {
+type DocumentUploaded struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DocumentId    string                 `protobuf:"bytes,1,opt,name=document_id,json=documentId,proto3" json:"document_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DocumentUploadedEvent) Reset() {
-	*x = DocumentUploadedEvent{}
+func (x *DocumentUploaded) Reset() {
+	*x = DocumentUploaded{}
 	mi := &file_storage_v1_document_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DocumentUploadedEvent) String() string {
+func (x *DocumentUploaded) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DocumentUploadedEvent) ProtoMessage() {}
+func (*DocumentUploaded) ProtoMessage() {}
 
-func (x *DocumentUploadedEvent) ProtoReflect() protoreflect.Message {
+func (x *DocumentUploaded) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_document_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -186,12 +186,12 @@ func (x *DocumentUploadedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DocumentUploadedEvent.ProtoReflect.Descriptor instead.
-func (*DocumentUploadedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use DocumentUploaded.ProtoReflect.Descriptor instead.
+func (*DocumentUploaded) Descriptor() ([]byte, []int) {
 	return file_storage_v1_document_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *DocumentUploadedEvent) GetDocumentId() string {
+func (x *DocumentUploaded) GetDocumentId() string {
 	if x != nil {
 		return x.DocumentId
 	}
@@ -199,27 +199,27 @@ func (x *DocumentUploadedEvent) GetDocumentId() string {
 }
 
 // Event: Document deleted
-type DocumentDeletedEvent struct {
+type DocumentDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DocumentId    string                 `protobuf:"bytes,1,opt,name=document_id,json=documentId,proto3" json:"document_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *DocumentDeletedEvent) Reset() {
-	*x = DocumentDeletedEvent{}
+func (x *DocumentDeleted) Reset() {
+	*x = DocumentDeleted{}
 	mi := &file_storage_v1_document_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *DocumentDeletedEvent) String() string {
+func (x *DocumentDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DocumentDeletedEvent) ProtoMessage() {}
+func (*DocumentDeleted) ProtoMessage() {}
 
-func (x *DocumentDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *DocumentDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_document_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -231,12 +231,12 @@ func (x *DocumentDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DocumentDeletedEvent.ProtoReflect.Descriptor instead.
-func (*DocumentDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use DocumentDeleted.ProtoReflect.Descriptor instead.
+func (*DocumentDeleted) Descriptor() ([]byte, []int) {
 	return file_storage_v1_document_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *DocumentDeletedEvent) GetDocumentId() string {
+func (x *DocumentDeleted) GetDocumentId() string {
 	if x != nil {
 		return x.DocumentId
 	}
@@ -267,11 +267,11 @@ const file_storage_v1_document_proto_rawDesc = "" +
 	"created_at\x18\v \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\f \x01(\tR\tupdatedAtB\x0f\n" +
-	"\r_workspace_id\"8\n" +
-	"\x15DocumentUploadedEvent\x12\x1f\n" +
+	"\r_workspace_id\"3\n" +
+	"\x10DocumentUploaded\x12\x1f\n" +
 	"\vdocument_id\x18\x01 \x01(\tR\n" +
-	"documentId\"7\n" +
-	"\x14DocumentDeletedEvent\x12\x1f\n" +
+	"documentId\"2\n" +
+	"\x0fDocumentDeleted\x12\x1f\n" +
 	"\vdocument_id\x18\x01 \x01(\tR\n" +
 	"documentIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3"
 
@@ -289,10 +289,10 @@ func file_storage_v1_document_proto_rawDescGZIP() []byte {
 
 var file_storage_v1_document_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_storage_v1_document_proto_goTypes = []any{
-	(*Document)(nil),              // 0: storage.v1.Document
-	(*DocumentUploadedEvent)(nil), // 1: storage.v1.DocumentUploadedEvent
-	(*DocumentDeletedEvent)(nil),  // 2: storage.v1.DocumentDeletedEvent
-	(FileStatus)(0),               // 3: storage.v1.FileStatus
+	(*Document)(nil),         // 0: storage.v1.Document
+	(*DocumentUploaded)(nil), // 1: storage.v1.DocumentUploaded
+	(*DocumentDeleted)(nil),  // 2: storage.v1.DocumentDeleted
+	(FileStatus)(0),          // 3: storage.v1.FileStatus
 }
 var file_storage_v1_document_proto_depIdxs = []int32{
 	3, // 0: storage.v1.Document.status:type_name -> storage.v1.FileStatus

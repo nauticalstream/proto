@@ -28,11 +28,11 @@ message Document {
 // ============================================
 
 // Event: Document uploaded
-message DocumentUploadedEvent {
+message DocumentUploaded {
   string document_id = 1;
 }
 
 // Event: Document deleted
-message DocumentDeletedEvent {
+message DocumentDeleted {
   string document_id = 1;
 }

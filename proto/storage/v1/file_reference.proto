@@ -39,11 +39,11 @@ message HasFileBatchResponse {
 // ============================================
 
 // Event: A file was attached to an entity
-message FileReferencedEvent {
+message FileReferenced {
   string file_reference_id = 1;
 }
 
 // Event: A file was detached from an entity
-message FileUnreferencedEvent {
+message FileUnreferenced {
   string file_reference_id = 1;
 }

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aworkspace/v1/amenity.proto\x12\x0cworkspace.v1\"\xf4\x02\n\x10WorkspaceAmenity\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03key\x18\x03 \x01(\tR\x03key\x12\x36\n\x04type\x18\x04 \x01(\x0e\x32\".workspace.v1.WorkspaceAmenityTypeR\x04type\x12%\n\x0b\x64\x65scription\x18\x05 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x17\n\x04icon\x18\x06 \x01(\tH\x01R\x04icon\x88\x01\x01\x12<\n\x06status\x18\x07 \x01(\x0e\x32$.workspace.v1.WorkspaceAmenityStatusR\x06status\x12\x1d\n\ncreated_by\x18\x08 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\t \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\n \x01(\tR\tupdatedAtB\x0e\n\x0c_descriptionB\x07\n\x05_icon\"a\n\x1cWorkspaceAmenityCreatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\ncreated_at\x18\x03 \x01(\tR\tcreatedAt\"M\n\x1cWorkspaceAmenityUpdatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"l\n\x1cWorkspaceAmenityDeletedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"S\n\x1eWorkspaceAmenityActivatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12!\n\x0c\x61\x63tivated_at\x18\x02 \x01(\tR\x0b\x61\x63tivatedAt\"Y\n WorkspaceAmenityDeactivatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12%\n\x0e\x64\x65\x61\x63tivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"V\n\x1fWorkspaceAmenityDeprecatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12#\n\rdeprecated_at\x18\x02 \x01(\tR\x0c\x64\x65precatedAt*\xaa\x01\n\x14WorkspaceAmenityType\x12&\n\"WORKSPACE_AMENITY_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1eWORKSPACE_AMENITY_TYPE_BOOLEAN\x10\x01\x12\x1f\n\x1bWORKSPACE_AMENITY_TYPE_JSON\x10\x02\x12%\n!WORKSPACE_AMENITY_TYPE_STANDALONE\x10\x03*\xb7\x01\n\x16WorkspaceAmenityStatus\x12(\n$WORKSPACE_AMENITY_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fWORKSPACE_AMENITY_STATUS_ACTIVE\x10\x01\x12%\n!WORKSPACE_AMENITY_STATUS_INACTIVE\x10\x02\x12\'\n#WORKSPACE_AMENITY_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aworkspace/v1/amenity.proto\x12\x0cworkspace.v1\"\xf4\x02\n\x10WorkspaceAmenity\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x10\n\x03key\x18\x03 \x01(\tR\x03key\x12\x36\n\x04type\x18\x04 \x01(\x0e\x32\".workspace.v1.WorkspaceAmenityTypeR\x04type\x12%\n\x0b\x64\x65scription\x18\x05 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x17\n\x04icon\x18\x06 \x01(\tH\x01R\x04icon\x88\x01\x01\x12<\n\x06status\x18\x07 \x01(\x0e\x32$.workspace.v1.WorkspaceAmenityStatusR\x06status\x12\x1d\n\ncreated_by\x18\x08 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\t \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\n \x01(\tR\tupdatedAtB\x0e\n\x0c_descriptionB\x07\n\x05_icon\"\\\n\x17WorkspaceAmenityCreated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n\ncreated_at\x18\x03 \x01(\tR\tcreatedAt\"H\n\x17WorkspaceAmenityUpdated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"g\n\x17WorkspaceAmenityDeleted\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"N\n\x19WorkspaceAmenityActivated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12!\n\x0c\x61\x63tivated_at\x18\x02 \x01(\tR\x0b\x61\x63tivatedAt\"T\n\x1bWorkspaceAmenityDeactivated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12%\n\x0e\x64\x65\x61\x63tivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"Q\n\x1aWorkspaceAmenityDeprecated\x12\x0e\n\x02id\x18\x01 \x01(\x05R\x02id\x12#\n\rdeprecated_at\x18\x02 \x01(\tR\x0c\x64\x65precatedAt*\xaa\x01\n\x14WorkspaceAmenityType\x12&\n\"WORKSPACE_AMENITY_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1eWORKSPACE_AMENITY_TYPE_BOOLEAN\x10\x01\x12\x1f\n\x1bWORKSPACE_AMENITY_TYPE_JSON\x10\x02\x12%\n!WORKSPACE_AMENITY_TYPE_STANDALONE\x10\x03*\xb7\x01\n\x16WorkspaceAmenityStatus\x12(\n$WORKSPACE_AMENITY_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fWORKSPACE_AMENITY_STATUS_ACTIVE\x10\x01\x12%\n!WORKSPACE_AMENITY_STATUS_INACTIVE\x10\x02\x12\'\n#WORKSPACE_AMENITY_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,22 +32,22 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'workspace.v1.amenity_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/nauticalstream/proto/gen/go/workspace/v1'
-  _globals['_WORKSPACEAMENITYTYPE']._serialized_start=972
-  _globals['_WORKSPACEAMENITYTYPE']._serialized_end=1142
-  _globals['_WORKSPACEAMENITYSTATUS']._serialized_start=1145
-  _globals['_WORKSPACEAMENITYSTATUS']._serialized_end=1328
+  _globals['_WORKSPACEAMENITYTYPE']._serialized_start=942
+  _globals['_WORKSPACEAMENITYTYPE']._serialized_end=1112
+  _globals['_WORKSPACEAMENITYSTATUS']._serialized_start=1115
+  _globals['_WORKSPACEAMENITYSTATUS']._serialized_end=1298
   _globals['_WORKSPACEAMENITY']._serialized_start=45
   _globals['_WORKSPACEAMENITY']._serialized_end=417
-  _globals['_WORKSPACEAMENITYCREATEDEVENT']._serialized_start=419
-  _globals['_WORKSPACEAMENITYCREATEDEVENT']._serialized_end=516
-  _globals['_WORKSPACEAMENITYUPDATEDEVENT']._serialized_start=518
-  _globals['_WORKSPACEAMENITYUPDATEDEVENT']._serialized_end=595
-  _globals['_WORKSPACEAMENITYDELETEDEVENT']._serialized_start=597
-  _globals['_WORKSPACEAMENITYDELETEDEVENT']._serialized_end=705
-  _globals['_WORKSPACEAMENITYACTIVATEDEVENT']._serialized_start=707
-  _globals['_WORKSPACEAMENITYACTIVATEDEVENT']._serialized_end=790
-  _globals['_WORKSPACEAMENITYDEACTIVATEDEVENT']._serialized_start=792
-  _globals['_WORKSPACEAMENITYDEACTIVATEDEVENT']._serialized_end=881
-  _globals['_WORKSPACEAMENITYDEPRECATEDEVENT']._serialized_start=883
-  _globals['_WORKSPACEAMENITYDEPRECATEDEVENT']._serialized_end=969
+  _globals['_WORKSPACEAMENITYCREATED']._serialized_start=419
+  _globals['_WORKSPACEAMENITYCREATED']._serialized_end=511
+  _globals['_WORKSPACEAMENITYUPDATED']._serialized_start=513
+  _globals['_WORKSPACEAMENITYUPDATED']._serialized_end=585
+  _globals['_WORKSPACEAMENITYDELETED']._serialized_start=587
+  _globals['_WORKSPACEAMENITYDELETED']._serialized_end=690
+  _globals['_WORKSPACEAMENITYACTIVATED']._serialized_start=692
+  _globals['_WORKSPACEAMENITYACTIVATED']._serialized_end=770
+  _globals['_WORKSPACEAMENITYDEACTIVATED']._serialized_start=772
+  _globals['_WORKSPACEAMENITYDEACTIVATED']._serialized_end=856
+  _globals['_WORKSPACEAMENITYDEPRECATED']._serialized_start=858
+  _globals['_WORKSPACEAMENITYDEPRECATED']._serialized_end=939
 # @@protoc_insertion_point(module_scope)

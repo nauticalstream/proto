@@ -111,9 +111,9 @@ export declare const HasFileBatchResponseSchema: GenMessage<HasFileBatchResponse
 /**
  * Event: A file was attached to an entity
  *
- * @generated from message storage.v1.FileReferencedEvent
+ * @generated from message storage.v1.FileReferenced
  */
-export declare type FileReferencedEvent = Message<"storage.v1.FileReferencedEvent"> & {
+export declare type FileReferenced = Message<"storage.v1.FileReferenced"> & {
   /**
    * @generated from field: string file_reference_id = 1;
    */
@@ -121,17 +121,17 @@ export declare type FileReferencedEvent = Message<"storage.v1.FileReferencedEven
 };
 
 /**
- * Describes the message storage.v1.FileReferencedEvent.
- * Use `create(FileReferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.FileReferenced.
+ * Use `create(FileReferencedSchema)` to create a new message.
  */
-export declare const FileReferencedEventSchema: GenMessage<FileReferencedEvent>;
+export declare const FileReferencedSchema: GenMessage<FileReferenced>;
 
 /**
  * Event: A file was detached from an entity
  *
- * @generated from message storage.v1.FileUnreferencedEvent
+ * @generated from message storage.v1.FileUnreferenced
  */
-export declare type FileUnreferencedEvent = Message<"storage.v1.FileUnreferencedEvent"> & {
+export declare type FileUnreferenced = Message<"storage.v1.FileUnreferenced"> & {
   /**
    * @generated from field: string file_reference_id = 1;
    */
@@ -139,8 +139,8 @@ export declare type FileUnreferencedEvent = Message<"storage.v1.FileUnreferenced
 };
 
 /**
- * Describes the message storage.v1.FileUnreferencedEvent.
- * Use `create(FileUnreferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.FileUnreferenced.
+ * Use `create(FileUnreferencedSchema)` to create a new message.
  */
-export declare const FileUnreferencedEventSchema: GenMessage<FileUnreferencedEvent>;
+export declare const FileUnreferencedSchema: GenMessage<FileUnreferenced>;
 

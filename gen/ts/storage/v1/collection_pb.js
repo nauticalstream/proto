@@ -9,33 +9,33 @@ import { file_storage_v1_shared } from "./shared_pb";
  * Describes the file storage/v1/collection.proto.
  */
 export const file_storage_v1_collection = /*@__PURE__*/
-  fileDesc("ChtzdG9yYWdlL3YxL2NvbGxlY3Rpb24ucHJvdG8SCnN0b3JhZ2UudjEiLwoWQ29sbGVjdGlvbkNyZWF0ZWRFdmVudBIVCg1jb2xsZWN0aW9uX2lkGAEgASgJIi8KFkNvbGxlY3Rpb25EZWxldGVkRXZlbnQSFQoNY29sbGVjdGlvbl9pZBgBIAEoCSJ/ChlDb2xsZWN0aW9uUmVmZXJlbmNlZEV2ZW50EhUKDWNvbGxlY3Rpb25faWQYASABKAkSNQoOcmVmZXJlbmNlX3R5cGUYAiABKA4yHS5zdG9yYWdlLnYxLkZpbGVSZWZlcmVuY2VUeXBlEhQKDHJlZmVyZW5jZV9pZBgDIAEoCSKBAQobQ29sbGVjdGlvblVucmVmZXJlbmNlZEV2ZW50EhUKDWNvbGxlY3Rpb25faWQYASABKAkSNQoOcmVmZXJlbmNlX3R5cGUYAiABKA4yHS5zdG9yYWdlLnYxLkZpbGVSZWZlcmVuY2VUeXBlEhQKDHJlZmVyZW5jZV9pZBgDIAEoCUIzWjFnaXRodWIuY29tL25hdXRpY2Fsc3RyZWFtL3Byb3RvL2dlbi9nby9zdG9yYWdlL3YxYgZwcm90bzM", [file_storage_v1_shared]);
+  fileDesc("ChtzdG9yYWdlL3YxL2NvbGxlY3Rpb24ucHJvdG8SCnN0b3JhZ2UudjEiKgoRQ29sbGVjdGlvbkNyZWF0ZWQSFQoNY29sbGVjdGlvbl9pZBgBIAEoCSIqChFDb2xsZWN0aW9uRGVsZXRlZBIVCg1jb2xsZWN0aW9uX2lkGAEgASgJInoKFENvbGxlY3Rpb25SZWZlcmVuY2VkEhUKDWNvbGxlY3Rpb25faWQYASABKAkSNQoOcmVmZXJlbmNlX3R5cGUYAiABKA4yHS5zdG9yYWdlLnYxLkZpbGVSZWZlcmVuY2VUeXBlEhQKDHJlZmVyZW5jZV9pZBgDIAEoCSJ8ChZDb2xsZWN0aW9uVW5yZWZlcmVuY2VkEhUKDWNvbGxlY3Rpb25faWQYASABKAkSNQoOcmVmZXJlbmNlX3R5cGUYAiABKA4yHS5zdG9yYWdlLnYxLkZpbGVSZWZlcmVuY2VUeXBlEhQKDHJlZmVyZW5jZV9pZBgDIAEoCUIzWjFnaXRodWIuY29tL25hdXRpY2Fsc3RyZWFtL3Byb3RvL2dlbi9nby9zdG9yYWdlL3YxYgZwcm90bzM", [file_storage_v1_shared]);
 
 /**
- * Describes the message storage.v1.CollectionCreatedEvent.
- * Use `create(CollectionCreatedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionCreated.
+ * Use `create(CollectionCreatedSchema)` to create a new message.
  */
-export const CollectionCreatedEventSchema = /*@__PURE__*/
+export const CollectionCreatedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_collection, 0);
 
 /**
- * Describes the message storage.v1.CollectionDeletedEvent.
- * Use `create(CollectionDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionDeleted.
+ * Use `create(CollectionDeletedSchema)` to create a new message.
  */
-export const CollectionDeletedEventSchema = /*@__PURE__*/
+export const CollectionDeletedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_collection, 1);
 
 /**
- * Describes the message storage.v1.CollectionReferencedEvent.
- * Use `create(CollectionReferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionReferenced.
+ * Use `create(CollectionReferencedSchema)` to create a new message.
  */
-export const CollectionReferencedEventSchema = /*@__PURE__*/
+export const CollectionReferencedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_collection, 2);
 
 /**
- * Describes the message storage.v1.CollectionUnreferencedEvent.
- * Use `create(CollectionUnreferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.CollectionUnreferenced.
+ * Use `create(CollectionUnreferencedSchema)` to create a new message.
  */
-export const CollectionUnreferencedEventSchema = /*@__PURE__*/
+export const CollectionUnreferencedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_collection, 3);
 

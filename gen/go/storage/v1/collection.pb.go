@@ -22,27 +22,27 @@ const (
 )
 
 // Event: Collection created
-type CollectionCreatedEvent struct {
+type CollectionCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CollectionId  string                 `protobuf:"bytes,1,opt,name=collection_id,json=collectionId,proto3" json:"collection_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CollectionCreatedEvent) Reset() {
-	*x = CollectionCreatedEvent{}
+func (x *CollectionCreated) Reset() {
+	*x = CollectionCreated{}
 	mi := &file_storage_v1_collection_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CollectionCreatedEvent) String() string {
+func (x *CollectionCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollectionCreatedEvent) ProtoMessage() {}
+func (*CollectionCreated) ProtoMessage() {}
 
-func (x *CollectionCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *CollectionCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_collection_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,12 +54,12 @@ func (x *CollectionCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollectionCreatedEvent.ProtoReflect.Descriptor instead.
-func (*CollectionCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use CollectionCreated.ProtoReflect.Descriptor instead.
+func (*CollectionCreated) Descriptor() ([]byte, []int) {
 	return file_storage_v1_collection_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CollectionCreatedEvent) GetCollectionId() string {
+func (x *CollectionCreated) GetCollectionId() string {
 	if x != nil {
 		return x.CollectionId
 	}
@@ -67,27 +67,27 @@ func (x *CollectionCreatedEvent) GetCollectionId() string {
 }
 
 // Event: Collection deleted
-type CollectionDeletedEvent struct {
+type CollectionDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CollectionId  string                 `protobuf:"bytes,1,opt,name=collection_id,json=collectionId,proto3" json:"collection_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CollectionDeletedEvent) Reset() {
-	*x = CollectionDeletedEvent{}
+func (x *CollectionDeleted) Reset() {
+	*x = CollectionDeleted{}
 	mi := &file_storage_v1_collection_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CollectionDeletedEvent) String() string {
+func (x *CollectionDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollectionDeletedEvent) ProtoMessage() {}
+func (*CollectionDeleted) ProtoMessage() {}
 
-func (x *CollectionDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *CollectionDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_collection_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -99,12 +99,12 @@ func (x *CollectionDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollectionDeletedEvent.ProtoReflect.Descriptor instead.
-func (*CollectionDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use CollectionDeleted.ProtoReflect.Descriptor instead.
+func (*CollectionDeleted) Descriptor() ([]byte, []int) {
 	return file_storage_v1_collection_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CollectionDeletedEvent) GetCollectionId() string {
+func (x *CollectionDeleted) GetCollectionId() string {
 	if x != nil {
 		return x.CollectionId
 	}
@@ -112,7 +112,7 @@ func (x *CollectionDeletedEvent) GetCollectionId() string {
 }
 
 // Event: Collection attached to an entity
-type CollectionReferencedEvent struct {
+type CollectionReferenced struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CollectionId  string                 `protobuf:"bytes,1,opt,name=collection_id,json=collectionId,proto3" json:"collection_id,omitempty"`
 	ReferenceType FileReferenceType      `protobuf:"varint,2,opt,name=reference_type,json=referenceType,proto3,enum=storage.v1.FileReferenceType" json:"reference_type,omitempty"`
@@ -121,20 +121,20 @@ type CollectionReferencedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CollectionReferencedEvent) Reset() {
-	*x = CollectionReferencedEvent{}
+func (x *CollectionReferenced) Reset() {
+	*x = CollectionReferenced{}
 	mi := &file_storage_v1_collection_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CollectionReferencedEvent) String() string {
+func (x *CollectionReferenced) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollectionReferencedEvent) ProtoMessage() {}
+func (*CollectionReferenced) ProtoMessage() {}
 
-func (x *CollectionReferencedEvent) ProtoReflect() protoreflect.Message {
+func (x *CollectionReferenced) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_collection_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -146,26 +146,26 @@ func (x *CollectionReferencedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollectionReferencedEvent.ProtoReflect.Descriptor instead.
-func (*CollectionReferencedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use CollectionReferenced.ProtoReflect.Descriptor instead.
+func (*CollectionReferenced) Descriptor() ([]byte, []int) {
 	return file_storage_v1_collection_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CollectionReferencedEvent) GetCollectionId() string {
+func (x *CollectionReferenced) GetCollectionId() string {
 	if x != nil {
 		return x.CollectionId
 	}
 	return ""
 }
 
-func (x *CollectionReferencedEvent) GetReferenceType() FileReferenceType {
+func (x *CollectionReferenced) GetReferenceType() FileReferenceType {
 	if x != nil {
 		return x.ReferenceType
 	}
 	return FileReferenceType_FILE_REFERENCE_TYPE_UNSPECIFIED
 }
 
-func (x *CollectionReferencedEvent) GetReferenceId() string {
+func (x *CollectionReferenced) GetReferenceId() string {
 	if x != nil {
 		return x.ReferenceId
 	}
@@ -173,7 +173,7 @@ func (x *CollectionReferencedEvent) GetReferenceId() string {
 }
 
 // Event: Collection detached from an entity
-type CollectionUnreferencedEvent struct {
+type CollectionUnreferenced struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	CollectionId  string                 `protobuf:"bytes,1,opt,name=collection_id,json=collectionId,proto3" json:"collection_id,omitempty"`
 	ReferenceType FileReferenceType      `protobuf:"varint,2,opt,name=reference_type,json=referenceType,proto3,enum=storage.v1.FileReferenceType" json:"reference_type,omitempty"`
@@ -182,20 +182,20 @@ type CollectionUnreferencedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CollectionUnreferencedEvent) Reset() {
-	*x = CollectionUnreferencedEvent{}
+func (x *CollectionUnreferenced) Reset() {
+	*x = CollectionUnreferenced{}
 	mi := &file_storage_v1_collection_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CollectionUnreferencedEvent) String() string {
+func (x *CollectionUnreferenced) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CollectionUnreferencedEvent) ProtoMessage() {}
+func (*CollectionUnreferenced) ProtoMessage() {}
 
-func (x *CollectionUnreferencedEvent) ProtoReflect() protoreflect.Message {
+func (x *CollectionUnreferenced) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_collection_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -207,26 +207,26 @@ func (x *CollectionUnreferencedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CollectionUnreferencedEvent.ProtoReflect.Descriptor instead.
-func (*CollectionUnreferencedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use CollectionUnreferenced.ProtoReflect.Descriptor instead.
+func (*CollectionUnreferenced) Descriptor() ([]byte, []int) {
 	return file_storage_v1_collection_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *CollectionUnreferencedEvent) GetCollectionId() string {
+func (x *CollectionUnreferenced) GetCollectionId() string {
 	if x != nil {
 		return x.CollectionId
 	}
 	return ""
 }
 
-func (x *CollectionUnreferencedEvent) GetReferenceType() FileReferenceType {
+func (x *CollectionUnreferenced) GetReferenceType() FileReferenceType {
 	if x != nil {
 		return x.ReferenceType
 	}
 	return FileReferenceType_FILE_REFERENCE_TYPE_UNSPECIFIED
 }
 
-func (x *CollectionUnreferencedEvent) GetReferenceId() string {
+func (x *CollectionUnreferenced) GetReferenceId() string {
 	if x != nil {
 		return x.ReferenceId
 	}
@@ -238,16 +238,16 @@ var File_storage_v1_collection_proto protoreflect.FileDescriptor
 const file_storage_v1_collection_proto_rawDesc = "" +
 	"\n" +
 	"\x1bstorage/v1/collection.proto\x12\n" +
-	"storage.v1\x1a\x17storage/v1/shared.proto\"=\n" +
-	"\x16CollectionCreatedEvent\x12#\n" +
-	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\"=\n" +
-	"\x16CollectionDeletedEvent\x12#\n" +
-	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\"\xa9\x01\n" +
-	"\x19CollectionReferencedEvent\x12#\n" +
+	"storage.v1\x1a\x17storage/v1/shared.proto\"8\n" +
+	"\x11CollectionCreated\x12#\n" +
+	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\"8\n" +
+	"\x11CollectionDeleted\x12#\n" +
+	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\"\xa4\x01\n" +
+	"\x14CollectionReferenced\x12#\n" +
 	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\x12D\n" +
 	"\x0ereference_type\x18\x02 \x01(\x0e2\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n" +
-	"\freference_id\x18\x03 \x01(\tR\vreferenceId\"\xab\x01\n" +
-	"\x1bCollectionUnreferencedEvent\x12#\n" +
+	"\freference_id\x18\x03 \x01(\tR\vreferenceId\"\xa6\x01\n" +
+	"\x16CollectionUnreferenced\x12#\n" +
 	"\rcollection_id\x18\x01 \x01(\tR\fcollectionId\x12D\n" +
 	"\x0ereference_type\x18\x02 \x01(\x0e2\x1d.storage.v1.FileReferenceTypeR\rreferenceType\x12!\n" +
 	"\freference_id\x18\x03 \x01(\tR\vreferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3"
@@ -266,15 +266,15 @@ func file_storage_v1_collection_proto_rawDescGZIP() []byte {
 
 var file_storage_v1_collection_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_storage_v1_collection_proto_goTypes = []any{
-	(*CollectionCreatedEvent)(nil),      // 0: storage.v1.CollectionCreatedEvent
-	(*CollectionDeletedEvent)(nil),      // 1: storage.v1.CollectionDeletedEvent
-	(*CollectionReferencedEvent)(nil),   // 2: storage.v1.CollectionReferencedEvent
-	(*CollectionUnreferencedEvent)(nil), // 3: storage.v1.CollectionUnreferencedEvent
-	(FileReferenceType)(0),              // 4: storage.v1.FileReferenceType
+	(*CollectionCreated)(nil),      // 0: storage.v1.CollectionCreated
+	(*CollectionDeleted)(nil),      // 1: storage.v1.CollectionDeleted
+	(*CollectionReferenced)(nil),   // 2: storage.v1.CollectionReferenced
+	(*CollectionUnreferenced)(nil), // 3: storage.v1.CollectionUnreferenced
+	(FileReferenceType)(0),         // 4: storage.v1.FileReferenceType
 }
 var file_storage_v1_collection_proto_depIdxs = []int32{
-	4, // 0: storage.v1.CollectionReferencedEvent.reference_type:type_name -> storage.v1.FileReferenceType
-	4, // 1: storage.v1.CollectionUnreferencedEvent.reference_type:type_name -> storage.v1.FileReferenceType
+	4, // 0: storage.v1.CollectionReferenced.reference_type:type_name -> storage.v1.FileReferenceType
+	4, // 1: storage.v1.CollectionUnreferenced.reference_type:type_name -> storage.v1.FileReferenceType
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

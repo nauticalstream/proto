@@ -9,7 +9,7 @@ import { file_storage_v1_shared } from "./shared_pb";
  * Describes the file storage/v1/document.proto.
  */
 export const file_storage_v1_document = /*@__PURE__*/
-  fileDesc("ChlzdG9yYWdlL3YxL2RvY3VtZW50LnByb3RvEgpzdG9yYWdlLnYxIpMCCghEb2N1bWVudBIKCgJpZBgBIAEoCRIQCghmaWxlbmFtZRgCIAEoCRIVCg1vcmlnaW5hbF9uYW1lGAMgASgJEhEKCW1pbWVfdHlwZRgEIAEoCRIMCgRzaXplGAUgASgFEgsKA3VybBgGIAEoCRITCgtzdG9yYWdlX2tleRgHIAEoCRImCgZzdGF0dXMYCCABKA4yFi5zdG9yYWdlLnYxLkZpbGVTdGF0dXMSEwoLdXBsb2FkZWRfYnkYCSABKAkSGQoMd29ya3NwYWNlX2lkGAogASgJSACIAQESEgoKY3JlYXRlZF9hdBgLIAEoCRISCgp1cGRhdGVkX2F0GAwgASgJQg8KDV93b3Jrc3BhY2VfaWQiLAoVRG9jdW1lbnRVcGxvYWRlZEV2ZW50EhMKC2RvY3VtZW50X2lkGAEgASgJIisKFERvY3VtZW50RGVsZXRlZEV2ZW50EhMKC2RvY3VtZW50X2lkGAEgASgJQjNaMWdpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3N0b3JhZ2UvdjFiBnByb3RvMw", [file_storage_v1_shared]);
+  fileDesc("ChlzdG9yYWdlL3YxL2RvY3VtZW50LnByb3RvEgpzdG9yYWdlLnYxIpMCCghEb2N1bWVudBIKCgJpZBgBIAEoCRIQCghmaWxlbmFtZRgCIAEoCRIVCg1vcmlnaW5hbF9uYW1lGAMgASgJEhEKCW1pbWVfdHlwZRgEIAEoCRIMCgRzaXplGAUgASgFEgsKA3VybBgGIAEoCRITCgtzdG9yYWdlX2tleRgHIAEoCRImCgZzdGF0dXMYCCABKA4yFi5zdG9yYWdlLnYxLkZpbGVTdGF0dXMSEwoLdXBsb2FkZWRfYnkYCSABKAkSGQoMd29ya3NwYWNlX2lkGAogASgJSACIAQESEgoKY3JlYXRlZF9hdBgLIAEoCRISCgp1cGRhdGVkX2F0GAwgASgJQg8KDV93b3Jrc3BhY2VfaWQiJwoQRG9jdW1lbnRVcGxvYWRlZBITCgtkb2N1bWVudF9pZBgBIAEoCSImCg9Eb2N1bWVudERlbGV0ZWQSEwoLZG9jdW1lbnRfaWQYASABKAlCM1oxZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vc3RvcmFnZS92MWIGcHJvdG8z", [file_storage_v1_shared]);
 
 /**
  * Describes the message storage.v1.Document.
@@ -19,16 +19,16 @@ export const DocumentSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_document, 0);
 
 /**
- * Describes the message storage.v1.DocumentUploadedEvent.
- * Use `create(DocumentUploadedEventSchema)` to create a new message.
+ * Describes the message storage.v1.DocumentUploaded.
+ * Use `create(DocumentUploadedSchema)` to create a new message.
  */
-export const DocumentUploadedEventSchema = /*@__PURE__*/
+export const DocumentUploadedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_document, 1);
 
 /**
- * Describes the message storage.v1.DocumentDeletedEvent.
- * Use `create(DocumentDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.DocumentDeleted.
+ * Use `create(DocumentDeletedSchema)` to create a new message.
  */
-export const DocumentDeletedEventSchema = /*@__PURE__*/
+export const DocumentDeletedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_document, 2);
 

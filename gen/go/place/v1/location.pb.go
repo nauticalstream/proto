@@ -336,27 +336,27 @@ func (x *HasLocationBatchResponse) GetResults() []*HasLocationBatchResult {
 }
 
 // Event: Location deleted (entity unassigned from a place)
-type LocationDeletedEvent struct {
+type LocationDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	LocationId    string                 `protobuf:"bytes,1,opt,name=location_id,json=locationId,proto3" json:"location_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *LocationDeletedEvent) Reset() {
-	*x = LocationDeletedEvent{}
+func (x *LocationDeleted) Reset() {
+	*x = LocationDeleted{}
 	mi := &file_place_v1_location_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *LocationDeletedEvent) String() string {
+func (x *LocationDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*LocationDeletedEvent) ProtoMessage() {}
+func (*LocationDeleted) ProtoMessage() {}
 
-func (x *LocationDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *LocationDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_place_v1_location_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -368,12 +368,12 @@ func (x *LocationDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use LocationDeletedEvent.ProtoReflect.Descriptor instead.
-func (*LocationDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use LocationDeleted.ProtoReflect.Descriptor instead.
+func (*LocationDeleted) Descriptor() ([]byte, []int) {
 	return file_place_v1_location_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *LocationDeletedEvent) GetLocationId() string {
+func (x *LocationDeleted) GetLocationId() string {
 	if x != nil {
 		return x.LocationId
 	}
@@ -397,8 +397,8 @@ const file_place_v1_location_proto_rawDesc = "" +
 	"\freference_id\x18\x02 \x01(\tR\vreferenceId\x12!\n" +
 	"\fhas_location\x18\x03 \x01(\bR\vhasLocation\"W\n" +
 	"\x18HasLocationBatchResponse\x12;\n" +
-	"\aresults\x18\x01 \x03(\v2!.places.v1.HasLocationBatchResultR\aresults\"7\n" +
-	"\x14LocationDeletedEvent\x12\x1f\n" +
+	"\aresults\x18\x01 \x03(\v2!.places.v1.HasLocationBatchResultR\aresults\"2\n" +
+	"\x0fLocationDeleted\x12\x1f\n" +
 	"\vlocation_id\x18\x01 \x01(\tR\n" +
 	"locationId*\xbc\x02\n" +
 	"\x15LocationReferenceType\x12'\n" +
@@ -432,7 +432,7 @@ var file_place_v1_location_proto_goTypes = []any{
 	(*HasLocationBatchRequest)(nil),  // 3: places.v1.HasLocationBatchRequest
 	(*HasLocationBatchResult)(nil),   // 4: places.v1.HasLocationBatchResult
 	(*HasLocationBatchResponse)(nil), // 5: places.v1.HasLocationBatchResponse
-	(*LocationDeletedEvent)(nil),     // 6: places.v1.LocationDeletedEvent
+	(*LocationDeleted)(nil),          // 6: places.v1.LocationDeleted
 }
 var file_place_v1_location_proto_depIdxs = []int32{
 	0, // 0: places.v1.HasLocationRequest.reference_type:type_name -> places.v1.LocationReferenceType

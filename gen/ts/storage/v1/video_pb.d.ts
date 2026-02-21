@@ -115,9 +115,9 @@ export declare const VideoSchema: GenMessage<Video>;
 /**
  * Event: Video uploaded (status = PENDING, transcoding not started yet)
  *
- * @generated from message storage.v1.VideoUploadedEvent
+ * @generated from message storage.v1.VideoUploaded
  */
-export declare type VideoUploadedEvent = Message<"storage.v1.VideoUploadedEvent"> & {
+export declare type VideoUploaded = Message<"storage.v1.VideoUploaded"> & {
   /**
    * @generated from field: string video_id = 1;
    */
@@ -125,17 +125,17 @@ export declare type VideoUploadedEvent = Message<"storage.v1.VideoUploadedEvent"
 };
 
 /**
- * Describes the message storage.v1.VideoUploadedEvent.
- * Use `create(VideoUploadedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoUploaded.
+ * Use `create(VideoUploadedSchema)` to create a new message.
  */
-export declare const VideoUploadedEventSchema: GenMessage<VideoUploadedEvent>;
+export declare const VideoUploadedSchema: GenMessage<VideoUploaded>;
 
 /**
  * Event: Video transcoded (status = ACTIVE, HLS/variants ready)
  *
- * @generated from message storage.v1.VideoProcessedEvent
+ * @generated from message storage.v1.VideoProcessed
  */
-export declare type VideoProcessedEvent = Message<"storage.v1.VideoProcessedEvent"> & {
+export declare type VideoProcessed = Message<"storage.v1.VideoProcessed"> & {
   /**
    * @generated from field: string video_id = 1;
    */
@@ -143,17 +143,17 @@ export declare type VideoProcessedEvent = Message<"storage.v1.VideoProcessedEven
 };
 
 /**
- * Describes the message storage.v1.VideoProcessedEvent.
- * Use `create(VideoProcessedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoProcessed.
+ * Use `create(VideoProcessedSchema)` to create a new message.
  */
-export declare const VideoProcessedEventSchema: GenMessage<VideoProcessedEvent>;
+export declare const VideoProcessedSchema: GenMessage<VideoProcessed>;
 
 /**
  * Event: Video deleted
  *
- * @generated from message storage.v1.VideoDeletedEvent
+ * @generated from message storage.v1.VideoDeleted
  */
-export declare type VideoDeletedEvent = Message<"storage.v1.VideoDeletedEvent"> & {
+export declare type VideoDeleted = Message<"storage.v1.VideoDeleted"> & {
   /**
    * @generated from field: string video_id = 1;
    */
@@ -161,8 +161,8 @@ export declare type VideoDeletedEvent = Message<"storage.v1.VideoDeletedEvent"> 
 };
 
 /**
- * Describes the message storage.v1.VideoDeletedEvent.
- * Use `create(VideoDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.VideoDeleted.
+ * Use `create(VideoDeletedSchema)` to create a new message.
  */
-export declare const VideoDeletedEventSchema: GenMessage<VideoDeletedEvent>;
+export declare const VideoDeletedSchema: GenMessage<VideoDeleted>;
 

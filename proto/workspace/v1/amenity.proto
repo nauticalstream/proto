@@ -45,39 +45,39 @@ message WorkspaceAmenity {
 // ============================================
 
 // Event: Amenity created
-message WorkspaceAmenityCreatedEvent {
+message WorkspaceAmenityCreated {
   int32 id = 1;
   string name = 2;
   string created_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Amenity updated
-message WorkspaceAmenityUpdatedEvent {
+message WorkspaceAmenityUpdated {
   int32 id = 1;
   string updated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Amenity deleted
-message WorkspaceAmenityDeletedEvent {
+message WorkspaceAmenityDeleted {
   int32 id = 1;
   string deleted_by = 2;
   string deleted_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Amenity activated
-message WorkspaceAmenityActivatedEvent {
+message WorkspaceAmenityActivated {
   int32 id = 1;
   string activated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Amenity deactivated
-message WorkspaceAmenityDeactivatedEvent {
+message WorkspaceAmenityDeactivated {
   int32 id = 1;
   string deactivated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Amenity deprecated
-message WorkspaceAmenityDeprecatedEvent {
+message WorkspaceAmenityDeprecated {
   int32 id = 1;
   string deprecated_at = 2; // ISO 8601 datetime string
 }

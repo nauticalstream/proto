@@ -118,9 +118,9 @@ export declare const HasLocationBatchResponseSchema: GenMessage<HasLocationBatch
 /**
  * Event: Location deleted (entity unassigned from a place)
  *
- * @generated from message places.v1.LocationDeletedEvent
+ * @generated from message places.v1.LocationDeleted
  */
-export declare type LocationDeletedEvent = Message<"places.v1.LocationDeletedEvent"> & {
+export declare type LocationDeleted = Message<"places.v1.LocationDeleted"> & {
   /**
    * @generated from field: string location_id = 1;
    */
@@ -128,10 +128,10 @@ export declare type LocationDeletedEvent = Message<"places.v1.LocationDeletedEve
 };
 
 /**
- * Describes the message places.v1.LocationDeletedEvent.
- * Use `create(LocationDeletedEventSchema)` to create a new message.
+ * Describes the message places.v1.LocationDeleted.
+ * Use `create(LocationDeletedSchema)` to create a new message.
  */
-export declare const LocationDeletedEventSchema: GenMessage<LocationDeletedEvent>;
+export declare const LocationDeletedSchema: GenMessage<LocationDeleted>;
 
 /**
  * Entity types that can have a location assigned

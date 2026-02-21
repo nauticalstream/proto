@@ -164,11 +164,11 @@ export declare type UserDetails = Message<"user.v1.UserDetails"> & {
 export declare const UserDetailsSchema: GenMessage<UserDetails>;
 
 /**
- * Query user by ID or email
+ * Get user by ID or email
  *
- * @generated from message user.v1.QueryUserRequest
+ * @generated from message user.v1.GetUserRequest
  */
-export declare type QueryUserRequest = Message<"user.v1.QueryUserRequest"> & {
+export declare type GetUserRequest = Message<"user.v1.GetUserRequest"> & {
   /**
    * @generated from field: optional string id = 1;
    */
@@ -181,15 +181,15 @@ export declare type QueryUserRequest = Message<"user.v1.QueryUserRequest"> & {
 };
 
 /**
- * Describes the message user.v1.QueryUserRequest.
- * Use `create(QueryUserRequestSchema)` to create a new message.
+ * Describes the message user.v1.GetUserRequest.
+ * Use `create(GetUserRequestSchema)` to create a new message.
  */
-export declare const QueryUserRequestSchema: GenMessage<QueryUserRequest>;
+export declare const GetUserRequestSchema: GenMessage<GetUserRequest>;
 
 /**
- * @generated from message user.v1.QueryUserResponse
+ * @generated from message user.v1.GetUserResponse
  */
-export declare type QueryUserResponse = Message<"user.v1.QueryUserResponse"> & {
+export declare type GetUserResponse = Message<"user.v1.GetUserResponse"> & {
   /**
    * @generated from field: optional user.v1.User user = 1;
    */
@@ -197,17 +197,17 @@ export declare type QueryUserResponse = Message<"user.v1.QueryUserResponse"> & {
 };
 
 /**
- * Describes the message user.v1.QueryUserResponse.
- * Use `create(QueryUserResponseSchema)` to create a new message.
+ * Describes the message user.v1.GetUserResponse.
+ * Use `create(GetUserResponseSchema)` to create a new message.
  */
-export declare const QueryUserResponseSchema: GenMessage<QueryUserResponse>;
+export declare const GetUserResponseSchema: GenMessage<GetUserResponse>;
 
 /**
- * Query multiple users by IDs
+ * List multiple users by IDs
  *
- * @generated from message user.v1.QueryUsersRequest
+ * @generated from message user.v1.ListUsersRequest
  */
-export declare type QueryUsersRequest = Message<"user.v1.QueryUsersRequest"> & {
+export declare type ListUsersRequest = Message<"user.v1.ListUsersRequest"> & {
   /**
    * @generated from field: repeated string ids = 1;
    */
@@ -215,15 +215,15 @@ export declare type QueryUsersRequest = Message<"user.v1.QueryUsersRequest"> & {
 };
 
 /**
- * Describes the message user.v1.QueryUsersRequest.
- * Use `create(QueryUsersRequestSchema)` to create a new message.
+ * Describes the message user.v1.ListUsersRequest.
+ * Use `create(ListUsersRequestSchema)` to create a new message.
  */
-export declare const QueryUsersRequestSchema: GenMessage<QueryUsersRequest>;
+export declare const ListUsersRequestSchema: GenMessage<ListUsersRequest>;
 
 /**
- * @generated from message user.v1.QueryUsersResponse
+ * @generated from message user.v1.ListUsersResponse
  */
-export declare type QueryUsersResponse = Message<"user.v1.QueryUsersResponse"> & {
+export declare type ListUsersResponse = Message<"user.v1.ListUsersResponse"> & {
   /**
    * @generated from field: repeated user.v1.User users = 1;
    */
@@ -231,17 +231,17 @@ export declare type QueryUsersResponse = Message<"user.v1.QueryUsersResponse"> &
 };
 
 /**
- * Describes the message user.v1.QueryUsersResponse.
- * Use `create(QueryUsersResponseSchema)` to create a new message.
+ * Describes the message user.v1.ListUsersResponse.
+ * Use `create(ListUsersResponseSchema)` to create a new message.
  */
-export declare const QueryUsersResponseSchema: GenMessage<QueryUsersResponse>;
+export declare const ListUsersResponseSchema: GenMessage<ListUsersResponse>;
 
 /**
  * Event: User created
  *
- * @generated from message user.v1.UserCreatedEvent
+ * @generated from message user.v1.UserCreated
  */
-export declare type UserCreatedEvent = Message<"user.v1.UserCreatedEvent"> & {
+export declare type UserCreated = Message<"user.v1.UserCreated"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -276,17 +276,17 @@ export declare type UserCreatedEvent = Message<"user.v1.UserCreatedEvent"> & {
 };
 
 /**
- * Describes the message user.v1.UserCreatedEvent.
- * Use `create(UserCreatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserCreated.
+ * Use `create(UserCreatedSchema)` to create a new message.
  */
-export declare const UserCreatedEventSchema: GenMessage<UserCreatedEvent>;
+export declare const UserCreatedSchema: GenMessage<UserCreated>;
 
 /**
  * Event: User updated
  *
- * @generated from message user.v1.UserUpdatedEvent
+ * @generated from message user.v1.UserUpdated
  */
-export declare type UserUpdatedEvent = Message<"user.v1.UserUpdatedEvent"> & {
+export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -348,17 +348,17 @@ export declare type UserUpdatedEvent = Message<"user.v1.UserUpdatedEvent"> & {
 };
 
 /**
- * Describes the message user.v1.UserUpdatedEvent.
- * Use `create(UserUpdatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserUpdated.
+ * Use `create(UserUpdatedSchema)` to create a new message.
  */
-export declare const UserUpdatedEventSchema: GenMessage<UserUpdatedEvent>;
+export declare const UserUpdatedSchema: GenMessage<UserUpdated>;
 
 /**
  * Event: User deleted
  *
- * @generated from message user.v1.UserDeletedEvent
+ * @generated from message user.v1.UserDeleted
  */
-export declare type UserDeletedEvent = Message<"user.v1.UserDeletedEvent"> & {
+export declare type UserDeleted = Message<"user.v1.UserDeleted"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -373,17 +373,17 @@ export declare type UserDeletedEvent = Message<"user.v1.UserDeletedEvent"> & {
 };
 
 /**
- * Describes the message user.v1.UserDeletedEvent.
- * Use `create(UserDeletedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserDeleted.
+ * Use `create(UserDeletedSchema)` to create a new message.
  */
-export declare const UserDeletedEventSchema: GenMessage<UserDeletedEvent>;
+export declare const UserDeletedSchema: GenMessage<UserDeleted>;
 
 /**
  * Event: User profile updated
  *
- * @generated from message user.v1.UserProfileUpdatedEvent
+ * @generated from message user.v1.UserProfileUpdated
  */
-export declare type UserProfileUpdatedEvent = Message<"user.v1.UserProfileUpdatedEvent"> & {
+export declare type UserProfileUpdated = Message<"user.v1.UserProfileUpdated"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -403,17 +403,17 @@ export declare type UserProfileUpdatedEvent = Message<"user.v1.UserProfileUpdate
 };
 
 /**
- * Describes the message user.v1.UserProfileUpdatedEvent.
- * Use `create(UserProfileUpdatedEventSchema)` to create a new message.
+ * Describes the message user.v1.UserProfileUpdated.
+ * Use `create(UserProfileUpdatedSchema)` to create a new message.
  */
-export declare const UserProfileUpdatedEventSchema: GenMessage<UserProfileUpdatedEvent>;
+export declare const UserProfileUpdatedSchema: GenMessage<UserProfileUpdated>;
 
 /**
  * Event: Onboarding status changed
  *
- * @generated from message user.v1.UserOnboardingStatusEvent
+ * @generated from message user.v1.UserOnboardingStatus
  */
-export declare type UserOnboardingStatusEvent = Message<"user.v1.UserOnboardingStatusEvent"> & {
+export declare type UserOnboardingStatus = Message<"user.v1.UserOnboardingStatus"> & {
   /**
    * @generated from field: string user_id = 1;
    */
@@ -438,8 +438,8 @@ export declare type UserOnboardingStatusEvent = Message<"user.v1.UserOnboardingS
 };
 
 /**
- * Describes the message user.v1.UserOnboardingStatusEvent.
- * Use `create(UserOnboardingStatusEventSchema)` to create a new message.
+ * Describes the message user.v1.UserOnboardingStatus.
+ * Use `create(UserOnboardingStatusSchema)` to create a new message.
  */
-export declare const UserOnboardingStatusEventSchema: GenMessage<UserOnboardingStatusEvent>;
+export declare const UserOnboardingStatusSchema: GenMessage<UserOnboardingStatus>;
 

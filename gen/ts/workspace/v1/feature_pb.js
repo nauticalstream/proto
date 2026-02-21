@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file workspace/v1/feature.proto.
  */
 export const file_workspace_v1_feature = /*@__PURE__*/
-  fileDesc("Chp3b3Jrc3BhY2UvdjEvZmVhdHVyZS5wcm90bxIMd29ya3NwYWNlLnYxIroBChBXb3Jrc3BhY2VGZWF0dXJlEgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRISCgphbWVuaXR5X2lkGAMgASgFEjQKBnN0YXR1cxgEIAEoDjIkLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VGZWF0dXJlU3RhdHVzEhIKCmNyZWF0ZWRfYnkYBSABKAkSEgoKY3JlYXRlZF9hdBgGIAEoCRISCgp1cGRhdGVkX2F0GAcgASgJImgKHFdvcmtzcGFjZUZlYXR1cmVDcmVhdGVkRXZlbnQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEhIKCmFtZW5pdHlfaWQYAyABKAUSEgoKY3JlYXRlZF9hdBgEIAEoCSI+ChxXb3Jrc3BhY2VGZWF0dXJlVXBkYXRlZEV2ZW50EgoKAmlkGAEgASgJEhIKCnVwZGF0ZWRfYXQYAiABKAkiUgocV29ya3NwYWNlRmVhdHVyZURlbGV0ZWRFdmVudBIKCgJpZBgBIAEoCRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkqtwEKFldvcmtzcGFjZUZlYXR1cmVTdGF0dXMSKAokV09SS1NQQUNFX0ZFQVRVUkVfU1RBVFVTX1VOU1BFQ0lGSUVEEAASIwofV09SS1NQQUNFX0ZFQVRVUkVfU1RBVFVTX0FDVElWRRABEiUKIVdPUktTUEFDRV9GRUFUVVJFX1NUQVRVU19JTkFDVElWRRACEicKI1dPUktTUEFDRV9GRUFUVVJFX1NUQVRVU19ERVBSRUNBVEVEEANCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM");
+  fileDesc("Chp3b3Jrc3BhY2UvdjEvZmVhdHVyZS5wcm90bxIMd29ya3NwYWNlLnYxIroBChBXb3Jrc3BhY2VGZWF0dXJlEgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRISCgphbWVuaXR5X2lkGAMgASgFEjQKBnN0YXR1cxgEIAEoDjIkLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VGZWF0dXJlU3RhdHVzEhIKCmNyZWF0ZWRfYnkYBSABKAkSEgoKY3JlYXRlZF9hdBgGIAEoCRISCgp1cGRhdGVkX2F0GAcgASgJImMKF1dvcmtzcGFjZUZlYXR1cmVDcmVhdGVkEgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRISCgphbWVuaXR5X2lkGAMgASgFEhIKCmNyZWF0ZWRfYXQYBCABKAkiOQoXV29ya3NwYWNlRmVhdHVyZVVwZGF0ZWQSCgoCaWQYASABKAkSEgoKdXBkYXRlZF9hdBgCIAEoCSJNChdXb3Jrc3BhY2VGZWF0dXJlRGVsZXRlZBIKCgJpZBgBIAEoCRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkqtwEKFldvcmtzcGFjZUZlYXR1cmVTdGF0dXMSKAokV09SS1NQQUNFX0ZFQVRVUkVfU1RBVFVTX1VOU1BFQ0lGSUVEEAASIwofV09SS1NQQUNFX0ZFQVRVUkVfU1RBVFVTX0FDVElWRRABEiUKIVdPUktTUEFDRV9GRUFUVVJFX1NUQVRVU19JTkFDVElWRRACEicKI1dPUktTUEFDRV9GRUFUVVJFX1NUQVRVU19ERVBSRUNBVEVEEANCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM");
 
 /**
  * Describes the message workspace.v1.WorkspaceFeature.
@@ -18,24 +18,24 @@ export const WorkspaceFeatureSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_feature, 0);
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureCreatedEvent.
- * Use `create(WorkspaceFeatureCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureCreated.
+ * Use `create(WorkspaceFeatureCreatedSchema)` to create a new message.
  */
-export const WorkspaceFeatureCreatedEventSchema = /*@__PURE__*/
+export const WorkspaceFeatureCreatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_feature, 1);
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureUpdatedEvent.
- * Use `create(WorkspaceFeatureUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureUpdated.
+ * Use `create(WorkspaceFeatureUpdatedSchema)` to create a new message.
  */
-export const WorkspaceFeatureUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceFeatureUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_feature, 2);
 
 /**
- * Describes the message workspace.v1.WorkspaceFeatureDeletedEvent.
- * Use `create(WorkspaceFeatureDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceFeatureDeleted.
+ * Use `create(WorkspaceFeatureDeletedSchema)` to create a new message.
  */
-export const WorkspaceFeatureDeletedEventSchema = /*@__PURE__*/
+export const WorkspaceFeatureDeletedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_feature, 3);
 
 /**

@@ -446,27 +446,27 @@ func (x *HasImageBatchResponse) GetResults() []*HasImageBatchResult {
 }
 
 // Event: Image uploaded (status = PENDING, processing not started yet)
-type ImageUploadedEvent struct {
+type ImageUploaded struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ImageUploadedEvent) Reset() {
-	*x = ImageUploadedEvent{}
+func (x *ImageUploaded) Reset() {
+	*x = ImageUploaded{}
 	mi := &file_storage_v1_image_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ImageUploadedEvent) String() string {
+func (x *ImageUploaded) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ImageUploadedEvent) ProtoMessage() {}
+func (*ImageUploaded) ProtoMessage() {}
 
-func (x *ImageUploadedEvent) ProtoReflect() protoreflect.Message {
+func (x *ImageUploaded) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_image_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -478,12 +478,12 @@ func (x *ImageUploadedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ImageUploadedEvent.ProtoReflect.Descriptor instead.
-func (*ImageUploadedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ImageUploaded.ProtoReflect.Descriptor instead.
+func (*ImageUploaded) Descriptor() ([]byte, []int) {
 	return file_storage_v1_image_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *ImageUploadedEvent) GetImageId() string {
+func (x *ImageUploaded) GetImageId() string {
 	if x != nil {
 		return x.ImageId
 	}
@@ -491,27 +491,27 @@ func (x *ImageUploadedEvent) GetImageId() string {
 }
 
 // Event: Image processed (status = ACTIVE, variants ready)
-type ImageProcessedEvent struct {
+type ImageProcessed struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ImageProcessedEvent) Reset() {
-	*x = ImageProcessedEvent{}
+func (x *ImageProcessed) Reset() {
+	*x = ImageProcessed{}
 	mi := &file_storage_v1_image_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ImageProcessedEvent) String() string {
+func (x *ImageProcessed) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ImageProcessedEvent) ProtoMessage() {}
+func (*ImageProcessed) ProtoMessage() {}
 
-func (x *ImageProcessedEvent) ProtoReflect() protoreflect.Message {
+func (x *ImageProcessed) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_image_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -523,12 +523,12 @@ func (x *ImageProcessedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ImageProcessedEvent.ProtoReflect.Descriptor instead.
-func (*ImageProcessedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ImageProcessed.ProtoReflect.Descriptor instead.
+func (*ImageProcessed) Descriptor() ([]byte, []int) {
 	return file_storage_v1_image_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *ImageProcessedEvent) GetImageId() string {
+func (x *ImageProcessed) GetImageId() string {
 	if x != nil {
 		return x.ImageId
 	}
@@ -536,27 +536,27 @@ func (x *ImageProcessedEvent) GetImageId() string {
 }
 
 // Event: Image deleted
-type ImageDeletedEvent struct {
+type ImageDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	ImageId       string                 `protobuf:"bytes,1,opt,name=image_id,json=imageId,proto3" json:"image_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ImageDeletedEvent) Reset() {
-	*x = ImageDeletedEvent{}
+func (x *ImageDeleted) Reset() {
+	*x = ImageDeleted{}
 	mi := &file_storage_v1_image_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ImageDeletedEvent) String() string {
+func (x *ImageDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ImageDeletedEvent) ProtoMessage() {}
+func (*ImageDeleted) ProtoMessage() {}
 
-func (x *ImageDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *ImageDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_image_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -568,12 +568,12 @@ func (x *ImageDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ImageDeletedEvent.ProtoReflect.Descriptor instead.
-func (*ImageDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ImageDeleted.ProtoReflect.Descriptor instead.
+func (*ImageDeleted) Descriptor() ([]byte, []int) {
 	return file_storage_v1_image_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ImageDeletedEvent) GetImageId() string {
+func (x *ImageDeleted) GetImageId() string {
 	if x != nil {
 		return x.ImageId
 	}
@@ -628,12 +628,12 @@ const file_storage_v1_image_proto_rawDesc = "" +
 	"\freference_id\x18\x02 \x01(\tR\vreferenceId\x12\x1b\n" +
 	"\thas_image\x18\x03 \x01(\bR\bhasImage\"R\n" +
 	"\x15HasImageBatchResponse\x129\n" +
-	"\aresults\x18\x01 \x03(\v2\x1f.storage.v1.HasImageBatchResultR\aresults\"/\n" +
-	"\x12ImageUploadedEvent\x12\x19\n" +
-	"\bimage_id\x18\x01 \x01(\tR\aimageId\"0\n" +
-	"\x13ImageProcessedEvent\x12\x19\n" +
-	"\bimage_id\x18\x01 \x01(\tR\aimageId\".\n" +
-	"\x11ImageDeletedEvent\x12\x19\n" +
+	"\aresults\x18\x01 \x03(\v2\x1f.storage.v1.HasImageBatchResultR\aresults\"*\n" +
+	"\rImageUploaded\x12\x19\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\"+\n" +
+	"\x0eImageProcessed\x12\x19\n" +
+	"\bimage_id\x18\x01 \x01(\tR\aimageId\")\n" +
+	"\fImageDeleted\x12\x19\n" +
 	"\bimage_id\x18\x01 \x01(\tR\aimageIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3"
 
 var (
@@ -656,9 +656,9 @@ var file_storage_v1_image_proto_goTypes = []any{
 	(*HasImageBatchRequest)(nil),  // 3: storage.v1.HasImageBatchRequest
 	(*HasImageBatchResult)(nil),   // 4: storage.v1.HasImageBatchResult
 	(*HasImageBatchResponse)(nil), // 5: storage.v1.HasImageBatchResponse
-	(*ImageUploadedEvent)(nil),    // 6: storage.v1.ImageUploadedEvent
-	(*ImageProcessedEvent)(nil),   // 7: storage.v1.ImageProcessedEvent
-	(*ImageDeletedEvent)(nil),     // 8: storage.v1.ImageDeletedEvent
+	(*ImageUploaded)(nil),         // 6: storage.v1.ImageUploaded
+	(*ImageProcessed)(nil),        // 7: storage.v1.ImageProcessed
+	(*ImageDeleted)(nil),          // 8: storage.v1.ImageDeleted
 	(ImageVariant)(0),             // 9: storage.v1.ImageVariant
 	(FileStatus)(0),               // 10: storage.v1.FileStatus
 	(FileReferenceType)(0),        // 11: storage.v1.FileReferenceType

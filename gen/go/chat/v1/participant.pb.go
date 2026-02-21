@@ -127,7 +127,7 @@ func (ConversationParticipantRole) EnumDescriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{1}
 }
 
-type ConversationParticipantAddedEvent struct {
+type ConversationParticipantAdded struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	UserId         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -141,20 +141,20 @@ type ConversationParticipantAddedEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConversationParticipantAddedEvent) Reset() {
-	*x = ConversationParticipantAddedEvent{}
+func (x *ConversationParticipantAdded) Reset() {
+	*x = ConversationParticipantAdded{}
 	mi := &file_chat_v1_participant_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationParticipantAddedEvent) String() string {
+func (x *ConversationParticipantAdded) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationParticipantAddedEvent) ProtoMessage() {}
+func (*ConversationParticipantAdded) ProtoMessage() {}
 
-func (x *ConversationParticipantAddedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationParticipantAdded) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -166,68 +166,68 @@ func (x *ConversationParticipantAddedEvent) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationParticipantAddedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationParticipantAddedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationParticipantAdded.ProtoReflect.Descriptor instead.
+func (*ConversationParticipantAdded) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ConversationParticipantAddedEvent) GetConversationId() string {
+func (x *ConversationParticipantAdded) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantAddedEvent) GetUserId() string {
+func (x *ConversationParticipantAdded) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantAddedEvent) GetAddedBy() string {
+func (x *ConversationParticipantAdded) GetAddedBy() string {
 	if x != nil {
 		return x.AddedBy
 	}
 	return ""
 }
 
-func (x *ConversationParticipantAddedEvent) GetStatus() string {
+func (x *ConversationParticipantAdded) GetStatus() string {
 	if x != nil {
 		return x.Status
 	}
 	return ""
 }
 
-func (x *ConversationParticipantAddedEvent) GetJoinedAt() string {
+func (x *ConversationParticipantAdded) GetJoinedAt() string {
 	if x != nil {
 		return x.JoinedAt
 	}
 	return ""
 }
 
-func (x *ConversationParticipantAddedEvent) GetUser() *v1.User {
+func (x *ConversationParticipantAdded) GetUser() *v1.User {
 	if x != nil {
 		return x.User
 	}
 	return nil
 }
 
-func (x *ConversationParticipantAddedEvent) GetAddedByUser() *v1.User {
+func (x *ConversationParticipantAdded) GetAddedByUser() *v1.User {
 	if x != nil {
 		return x.AddedByUser
 	}
 	return nil
 }
 
-func (x *ConversationParticipantAddedEvent) GetConversation() *Conversation {
+func (x *ConversationParticipantAdded) GetConversation() *Conversation {
 	if x != nil {
 		return x.Conversation
 	}
 	return nil
 }
 
-type ConversationParticipantRemovedEvent struct {
+type ConversationParticipantRemoved struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	UserId         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -240,20 +240,20 @@ type ConversationParticipantRemovedEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConversationParticipantRemovedEvent) Reset() {
-	*x = ConversationParticipantRemovedEvent{}
+func (x *ConversationParticipantRemoved) Reset() {
+	*x = ConversationParticipantRemoved{}
 	mi := &file_chat_v1_participant_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationParticipantRemovedEvent) String() string {
+func (x *ConversationParticipantRemoved) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationParticipantRemovedEvent) ProtoMessage() {}
+func (*ConversationParticipantRemoved) ProtoMessage() {}
 
-func (x *ConversationParticipantRemovedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationParticipantRemoved) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -265,61 +265,61 @@ func (x *ConversationParticipantRemovedEvent) ProtoReflect() protoreflect.Messag
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationParticipantRemovedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationParticipantRemovedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationParticipantRemoved.ProtoReflect.Descriptor instead.
+func (*ConversationParticipantRemoved) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ConversationParticipantRemovedEvent) GetConversationId() string {
+func (x *ConversationParticipantRemoved) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantRemovedEvent) GetUserId() string {
+func (x *ConversationParticipantRemoved) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantRemovedEvent) GetRemovedBy() string {
+func (x *ConversationParticipantRemoved) GetRemovedBy() string {
 	if x != nil {
 		return x.RemovedBy
 	}
 	return ""
 }
 
-func (x *ConversationParticipantRemovedEvent) GetLeftAt() string {
+func (x *ConversationParticipantRemoved) GetLeftAt() string {
 	if x != nil {
 		return x.LeftAt
 	}
 	return ""
 }
 
-func (x *ConversationParticipantRemovedEvent) GetUser() *v1.User {
+func (x *ConversationParticipantRemoved) GetUser() *v1.User {
 	if x != nil {
 		return x.User
 	}
 	return nil
 }
 
-func (x *ConversationParticipantRemovedEvent) GetRemovedByUser() *v1.User {
+func (x *ConversationParticipantRemoved) GetRemovedByUser() *v1.User {
 	if x != nil {
 		return x.RemovedByUser
 	}
 	return nil
 }
 
-func (x *ConversationParticipantRemovedEvent) GetConversation() *Conversation {
+func (x *ConversationParticipantRemoved) GetConversation() *Conversation {
 	if x != nil {
 		return x.Conversation
 	}
 	return nil
 }
 
-type ConversationParticipantUpdatedEvent struct {
+type ConversationParticipantUpdated struct {
 	state             protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId    string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	UserId            string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -333,20 +333,20 @@ type ConversationParticipantUpdatedEvent struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *ConversationParticipantUpdatedEvent) Reset() {
-	*x = ConversationParticipantUpdatedEvent{}
+func (x *ConversationParticipantUpdated) Reset() {
+	*x = ConversationParticipantUpdated{}
 	mi := &file_chat_v1_participant_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationParticipantUpdatedEvent) String() string {
+func (x *ConversationParticipantUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationParticipantUpdatedEvent) ProtoMessage() {}
+func (*ConversationParticipantUpdated) ProtoMessage() {}
 
-func (x *ConversationParticipantUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationParticipantUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -358,68 +358,68 @@ func (x *ConversationParticipantUpdatedEvent) ProtoReflect() protoreflect.Messag
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationParticipantUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationParticipantUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationParticipantUpdated.ProtoReflect.Descriptor instead.
+func (*ConversationParticipantUpdated) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetConversationId() string {
+func (x *ConversationParticipantUpdated) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetUserId() string {
+func (x *ConversationParticipantUpdated) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetUnreadCount() int32 {
+func (x *ConversationParticipantUpdated) GetUnreadCount() int32 {
 	if x != nil {
 		return x.UnreadCount
 	}
 	return 0
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetLastReadAt() string {
+func (x *ConversationParticipantUpdated) GetLastReadAt() string {
 	if x != nil && x.LastReadAt != nil {
 		return *x.LastReadAt
 	}
 	return ""
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetLastReadMessageId() string {
+func (x *ConversationParticipantUpdated) GetLastReadMessageId() string {
 	if x != nil && x.LastReadMessageId != nil {
 		return *x.LastReadMessageId
 	}
 	return ""
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetUpdatedAt() string {
+func (x *ConversationParticipantUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return ""
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetUser() *v1.User {
+func (x *ConversationParticipantUpdated) GetUser() *v1.User {
 	if x != nil {
 		return x.User
 	}
 	return nil
 }
 
-func (x *ConversationParticipantUpdatedEvent) GetConversation() *Conversation {
+func (x *ConversationParticipantUpdated) GetConversation() *Conversation {
 	if x != nil {
 		return x.Conversation
 	}
 	return nil
 }
 
-type ChatUserOnlineEvent struct {
+type ChatUserOnline struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Timestamp     string                 `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
@@ -427,20 +427,20 @@ type ChatUserOnlineEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChatUserOnlineEvent) Reset() {
-	*x = ChatUserOnlineEvent{}
+func (x *ChatUserOnline) Reset() {
+	*x = ChatUserOnline{}
 	mi := &file_chat_v1_participant_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChatUserOnlineEvent) String() string {
+func (x *ChatUserOnline) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChatUserOnlineEvent) ProtoMessage() {}
+func (*ChatUserOnline) ProtoMessage() {}
 
-func (x *ChatUserOnlineEvent) ProtoReflect() protoreflect.Message {
+func (x *ChatUserOnline) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -452,26 +452,26 @@ func (x *ChatUserOnlineEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChatUserOnlineEvent.ProtoReflect.Descriptor instead.
-func (*ChatUserOnlineEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ChatUserOnline.ProtoReflect.Descriptor instead.
+func (*ChatUserOnline) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ChatUserOnlineEvent) GetUserId() string {
+func (x *ChatUserOnline) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ChatUserOnlineEvent) GetTimestamp() string {
+func (x *ChatUserOnline) GetTimestamp() string {
 	if x != nil {
 		return x.Timestamp
 	}
 	return ""
 }
 
-type ChatUserOfflineEvent struct {
+type ChatUserOffline struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Timestamp     string                 `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
@@ -479,20 +479,20 @@ type ChatUserOfflineEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ChatUserOfflineEvent) Reset() {
-	*x = ChatUserOfflineEvent{}
+func (x *ChatUserOffline) Reset() {
+	*x = ChatUserOffline{}
 	mi := &file_chat_v1_participant_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChatUserOfflineEvent) String() string {
+func (x *ChatUserOffline) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChatUserOfflineEvent) ProtoMessage() {}
+func (*ChatUserOffline) ProtoMessage() {}
 
-func (x *ChatUserOfflineEvent) ProtoReflect() protoreflect.Message {
+func (x *ChatUserOffline) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -504,26 +504,26 @@ func (x *ChatUserOfflineEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChatUserOfflineEvent.ProtoReflect.Descriptor instead.
-func (*ChatUserOfflineEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ChatUserOffline.ProtoReflect.Descriptor instead.
+func (*ChatUserOffline) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ChatUserOfflineEvent) GetUserId() string {
+func (x *ChatUserOffline) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ChatUserOfflineEvent) GetTimestamp() string {
+func (x *ChatUserOffline) GetTimestamp() string {
 	if x != nil {
 		return x.Timestamp
 	}
 	return ""
 }
 
-type ChatUserTypingEvent struct {
+type ChatUserTyping struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	UserId         string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -533,20 +533,20 @@ type ChatUserTypingEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ChatUserTypingEvent) Reset() {
-	*x = ChatUserTypingEvent{}
+func (x *ChatUserTyping) Reset() {
+	*x = ChatUserTyping{}
 	mi := &file_chat_v1_participant_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ChatUserTypingEvent) String() string {
+func (x *ChatUserTyping) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ChatUserTypingEvent) ProtoMessage() {}
+func (*ChatUserTyping) ProtoMessage() {}
 
-func (x *ChatUserTypingEvent) ProtoReflect() protoreflect.Message {
+func (x *ChatUserTyping) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -558,33 +558,33 @@ func (x *ChatUserTypingEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ChatUserTypingEvent.ProtoReflect.Descriptor instead.
-func (*ChatUserTypingEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ChatUserTyping.ProtoReflect.Descriptor instead.
+func (*ChatUserTyping) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *ChatUserTypingEvent) GetConversationId() string {
+func (x *ChatUserTyping) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ChatUserTypingEvent) GetUserId() string {
+func (x *ChatUserTyping) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *ChatUserTypingEvent) GetIsTyping() bool {
+func (x *ChatUserTyping) GetIsTyping() bool {
 	if x != nil {
 		return x.IsTyping
 	}
 	return false
 }
 
-func (x *ChatUserTypingEvent) GetTimestamp() string {
+func (x *ChatUserTyping) GetTimestamp() string {
 	if x != nil {
 		return x.Timestamp
 	}
@@ -796,28 +796,28 @@ func (x *ConversationParticipant) GetAddedByUser() *v1.User {
 	return nil
 }
 
-// Query conversation participants
-type QueryConversationParticipantsRequest struct {
+// List conversation participants
+type ListConversationParticipantsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"` // conversation_id
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryConversationParticipantsRequest) Reset() {
-	*x = QueryConversationParticipantsRequest{}
+func (x *ListConversationParticipantsRequest) Reset() {
+	*x = ListConversationParticipantsRequest{}
 	mi := &file_chat_v1_participant_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryConversationParticipantsRequest) String() string {
+func (x *ListConversationParticipantsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryConversationParticipantsRequest) ProtoMessage() {}
+func (*ListConversationParticipantsRequest) ProtoMessage() {}
 
-func (x *QueryConversationParticipantsRequest) ProtoReflect() protoreflect.Message {
+func (x *ListConversationParticipantsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -829,39 +829,39 @@ func (x *QueryConversationParticipantsRequest) ProtoReflect() protoreflect.Messa
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryConversationParticipantsRequest.ProtoReflect.Descriptor instead.
-func (*QueryConversationParticipantsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListConversationParticipantsRequest.ProtoReflect.Descriptor instead.
+func (*ListConversationParticipantsRequest) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *QueryConversationParticipantsRequest) GetId() string {
+func (x *ListConversationParticipantsRequest) GetId() string {
 	if x != nil && x.Id != nil {
 		return *x.Id
 	}
 	return ""
 }
 
-type QueryConversationParticipantsResponse struct {
+type ListConversationParticipantsResponse struct {
 	state         protoimpl.MessageState     `protogen:"open.v1"`
 	Participants  []*ConversationParticipant `protobuf:"bytes,1,rep,name=participants,proto3" json:"participants,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryConversationParticipantsResponse) Reset() {
-	*x = QueryConversationParticipantsResponse{}
+func (x *ListConversationParticipantsResponse) Reset() {
+	*x = ListConversationParticipantsResponse{}
 	mi := &file_chat_v1_participant_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryConversationParticipantsResponse) String() string {
+func (x *ListConversationParticipantsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryConversationParticipantsResponse) ProtoMessage() {}
+func (*ListConversationParticipantsResponse) ProtoMessage() {}
 
-func (x *QueryConversationParticipantsResponse) ProtoReflect() protoreflect.Message {
+func (x *ListConversationParticipantsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -873,20 +873,20 @@ func (x *QueryConversationParticipantsResponse) ProtoReflect() protoreflect.Mess
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryConversationParticipantsResponse.ProtoReflect.Descriptor instead.
-func (*QueryConversationParticipantsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListConversationParticipantsResponse.ProtoReflect.Descriptor instead.
+func (*ListConversationParticipantsResponse) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *QueryConversationParticipantsResponse) GetParticipants() []*ConversationParticipant {
+func (x *ListConversationParticipantsResponse) GetParticipants() []*ConversationParticipant {
 	if x != nil {
 		return x.Participants
 	}
 	return nil
 }
 
-// Query if user is participant in conversation
-type QueryIsParticipantRequest struct {
+// Check if user is participant in conversation
+type CheckParticipantRequest struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // user_id
 	ConversationId string                 `protobuf:"bytes,2,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
@@ -894,20 +894,20 @@ type QueryIsParticipantRequest struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *QueryIsParticipantRequest) Reset() {
-	*x = QueryIsParticipantRequest{}
+func (x *CheckParticipantRequest) Reset() {
+	*x = CheckParticipantRequest{}
 	mi := &file_chat_v1_participant_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryIsParticipantRequest) String() string {
+func (x *CheckParticipantRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryIsParticipantRequest) ProtoMessage() {}
+func (*CheckParticipantRequest) ProtoMessage() {}
 
-func (x *QueryIsParticipantRequest) ProtoReflect() protoreflect.Message {
+func (x *CheckParticipantRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -919,46 +919,46 @@ func (x *QueryIsParticipantRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryIsParticipantRequest.ProtoReflect.Descriptor instead.
-func (*QueryIsParticipantRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use CheckParticipantRequest.ProtoReflect.Descriptor instead.
+func (*CheckParticipantRequest) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *QueryIsParticipantRequest) GetId() string {
+func (x *CheckParticipantRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *QueryIsParticipantRequest) GetConversationId() string {
+func (x *CheckParticipantRequest) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-type QueryIsParticipantResponse struct {
+type CheckParticipantResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IsParticipant bool                   `protobuf:"varint,1,opt,name=is_participant,json=isParticipant,proto3" json:"is_participant,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryIsParticipantResponse) Reset() {
-	*x = QueryIsParticipantResponse{}
+func (x *CheckParticipantResponse) Reset() {
+	*x = CheckParticipantResponse{}
 	mi := &file_chat_v1_participant_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryIsParticipantResponse) String() string {
+func (x *CheckParticipantResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryIsParticipantResponse) ProtoMessage() {}
+func (*CheckParticipantResponse) ProtoMessage() {}
 
-func (x *QueryIsParticipantResponse) ProtoReflect() protoreflect.Message {
+func (x *CheckParticipantResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -970,40 +970,40 @@ func (x *QueryIsParticipantResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryIsParticipantResponse.ProtoReflect.Descriptor instead.
-func (*QueryIsParticipantResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use CheckParticipantResponse.ProtoReflect.Descriptor instead.
+func (*CheckParticipantResponse) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *QueryIsParticipantResponse) GetIsParticipant() bool {
+func (x *CheckParticipantResponse) GetIsParticipant() bool {
 	if x != nil {
 		return x.IsParticipant
 	}
 	return false
 }
 
-// Query user's conversation topics (for WebSocket rooms)
-type QueryUserTopicsRequest struct {
+// List user's conversation topics (for WebSocket rooms)
+type ListUserTopicsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // user_id
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryUserTopicsRequest) Reset() {
-	*x = QueryUserTopicsRequest{}
+func (x *ListUserTopicsRequest) Reset() {
+	*x = ListUserTopicsRequest{}
 	mi := &file_chat_v1_participant_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryUserTopicsRequest) String() string {
+func (x *ListUserTopicsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryUserTopicsRequest) ProtoMessage() {}
+func (*ListUserTopicsRequest) ProtoMessage() {}
 
-func (x *QueryUserTopicsRequest) ProtoReflect() protoreflect.Message {
+func (x *ListUserTopicsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1015,39 +1015,39 @@ func (x *QueryUserTopicsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryUserTopicsRequest.ProtoReflect.Descriptor instead.
-func (*QueryUserTopicsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListUserTopicsRequest.ProtoReflect.Descriptor instead.
+func (*ListUserTopicsRequest) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *QueryUserTopicsRequest) GetId() string {
+func (x *ListUserTopicsRequest) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-type QueryUserTopicsResponse struct {
+type ListUserTopicsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	TopicIds      []string               `protobuf:"bytes,1,rep,name=topic_ids,json=topicIds,proto3" json:"topic_ids,omitempty"` // conversation IDs
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryUserTopicsResponse) Reset() {
-	*x = QueryUserTopicsResponse{}
+func (x *ListUserTopicsResponse) Reset() {
+	*x = ListUserTopicsResponse{}
 	mi := &file_chat_v1_participant_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryUserTopicsResponse) String() string {
+func (x *ListUserTopicsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryUserTopicsResponse) ProtoMessage() {}
+func (*ListUserTopicsResponse) ProtoMessage() {}
 
-func (x *QueryUserTopicsResponse) ProtoReflect() protoreflect.Message {
+func (x *ListUserTopicsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_participant_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1059,12 +1059,12 @@ func (x *QueryUserTopicsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryUserTopicsResponse.ProtoReflect.Descriptor instead.
-func (*QueryUserTopicsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListUserTopicsResponse.ProtoReflect.Descriptor instead.
+func (*ListUserTopicsResponse) Descriptor() ([]byte, []int) {
 	return file_chat_v1_participant_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *QueryUserTopicsResponse) GetTopicIds() []string {
+func (x *ListUserTopicsResponse) GetTopicIds() []string {
 	if x != nil {
 		return x.TopicIds
 	}
@@ -1356,8 +1356,8 @@ var File_chat_v1_participant_proto protoreflect.FileDescriptor
 
 const file_chat_v1_participant_proto_rawDesc = "" +
 	"\n" +
-	"\x19chat/v1/participant.proto\x12\achat.v1\x1a\x1achat/v1/conversation.proto\x1a\x12user/v1/user.proto\x1a\x1cworkspace/v1/workspace.proto\"\x81\x03\n" +
-	"!ConversationParticipantAddedEvent\x12'\n" +
+	"\x19chat/v1/participant.proto\x12\achat.v1\x1a\x1achat/v1/conversation.proto\x1a\x12user/v1/user.proto\x1a\x1cworkspace/v1/workspace.proto\"\xfc\x02\n" +
+	"\x1cConversationParticipantAdded\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x19\n" +
 	"\badded_by\x18\x03 \x01(\tR\aaddedBy\x12\x16\n" +
@@ -1368,8 +1368,8 @@ const file_chat_v1_participant_proto_rawDesc = "" +
 	"\fconversation\x18\b \x01(\v2\x15.chat.v1.ConversationH\x02R\fconversation\x88\x01\x01B\a\n" +
 	"\x05_userB\x10\n" +
 	"\x0e_added_by_userB\x0f\n" +
-	"\r_conversation\"\xf1\x02\n" +
-	"#ConversationParticipantRemovedEvent\x12'\n" +
+	"\r_conversation\"\xec\x02\n" +
+	"\x1eConversationParticipantRemoved\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1d\n" +
 	"\n" +
@@ -1380,8 +1380,8 @@ const file_chat_v1_participant_proto_rawDesc = "" +
 	"\fconversation\x18\a \x01(\v2\x15.chat.v1.ConversationH\x02R\fconversation\x88\x01\x01B\a\n" +
 	"\x05_userB\x12\n" +
 	"\x10_removed_by_userB\x0f\n" +
-	"\r_conversation\"\xb2\x03\n" +
-	"#ConversationParticipantUpdatedEvent\x12'\n" +
+	"\r_conversation\"\xad\x03\n" +
+	"\x1eConversationParticipantUpdated\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12!\n" +
 	"\funread_count\x18\x03 \x01(\x05R\vunreadCount\x12%\n" +
@@ -1395,14 +1395,14 @@ const file_chat_v1_participant_proto_rawDesc = "" +
 	"\r_last_read_atB\x17\n" +
 	"\x15_last_read_message_idB\a\n" +
 	"\x05_userB\x0f\n" +
-	"\r_conversation\"L\n" +
-	"\x13ChatUserOnlineEvent\x12\x17\n" +
+	"\r_conversation\"G\n" +
+	"\x0eChatUserOnline\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1c\n" +
-	"\ttimestamp\x18\x02 \x01(\tR\ttimestamp\"M\n" +
-	"\x14ChatUserOfflineEvent\x12\x17\n" +
+	"\ttimestamp\x18\x02 \x01(\tR\ttimestamp\"H\n" +
+	"\x0fChatUserOffline\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1c\n" +
-	"\ttimestamp\x18\x02 \x01(\tR\ttimestamp\"\x92\x01\n" +
-	"\x13ChatUserTypingEvent\x12'\n" +
+	"\ttimestamp\x18\x02 \x01(\tR\ttimestamp\"\x8d\x01\n" +
+	"\x0eChatUserTyping\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x1b\n" +
 	"\tis_typing\x18\x03 \x01(\bR\bisTyping\x12\x1c\n" +
@@ -1455,20 +1455,20 @@ const file_chat_v1_participant_proto_rawDesc = "" +
 	"\x05_userB\x0f\n" +
 	"\r_conversationB\x19\n" +
 	"\x17_on_behalf_of_workspaceB\x10\n" +
-	"\x0e_added_by_user\"B\n" +
-	"$QueryConversationParticipantsRequest\x12\x13\n" +
+	"\x0e_added_by_user\"A\n" +
+	"#ListConversationParticipantsRequest\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01B\x05\n" +
-	"\x03_id\"m\n" +
-	"%QueryConversationParticipantsResponse\x12D\n" +
-	"\fparticipants\x18\x01 \x03(\v2 .chat.v1.ConversationParticipantR\fparticipants\"T\n" +
-	"\x19QueryIsParticipantRequest\x12\x0e\n" +
+	"\x03_id\"l\n" +
+	"$ListConversationParticipantsResponse\x12D\n" +
+	"\fparticipants\x18\x01 \x03(\v2 .chat.v1.ConversationParticipantR\fparticipants\"R\n" +
+	"\x17CheckParticipantRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12'\n" +
-	"\x0fconversation_id\x18\x02 \x01(\tR\x0econversationId\"C\n" +
-	"\x1aQueryIsParticipantResponse\x12%\n" +
-	"\x0eis_participant\x18\x01 \x01(\bR\risParticipant\"(\n" +
-	"\x16QueryUserTopicsRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"6\n" +
-	"\x17QueryUserTopicsResponse\x12\x1b\n" +
+	"\x0fconversation_id\x18\x02 \x01(\tR\x0econversationId\"A\n" +
+	"\x18CheckParticipantResponse\x12%\n" +
+	"\x0eis_participant\x18\x01 \x01(\bR\risParticipant\"'\n" +
+	"\x15ListUserTopicsRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"5\n" +
+	"\x16ListUserTopicsResponse\x12\x1b\n" +
 	"\ttopic_ids\x18\x01 \x03(\tR\btopicIds\"f\n" +
 	"\"GetConversationParticipantsRequest\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
@@ -1512,19 +1512,19 @@ var file_chat_v1_participant_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
 var file_chat_v1_participant_proto_goTypes = []any{
 	(ConversationParticipantStatus)(0),            // 0: chat.v1.ConversationParticipantStatus
 	(ConversationParticipantRole)(0),              // 1: chat.v1.ConversationParticipantRole
-	(*ConversationParticipantAddedEvent)(nil),     // 2: chat.v1.ConversationParticipantAddedEvent
-	(*ConversationParticipantRemovedEvent)(nil),   // 3: chat.v1.ConversationParticipantRemovedEvent
-	(*ConversationParticipantUpdatedEvent)(nil),   // 4: chat.v1.ConversationParticipantUpdatedEvent
-	(*ChatUserOnlineEvent)(nil),                   // 5: chat.v1.ChatUserOnlineEvent
-	(*ChatUserOfflineEvent)(nil),                  // 6: chat.v1.ChatUserOfflineEvent
-	(*ChatUserTypingEvent)(nil),                   // 7: chat.v1.ChatUserTypingEvent
+	(*ConversationParticipantAdded)(nil),          // 2: chat.v1.ConversationParticipantAdded
+	(*ConversationParticipantRemoved)(nil),        // 3: chat.v1.ConversationParticipantRemoved
+	(*ConversationParticipantUpdated)(nil),        // 4: chat.v1.ConversationParticipantUpdated
+	(*ChatUserOnline)(nil),                        // 5: chat.v1.ChatUserOnline
+	(*ChatUserOffline)(nil),                       // 6: chat.v1.ChatUserOffline
+	(*ChatUserTyping)(nil),                        // 7: chat.v1.ChatUserTyping
 	(*ConversationParticipant)(nil),               // 8: chat.v1.ConversationParticipant
-	(*QueryConversationParticipantsRequest)(nil),  // 9: chat.v1.QueryConversationParticipantsRequest
-	(*QueryConversationParticipantsResponse)(nil), // 10: chat.v1.QueryConversationParticipantsResponse
-	(*QueryIsParticipantRequest)(nil),             // 11: chat.v1.QueryIsParticipantRequest
-	(*QueryIsParticipantResponse)(nil),            // 12: chat.v1.QueryIsParticipantResponse
-	(*QueryUserTopicsRequest)(nil),                // 13: chat.v1.QueryUserTopicsRequest
-	(*QueryUserTopicsResponse)(nil),               // 14: chat.v1.QueryUserTopicsResponse
+	(*ListConversationParticipantsRequest)(nil),   // 9: chat.v1.ListConversationParticipantsRequest
+	(*ListConversationParticipantsResponse)(nil),  // 10: chat.v1.ListConversationParticipantsResponse
+	(*CheckParticipantRequest)(nil),               // 11: chat.v1.CheckParticipantRequest
+	(*CheckParticipantResponse)(nil),              // 12: chat.v1.CheckParticipantResponse
+	(*ListUserTopicsRequest)(nil),                 // 13: chat.v1.ListUserTopicsRequest
+	(*ListUserTopicsResponse)(nil),                // 14: chat.v1.ListUserTopicsResponse
 	(*GetConversationParticipantsRequest)(nil),    // 15: chat.v1.GetConversationParticipantsRequest
 	(*GetConversationParticipantsResponse)(nil),   // 16: chat.v1.GetConversationParticipantsResponse
 	(*GetConversationParticipantIdsRequest)(nil),  // 17: chat.v1.GetConversationParticipantIdsRequest
@@ -1536,19 +1536,19 @@ var file_chat_v1_participant_proto_goTypes = []any{
 	(*v11.Workspace)(nil),                         // 23: workspace.v1.Workspace
 }
 var file_chat_v1_participant_proto_depIdxs = []int32{
-	21, // 0: chat.v1.ConversationParticipantAddedEvent.user:type_name -> user.v1.User
-	21, // 1: chat.v1.ConversationParticipantAddedEvent.added_by_user:type_name -> user.v1.User
-	22, // 2: chat.v1.ConversationParticipantAddedEvent.conversation:type_name -> chat.v1.Conversation
-	21, // 3: chat.v1.ConversationParticipantRemovedEvent.user:type_name -> user.v1.User
-	21, // 4: chat.v1.ConversationParticipantRemovedEvent.removed_by_user:type_name -> user.v1.User
-	22, // 5: chat.v1.ConversationParticipantRemovedEvent.conversation:type_name -> chat.v1.Conversation
-	21, // 6: chat.v1.ConversationParticipantUpdatedEvent.user:type_name -> user.v1.User
-	22, // 7: chat.v1.ConversationParticipantUpdatedEvent.conversation:type_name -> chat.v1.Conversation
+	21, // 0: chat.v1.ConversationParticipantAdded.user:type_name -> user.v1.User
+	21, // 1: chat.v1.ConversationParticipantAdded.added_by_user:type_name -> user.v1.User
+	22, // 2: chat.v1.ConversationParticipantAdded.conversation:type_name -> chat.v1.Conversation
+	21, // 3: chat.v1.ConversationParticipantRemoved.user:type_name -> user.v1.User
+	21, // 4: chat.v1.ConversationParticipantRemoved.removed_by_user:type_name -> user.v1.User
+	22, // 5: chat.v1.ConversationParticipantRemoved.conversation:type_name -> chat.v1.Conversation
+	21, // 6: chat.v1.ConversationParticipantUpdated.user:type_name -> user.v1.User
+	22, // 7: chat.v1.ConversationParticipantUpdated.conversation:type_name -> chat.v1.Conversation
 	21, // 8: chat.v1.ConversationParticipant.user:type_name -> user.v1.User
 	22, // 9: chat.v1.ConversationParticipant.conversation:type_name -> chat.v1.Conversation
 	23, // 10: chat.v1.ConversationParticipant.on_behalf_of_workspace:type_name -> workspace.v1.Workspace
 	21, // 11: chat.v1.ConversationParticipant.added_by_user:type_name -> user.v1.User
-	8,  // 12: chat.v1.QueryConversationParticipantsResponse.participants:type_name -> chat.v1.ConversationParticipant
+	8,  // 12: chat.v1.ListConversationParticipantsResponse.participants:type_name -> chat.v1.ConversationParticipant
 	8,  // 13: chat.v1.GetConversationParticipantsResponse.participants:type_name -> chat.v1.ConversationParticipant
 	14, // [14:14] is the sub-list for method output_type
 	14, // [14:14] is the sub-list for method input_type

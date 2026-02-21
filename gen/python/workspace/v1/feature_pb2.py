@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aworkspace/v1/feature.proto\x12\x0cworkspace.v1\"\xff\x01\n\x10WorkspaceFeature\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x1d\n\namenity_id\x18\x03 \x01(\x05R\tamenityId\x12<\n\x06status\x18\x04 \x01(\x0e\x32$.workspace.v1.WorkspaceFeatureStatusR\x06status\x12\x1d\n\ncreated_by\x18\x05 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\"\x8f\x01\n\x1cWorkspaceFeatureCreatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x1d\n\namenity_id\x18\x03 \x01(\x05R\tamenityId\x12\x1d\n\ncreated_at\x18\x04 \x01(\tR\tcreatedAt\"M\n\x1cWorkspaceFeatureUpdatedEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"l\n\x1cWorkspaceFeatureDeletedEvent\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt*\xb7\x01\n\x16WorkspaceFeatureStatus\x12(\n$WORKSPACE_FEATURE_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fWORKSPACE_FEATURE_STATUS_ACTIVE\x10\x01\x12%\n!WORKSPACE_FEATURE_STATUS_INACTIVE\x10\x02\x12\'\n#WORKSPACE_FEATURE_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aworkspace/v1/feature.proto\x12\x0cworkspace.v1\"\xff\x01\n\x10WorkspaceFeature\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x1d\n\namenity_id\x18\x03 \x01(\x05R\tamenityId\x12<\n\x06status\x18\x04 \x01(\x0e\x32$.workspace.v1.WorkspaceFeatureStatusR\x06status\x12\x1d\n\ncreated_by\x18\x05 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\"\x8a\x01\n\x17WorkspaceFeatureCreated\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x1d\n\namenity_id\x18\x03 \x01(\x05R\tamenityId\x12\x1d\n\ncreated_at\x18\x04 \x01(\tR\tcreatedAt\"H\n\x17WorkspaceFeatureUpdated\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt\"g\n\x17WorkspaceFeatureDeleted\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt*\xb7\x01\n\x16WorkspaceFeatureStatus\x12(\n$WORKSPACE_FEATURE_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fWORKSPACE_FEATURE_STATUS_ACTIVE\x10\x01\x12%\n!WORKSPACE_FEATURE_STATUS_INACTIVE\x10\x02\x12\'\n#WORKSPACE_FEATURE_STATUS_DEPRECATED\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,14 +32,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'workspace.v1.feature_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/nauticalstream/proto/gen/go/workspace/v1'
-  _globals['_WORKSPACEFEATURESTATUS']._serialized_start=638
-  _globals['_WORKSPACEFEATURESTATUS']._serialized_end=821
+  _globals['_WORKSPACEFEATURESTATUS']._serialized_start=623
+  _globals['_WORKSPACEFEATURESTATUS']._serialized_end=806
   _globals['_WORKSPACEFEATURE']._serialized_start=45
   _globals['_WORKSPACEFEATURE']._serialized_end=300
-  _globals['_WORKSPACEFEATURECREATEDEVENT']._serialized_start=303
-  _globals['_WORKSPACEFEATURECREATEDEVENT']._serialized_end=446
-  _globals['_WORKSPACEFEATUREUPDATEDEVENT']._serialized_start=448
-  _globals['_WORKSPACEFEATUREUPDATEDEVENT']._serialized_end=525
-  _globals['_WORKSPACEFEATUREDELETEDEVENT']._serialized_start=527
-  _globals['_WORKSPACEFEATUREDELETEDEVENT']._serialized_end=635
+  _globals['_WORKSPACEFEATURECREATED']._serialized_start=303
+  _globals['_WORKSPACEFEATURECREATED']._serialized_end=441
+  _globals['_WORKSPACEFEATUREUPDATED']._serialized_start=443
+  _globals['_WORKSPACEFEATUREUPDATED']._serialized_end=515
+  _globals['_WORKSPACEFEATUREDELETED']._serialized_start=517
+  _globals['_WORKSPACEFEATUREDELETED']._serialized_end=620
 # @@protoc_insertion_point(module_scope)

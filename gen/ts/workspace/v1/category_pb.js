@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file workspace/v1/category.proto.
  */
 export const file_workspace_v1_category = /*@__PURE__*/
-  fileDesc("Cht3b3Jrc3BhY2UvdjEvY2F0ZWdvcnkucHJvdG8SDHdvcmtzcGFjZS52MSLzAQoRV29ya3NwYWNlQ2F0ZWdvcnkSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRILCgNrZXkYAyABKAkSGAoLZGVzY3JpcHRpb24YBCABKAlIAIgBARIRCgRpY29uGAUgASgJSAGIAQESNQoGc3RhdHVzGAYgASgOMiUud29ya3NwYWNlLnYxLldvcmtzcGFjZUNhdGVnb3J5U3RhdHVzEhIKCmNyZWF0ZWRfYnkYByABKAkSEgoKY3JlYXRlZF9hdBgIIAEoCRISCgp1cGRhdGVkX2F0GAkgASgJQg4KDF9kZXNjcmlwdGlvbkIHCgVfaWNvbiJNCh1Xb3Jrc3BhY2VDYXRlZ29yeUNyZWF0ZWRFdmVudBIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhIKCmNyZWF0ZWRfYXQYAyABKAkiPwodV29ya3NwYWNlQ2F0ZWdvcnlVcGRhdGVkRXZlbnQSCgoCaWQYASABKAUSEgoKdXBkYXRlZF9hdBgCIAEoCSJTCh1Xb3Jrc3BhY2VDYXRlZ29yeURlbGV0ZWRFdmVudBIKCgJpZBgBIAEoBRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkiQwofV29ya3NwYWNlQ2F0ZWdvcnlBY3RpdmF0ZWRFdmVudBIKCgJpZBgBIAEoBRIUCgxhY3RpdmF0ZWRfYXQYAiABKAkiRwohV29ya3NwYWNlQ2F0ZWdvcnlEZWFjdGl2YXRlZEV2ZW50EgoKAmlkGAEgASgFEhYKDmRlYWN0aXZhdGVkX2F0GAIgASgJIkUKIFdvcmtzcGFjZUNhdGVnb3J5RGVwcmVjYXRlZEV2ZW50EgoKAmlkGAEgASgFEhUKDWRlcHJlY2F0ZWRfYXQYAiABKAkiZQolV29ya3NwYWNlQ2F0ZWdvcnlBbWVuaXR5QXNzaWduZWRFdmVudBITCgtjYXRlZ29yeV9pZBgBIAEoBRISCgphbWVuaXR5X2lkGAIgASgFEhMKC2Fzc2lnbmVkX2F0GAMgASgJIncKJFdvcmtzcGFjZUNhdGVnb3J5QW1lbml0eVJlbW92ZWRFdmVudBITCgtjYXRlZ29yeV9pZBgBIAEoBRISCgphbWVuaXR5X2lkGAIgASgFEhIKCmRlbGV0ZWRfYnkYAyABKAkSEgoKZGVsZXRlZF9hdBgEIAEoCSq8AQoXV29ya3NwYWNlQ2F0ZWdvcnlTdGF0dXMSKQolV09SS1NQQUNFX0NBVEVHT1JZX1NUQVRVU19VTlNQRUNJRklFRBAAEiQKIFdPUktTUEFDRV9DQVRFR09SWV9TVEFUVVNfQUNUSVZFEAESJgoiV09SS1NQQUNFX0NBVEVHT1JZX1NUQVRVU19JTkFDVElWRRACEigKJFdPUktTUEFDRV9DQVRFR09SWV9TVEFUVVNfREVQUkVDQVRFRBADQjVaM2dpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3dvcmtzcGFjZS92MWIGcHJvdG8z");
+  fileDesc("Cht3b3Jrc3BhY2UvdjEvY2F0ZWdvcnkucHJvdG8SDHdvcmtzcGFjZS52MSLzAQoRV29ya3NwYWNlQ2F0ZWdvcnkSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRILCgNrZXkYAyABKAkSGAoLZGVzY3JpcHRpb24YBCABKAlIAIgBARIRCgRpY29uGAUgASgJSAGIAQESNQoGc3RhdHVzGAYgASgOMiUud29ya3NwYWNlLnYxLldvcmtzcGFjZUNhdGVnb3J5U3RhdHVzEhIKCmNyZWF0ZWRfYnkYByABKAkSEgoKY3JlYXRlZF9hdBgIIAEoCRISCgp1cGRhdGVkX2F0GAkgASgJQg4KDF9kZXNjcmlwdGlvbkIHCgVfaWNvbiJIChhXb3Jrc3BhY2VDYXRlZ29yeUNyZWF0ZWQSCgoCaWQYASABKAUSDAoEbmFtZRgCIAEoCRISCgpjcmVhdGVkX2F0GAMgASgJIjoKGFdvcmtzcGFjZUNhdGVnb3J5VXBkYXRlZBIKCgJpZBgBIAEoBRISCgp1cGRhdGVkX2F0GAIgASgJIk4KGFdvcmtzcGFjZUNhdGVnb3J5RGVsZXRlZBIKCgJpZBgBIAEoBRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkiPgoaV29ya3NwYWNlQ2F0ZWdvcnlBY3RpdmF0ZWQSCgoCaWQYASABKAUSFAoMYWN0aXZhdGVkX2F0GAIgASgJIkIKHFdvcmtzcGFjZUNhdGVnb3J5RGVhY3RpdmF0ZWQSCgoCaWQYASABKAUSFgoOZGVhY3RpdmF0ZWRfYXQYAiABKAkiQAobV29ya3NwYWNlQ2F0ZWdvcnlEZXByZWNhdGVkEgoKAmlkGAEgASgFEhUKDWRlcHJlY2F0ZWRfYXQYAiABKAkiYAogV29ya3NwYWNlQ2F0ZWdvcnlBbWVuaXR5QXNzaWduZWQSEwoLY2F0ZWdvcnlfaWQYASABKAUSEgoKYW1lbml0eV9pZBgCIAEoBRITCgthc3NpZ25lZF9hdBgDIAEoCSJyCh9Xb3Jrc3BhY2VDYXRlZ29yeUFtZW5pdHlSZW1vdmVkEhMKC2NhdGVnb3J5X2lkGAEgASgFEhIKCmFtZW5pdHlfaWQYAiABKAUSEgoKZGVsZXRlZF9ieRgDIAEoCRISCgpkZWxldGVkX2F0GAQgASgJKrwBChdXb3Jrc3BhY2VDYXRlZ29yeVN0YXR1cxIpCiVXT1JLU1BBQ0VfQ0FURUdPUllfU1RBVFVTX1VOU1BFQ0lGSUVEEAASJAogV09SS1NQQUNFX0NBVEVHT1JZX1NUQVRVU19BQ1RJVkUQARImCiJXT1JLU1BBQ0VfQ0FURUdPUllfU1RBVFVTX0lOQUNUSVZFEAISKAokV09SS1NQQUNFX0NBVEVHT1JZX1NUQVRVU19ERVBSRUNBVEVEEANCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM");
 
 /**
  * Describes the message workspace.v1.WorkspaceCategory.
@@ -18,59 +18,59 @@ export const WorkspaceCategorySchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 0);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryCreatedEvent.
- * Use `create(WorkspaceCategoryCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryCreated.
+ * Use `create(WorkspaceCategoryCreatedSchema)` to create a new message.
  */
-export const WorkspaceCategoryCreatedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryCreatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 1);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryUpdatedEvent.
- * Use `create(WorkspaceCategoryUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryUpdated.
+ * Use `create(WorkspaceCategoryUpdatedSchema)` to create a new message.
  */
-export const WorkspaceCategoryUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 2);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeletedEvent.
- * Use `create(WorkspaceCategoryDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeleted.
+ * Use `create(WorkspaceCategoryDeletedSchema)` to create a new message.
  */
-export const WorkspaceCategoryDeletedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryDeletedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 3);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryActivatedEvent.
- * Use `create(WorkspaceCategoryActivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryActivated.
+ * Use `create(WorkspaceCategoryActivatedSchema)` to create a new message.
  */
-export const WorkspaceCategoryActivatedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryActivatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 4);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeactivatedEvent.
- * Use `create(WorkspaceCategoryDeactivatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeactivated.
+ * Use `create(WorkspaceCategoryDeactivatedSchema)` to create a new message.
  */
-export const WorkspaceCategoryDeactivatedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryDeactivatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 5);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryDeprecatedEvent.
- * Use `create(WorkspaceCategoryDeprecatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryDeprecated.
+ * Use `create(WorkspaceCategoryDeprecatedSchema)` to create a new message.
  */
-export const WorkspaceCategoryDeprecatedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryDeprecatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 6);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryAmenityAssignedEvent.
- * Use `create(WorkspaceCategoryAmenityAssignedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryAmenityAssigned.
+ * Use `create(WorkspaceCategoryAmenityAssignedSchema)` to create a new message.
  */
-export const WorkspaceCategoryAmenityAssignedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryAmenityAssignedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 7);
 
 /**
- * Describes the message workspace.v1.WorkspaceCategoryAmenityRemovedEvent.
- * Use `create(WorkspaceCategoryAmenityRemovedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCategoryAmenityRemoved.
+ * Use `create(WorkspaceCategoryAmenityRemovedSchema)` to create a new message.
  */
-export const WorkspaceCategoryAmenityRemovedEventSchema = /*@__PURE__*/
+export const WorkspaceCategoryAmenityRemovedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_category, 8);
 
 /**

@@ -274,28 +274,28 @@ func (x *Workspace) GetLongitude() float64 {
 	return 0
 }
 
-// Query workspace by ID
-type QueryWorkspaceRequest struct {
+// Get workspace by ID
+type GetWorkspaceRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryWorkspaceRequest) Reset() {
-	*x = QueryWorkspaceRequest{}
+func (x *GetWorkspaceRequest) Reset() {
+	*x = GetWorkspaceRequest{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryWorkspaceRequest) String() string {
+func (x *GetWorkspaceRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryWorkspaceRequest) ProtoMessage() {}
+func (*GetWorkspaceRequest) ProtoMessage() {}
 
-func (x *QueryWorkspaceRequest) ProtoReflect() protoreflect.Message {
+func (x *GetWorkspaceRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -307,39 +307,39 @@ func (x *QueryWorkspaceRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryWorkspaceRequest.ProtoReflect.Descriptor instead.
-func (*QueryWorkspaceRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetWorkspaceRequest.ProtoReflect.Descriptor instead.
+func (*GetWorkspaceRequest) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *QueryWorkspaceRequest) GetId() string {
+func (x *GetWorkspaceRequest) GetId() string {
 	if x != nil && x.Id != nil {
 		return *x.Id
 	}
 	return ""
 }
 
-type QueryWorkspaceResponse struct {
+type GetWorkspaceResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workspace     *Workspace             `protobuf:"bytes,1,opt,name=workspace,proto3,oneof" json:"workspace,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryWorkspaceResponse) Reset() {
-	*x = QueryWorkspaceResponse{}
+func (x *GetWorkspaceResponse) Reset() {
+	*x = GetWorkspaceResponse{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryWorkspaceResponse) String() string {
+func (x *GetWorkspaceResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryWorkspaceResponse) ProtoMessage() {}
+func (*GetWorkspaceResponse) ProtoMessage() {}
 
-func (x *QueryWorkspaceResponse) ProtoReflect() protoreflect.Message {
+func (x *GetWorkspaceResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -351,40 +351,40 @@ func (x *QueryWorkspaceResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryWorkspaceResponse.ProtoReflect.Descriptor instead.
-func (*QueryWorkspaceResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetWorkspaceResponse.ProtoReflect.Descriptor instead.
+func (*GetWorkspaceResponse) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *QueryWorkspaceResponse) GetWorkspace() *Workspace {
+func (x *GetWorkspaceResponse) GetWorkspace() *Workspace {
 	if x != nil {
 		return x.Workspace
 	}
 	return nil
 }
 
-// Query multiple workspaces by IDs
-type QueryWorkspacesRequest struct {
+// List multiple workspaces by IDs
+type ListWorkspacesRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryWorkspacesRequest) Reset() {
-	*x = QueryWorkspacesRequest{}
+func (x *ListWorkspacesRequest) Reset() {
+	*x = ListWorkspacesRequest{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryWorkspacesRequest) String() string {
+func (x *ListWorkspacesRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryWorkspacesRequest) ProtoMessage() {}
+func (*ListWorkspacesRequest) ProtoMessage() {}
 
-func (x *QueryWorkspacesRequest) ProtoReflect() protoreflect.Message {
+func (x *ListWorkspacesRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -396,39 +396,39 @@ func (x *QueryWorkspacesRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryWorkspacesRequest.ProtoReflect.Descriptor instead.
-func (*QueryWorkspacesRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListWorkspacesRequest.ProtoReflect.Descriptor instead.
+func (*ListWorkspacesRequest) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *QueryWorkspacesRequest) GetIds() []string {
+func (x *ListWorkspacesRequest) GetIds() []string {
 	if x != nil {
 		return x.Ids
 	}
 	return nil
 }
 
-type QueryWorkspacesResponse struct {
+type ListWorkspacesResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workspaces    []*Workspace           `protobuf:"bytes,1,rep,name=workspaces,proto3" json:"workspaces,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryWorkspacesResponse) Reset() {
-	*x = QueryWorkspacesResponse{}
+func (x *ListWorkspacesResponse) Reset() {
+	*x = ListWorkspacesResponse{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryWorkspacesResponse) String() string {
+func (x *ListWorkspacesResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryWorkspacesResponse) ProtoMessage() {}
+func (*ListWorkspacesResponse) ProtoMessage() {}
 
-func (x *QueryWorkspacesResponse) ProtoReflect() protoreflect.Message {
+func (x *ListWorkspacesResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -440,12 +440,12 @@ func (x *QueryWorkspacesResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryWorkspacesResponse.ProtoReflect.Descriptor instead.
-func (*QueryWorkspacesResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListWorkspacesResponse.ProtoReflect.Descriptor instead.
+func (*ListWorkspacesResponse) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *QueryWorkspacesResponse) GetWorkspaces() []*Workspace {
+func (x *ListWorkspacesResponse) GetWorkspaces() []*Workspace {
 	if x != nil {
 		return x.Workspaces
 	}
@@ -453,27 +453,27 @@ func (x *QueryWorkspacesResponse) GetWorkspaces() []*Workspace {
 }
 
 // Event: Workspace created
-type WorkspaceCreatedEvent struct {
+type WorkspaceCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workspace     *Workspace             `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCreatedEvent) Reset() {
-	*x = WorkspaceCreatedEvent{}
+func (x *WorkspaceCreated) Reset() {
+	*x = WorkspaceCreated{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCreatedEvent) String() string {
+func (x *WorkspaceCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCreatedEvent) ProtoMessage() {}
+func (*WorkspaceCreated) ProtoMessage() {}
 
-func (x *WorkspaceCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -485,12 +485,12 @@ func (x *WorkspaceCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCreatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCreated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCreated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *WorkspaceCreatedEvent) GetWorkspace() *Workspace {
+func (x *WorkspaceCreated) GetWorkspace() *Workspace {
 	if x != nil {
 		return x.Workspace
 	}
@@ -498,27 +498,27 @@ func (x *WorkspaceCreatedEvent) GetWorkspace() *Workspace {
 }
 
 // Event: Workspace updated
-type WorkspaceUpdatedEvent struct {
+type WorkspaceUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Workspace     *Workspace             `protobuf:"bytes,1,opt,name=workspace,proto3" json:"workspace,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceUpdatedEvent) Reset() {
-	*x = WorkspaceUpdatedEvent{}
+func (x *WorkspaceUpdated) Reset() {
+	*x = WorkspaceUpdated{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceUpdatedEvent) String() string {
+func (x *WorkspaceUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceUpdated) ProtoMessage() {}
 
-func (x *WorkspaceUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -530,12 +530,12 @@ func (x *WorkspaceUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *WorkspaceUpdatedEvent) GetWorkspace() *Workspace {
+func (x *WorkspaceUpdated) GetWorkspace() *Workspace {
 	if x != nil {
 		return x.Workspace
 	}
@@ -543,7 +543,7 @@ func (x *WorkspaceUpdatedEvent) GetWorkspace() *Workspace {
 }
 
 // Event: Workspace deleted
-type WorkspaceDeletedEvent struct {
+type WorkspaceDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeletedBy     string                 `protobuf:"bytes,2,opt,name=deleted_by,json=deletedBy,proto3" json:"deleted_by,omitempty"`
@@ -552,20 +552,20 @@ type WorkspaceDeletedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceDeletedEvent) Reset() {
-	*x = WorkspaceDeletedEvent{}
+func (x *WorkspaceDeleted) Reset() {
+	*x = WorkspaceDeleted{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceDeletedEvent) String() string {
+func (x *WorkspaceDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceDeletedEvent) ProtoMessage() {}
+func (*WorkspaceDeleted) ProtoMessage() {}
 
-func (x *WorkspaceDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -577,26 +577,26 @@ func (x *WorkspaceDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceDeletedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceDeleted.ProtoReflect.Descriptor instead.
+func (*WorkspaceDeleted) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *WorkspaceDeletedEvent) GetId() string {
+func (x *WorkspaceDeleted) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceDeletedEvent) GetDeletedBy() string {
+func (x *WorkspaceDeleted) GetDeletedBy() string {
 	if x != nil {
 		return x.DeletedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceDeletedEvent) GetDeletedAt() string {
+func (x *WorkspaceDeleted) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -604,7 +604,7 @@ func (x *WorkspaceDeletedEvent) GetDeletedAt() string {
 }
 
 // Event: Workspace published
-type WorkspacePublishedEvent struct {
+type WorkspacePublished struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	PublishedAt   string                 `protobuf:"bytes,2,opt,name=published_at,json=publishedAt,proto3" json:"published_at,omitempty"` // ISO 8601 datetime string
@@ -612,20 +612,20 @@ type WorkspacePublishedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspacePublishedEvent) Reset() {
-	*x = WorkspacePublishedEvent{}
+func (x *WorkspacePublished) Reset() {
+	*x = WorkspacePublished{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspacePublishedEvent) String() string {
+func (x *WorkspacePublished) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspacePublishedEvent) ProtoMessage() {}
+func (*WorkspacePublished) ProtoMessage() {}
 
-func (x *WorkspacePublishedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspacePublished) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -637,19 +637,19 @@ func (x *WorkspacePublishedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspacePublishedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspacePublishedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspacePublished.ProtoReflect.Descriptor instead.
+func (*WorkspacePublished) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *WorkspacePublishedEvent) GetId() string {
+func (x *WorkspacePublished) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspacePublishedEvent) GetPublishedAt() string {
+func (x *WorkspacePublished) GetPublishedAt() string {
 	if x != nil {
 		return x.PublishedAt
 	}
@@ -657,7 +657,7 @@ func (x *WorkspacePublishedEvent) GetPublishedAt() string {
 }
 
 // Event: Workspace unpublished
-type WorkspaceUnpublishedEvent struct {
+type WorkspaceUnpublished struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	UnpublishedAt string                 `protobuf:"bytes,2,opt,name=unpublished_at,json=unpublishedAt,proto3" json:"unpublished_at,omitempty"` // ISO 8601 datetime string
@@ -665,20 +665,20 @@ type WorkspaceUnpublishedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceUnpublishedEvent) Reset() {
-	*x = WorkspaceUnpublishedEvent{}
+func (x *WorkspaceUnpublished) Reset() {
+	*x = WorkspaceUnpublished{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceUnpublishedEvent) String() string {
+func (x *WorkspaceUnpublished) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceUnpublishedEvent) ProtoMessage() {}
+func (*WorkspaceUnpublished) ProtoMessage() {}
 
-func (x *WorkspaceUnpublishedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceUnpublished) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -690,19 +690,19 @@ func (x *WorkspaceUnpublishedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceUnpublishedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceUnpublishedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceUnpublished.ProtoReflect.Descriptor instead.
+func (*WorkspaceUnpublished) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *WorkspaceUnpublishedEvent) GetId() string {
+func (x *WorkspaceUnpublished) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceUnpublishedEvent) GetUnpublishedAt() string {
+func (x *WorkspaceUnpublished) GetUnpublishedAt() string {
 	if x != nil {
 		return x.UnpublishedAt
 	}
@@ -710,7 +710,7 @@ func (x *WorkspaceUnpublishedEvent) GetUnpublishedAt() string {
 }
 
 // Event: Workspace suspended
-type WorkspaceSuspendedEvent struct {
+type WorkspaceSuspended struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	SuspendedAt   string                 `protobuf:"bytes,2,opt,name=suspended_at,json=suspendedAt,proto3" json:"suspended_at,omitempty"` // ISO 8601 datetime string
@@ -718,20 +718,20 @@ type WorkspaceSuspendedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceSuspendedEvent) Reset() {
-	*x = WorkspaceSuspendedEvent{}
+func (x *WorkspaceSuspended) Reset() {
+	*x = WorkspaceSuspended{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceSuspendedEvent) String() string {
+func (x *WorkspaceSuspended) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceSuspendedEvent) ProtoMessage() {}
+func (*WorkspaceSuspended) ProtoMessage() {}
 
-func (x *WorkspaceSuspendedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceSuspended) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -743,19 +743,19 @@ func (x *WorkspaceSuspendedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceSuspendedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceSuspendedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceSuspended.ProtoReflect.Descriptor instead.
+func (*WorkspaceSuspended) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *WorkspaceSuspendedEvent) GetId() string {
+func (x *WorkspaceSuspended) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceSuspendedEvent) GetSuspendedAt() string {
+func (x *WorkspaceSuspended) GetSuspendedAt() string {
 	if x != nil {
 		return x.SuspendedAt
 	}
@@ -763,7 +763,7 @@ func (x *WorkspaceSuspendedEvent) GetSuspendedAt() string {
 }
 
 // Event: Company info updated
-type WorkspaceCompanyInfoUpdatedEvent struct {
+type WorkspaceCompanyInfoUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	UpdatedAt     string                 `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
@@ -771,20 +771,20 @@ type WorkspaceCompanyInfoUpdatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceCompanyInfoUpdatedEvent) Reset() {
-	*x = WorkspaceCompanyInfoUpdatedEvent{}
+func (x *WorkspaceCompanyInfoUpdated) Reset() {
+	*x = WorkspaceCompanyInfoUpdated{}
 	mi := &file_workspace_v1_workspace_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceCompanyInfoUpdatedEvent) String() string {
+func (x *WorkspaceCompanyInfoUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceCompanyInfoUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceCompanyInfoUpdated) ProtoMessage() {}
 
-func (x *WorkspaceCompanyInfoUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceCompanyInfoUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_workspace_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -796,19 +796,19 @@ func (x *WorkspaceCompanyInfoUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceCompanyInfoUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceCompanyInfoUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceCompanyInfoUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceCompanyInfoUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *WorkspaceCompanyInfoUpdatedEvent) GetId() string {
+func (x *WorkspaceCompanyInfoUpdated) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceCompanyInfoUpdatedEvent) GetUpdatedAt() string {
+func (x *WorkspaceCompanyInfoUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
@@ -847,40 +847,40 @@ const file_workspace_v1_workspace_proto_rawDesc = "" +
 	"\a_avatarB\v\n" +
 	"\t_latitudeB\f\n" +
 	"\n" +
-	"_longitude\"3\n" +
-	"\x15QueryWorkspaceRequest\x12\x13\n" +
+	"_longitude\"1\n" +
+	"\x13GetWorkspaceRequest\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01B\x05\n" +
-	"\x03_id\"b\n" +
-	"\x16QueryWorkspaceResponse\x12:\n" +
+	"\x03_id\"`\n" +
+	"\x14GetWorkspaceResponse\x12:\n" +
 	"\tworkspace\x18\x01 \x01(\v2\x17.workspace.v1.WorkspaceH\x00R\tworkspace\x88\x01\x01B\f\n" +
 	"\n" +
-	"_workspace\"*\n" +
-	"\x16QueryWorkspacesRequest\x12\x10\n" +
-	"\x03ids\x18\x01 \x03(\tR\x03ids\"R\n" +
-	"\x17QueryWorkspacesResponse\x127\n" +
+	"_workspace\")\n" +
+	"\x15ListWorkspacesRequest\x12\x10\n" +
+	"\x03ids\x18\x01 \x03(\tR\x03ids\"Q\n" +
+	"\x16ListWorkspacesResponse\x127\n" +
 	"\n" +
 	"workspaces\x18\x01 \x03(\v2\x17.workspace.v1.WorkspaceR\n" +
-	"workspaces\"N\n" +
-	"\x15WorkspaceCreatedEvent\x125\n" +
-	"\tworkspace\x18\x01 \x01(\v2\x17.workspace.v1.WorkspaceR\tworkspace\"N\n" +
-	"\x15WorkspaceUpdatedEvent\x125\n" +
-	"\tworkspace\x18\x01 \x01(\v2\x17.workspace.v1.WorkspaceR\tworkspace\"e\n" +
-	"\x15WorkspaceDeletedEvent\x12\x0e\n" +
+	"workspaces\"I\n" +
+	"\x10WorkspaceCreated\x125\n" +
+	"\tworkspace\x18\x01 \x01(\v2\x17.workspace.v1.WorkspaceR\tworkspace\"I\n" +
+	"\x10WorkspaceUpdated\x125\n" +
+	"\tworkspace\x18\x01 \x01(\v2\x17.workspace.v1.WorkspaceR\tworkspace\"`\n" +
+	"\x10WorkspaceDeleted\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
 	"deleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n" +
 	"\n" +
-	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"L\n" +
-	"\x17WorkspacePublishedEvent\x12\x0e\n" +
+	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"G\n" +
+	"\x12WorkspacePublished\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
-	"\fpublished_at\x18\x02 \x01(\tR\vpublishedAt\"R\n" +
-	"\x19WorkspaceUnpublishedEvent\x12\x0e\n" +
+	"\fpublished_at\x18\x02 \x01(\tR\vpublishedAt\"M\n" +
+	"\x14WorkspaceUnpublished\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12%\n" +
-	"\x0eunpublished_at\x18\x02 \x01(\tR\runpublishedAt\"L\n" +
-	"\x17WorkspaceSuspendedEvent\x12\x0e\n" +
+	"\x0eunpublished_at\x18\x02 \x01(\tR\runpublishedAt\"G\n" +
+	"\x12WorkspaceSuspended\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
-	"\fsuspended_at\x18\x02 \x01(\tR\vsuspendedAt\"Q\n" +
-	" WorkspaceCompanyInfoUpdatedEvent\x12\x0e\n" +
+	"\fsuspended_at\x18\x02 \x01(\tR\vsuspendedAt\"L\n" +
+	"\x1bWorkspaceCompanyInfoUpdated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x02 \x01(\tR\tupdatedAt*\xb1\x01\n" +
@@ -910,28 +910,28 @@ func file_workspace_v1_workspace_proto_rawDescGZIP() []byte {
 var file_workspace_v1_workspace_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_workspace_v1_workspace_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_workspace_v1_workspace_proto_goTypes = []any{
-	(WorkspaceStatus)(0),                     // 0: workspace.v1.WorkspaceStatus
-	(WorkspaceType)(0),                       // 1: workspace.v1.WorkspaceType
-	(*Workspace)(nil),                        // 2: workspace.v1.Workspace
-	(*QueryWorkspaceRequest)(nil),            // 3: workspace.v1.QueryWorkspaceRequest
-	(*QueryWorkspaceResponse)(nil),           // 4: workspace.v1.QueryWorkspaceResponse
-	(*QueryWorkspacesRequest)(nil),           // 5: workspace.v1.QueryWorkspacesRequest
-	(*QueryWorkspacesResponse)(nil),          // 6: workspace.v1.QueryWorkspacesResponse
-	(*WorkspaceCreatedEvent)(nil),            // 7: workspace.v1.WorkspaceCreatedEvent
-	(*WorkspaceUpdatedEvent)(nil),            // 8: workspace.v1.WorkspaceUpdatedEvent
-	(*WorkspaceDeletedEvent)(nil),            // 9: workspace.v1.WorkspaceDeletedEvent
-	(*WorkspacePublishedEvent)(nil),          // 10: workspace.v1.WorkspacePublishedEvent
-	(*WorkspaceUnpublishedEvent)(nil),        // 11: workspace.v1.WorkspaceUnpublishedEvent
-	(*WorkspaceSuspendedEvent)(nil),          // 12: workspace.v1.WorkspaceSuspendedEvent
-	(*WorkspaceCompanyInfoUpdatedEvent)(nil), // 13: workspace.v1.WorkspaceCompanyInfoUpdatedEvent
+	(WorkspaceStatus)(0),                // 0: workspace.v1.WorkspaceStatus
+	(WorkspaceType)(0),                  // 1: workspace.v1.WorkspaceType
+	(*Workspace)(nil),                   // 2: workspace.v1.Workspace
+	(*GetWorkspaceRequest)(nil),         // 3: workspace.v1.GetWorkspaceRequest
+	(*GetWorkspaceResponse)(nil),        // 4: workspace.v1.GetWorkspaceResponse
+	(*ListWorkspacesRequest)(nil),       // 5: workspace.v1.ListWorkspacesRequest
+	(*ListWorkspacesResponse)(nil),      // 6: workspace.v1.ListWorkspacesResponse
+	(*WorkspaceCreated)(nil),            // 7: workspace.v1.WorkspaceCreated
+	(*WorkspaceUpdated)(nil),            // 8: workspace.v1.WorkspaceUpdated
+	(*WorkspaceDeleted)(nil),            // 9: workspace.v1.WorkspaceDeleted
+	(*WorkspacePublished)(nil),          // 10: workspace.v1.WorkspacePublished
+	(*WorkspaceUnpublished)(nil),        // 11: workspace.v1.WorkspaceUnpublished
+	(*WorkspaceSuspended)(nil),          // 12: workspace.v1.WorkspaceSuspended
+	(*WorkspaceCompanyInfoUpdated)(nil), // 13: workspace.v1.WorkspaceCompanyInfoUpdated
 }
 var file_workspace_v1_workspace_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.Workspace.status:type_name -> workspace.v1.WorkspaceStatus
 	1, // 1: workspace.v1.Workspace.type:type_name -> workspace.v1.WorkspaceType
-	2, // 2: workspace.v1.QueryWorkspaceResponse.workspace:type_name -> workspace.v1.Workspace
-	2, // 3: workspace.v1.QueryWorkspacesResponse.workspaces:type_name -> workspace.v1.Workspace
-	2, // 4: workspace.v1.WorkspaceCreatedEvent.workspace:type_name -> workspace.v1.Workspace
-	2, // 5: workspace.v1.WorkspaceUpdatedEvent.workspace:type_name -> workspace.v1.Workspace
+	2, // 2: workspace.v1.GetWorkspaceResponse.workspace:type_name -> workspace.v1.Workspace
+	2, // 3: workspace.v1.ListWorkspacesResponse.workspaces:type_name -> workspace.v1.Workspace
+	2, // 4: workspace.v1.WorkspaceCreated.workspace:type_name -> workspace.v1.Workspace
+	2, // 5: workspace.v1.WorkspaceUpdated.workspace:type_name -> workspace.v1.Workspace
 	6, // [6:6] is the sub-list for method output_type
 	6, // [6:6] is the sub-list for method input_type
 	6, // [6:6] is the sub-list for extension type_name

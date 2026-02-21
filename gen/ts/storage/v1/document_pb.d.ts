@@ -91,9 +91,9 @@ export declare const DocumentSchema: GenMessage<Document>;
 /**
  * Event: Document uploaded
  *
- * @generated from message storage.v1.DocumentUploadedEvent
+ * @generated from message storage.v1.DocumentUploaded
  */
-export declare type DocumentUploadedEvent = Message<"storage.v1.DocumentUploadedEvent"> & {
+export declare type DocumentUploaded = Message<"storage.v1.DocumentUploaded"> & {
   /**
    * @generated from field: string document_id = 1;
    */
@@ -101,17 +101,17 @@ export declare type DocumentUploadedEvent = Message<"storage.v1.DocumentUploaded
 };
 
 /**
- * Describes the message storage.v1.DocumentUploadedEvent.
- * Use `create(DocumentUploadedEventSchema)` to create a new message.
+ * Describes the message storage.v1.DocumentUploaded.
+ * Use `create(DocumentUploadedSchema)` to create a new message.
  */
-export declare const DocumentUploadedEventSchema: GenMessage<DocumentUploadedEvent>;
+export declare const DocumentUploadedSchema: GenMessage<DocumentUploaded>;
 
 /**
  * Event: Document deleted
  *
- * @generated from message storage.v1.DocumentDeletedEvent
+ * @generated from message storage.v1.DocumentDeleted
  */
-export declare type DocumentDeletedEvent = Message<"storage.v1.DocumentDeletedEvent"> & {
+export declare type DocumentDeleted = Message<"storage.v1.DocumentDeleted"> & {
   /**
    * @generated from field: string document_id = 1;
    */
@@ -119,8 +119,8 @@ export declare type DocumentDeletedEvent = Message<"storage.v1.DocumentDeletedEv
 };
 
 /**
- * Describes the message storage.v1.DocumentDeletedEvent.
- * Use `create(DocumentDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.DocumentDeleted.
+ * Use `create(DocumentDeletedSchema)` to create a new message.
  */
-export declare const DocumentDeletedEventSchema: GenMessage<DocumentDeletedEvent>;
+export declare const DocumentDeletedSchema: GenMessage<DocumentDeleted>;
 

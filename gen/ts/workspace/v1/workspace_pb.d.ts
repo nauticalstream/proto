@@ -104,11 +104,11 @@ export declare type Workspace = Message<"workspace.v1.Workspace"> & {
 export declare const WorkspaceSchema: GenMessage<Workspace>;
 
 /**
- * Query workspace by ID
+ * Get workspace by ID
  *
- * @generated from message workspace.v1.QueryWorkspaceRequest
+ * @generated from message workspace.v1.GetWorkspaceRequest
  */
-export declare type QueryWorkspaceRequest = Message<"workspace.v1.QueryWorkspaceRequest"> & {
+export declare type GetWorkspaceRequest = Message<"workspace.v1.GetWorkspaceRequest"> & {
   /**
    * @generated from field: optional string id = 1;
    */
@@ -116,15 +116,15 @@ export declare type QueryWorkspaceRequest = Message<"workspace.v1.QueryWorkspace
 };
 
 /**
- * Describes the message workspace.v1.QueryWorkspaceRequest.
- * Use `create(QueryWorkspaceRequestSchema)` to create a new message.
+ * Describes the message workspace.v1.GetWorkspaceRequest.
+ * Use `create(GetWorkspaceRequestSchema)` to create a new message.
  */
-export declare const QueryWorkspaceRequestSchema: GenMessage<QueryWorkspaceRequest>;
+export declare const GetWorkspaceRequestSchema: GenMessage<GetWorkspaceRequest>;
 
 /**
- * @generated from message workspace.v1.QueryWorkspaceResponse
+ * @generated from message workspace.v1.GetWorkspaceResponse
  */
-export declare type QueryWorkspaceResponse = Message<"workspace.v1.QueryWorkspaceResponse"> & {
+export declare type GetWorkspaceResponse = Message<"workspace.v1.GetWorkspaceResponse"> & {
   /**
    * @generated from field: optional workspace.v1.Workspace workspace = 1;
    */
@@ -132,17 +132,17 @@ export declare type QueryWorkspaceResponse = Message<"workspace.v1.QueryWorkspac
 };
 
 /**
- * Describes the message workspace.v1.QueryWorkspaceResponse.
- * Use `create(QueryWorkspaceResponseSchema)` to create a new message.
+ * Describes the message workspace.v1.GetWorkspaceResponse.
+ * Use `create(GetWorkspaceResponseSchema)` to create a new message.
  */
-export declare const QueryWorkspaceResponseSchema: GenMessage<QueryWorkspaceResponse>;
+export declare const GetWorkspaceResponseSchema: GenMessage<GetWorkspaceResponse>;
 
 /**
- * Query multiple workspaces by IDs
+ * List multiple workspaces by IDs
  *
- * @generated from message workspace.v1.QueryWorkspacesRequest
+ * @generated from message workspace.v1.ListWorkspacesRequest
  */
-export declare type QueryWorkspacesRequest = Message<"workspace.v1.QueryWorkspacesRequest"> & {
+export declare type ListWorkspacesRequest = Message<"workspace.v1.ListWorkspacesRequest"> & {
   /**
    * @generated from field: repeated string ids = 1;
    */
@@ -150,15 +150,15 @@ export declare type QueryWorkspacesRequest = Message<"workspace.v1.QueryWorkspac
 };
 
 /**
- * Describes the message workspace.v1.QueryWorkspacesRequest.
- * Use `create(QueryWorkspacesRequestSchema)` to create a new message.
+ * Describes the message workspace.v1.ListWorkspacesRequest.
+ * Use `create(ListWorkspacesRequestSchema)` to create a new message.
  */
-export declare const QueryWorkspacesRequestSchema: GenMessage<QueryWorkspacesRequest>;
+export declare const ListWorkspacesRequestSchema: GenMessage<ListWorkspacesRequest>;
 
 /**
- * @generated from message workspace.v1.QueryWorkspacesResponse
+ * @generated from message workspace.v1.ListWorkspacesResponse
  */
-export declare type QueryWorkspacesResponse = Message<"workspace.v1.QueryWorkspacesResponse"> & {
+export declare type ListWorkspacesResponse = Message<"workspace.v1.ListWorkspacesResponse"> & {
   /**
    * @generated from field: repeated workspace.v1.Workspace workspaces = 1;
    */
@@ -166,17 +166,17 @@ export declare type QueryWorkspacesResponse = Message<"workspace.v1.QueryWorkspa
 };
 
 /**
- * Describes the message workspace.v1.QueryWorkspacesResponse.
- * Use `create(QueryWorkspacesResponseSchema)` to create a new message.
+ * Describes the message workspace.v1.ListWorkspacesResponse.
+ * Use `create(ListWorkspacesResponseSchema)` to create a new message.
  */
-export declare const QueryWorkspacesResponseSchema: GenMessage<QueryWorkspacesResponse>;
+export declare const ListWorkspacesResponseSchema: GenMessage<ListWorkspacesResponse>;
 
 /**
  * Event: Workspace created
  *
- * @generated from message workspace.v1.WorkspaceCreatedEvent
+ * @generated from message workspace.v1.WorkspaceCreated
  */
-export declare type WorkspaceCreatedEvent = Message<"workspace.v1.WorkspaceCreatedEvent"> & {
+export declare type WorkspaceCreated = Message<"workspace.v1.WorkspaceCreated"> & {
   /**
    * @generated from field: workspace.v1.Workspace workspace = 1;
    */
@@ -184,17 +184,17 @@ export declare type WorkspaceCreatedEvent = Message<"workspace.v1.WorkspaceCreat
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCreatedEvent.
- * Use `create(WorkspaceCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCreated.
+ * Use `create(WorkspaceCreatedSchema)` to create a new message.
  */
-export declare const WorkspaceCreatedEventSchema: GenMessage<WorkspaceCreatedEvent>;
+export declare const WorkspaceCreatedSchema: GenMessage<WorkspaceCreated>;
 
 /**
  * Event: Workspace updated
  *
- * @generated from message workspace.v1.WorkspaceUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceUpdated
  */
-export declare type WorkspaceUpdatedEvent = Message<"workspace.v1.WorkspaceUpdatedEvent"> & {
+export declare type WorkspaceUpdated = Message<"workspace.v1.WorkspaceUpdated"> & {
   /**
    * @generated from field: workspace.v1.Workspace workspace = 1;
    */
@@ -202,17 +202,17 @@ export declare type WorkspaceUpdatedEvent = Message<"workspace.v1.WorkspaceUpdat
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceUpdatedEvent.
- * Use `create(WorkspaceUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceUpdated.
+ * Use `create(WorkspaceUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceUpdatedEventSchema: GenMessage<WorkspaceUpdatedEvent>;
+export declare const WorkspaceUpdatedSchema: GenMessage<WorkspaceUpdated>;
 
 /**
  * Event: Workspace deleted
  *
- * @generated from message workspace.v1.WorkspaceDeletedEvent
+ * @generated from message workspace.v1.WorkspaceDeleted
  */
-export declare type WorkspaceDeletedEvent = Message<"workspace.v1.WorkspaceDeletedEvent"> & {
+export declare type WorkspaceDeleted = Message<"workspace.v1.WorkspaceDeleted"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -232,17 +232,17 @@ export declare type WorkspaceDeletedEvent = Message<"workspace.v1.WorkspaceDelet
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceDeletedEvent.
- * Use `create(WorkspaceDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceDeleted.
+ * Use `create(WorkspaceDeletedSchema)` to create a new message.
  */
-export declare const WorkspaceDeletedEventSchema: GenMessage<WorkspaceDeletedEvent>;
+export declare const WorkspaceDeletedSchema: GenMessage<WorkspaceDeleted>;
 
 /**
  * Event: Workspace published
  *
- * @generated from message workspace.v1.WorkspacePublishedEvent
+ * @generated from message workspace.v1.WorkspacePublished
  */
-export declare type WorkspacePublishedEvent = Message<"workspace.v1.WorkspacePublishedEvent"> & {
+export declare type WorkspacePublished = Message<"workspace.v1.WorkspacePublished"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -257,17 +257,17 @@ export declare type WorkspacePublishedEvent = Message<"workspace.v1.WorkspacePub
 };
 
 /**
- * Describes the message workspace.v1.WorkspacePublishedEvent.
- * Use `create(WorkspacePublishedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspacePublished.
+ * Use `create(WorkspacePublishedSchema)` to create a new message.
  */
-export declare const WorkspacePublishedEventSchema: GenMessage<WorkspacePublishedEvent>;
+export declare const WorkspacePublishedSchema: GenMessage<WorkspacePublished>;
 
 /**
  * Event: Workspace unpublished
  *
- * @generated from message workspace.v1.WorkspaceUnpublishedEvent
+ * @generated from message workspace.v1.WorkspaceUnpublished
  */
-export declare type WorkspaceUnpublishedEvent = Message<"workspace.v1.WorkspaceUnpublishedEvent"> & {
+export declare type WorkspaceUnpublished = Message<"workspace.v1.WorkspaceUnpublished"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -282,17 +282,17 @@ export declare type WorkspaceUnpublishedEvent = Message<"workspace.v1.WorkspaceU
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceUnpublishedEvent.
- * Use `create(WorkspaceUnpublishedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceUnpublished.
+ * Use `create(WorkspaceUnpublishedSchema)` to create a new message.
  */
-export declare const WorkspaceUnpublishedEventSchema: GenMessage<WorkspaceUnpublishedEvent>;
+export declare const WorkspaceUnpublishedSchema: GenMessage<WorkspaceUnpublished>;
 
 /**
  * Event: Workspace suspended
  *
- * @generated from message workspace.v1.WorkspaceSuspendedEvent
+ * @generated from message workspace.v1.WorkspaceSuspended
  */
-export declare type WorkspaceSuspendedEvent = Message<"workspace.v1.WorkspaceSuspendedEvent"> & {
+export declare type WorkspaceSuspended = Message<"workspace.v1.WorkspaceSuspended"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -307,17 +307,17 @@ export declare type WorkspaceSuspendedEvent = Message<"workspace.v1.WorkspaceSus
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceSuspendedEvent.
- * Use `create(WorkspaceSuspendedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceSuspended.
+ * Use `create(WorkspaceSuspendedSchema)` to create a new message.
  */
-export declare const WorkspaceSuspendedEventSchema: GenMessage<WorkspaceSuspendedEvent>;
+export declare const WorkspaceSuspendedSchema: GenMessage<WorkspaceSuspended>;
 
 /**
  * Event: Company info updated
  *
- * @generated from message workspace.v1.WorkspaceCompanyInfoUpdatedEvent
+ * @generated from message workspace.v1.WorkspaceCompanyInfoUpdated
  */
-export declare type WorkspaceCompanyInfoUpdatedEvent = Message<"workspace.v1.WorkspaceCompanyInfoUpdatedEvent"> & {
+export declare type WorkspaceCompanyInfoUpdated = Message<"workspace.v1.WorkspaceCompanyInfoUpdated"> & {
   /**
    * @generated from field: string id = 1;
    */
@@ -332,10 +332,10 @@ export declare type WorkspaceCompanyInfoUpdatedEvent = Message<"workspace.v1.Wor
 };
 
 /**
- * Describes the message workspace.v1.WorkspaceCompanyInfoUpdatedEvent.
- * Use `create(WorkspaceCompanyInfoUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCompanyInfoUpdated.
+ * Use `create(WorkspaceCompanyInfoUpdatedSchema)` to create a new message.
  */
-export declare const WorkspaceCompanyInfoUpdatedEventSchema: GenMessage<WorkspaceCompanyInfoUpdatedEvent>;
+export declare const WorkspaceCompanyInfoUpdatedSchema: GenMessage<WorkspaceCompanyInfoUpdated>;
 
 /**
  * @generated from enum workspace.v1.WorkspaceStatus

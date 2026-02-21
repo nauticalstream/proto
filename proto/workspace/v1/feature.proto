@@ -35,7 +35,7 @@ message WorkspaceFeature {
 // ============================================
 
 // Event: Feature created
-message WorkspaceFeatureCreatedEvent {
+message WorkspaceFeatureCreated {
   string id = 1;
   string workspace_id = 2;
   int32 amenity_id = 3;
@@ -43,13 +43,13 @@ message WorkspaceFeatureCreatedEvent {
 }
 
 // Event: Feature updated
-message WorkspaceFeatureUpdatedEvent {
+message WorkspaceFeatureUpdated {
   string id = 1;
   string updated_at = 2; // ISO 8601 datetime string
 }
 
 // Event: Feature deleted
-message WorkspaceFeatureDeletedEvent {
+message WorkspaceFeatureDeleted {
   string id = 1;
   string deleted_by = 2;
   string deleted_at = 3; // ISO 8601 datetime string

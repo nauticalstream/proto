@@ -53,25 +53,25 @@ message UserDetails {
 }
 
 // ============================================
-// REQUEST/RESPONSE (EventBus Query Patterns)
+// REQUEST/RESPONSE (EventBus RPC Patterns)
 // ============================================
 
-// Query user by ID or email
-message QueryUserRequest {
+// Get user by ID or email
+message GetUserRequest {
   optional string id = 1;
   optional string email = 2;
 }
 
-message QueryUserResponse {
+message GetUserResponse {
   optional User user = 1;
 }
 
-// Query multiple users by IDs
-message QueryUsersRequest {
+// List multiple users by IDs
+message ListUsersRequest {
   repeated string ids = 1;
 }
 
-message QueryUsersResponse {
+message ListUsersResponse {
   repeated User users = 1;
 }
 
@@ -80,7 +80,7 @@ message QueryUsersResponse {
 // ============================================
 
 // Event: User created
-message UserCreatedEvent {
+message UserCreated {
   string user_id = 1;
   string username = 2;
   string email = 3;
@@ -90,7 +90,7 @@ message UserCreatedEvent {
 }
 
 // Event: User updated
-message UserUpdatedEvent {
+message UserUpdated {
   string user_id = 1;
   optional string username = 2;
   optional string email = 3;
@@ -110,20 +110,20 @@ message UserUpdatedEvent {
 }
 
 // Event: User deleted
-message UserDeletedEvent {
+message UserDeleted {
   string user_id = 1;
   string deleted_at = 2; // ISO 8601 datetime string
 }
 
 // Event: User profile updated
-message UserProfileUpdatedEvent {
+message UserProfileUpdated {
   string user_id = 1;
   optional string avatar = 2;
   string updated_at = 3; // ISO 8601 datetime string
 }
 
 // Event: Onboarding status changed
-message UserOnboardingStatusEvent {
+message UserOnboardingStatus {
   string user_id = 1;
   bool onboarding_completed = 2;
   repeated string missing_fields = 3;

@@ -167,7 +167,7 @@ func (x *WorkspaceFeature) GetUpdatedAt() string {
 }
 
 // Event: Feature created
-type WorkspaceFeatureCreatedEvent struct {
+type WorkspaceFeatureCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
@@ -177,20 +177,20 @@ type WorkspaceFeatureCreatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceFeatureCreatedEvent) Reset() {
-	*x = WorkspaceFeatureCreatedEvent{}
+func (x *WorkspaceFeatureCreated) Reset() {
+	*x = WorkspaceFeatureCreated{}
 	mi := &file_workspace_v1_feature_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceFeatureCreatedEvent) String() string {
+func (x *WorkspaceFeatureCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceFeatureCreatedEvent) ProtoMessage() {}
+func (*WorkspaceFeatureCreated) ProtoMessage() {}
 
-func (x *WorkspaceFeatureCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceFeatureCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_feature_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -202,33 +202,33 @@ func (x *WorkspaceFeatureCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceFeatureCreatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceFeatureCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceFeatureCreated.ProtoReflect.Descriptor instead.
+func (*WorkspaceFeatureCreated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_feature_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *WorkspaceFeatureCreatedEvent) GetId() string {
+func (x *WorkspaceFeatureCreated) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceFeatureCreatedEvent) GetWorkspaceId() string {
+func (x *WorkspaceFeatureCreated) GetWorkspaceId() string {
 	if x != nil {
 		return x.WorkspaceId
 	}
 	return ""
 }
 
-func (x *WorkspaceFeatureCreatedEvent) GetAmenityId() int32 {
+func (x *WorkspaceFeatureCreated) GetAmenityId() int32 {
 	if x != nil {
 		return x.AmenityId
 	}
 	return 0
 }
 
-func (x *WorkspaceFeatureCreatedEvent) GetCreatedAt() string {
+func (x *WorkspaceFeatureCreated) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -236,7 +236,7 @@ func (x *WorkspaceFeatureCreatedEvent) GetCreatedAt() string {
 }
 
 // Event: Feature updated
-type WorkspaceFeatureUpdatedEvent struct {
+type WorkspaceFeatureUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	UpdatedAt     string                 `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
@@ -244,20 +244,20 @@ type WorkspaceFeatureUpdatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceFeatureUpdatedEvent) Reset() {
-	*x = WorkspaceFeatureUpdatedEvent{}
+func (x *WorkspaceFeatureUpdated) Reset() {
+	*x = WorkspaceFeatureUpdated{}
 	mi := &file_workspace_v1_feature_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceFeatureUpdatedEvent) String() string {
+func (x *WorkspaceFeatureUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceFeatureUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceFeatureUpdated) ProtoMessage() {}
 
-func (x *WorkspaceFeatureUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceFeatureUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_feature_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -269,19 +269,19 @@ func (x *WorkspaceFeatureUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceFeatureUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceFeatureUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceFeatureUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceFeatureUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_feature_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *WorkspaceFeatureUpdatedEvent) GetId() string {
+func (x *WorkspaceFeatureUpdated) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceFeatureUpdatedEvent) GetUpdatedAt() string {
+func (x *WorkspaceFeatureUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
@@ -289,7 +289,7 @@ func (x *WorkspaceFeatureUpdatedEvent) GetUpdatedAt() string {
 }
 
 // Event: Feature deleted
-type WorkspaceFeatureDeletedEvent struct {
+type WorkspaceFeatureDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeletedBy     string                 `protobuf:"bytes,2,opt,name=deleted_by,json=deletedBy,proto3" json:"deleted_by,omitempty"`
@@ -298,20 +298,20 @@ type WorkspaceFeatureDeletedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceFeatureDeletedEvent) Reset() {
-	*x = WorkspaceFeatureDeletedEvent{}
+func (x *WorkspaceFeatureDeleted) Reset() {
+	*x = WorkspaceFeatureDeleted{}
 	mi := &file_workspace_v1_feature_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceFeatureDeletedEvent) String() string {
+func (x *WorkspaceFeatureDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceFeatureDeletedEvent) ProtoMessage() {}
+func (*WorkspaceFeatureDeleted) ProtoMessage() {}
 
-func (x *WorkspaceFeatureDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceFeatureDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_feature_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -323,26 +323,26 @@ func (x *WorkspaceFeatureDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceFeatureDeletedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceFeatureDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceFeatureDeleted.ProtoReflect.Descriptor instead.
+func (*WorkspaceFeatureDeleted) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_feature_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *WorkspaceFeatureDeletedEvent) GetId() string {
+func (x *WorkspaceFeatureDeleted) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceFeatureDeletedEvent) GetDeletedBy() string {
+func (x *WorkspaceFeatureDeleted) GetDeletedBy() string {
 	if x != nil {
 		return x.DeletedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceFeatureDeletedEvent) GetDeletedAt() string {
+func (x *WorkspaceFeatureDeleted) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -365,19 +365,19 @@ const file_workspace_v1_feature_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\a \x01(\tR\tupdatedAt\"\x8f\x01\n" +
-	"\x1cWorkspaceFeatureCreatedEvent\x12\x0e\n" +
+	"updated_at\x18\a \x01(\tR\tupdatedAt\"\x8a\x01\n" +
+	"\x17WorkspaceFeatureCreated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x1d\n" +
 	"\n" +
 	"amenity_id\x18\x03 \x01(\x05R\tamenityId\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x04 \x01(\tR\tcreatedAt\"M\n" +
-	"\x1cWorkspaceFeatureUpdatedEvent\x12\x0e\n" +
+	"created_at\x18\x04 \x01(\tR\tcreatedAt\"H\n" +
+	"\x17WorkspaceFeatureUpdated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"l\n" +
-	"\x1cWorkspaceFeatureDeletedEvent\x12\x0e\n" +
+	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"g\n" +
+	"\x17WorkspaceFeatureDeleted\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
 	"deleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n" +
@@ -404,11 +404,11 @@ func file_workspace_v1_feature_proto_rawDescGZIP() []byte {
 var file_workspace_v1_feature_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_workspace_v1_feature_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_workspace_v1_feature_proto_goTypes = []any{
-	(WorkspaceFeatureStatus)(0),          // 0: workspace.v1.WorkspaceFeatureStatus
-	(*WorkspaceFeature)(nil),             // 1: workspace.v1.WorkspaceFeature
-	(*WorkspaceFeatureCreatedEvent)(nil), // 2: workspace.v1.WorkspaceFeatureCreatedEvent
-	(*WorkspaceFeatureUpdatedEvent)(nil), // 3: workspace.v1.WorkspaceFeatureUpdatedEvent
-	(*WorkspaceFeatureDeletedEvent)(nil), // 4: workspace.v1.WorkspaceFeatureDeletedEvent
+	(WorkspaceFeatureStatus)(0),     // 0: workspace.v1.WorkspaceFeatureStatus
+	(*WorkspaceFeature)(nil),        // 1: workspace.v1.WorkspaceFeature
+	(*WorkspaceFeatureCreated)(nil), // 2: workspace.v1.WorkspaceFeatureCreated
+	(*WorkspaceFeatureUpdated)(nil), // 3: workspace.v1.WorkspaceFeatureUpdated
+	(*WorkspaceFeatureDeleted)(nil), // 4: workspace.v1.WorkspaceFeatureDeleted
 }
 var file_workspace_v1_feature_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.WorkspaceFeature.status:type_name -> workspace.v1.WorkspaceFeatureStatus

@@ -183,7 +183,7 @@ func (x *WorkspaceMember) GetUpdatedAt() string {
 }
 
 // Event: Member added to workspace
-type WorkspaceMemberAddedEvent struct {
+type WorkspaceMemberAdded struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
@@ -194,20 +194,20 @@ type WorkspaceMemberAddedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceMemberAddedEvent) Reset() {
-	*x = WorkspaceMemberAddedEvent{}
+func (x *WorkspaceMemberAdded) Reset() {
+	*x = WorkspaceMemberAdded{}
 	mi := &file_workspace_v1_member_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceMemberAddedEvent) String() string {
+func (x *WorkspaceMemberAdded) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceMemberAddedEvent) ProtoMessage() {}
+func (*WorkspaceMemberAdded) ProtoMessage() {}
 
-func (x *WorkspaceMemberAddedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceMemberAdded) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_member_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -219,40 +219,40 @@ func (x *WorkspaceMemberAddedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceMemberAddedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceMemberAddedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceMemberAdded.ProtoReflect.Descriptor instead.
+func (*WorkspaceMemberAdded) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_member_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *WorkspaceMemberAddedEvent) GetId() string {
+func (x *WorkspaceMemberAdded) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberAddedEvent) GetWorkspaceId() string {
+func (x *WorkspaceMemberAdded) GetWorkspaceId() string {
 	if x != nil {
 		return x.WorkspaceId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberAddedEvent) GetUserId() string {
+func (x *WorkspaceMemberAdded) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberAddedEvent) GetRole() string {
+func (x *WorkspaceMemberAdded) GetRole() string {
 	if x != nil {
 		return x.Role
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberAddedEvent) GetAddedAt() string {
+func (x *WorkspaceMemberAdded) GetAddedAt() string {
 	if x != nil {
 		return x.AddedAt
 	}
@@ -260,7 +260,7 @@ func (x *WorkspaceMemberAddedEvent) GetAddedAt() string {
 }
 
 // Event: Member updated in workspace
-type WorkspaceMemberUpdatedEvent struct {
+type WorkspaceMemberUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
@@ -271,20 +271,20 @@ type WorkspaceMemberUpdatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceMemberUpdatedEvent) Reset() {
-	*x = WorkspaceMemberUpdatedEvent{}
+func (x *WorkspaceMemberUpdated) Reset() {
+	*x = WorkspaceMemberUpdated{}
 	mi := &file_workspace_v1_member_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceMemberUpdatedEvent) String() string {
+func (x *WorkspaceMemberUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceMemberUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceMemberUpdated) ProtoMessage() {}
 
-func (x *WorkspaceMemberUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceMemberUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_member_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -296,40 +296,40 @@ func (x *WorkspaceMemberUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceMemberUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceMemberUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceMemberUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceMemberUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_member_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *WorkspaceMemberUpdatedEvent) GetId() string {
+func (x *WorkspaceMemberUpdated) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberUpdatedEvent) GetWorkspaceId() string {
+func (x *WorkspaceMemberUpdated) GetWorkspaceId() string {
 	if x != nil {
 		return x.WorkspaceId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberUpdatedEvent) GetUserId() string {
+func (x *WorkspaceMemberUpdated) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberUpdatedEvent) GetRole() string {
+func (x *WorkspaceMemberUpdated) GetRole() string {
 	if x != nil && x.Role != nil {
 		return *x.Role
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberUpdatedEvent) GetUpdatedAt() string {
+func (x *WorkspaceMemberUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
@@ -337,7 +337,7 @@ func (x *WorkspaceMemberUpdatedEvent) GetUpdatedAt() string {
 }
 
 // Event: Member removed from workspace
-type WorkspaceMemberRemovedEvent struct {
+type WorkspaceMemberRemoved struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
@@ -348,20 +348,20 @@ type WorkspaceMemberRemovedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceMemberRemovedEvent) Reset() {
-	*x = WorkspaceMemberRemovedEvent{}
+func (x *WorkspaceMemberRemoved) Reset() {
+	*x = WorkspaceMemberRemoved{}
 	mi := &file_workspace_v1_member_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceMemberRemovedEvent) String() string {
+func (x *WorkspaceMemberRemoved) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceMemberRemovedEvent) ProtoMessage() {}
+func (*WorkspaceMemberRemoved) ProtoMessage() {}
 
-func (x *WorkspaceMemberRemovedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceMemberRemoved) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_member_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -373,40 +373,40 @@ func (x *WorkspaceMemberRemovedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceMemberRemovedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceMemberRemovedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceMemberRemoved.ProtoReflect.Descriptor instead.
+func (*WorkspaceMemberRemoved) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_member_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *WorkspaceMemberRemovedEvent) GetId() string {
+func (x *WorkspaceMemberRemoved) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberRemovedEvent) GetWorkspaceId() string {
+func (x *WorkspaceMemberRemoved) GetWorkspaceId() string {
 	if x != nil {
 		return x.WorkspaceId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberRemovedEvent) GetUserId() string {
+func (x *WorkspaceMemberRemoved) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberRemovedEvent) GetRemovedBy() string {
+func (x *WorkspaceMemberRemoved) GetRemovedBy() string {
 	if x != nil {
 		return x.RemovedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceMemberRemovedEvent) GetRemovedAt() string {
+func (x *WorkspaceMemberRemoved) GetRemovedAt() string {
 	if x != nil {
 		return x.RemovedAt
 	}
@@ -431,22 +431,22 @@ const file_workspace_v1_member_proto_rawDesc = "" +
 	"created_at\x18\b \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\t \x01(\tR\tupdatedAtB\b\n" +
-	"\x06_title\"\x96\x01\n" +
-	"\x19WorkspaceMemberAddedEvent\x12\x0e\n" +
+	"\x06_title\"\x91\x01\n" +
+	"\x14WorkspaceMemberAdded\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
 	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x12\n" +
 	"\x04role\x18\x04 \x01(\tR\x04role\x12\x19\n" +
-	"\badded_at\x18\x05 \x01(\tR\aaddedAt\"\xaa\x01\n" +
-	"\x1bWorkspaceMemberUpdatedEvent\x12\x0e\n" +
+	"\badded_at\x18\x05 \x01(\tR\aaddedAt\"\xa5\x01\n" +
+	"\x16WorkspaceMemberUpdated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
 	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x17\n" +
 	"\x04role\x18\x04 \x01(\tH\x00R\x04role\x88\x01\x01\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x05 \x01(\tR\tupdatedAtB\a\n" +
-	"\x05_role\"\xa7\x01\n" +
-	"\x1bWorkspaceMemberRemovedEvent\x12\x0e\n" +
+	"\x05_role\"\xa2\x01\n" +
+	"\x16WorkspaceMemberRemoved\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
 	"\auser_id\x18\x03 \x01(\tR\x06userId\x12\x1d\n" +
@@ -475,11 +475,11 @@ func file_workspace_v1_member_proto_rawDescGZIP() []byte {
 var file_workspace_v1_member_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_workspace_v1_member_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_workspace_v1_member_proto_goTypes = []any{
-	(WorkspaceMemberRole)(0),            // 0: workspace.v1.WorkspaceMemberRole
-	(*WorkspaceMember)(nil),             // 1: workspace.v1.WorkspaceMember
-	(*WorkspaceMemberAddedEvent)(nil),   // 2: workspace.v1.WorkspaceMemberAddedEvent
-	(*WorkspaceMemberUpdatedEvent)(nil), // 3: workspace.v1.WorkspaceMemberUpdatedEvent
-	(*WorkspaceMemberRemovedEvent)(nil), // 4: workspace.v1.WorkspaceMemberRemovedEvent
+	(WorkspaceMemberRole)(0),       // 0: workspace.v1.WorkspaceMemberRole
+	(*WorkspaceMember)(nil),        // 1: workspace.v1.WorkspaceMember
+	(*WorkspaceMemberAdded)(nil),   // 2: workspace.v1.WorkspaceMemberAdded
+	(*WorkspaceMemberUpdated)(nil), // 3: workspace.v1.WorkspaceMemberUpdated
+	(*WorkspaceMemberRemoved)(nil), // 4: workspace.v1.WorkspaceMemberRemoved
 }
 var file_workspace_v1_member_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.WorkspaceMember.role:type_name -> workspace.v1.WorkspaceMemberRole

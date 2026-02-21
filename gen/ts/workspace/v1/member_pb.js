@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file workspace/v1/member.proto.
  */
 export const file_workspace_v1_member = /*@__PURE__*/
-  fileDesc("Chl3b3Jrc3BhY2UvdjEvbWVtYmVyLnByb3RvEgx3b3Jrc3BhY2UudjEi5wEKD1dvcmtzcGFjZU1lbWJlchIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIvCgRyb2xlGAQgASgOMiEud29ya3NwYWNlLnYxLldvcmtzcGFjZU1lbWJlclJvbGUSEgoFdGl0bGUYBSABKAlIAIgBARIWCg5yZXByZXNlbnRhdGl2ZRgGIAEoCBISCgpjcmVhdGVkX2J5GAcgASgJEhIKCmNyZWF0ZWRfYXQYCCABKAkSEgoKdXBkYXRlZF9hdBgJIAEoCUIICgZfdGl0bGUibgoZV29ya3NwYWNlTWVtYmVyQWRkZWRFdmVudBIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIMCgRyb2xlGAQgASgJEhAKCGFkZGVkX2F0GAUgASgJIoABChtXb3Jrc3BhY2VNZW1iZXJVcGRhdGVkRXZlbnQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSEQoEcm9sZRgEIAEoCUgAiAEBEhIKCnVwZGF0ZWRfYXQYBSABKAlCBwoFX3JvbGUieAobV29ya3NwYWNlTWVtYmVyUmVtb3ZlZEV2ZW50EgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRIPCgd1c2VyX2lkGAMgASgJEhIKCnJlbW92ZWRfYnkYBCABKAkSEgoKcmVtb3ZlZF9hdBgFIAEoCSqgAQoTV29ya3NwYWNlTWVtYmVyUm9sZRIlCiFXT1JLU1BBQ0VfTUVNQkVSX1JPTEVfVU5TUEVDSUZJRUQQABIfChtXT1JLU1BBQ0VfTUVNQkVSX1JPTEVfT1dORVIQARIfChtXT1JLU1BBQ0VfTUVNQkVSX1JPTEVfQURNSU4QAhIgChxXT1JLU1BBQ0VfTUVNQkVSX1JPTEVfTUVNQkVSEANCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM");
+  fileDesc("Chl3b3Jrc3BhY2UvdjEvbWVtYmVyLnByb3RvEgx3b3Jrc3BhY2UudjEi5wEKD1dvcmtzcGFjZU1lbWJlchIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIvCgRyb2xlGAQgASgOMiEud29ya3NwYWNlLnYxLldvcmtzcGFjZU1lbWJlclJvbGUSEgoFdGl0bGUYBSABKAlIAIgBARIWCg5yZXByZXNlbnRhdGl2ZRgGIAEoCBISCgpjcmVhdGVkX2J5GAcgASgJEhIKCmNyZWF0ZWRfYXQYCCABKAkSEgoKdXBkYXRlZF9hdBgJIAEoCUIICgZfdGl0bGUiaQoUV29ya3NwYWNlTWVtYmVyQWRkZWQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSDAoEcm9sZRgEIAEoCRIQCghhZGRlZF9hdBgFIAEoCSJ7ChZXb3Jrc3BhY2VNZW1iZXJVcGRhdGVkEgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRIPCgd1c2VyX2lkGAMgASgJEhEKBHJvbGUYBCABKAlIAIgBARISCgp1cGRhdGVkX2F0GAUgASgJQgcKBV9yb2xlInMKFldvcmtzcGFjZU1lbWJlclJlbW92ZWQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSEgoKcmVtb3ZlZF9ieRgEIAEoCRISCgpyZW1vdmVkX2F0GAUgASgJKqABChNXb3Jrc3BhY2VNZW1iZXJSb2xlEiUKIVdPUktTUEFDRV9NRU1CRVJfUk9MRV9VTlNQRUNJRklFRBAAEh8KG1dPUktTUEFDRV9NRU1CRVJfUk9MRV9PV05FUhABEh8KG1dPUktTUEFDRV9NRU1CRVJfUk9MRV9BRE1JThACEiAKHFdPUktTUEFDRV9NRU1CRVJfUk9MRV9NRU1CRVIQA0I1WjNnaXRodWIuY29tL25hdXRpY2Fsc3RyZWFtL3Byb3RvL2dlbi9nby93b3Jrc3BhY2UvdjFiBnByb3RvMw");
 
 /**
  * Describes the message workspace.v1.WorkspaceMember.
@@ -18,24 +18,24 @@ export const WorkspaceMemberSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_member, 0);
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberAddedEvent.
- * Use `create(WorkspaceMemberAddedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberAdded.
+ * Use `create(WorkspaceMemberAddedSchema)` to create a new message.
  */
-export const WorkspaceMemberAddedEventSchema = /*@__PURE__*/
+export const WorkspaceMemberAddedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_member, 1);
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberUpdatedEvent.
- * Use `create(WorkspaceMemberUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberUpdated.
+ * Use `create(WorkspaceMemberUpdatedSchema)` to create a new message.
  */
-export const WorkspaceMemberUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceMemberUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_member, 2);
 
 /**
- * Describes the message workspace.v1.WorkspaceMemberRemovedEvent.
- * Use `create(WorkspaceMemberRemovedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceMemberRemoved.
+ * Use `create(WorkspaceMemberRemovedSchema)` to create a new message.
  */
-export const WorkspaceMemberRemovedEventSchema = /*@__PURE__*/
+export const WorkspaceMemberRemovedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_member, 3);
 
 /**

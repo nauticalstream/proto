@@ -9,7 +9,7 @@ import { file_storage_v1_shared } from "./shared_pb";
  * Describes the file storage/v1/file_reference.proto.
  */
 export const file_storage_v1_file_reference = /*@__PURE__*/
-  fileDesc("Ch9zdG9yYWdlL3YxL2ZpbGVfcmVmZXJlbmNlLnByb3RvEgpzdG9yYWdlLnYxIl0KDkhhc0ZpbGVSZXF1ZXN0EjUKDnJlZmVyZW5jZV90eXBlGAEgASgOMh0uc3RvcmFnZS52MS5GaWxlUmVmZXJlbmNlVHlwZRIUCgxyZWZlcmVuY2VfaWQYAiABKAkiIwoPSGFzRmlsZVJlc3BvbnNlEhAKCGhhc19maWxlGAEgASgIIkAKE0hhc0ZpbGVCYXRjaFJlcXVlc3QSKQoFaXRlbXMYASADKAsyGi5zdG9yYWdlLnYxLkhhc0ZpbGVSZXF1ZXN0InMKEkhhc0ZpbGVCYXRjaFJlc3VsdBI1Cg5yZWZlcmVuY2VfdHlwZRgBIAEoDjIdLnN0b3JhZ2UudjEuRmlsZVJlZmVyZW5jZVR5cGUSFAoMcmVmZXJlbmNlX2lkGAIgASgJEhAKCGhhc19maWxlGAMgASgIIkcKFEhhc0ZpbGVCYXRjaFJlc3BvbnNlEi8KB3Jlc3VsdHMYASADKAsyHi5zdG9yYWdlLnYxLkhhc0ZpbGVCYXRjaFJlc3VsdCIwChNGaWxlUmVmZXJlbmNlZEV2ZW50EhkKEWZpbGVfcmVmZXJlbmNlX2lkGAEgASgJIjIKFUZpbGVVbnJlZmVyZW5jZWRFdmVudBIZChFmaWxlX3JlZmVyZW5jZV9pZBgBIAEoCUIzWjFnaXRodWIuY29tL25hdXRpY2Fsc3RyZWFtL3Byb3RvL2dlbi9nby9zdG9yYWdlL3YxYgZwcm90bzM", [file_storage_v1_shared]);
+  fileDesc("Ch9zdG9yYWdlL3YxL2ZpbGVfcmVmZXJlbmNlLnByb3RvEgpzdG9yYWdlLnYxIl0KDkhhc0ZpbGVSZXF1ZXN0EjUKDnJlZmVyZW5jZV90eXBlGAEgASgOMh0uc3RvcmFnZS52MS5GaWxlUmVmZXJlbmNlVHlwZRIUCgxyZWZlcmVuY2VfaWQYAiABKAkiIwoPSGFzRmlsZVJlc3BvbnNlEhAKCGhhc19maWxlGAEgASgIIkAKE0hhc0ZpbGVCYXRjaFJlcXVlc3QSKQoFaXRlbXMYASADKAsyGi5zdG9yYWdlLnYxLkhhc0ZpbGVSZXF1ZXN0InMKEkhhc0ZpbGVCYXRjaFJlc3VsdBI1Cg5yZWZlcmVuY2VfdHlwZRgBIAEoDjIdLnN0b3JhZ2UudjEuRmlsZVJlZmVyZW5jZVR5cGUSFAoMcmVmZXJlbmNlX2lkGAIgASgJEhAKCGhhc19maWxlGAMgASgIIkcKFEhhc0ZpbGVCYXRjaFJlc3BvbnNlEi8KB3Jlc3VsdHMYASADKAsyHi5zdG9yYWdlLnYxLkhhc0ZpbGVCYXRjaFJlc3VsdCIrCg5GaWxlUmVmZXJlbmNlZBIZChFmaWxlX3JlZmVyZW5jZV9pZBgBIAEoCSItChBGaWxlVW5yZWZlcmVuY2VkEhkKEWZpbGVfcmVmZXJlbmNlX2lkGAEgASgJQjNaMWdpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3N0b3JhZ2UvdjFiBnByb3RvMw", [file_storage_v1_shared]);
 
 /**
  * Describes the message storage.v1.HasFileRequest.
@@ -47,16 +47,16 @@ export const HasFileBatchResponseSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_file_reference, 4);
 
 /**
- * Describes the message storage.v1.FileReferencedEvent.
- * Use `create(FileReferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.FileReferenced.
+ * Use `create(FileReferencedSchema)` to create a new message.
  */
-export const FileReferencedEventSchema = /*@__PURE__*/
+export const FileReferencedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_file_reference, 5);
 
 /**
- * Describes the message storage.v1.FileUnreferencedEvent.
- * Use `create(FileUnreferencedEventSchema)` to create a new message.
+ * Describes the message storage.v1.FileUnreferenced.
+ * Use `create(FileUnreferencedSchema)` to create a new message.
  */
-export const FileUnreferencedEventSchema = /*@__PURE__*/
+export const FileUnreferencedSchema = /*@__PURE__*/
   messageDesc(file_storage_v1_file_reference, 6);
 

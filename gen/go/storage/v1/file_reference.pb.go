@@ -267,27 +267,27 @@ func (x *HasFileBatchResponse) GetResults() []*HasFileBatchResult {
 }
 
 // Event: A file was attached to an entity
-type FileReferencedEvent struct {
+type FileReferenced struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	FileReferenceId string                 `protobuf:"bytes,1,opt,name=file_reference_id,json=fileReferenceId,proto3" json:"file_reference_id,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *FileReferencedEvent) Reset() {
-	*x = FileReferencedEvent{}
+func (x *FileReferenced) Reset() {
+	*x = FileReferenced{}
 	mi := &file_storage_v1_file_reference_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FileReferencedEvent) String() string {
+func (x *FileReferenced) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FileReferencedEvent) ProtoMessage() {}
+func (*FileReferenced) ProtoMessage() {}
 
-func (x *FileReferencedEvent) ProtoReflect() protoreflect.Message {
+func (x *FileReferenced) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_file_reference_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -299,12 +299,12 @@ func (x *FileReferencedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FileReferencedEvent.ProtoReflect.Descriptor instead.
-func (*FileReferencedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use FileReferenced.ProtoReflect.Descriptor instead.
+func (*FileReferenced) Descriptor() ([]byte, []int) {
 	return file_storage_v1_file_reference_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *FileReferencedEvent) GetFileReferenceId() string {
+func (x *FileReferenced) GetFileReferenceId() string {
 	if x != nil {
 		return x.FileReferenceId
 	}
@@ -312,27 +312,27 @@ func (x *FileReferencedEvent) GetFileReferenceId() string {
 }
 
 // Event: A file was detached from an entity
-type FileUnreferencedEvent struct {
+type FileUnreferenced struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	FileReferenceId string                 `protobuf:"bytes,1,opt,name=file_reference_id,json=fileReferenceId,proto3" json:"file_reference_id,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *FileUnreferencedEvent) Reset() {
-	*x = FileUnreferencedEvent{}
+func (x *FileUnreferenced) Reset() {
+	*x = FileUnreferenced{}
 	mi := &file_storage_v1_file_reference_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *FileUnreferencedEvent) String() string {
+func (x *FileUnreferenced) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FileUnreferencedEvent) ProtoMessage() {}
+func (*FileUnreferenced) ProtoMessage() {}
 
-func (x *FileUnreferencedEvent) ProtoReflect() protoreflect.Message {
+func (x *FileUnreferenced) ProtoReflect() protoreflect.Message {
 	mi := &file_storage_v1_file_reference_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -344,12 +344,12 @@ func (x *FileUnreferencedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FileUnreferencedEvent.ProtoReflect.Descriptor instead.
-func (*FileUnreferencedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use FileUnreferenced.ProtoReflect.Descriptor instead.
+func (*FileUnreferenced) Descriptor() ([]byte, []int) {
 	return file_storage_v1_file_reference_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *FileUnreferencedEvent) GetFileReferenceId() string {
+func (x *FileUnreferenced) GetFileReferenceId() string {
 	if x != nil {
 		return x.FileReferenceId
 	}
@@ -374,10 +374,10 @@ const file_storage_v1_file_reference_proto_rawDesc = "" +
 	"\freference_id\x18\x02 \x01(\tR\vreferenceId\x12\x19\n" +
 	"\bhas_file\x18\x03 \x01(\bR\ahasFile\"P\n" +
 	"\x14HasFileBatchResponse\x128\n" +
-	"\aresults\x18\x01 \x03(\v2\x1e.storage.v1.HasFileBatchResultR\aresults\"A\n" +
-	"\x13FileReferencedEvent\x12*\n" +
-	"\x11file_reference_id\x18\x01 \x01(\tR\x0ffileReferenceId\"C\n" +
-	"\x15FileUnreferencedEvent\x12*\n" +
+	"\aresults\x18\x01 \x03(\v2\x1e.storage.v1.HasFileBatchResultR\aresults\"<\n" +
+	"\x0eFileReferenced\x12*\n" +
+	"\x11file_reference_id\x18\x01 \x01(\tR\x0ffileReferenceId\">\n" +
+	"\x10FileUnreferenced\x12*\n" +
 	"\x11file_reference_id\x18\x01 \x01(\tR\x0ffileReferenceIdB3Z1github.com/nauticalstream/proto/gen/go/storage/v1b\x06proto3"
 
 var (
@@ -394,14 +394,14 @@ func file_storage_v1_file_reference_proto_rawDescGZIP() []byte {
 
 var file_storage_v1_file_reference_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_storage_v1_file_reference_proto_goTypes = []any{
-	(*HasFileRequest)(nil),        // 0: storage.v1.HasFileRequest
-	(*HasFileResponse)(nil),       // 1: storage.v1.HasFileResponse
-	(*HasFileBatchRequest)(nil),   // 2: storage.v1.HasFileBatchRequest
-	(*HasFileBatchResult)(nil),    // 3: storage.v1.HasFileBatchResult
-	(*HasFileBatchResponse)(nil),  // 4: storage.v1.HasFileBatchResponse
-	(*FileReferencedEvent)(nil),   // 5: storage.v1.FileReferencedEvent
-	(*FileUnreferencedEvent)(nil), // 6: storage.v1.FileUnreferencedEvent
-	(FileReferenceType)(0),        // 7: storage.v1.FileReferenceType
+	(*HasFileRequest)(nil),       // 0: storage.v1.HasFileRequest
+	(*HasFileResponse)(nil),      // 1: storage.v1.HasFileResponse
+	(*HasFileBatchRequest)(nil),  // 2: storage.v1.HasFileBatchRequest
+	(*HasFileBatchResult)(nil),   // 3: storage.v1.HasFileBatchResult
+	(*HasFileBatchResponse)(nil), // 4: storage.v1.HasFileBatchResponse
+	(*FileReferenced)(nil),       // 5: storage.v1.FileReferenced
+	(*FileUnreferenced)(nil),     // 6: storage.v1.FileUnreferenced
+	(FileReferenceType)(0),       // 7: storage.v1.FileReferenceType
 }
 var file_storage_v1_file_reference_proto_depIdxs = []int32{
 	7, // 0: storage.v1.HasFileRequest.reference_type:type_name -> storage.v1.FileReferenceType

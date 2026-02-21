@@ -243,7 +243,7 @@ func (x *WorkspaceAmenity) GetUpdatedAt() string {
 }
 
 // Event: Amenity created
-type WorkspaceAmenityCreatedEvent struct {
+type WorkspaceAmenityCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
@@ -252,20 +252,20 @@ type WorkspaceAmenityCreatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityCreatedEvent) Reset() {
-	*x = WorkspaceAmenityCreatedEvent{}
+func (x *WorkspaceAmenityCreated) Reset() {
+	*x = WorkspaceAmenityCreated{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityCreatedEvent) String() string {
+func (x *WorkspaceAmenityCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityCreatedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityCreated) ProtoMessage() {}
 
-func (x *WorkspaceAmenityCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -277,26 +277,26 @@ func (x *WorkspaceAmenityCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityCreatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityCreated.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityCreated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *WorkspaceAmenityCreatedEvent) GetId() int32 {
+func (x *WorkspaceAmenityCreated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityCreatedEvent) GetName() string {
+func (x *WorkspaceAmenityCreated) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *WorkspaceAmenityCreatedEvent) GetCreatedAt() string {
+func (x *WorkspaceAmenityCreated) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
@@ -304,7 +304,7 @@ func (x *WorkspaceAmenityCreatedEvent) GetCreatedAt() string {
 }
 
 // Event: Amenity updated
-type WorkspaceAmenityUpdatedEvent struct {
+type WorkspaceAmenityUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	UpdatedAt     string                 `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
@@ -312,20 +312,20 @@ type WorkspaceAmenityUpdatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityUpdatedEvent) Reset() {
-	*x = WorkspaceAmenityUpdatedEvent{}
+func (x *WorkspaceAmenityUpdated) Reset() {
+	*x = WorkspaceAmenityUpdated{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityUpdatedEvent) String() string {
+func (x *WorkspaceAmenityUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityUpdatedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityUpdated) ProtoMessage() {}
 
-func (x *WorkspaceAmenityUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -337,19 +337,19 @@ func (x *WorkspaceAmenityUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityUpdated.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityUpdated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *WorkspaceAmenityUpdatedEvent) GetId() int32 {
+func (x *WorkspaceAmenityUpdated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityUpdatedEvent) GetUpdatedAt() string {
+func (x *WorkspaceAmenityUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
@@ -357,7 +357,7 @@ func (x *WorkspaceAmenityUpdatedEvent) GetUpdatedAt() string {
 }
 
 // Event: Amenity deleted
-type WorkspaceAmenityDeletedEvent struct {
+type WorkspaceAmenityDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeletedBy     string                 `protobuf:"bytes,2,opt,name=deleted_by,json=deletedBy,proto3" json:"deleted_by,omitempty"`
@@ -366,20 +366,20 @@ type WorkspaceAmenityDeletedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityDeletedEvent) Reset() {
-	*x = WorkspaceAmenityDeletedEvent{}
+func (x *WorkspaceAmenityDeleted) Reset() {
+	*x = WorkspaceAmenityDeleted{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityDeletedEvent) String() string {
+func (x *WorkspaceAmenityDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityDeletedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityDeleted) ProtoMessage() {}
 
-func (x *WorkspaceAmenityDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -391,26 +391,26 @@ func (x *WorkspaceAmenityDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityDeletedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityDeleted.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityDeleted) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *WorkspaceAmenityDeletedEvent) GetId() int32 {
+func (x *WorkspaceAmenityDeleted) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityDeletedEvent) GetDeletedBy() string {
+func (x *WorkspaceAmenityDeleted) GetDeletedBy() string {
 	if x != nil {
 		return x.DeletedBy
 	}
 	return ""
 }
 
-func (x *WorkspaceAmenityDeletedEvent) GetDeletedAt() string {
+func (x *WorkspaceAmenityDeleted) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -418,7 +418,7 @@ func (x *WorkspaceAmenityDeletedEvent) GetDeletedAt() string {
 }
 
 // Event: Amenity activated
-type WorkspaceAmenityActivatedEvent struct {
+type WorkspaceAmenityActivated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	ActivatedAt   string                 `protobuf:"bytes,2,opt,name=activated_at,json=activatedAt,proto3" json:"activated_at,omitempty"` // ISO 8601 datetime string
@@ -426,20 +426,20 @@ type WorkspaceAmenityActivatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityActivatedEvent) Reset() {
-	*x = WorkspaceAmenityActivatedEvent{}
+func (x *WorkspaceAmenityActivated) Reset() {
+	*x = WorkspaceAmenityActivated{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityActivatedEvent) String() string {
+func (x *WorkspaceAmenityActivated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityActivatedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityActivated) ProtoMessage() {}
 
-func (x *WorkspaceAmenityActivatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityActivated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -451,19 +451,19 @@ func (x *WorkspaceAmenityActivatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityActivatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityActivatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityActivated.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityActivated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *WorkspaceAmenityActivatedEvent) GetId() int32 {
+func (x *WorkspaceAmenityActivated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityActivatedEvent) GetActivatedAt() string {
+func (x *WorkspaceAmenityActivated) GetActivatedAt() string {
 	if x != nil {
 		return x.ActivatedAt
 	}
@@ -471,7 +471,7 @@ func (x *WorkspaceAmenityActivatedEvent) GetActivatedAt() string {
 }
 
 // Event: Amenity deactivated
-type WorkspaceAmenityDeactivatedEvent struct {
+type WorkspaceAmenityDeactivated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeactivatedAt string                 `protobuf:"bytes,2,opt,name=deactivated_at,json=deactivatedAt,proto3" json:"deactivated_at,omitempty"` // ISO 8601 datetime string
@@ -479,20 +479,20 @@ type WorkspaceAmenityDeactivatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityDeactivatedEvent) Reset() {
-	*x = WorkspaceAmenityDeactivatedEvent{}
+func (x *WorkspaceAmenityDeactivated) Reset() {
+	*x = WorkspaceAmenityDeactivated{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityDeactivatedEvent) String() string {
+func (x *WorkspaceAmenityDeactivated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityDeactivatedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityDeactivated) ProtoMessage() {}
 
-func (x *WorkspaceAmenityDeactivatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityDeactivated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -504,19 +504,19 @@ func (x *WorkspaceAmenityDeactivatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityDeactivatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityDeactivatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityDeactivated.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityDeactivated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *WorkspaceAmenityDeactivatedEvent) GetId() int32 {
+func (x *WorkspaceAmenityDeactivated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityDeactivatedEvent) GetDeactivatedAt() string {
+func (x *WorkspaceAmenityDeactivated) GetDeactivatedAt() string {
 	if x != nil {
 		return x.DeactivatedAt
 	}
@@ -524,7 +524,7 @@ func (x *WorkspaceAmenityDeactivatedEvent) GetDeactivatedAt() string {
 }
 
 // Event: Amenity deprecated
-type WorkspaceAmenityDeprecatedEvent struct {
+type WorkspaceAmenityDeprecated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            int32                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	DeprecatedAt  string                 `protobuf:"bytes,2,opt,name=deprecated_at,json=deprecatedAt,proto3" json:"deprecated_at,omitempty"` // ISO 8601 datetime string
@@ -532,20 +532,20 @@ type WorkspaceAmenityDeprecatedEvent struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *WorkspaceAmenityDeprecatedEvent) Reset() {
-	*x = WorkspaceAmenityDeprecatedEvent{}
+func (x *WorkspaceAmenityDeprecated) Reset() {
+	*x = WorkspaceAmenityDeprecated{}
 	mi := &file_workspace_v1_amenity_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *WorkspaceAmenityDeprecatedEvent) String() string {
+func (x *WorkspaceAmenityDeprecated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WorkspaceAmenityDeprecatedEvent) ProtoMessage() {}
+func (*WorkspaceAmenityDeprecated) ProtoMessage() {}
 
-func (x *WorkspaceAmenityDeprecatedEvent) ProtoReflect() protoreflect.Message {
+func (x *WorkspaceAmenityDeprecated) ProtoReflect() protoreflect.Message {
 	mi := &file_workspace_v1_amenity_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -557,19 +557,19 @@ func (x *WorkspaceAmenityDeprecatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WorkspaceAmenityDeprecatedEvent.ProtoReflect.Descriptor instead.
-func (*WorkspaceAmenityDeprecatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use WorkspaceAmenityDeprecated.ProtoReflect.Descriptor instead.
+func (*WorkspaceAmenityDeprecated) Descriptor() ([]byte, []int) {
 	return file_workspace_v1_amenity_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *WorkspaceAmenityDeprecatedEvent) GetId() int32 {
+func (x *WorkspaceAmenityDeprecated) GetId() int32 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *WorkspaceAmenityDeprecatedEvent) GetDeprecatedAt() string {
+func (x *WorkspaceAmenityDeprecated) GetDeprecatedAt() string {
 	if x != nil {
 		return x.DeprecatedAt
 	}
@@ -597,29 +597,29 @@ const file_workspace_v1_amenity_proto_rawDesc = "" +
 	"updated_at\x18\n" +
 	" \x01(\tR\tupdatedAtB\x0e\n" +
 	"\f_descriptionB\a\n" +
-	"\x05_icon\"a\n" +
-	"\x1cWorkspaceAmenityCreatedEvent\x12\x0e\n" +
+	"\x05_icon\"\\\n" +
+	"\x17WorkspaceAmenityCreated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x03 \x01(\tR\tcreatedAt\"M\n" +
-	"\x1cWorkspaceAmenityUpdatedEvent\x12\x0e\n" +
+	"created_at\x18\x03 \x01(\tR\tcreatedAt\"H\n" +
+	"\x17WorkspaceAmenityUpdated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"l\n" +
-	"\x1cWorkspaceAmenityDeletedEvent\x12\x0e\n" +
+	"updated_at\x18\x02 \x01(\tR\tupdatedAt\"g\n" +
+	"\x17WorkspaceAmenityDeleted\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x1d\n" +
 	"\n" +
 	"deleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n" +
 	"\n" +
-	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"S\n" +
-	"\x1eWorkspaceAmenityActivatedEvent\x12\x0e\n" +
+	"deleted_at\x18\x03 \x01(\tR\tdeletedAt\"N\n" +
+	"\x19WorkspaceAmenityActivated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12!\n" +
-	"\factivated_at\x18\x02 \x01(\tR\vactivatedAt\"Y\n" +
-	" WorkspaceAmenityDeactivatedEvent\x12\x0e\n" +
+	"\factivated_at\x18\x02 \x01(\tR\vactivatedAt\"T\n" +
+	"\x1bWorkspaceAmenityDeactivated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12%\n" +
-	"\x0edeactivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"V\n" +
-	"\x1fWorkspaceAmenityDeprecatedEvent\x12\x0e\n" +
+	"\x0edeactivated_at\x18\x02 \x01(\tR\rdeactivatedAt\"Q\n" +
+	"\x1aWorkspaceAmenityDeprecated\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12#\n" +
 	"\rdeprecated_at\x18\x02 \x01(\tR\fdeprecatedAt*\xaa\x01\n" +
 	"\x14WorkspaceAmenityType\x12&\n" +
@@ -648,15 +648,15 @@ func file_workspace_v1_amenity_proto_rawDescGZIP() []byte {
 var file_workspace_v1_amenity_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_workspace_v1_amenity_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_workspace_v1_amenity_proto_goTypes = []any{
-	(WorkspaceAmenityType)(0),                // 0: workspace.v1.WorkspaceAmenityType
-	(WorkspaceAmenityStatus)(0),              // 1: workspace.v1.WorkspaceAmenityStatus
-	(*WorkspaceAmenity)(nil),                 // 2: workspace.v1.WorkspaceAmenity
-	(*WorkspaceAmenityCreatedEvent)(nil),     // 3: workspace.v1.WorkspaceAmenityCreatedEvent
-	(*WorkspaceAmenityUpdatedEvent)(nil),     // 4: workspace.v1.WorkspaceAmenityUpdatedEvent
-	(*WorkspaceAmenityDeletedEvent)(nil),     // 5: workspace.v1.WorkspaceAmenityDeletedEvent
-	(*WorkspaceAmenityActivatedEvent)(nil),   // 6: workspace.v1.WorkspaceAmenityActivatedEvent
-	(*WorkspaceAmenityDeactivatedEvent)(nil), // 7: workspace.v1.WorkspaceAmenityDeactivatedEvent
-	(*WorkspaceAmenityDeprecatedEvent)(nil),  // 8: workspace.v1.WorkspaceAmenityDeprecatedEvent
+	(WorkspaceAmenityType)(0),           // 0: workspace.v1.WorkspaceAmenityType
+	(WorkspaceAmenityStatus)(0),         // 1: workspace.v1.WorkspaceAmenityStatus
+	(*WorkspaceAmenity)(nil),            // 2: workspace.v1.WorkspaceAmenity
+	(*WorkspaceAmenityCreated)(nil),     // 3: workspace.v1.WorkspaceAmenityCreated
+	(*WorkspaceAmenityUpdated)(nil),     // 4: workspace.v1.WorkspaceAmenityUpdated
+	(*WorkspaceAmenityDeleted)(nil),     // 5: workspace.v1.WorkspaceAmenityDeleted
+	(*WorkspaceAmenityActivated)(nil),   // 6: workspace.v1.WorkspaceAmenityActivated
+	(*WorkspaceAmenityDeactivated)(nil), // 7: workspace.v1.WorkspaceAmenityDeactivated
+	(*WorkspaceAmenityDeprecated)(nil),  // 8: workspace.v1.WorkspaceAmenityDeprecated
 }
 var file_workspace_v1_amenity_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.WorkspaceAmenity.type:type_name -> workspace.v1.WorkspaceAmenityType

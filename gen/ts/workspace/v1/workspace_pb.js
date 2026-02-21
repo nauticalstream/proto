@@ -8,7 +8,7 @@ import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/code
  * Describes the file workspace/v1/workspace.proto.
  */
 export const file_workspace_v1_workspace = /*@__PURE__*/
-  fileDesc("Chx3b3Jrc3BhY2UvdjEvd29ya3NwYWNlLnByb3RvEgx3b3Jrc3BhY2UudjEiqwMKCVdvcmtzcGFjZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg4KBmhhbmRsZRgDIAEoCRIYCgtkZXNjcmlwdGlvbhgEIAEoCUgAiAEBEi0KBnN0YXR1cxgFIAEoDjIdLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VTdGF0dXMSKQoEdHlwZRgGIAEoDjIbLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VUeXBlEhgKC2NhdGVnb3J5X2lkGAcgASgFSAGIAQESEgoKY3JlYXRlZF9ieRgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJEhIKCnVwZGF0ZWRfYXQYCiABKAkSFAoHd2Vic2l0ZRgLIAEoCUgCiAEBEhMKBmF2YXRhchgOIAEoCUgDiAEBEhUKCGxhdGl0dWRlGA8gASgBSASIAQESFgoJbG9uZ2l0dWRlGBAgASgBSAWIAQFCDgoMX2Rlc2NyaXB0aW9uQg4KDF9jYXRlZ29yeV9pZEIKCghfd2Vic2l0ZUIJCgdfYXZhdGFyQgsKCV9sYXRpdHVkZUIMCgpfbG9uZ2l0dWRlIi8KFVF1ZXJ5V29ya3NwYWNlUmVxdWVzdBIPCgJpZBgBIAEoCUgAiAEBQgUKA19pZCJXChZRdWVyeVdvcmtzcGFjZVJlc3BvbnNlEi8KCXdvcmtzcGFjZRgBIAEoCzIXLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VIAIgBAUIMCgpfd29ya3NwYWNlIiUKFlF1ZXJ5V29ya3NwYWNlc1JlcXVlc3QSCwoDaWRzGAEgAygJIkYKF1F1ZXJ5V29ya3NwYWNlc1Jlc3BvbnNlEisKCndvcmtzcGFjZXMYASADKAsyFy53b3Jrc3BhY2UudjEuV29ya3NwYWNlIkMKFVdvcmtzcGFjZUNyZWF0ZWRFdmVudBIqCgl3b3Jrc3BhY2UYASABKAsyFy53b3Jrc3BhY2UudjEuV29ya3NwYWNlIkMKFVdvcmtzcGFjZVVwZGF0ZWRFdmVudBIqCgl3b3Jrc3BhY2UYASABKAsyFy53b3Jrc3BhY2UudjEuV29ya3NwYWNlIksKFVdvcmtzcGFjZURlbGV0ZWRFdmVudBIKCgJpZBgBIAEoCRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkiOwoXV29ya3NwYWNlUHVibGlzaGVkRXZlbnQSCgoCaWQYASABKAkSFAoMcHVibGlzaGVkX2F0GAIgASgJIj8KGVdvcmtzcGFjZVVucHVibGlzaGVkRXZlbnQSCgoCaWQYASABKAkSFgoOdW5wdWJsaXNoZWRfYXQYAiABKAkiOwoXV29ya3NwYWNlU3VzcGVuZGVkRXZlbnQSCgoCaWQYASABKAkSFAoMc3VzcGVuZGVkX2F0GAIgASgJIkIKIFdvcmtzcGFjZUNvbXBhbnlJbmZvVXBkYXRlZEV2ZW50EgoKAmlkGAEgASgJEhIKCnVwZGF0ZWRfYXQYAiABKAkqsQEKD1dvcmtzcGFjZVN0YXR1cxIgChxXT1JLU1BBQ0VfU1RBVFVTX1VOU1BFQ0lGSUVEEAASGgoWV09SS1NQQUNFX1NUQVRVU19EUkFGVBABEh4KGldPUktTUEFDRV9TVEFUVVNfUFVCTElTSEVEEAISIAocV09SS1NQQUNFX1NUQVRVU19VTlBVQkxJU0hFRBADEh4KGldPUktTUEFDRV9TVEFUVVNfU1VTUEVOREVEEAQqagoNV29ya3NwYWNlVHlwZRIeChpXT1JLU1BBQ0VfVFlQRV9VTlNQRUNJRklFRBAAEh0KGVdPUktTUEFDRV9UWVBFX0lORElWSURVQUwQARIaChZXT1JLU1BBQ0VfVFlQRV9DT01QQU5ZEAJCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM");
+  fileDesc("Chx3b3Jrc3BhY2UvdjEvd29ya3NwYWNlLnByb3RvEgx3b3Jrc3BhY2UudjEiqwMKCVdvcmtzcGFjZRIKCgJpZBgBIAEoCRIMCgRuYW1lGAIgASgJEg4KBmhhbmRsZRgDIAEoCRIYCgtkZXNjcmlwdGlvbhgEIAEoCUgAiAEBEi0KBnN0YXR1cxgFIAEoDjIdLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VTdGF0dXMSKQoEdHlwZRgGIAEoDjIbLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2VUeXBlEhgKC2NhdGVnb3J5X2lkGAcgASgFSAGIAQESEgoKY3JlYXRlZF9ieRgIIAEoCRISCgpjcmVhdGVkX2F0GAkgASgJEhIKCnVwZGF0ZWRfYXQYCiABKAkSFAoHd2Vic2l0ZRgLIAEoCUgCiAEBEhMKBmF2YXRhchgOIAEoCUgDiAEBEhUKCGxhdGl0dWRlGA8gASgBSASIAQESFgoJbG9uZ2l0dWRlGBAgASgBSAWIAQFCDgoMX2Rlc2NyaXB0aW9uQg4KDF9jYXRlZ29yeV9pZEIKCghfd2Vic2l0ZUIJCgdfYXZhdGFyQgsKCV9sYXRpdHVkZUIMCgpfbG9uZ2l0dWRlIi0KE0dldFdvcmtzcGFjZVJlcXVlc3QSDwoCaWQYASABKAlIAIgBAUIFCgNfaWQiVQoUR2V0V29ya3NwYWNlUmVzcG9uc2USLwoJd29ya3NwYWNlGAEgASgLMhcud29ya3NwYWNlLnYxLldvcmtzcGFjZUgAiAEBQgwKCl93b3Jrc3BhY2UiJAoVTGlzdFdvcmtzcGFjZXNSZXF1ZXN0EgsKA2lkcxgBIAMoCSJFChZMaXN0V29ya3NwYWNlc1Jlc3BvbnNlEisKCndvcmtzcGFjZXMYASADKAsyFy53b3Jrc3BhY2UudjEuV29ya3NwYWNlIj4KEFdvcmtzcGFjZUNyZWF0ZWQSKgoJd29ya3NwYWNlGAEgASgLMhcud29ya3NwYWNlLnYxLldvcmtzcGFjZSI+ChBXb3Jrc3BhY2VVcGRhdGVkEioKCXdvcmtzcGFjZRgBIAEoCzIXLndvcmtzcGFjZS52MS5Xb3Jrc3BhY2UiRgoQV29ya3NwYWNlRGVsZXRlZBIKCgJpZBgBIAEoCRISCgpkZWxldGVkX2J5GAIgASgJEhIKCmRlbGV0ZWRfYXQYAyABKAkiNgoSV29ya3NwYWNlUHVibGlzaGVkEgoKAmlkGAEgASgJEhQKDHB1Ymxpc2hlZF9hdBgCIAEoCSI6ChRXb3Jrc3BhY2VVbnB1Ymxpc2hlZBIKCgJpZBgBIAEoCRIWCg51bnB1Ymxpc2hlZF9hdBgCIAEoCSI2ChJXb3Jrc3BhY2VTdXNwZW5kZWQSCgoCaWQYASABKAkSFAoMc3VzcGVuZGVkX2F0GAIgASgJIj0KG1dvcmtzcGFjZUNvbXBhbnlJbmZvVXBkYXRlZBIKCgJpZBgBIAEoCRISCgp1cGRhdGVkX2F0GAIgASgJKrEBCg9Xb3Jrc3BhY2VTdGF0dXMSIAocV09SS1NQQUNFX1NUQVRVU19VTlNQRUNJRklFRBAAEhoKFldPUktTUEFDRV9TVEFUVVNfRFJBRlQQARIeChpXT1JLU1BBQ0VfU1RBVFVTX1BVQkxJU0hFRBACEiAKHFdPUktTUEFDRV9TVEFUVVNfVU5QVUJMSVNIRUQQAxIeChpXT1JLU1BBQ0VfU1RBVFVTX1NVU1BFTkRFRBAEKmoKDVdvcmtzcGFjZVR5cGUSHgoaV09SS1NQQUNFX1RZUEVfVU5TUEVDSUZJRUQQABIdChlXT1JLU1BBQ0VfVFlQRV9JTkRJVklEVUFMEAESGgoWV09SS1NQQUNFX1RZUEVfQ09NUEFOWRACQjVaM2dpdGh1Yi5jb20vbmF1dGljYWxzdHJlYW0vcHJvdG8vZ2VuL2dvL3dvcmtzcGFjZS92MWIGcHJvdG8z");
 
 /**
  * Describes the message workspace.v1.Workspace.
@@ -18,80 +18,80 @@ export const WorkspaceSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 0);
 
 /**
- * Describes the message workspace.v1.QueryWorkspaceRequest.
- * Use `create(QueryWorkspaceRequestSchema)` to create a new message.
+ * Describes the message workspace.v1.GetWorkspaceRequest.
+ * Use `create(GetWorkspaceRequestSchema)` to create a new message.
  */
-export const QueryWorkspaceRequestSchema = /*@__PURE__*/
+export const GetWorkspaceRequestSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 1);
 
 /**
- * Describes the message workspace.v1.QueryWorkspaceResponse.
- * Use `create(QueryWorkspaceResponseSchema)` to create a new message.
+ * Describes the message workspace.v1.GetWorkspaceResponse.
+ * Use `create(GetWorkspaceResponseSchema)` to create a new message.
  */
-export const QueryWorkspaceResponseSchema = /*@__PURE__*/
+export const GetWorkspaceResponseSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 2);
 
 /**
- * Describes the message workspace.v1.QueryWorkspacesRequest.
- * Use `create(QueryWorkspacesRequestSchema)` to create a new message.
+ * Describes the message workspace.v1.ListWorkspacesRequest.
+ * Use `create(ListWorkspacesRequestSchema)` to create a new message.
  */
-export const QueryWorkspacesRequestSchema = /*@__PURE__*/
+export const ListWorkspacesRequestSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 3);
 
 /**
- * Describes the message workspace.v1.QueryWorkspacesResponse.
- * Use `create(QueryWorkspacesResponseSchema)` to create a new message.
+ * Describes the message workspace.v1.ListWorkspacesResponse.
+ * Use `create(ListWorkspacesResponseSchema)` to create a new message.
  */
-export const QueryWorkspacesResponseSchema = /*@__PURE__*/
+export const ListWorkspacesResponseSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 4);
 
 /**
- * Describes the message workspace.v1.WorkspaceCreatedEvent.
- * Use `create(WorkspaceCreatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCreated.
+ * Use `create(WorkspaceCreatedSchema)` to create a new message.
  */
-export const WorkspaceCreatedEventSchema = /*@__PURE__*/
+export const WorkspaceCreatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 5);
 
 /**
- * Describes the message workspace.v1.WorkspaceUpdatedEvent.
- * Use `create(WorkspaceUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceUpdated.
+ * Use `create(WorkspaceUpdatedSchema)` to create a new message.
  */
-export const WorkspaceUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 6);
 
 /**
- * Describes the message workspace.v1.WorkspaceDeletedEvent.
- * Use `create(WorkspaceDeletedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceDeleted.
+ * Use `create(WorkspaceDeletedSchema)` to create a new message.
  */
-export const WorkspaceDeletedEventSchema = /*@__PURE__*/
+export const WorkspaceDeletedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 7);
 
 /**
- * Describes the message workspace.v1.WorkspacePublishedEvent.
- * Use `create(WorkspacePublishedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspacePublished.
+ * Use `create(WorkspacePublishedSchema)` to create a new message.
  */
-export const WorkspacePublishedEventSchema = /*@__PURE__*/
+export const WorkspacePublishedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 8);
 
 /**
- * Describes the message workspace.v1.WorkspaceUnpublishedEvent.
- * Use `create(WorkspaceUnpublishedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceUnpublished.
+ * Use `create(WorkspaceUnpublishedSchema)` to create a new message.
  */
-export const WorkspaceUnpublishedEventSchema = /*@__PURE__*/
+export const WorkspaceUnpublishedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 9);
 
 /**
- * Describes the message workspace.v1.WorkspaceSuspendedEvent.
- * Use `create(WorkspaceSuspendedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceSuspended.
+ * Use `create(WorkspaceSuspendedSchema)` to create a new message.
  */
-export const WorkspaceSuspendedEventSchema = /*@__PURE__*/
+export const WorkspaceSuspendedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 10);
 
 /**
- * Describes the message workspace.v1.WorkspaceCompanyInfoUpdatedEvent.
- * Use `create(WorkspaceCompanyInfoUpdatedEventSchema)` to create a new message.
+ * Describes the message workspace.v1.WorkspaceCompanyInfoUpdated.
+ * Use `create(WorkspaceCompanyInfoUpdatedSchema)` to create a new message.
  */
-export const WorkspaceCompanyInfoUpdatedEventSchema = /*@__PURE__*/
+export const WorkspaceCompanyInfoUpdatedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_workspace, 11);
 
 /**

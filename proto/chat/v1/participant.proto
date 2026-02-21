@@ -15,7 +15,7 @@ enum ConversationParticipantStatus {
   CONVERSATION_PARTICIPANT_STATUS_REMOVED = 3;
 }
 
-message ConversationParticipantAddedEvent {
+message ConversationParticipantAdded {
   string conversation_id = 1;
   string user_id = 2;
   string added_by = 3;
@@ -26,7 +26,7 @@ message ConversationParticipantAddedEvent {
   optional Conversation conversation = 8;
 }
 
-message ConversationParticipantRemovedEvent {
+message ConversationParticipantRemoved {
   string conversation_id = 1;
   string user_id = 2;
   string removed_by = 3;
@@ -36,7 +36,7 @@ message ConversationParticipantRemovedEvent {
   optional Conversation conversation = 7;
 }
 
-message ConversationParticipantUpdatedEvent {
+message ConversationParticipantUpdated {
   string conversation_id = 1;
   string user_id = 2;
   int32 unread_count = 3;
@@ -47,17 +47,17 @@ message ConversationParticipantUpdatedEvent {
   optional Conversation conversation = 8;
 }
 
-message ChatUserOnlineEvent {
+message ChatUserOnline {
   string user_id = 1;
   string timestamp = 2;
 }
 
-message ChatUserOfflineEvent {
+message ChatUserOffline {
   string user_id = 1;
   string timestamp = 2;
 }
 
-message ChatUserTypingEvent {
+message ChatUserTyping {
   string conversation_id = 1;
   string user_id = 2;
   bool is_typing = 3;
@@ -98,34 +98,34 @@ message ConversationParticipant {
 }
 
 // ============================================
-// REQUEST/RESPONSE (EventBus Query Patterns)
+// REQUEST/RESPONSE (EventBus RPC Patterns)
 // ============================================
 
-// Query conversation participants
-message QueryConversationParticipantsRequest {
+// List conversation participants
+message ListConversationParticipantsRequest {
   optional string id = 1; // conversation_id
 }
 
-message QueryConversationParticipantsResponse {
+message ListConversationParticipantsResponse {
   repeated ConversationParticipant participants = 1;
 }
 
-// Query if user is participant in conversation
-message QueryIsParticipantRequest {
+// Check if user is participant in conversation
+message CheckParticipantRequest {
   string id = 1; // user_id
   string conversation_id = 2;
 }
 
-message QueryIsParticipantResponse {
+message CheckParticipantResponse {
   bool is_participant = 1;
 }
 
-// Query user's conversation topics (for WebSocket rooms)
-message QueryUserTopicsRequest {
+// List user's conversation topics (for WebSocket rooms)
+message ListUserTopicsRequest {
   string id = 1; // user_id
 }
 
-message QueryUserTopicsResponse {
+message ListUserTopicsResponse {
   repeated string topic_ids = 1; // conversation IDs
 }
 

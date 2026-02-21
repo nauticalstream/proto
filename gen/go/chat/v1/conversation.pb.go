@@ -292,7 +292,7 @@ func (x *Conversation) GetCreator() *v11.User {
 	return nil
 }
 
-type ConversationCreatedEvent struct {
+type ConversationCreated struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	Conversation   *Conversation          `protobuf:"bytes,2,opt,name=conversation,proto3" json:"conversation,omitempty"`
@@ -304,20 +304,20 @@ type ConversationCreatedEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConversationCreatedEvent) Reset() {
-	*x = ConversationCreatedEvent{}
+func (x *ConversationCreated) Reset() {
+	*x = ConversationCreated{}
 	mi := &file_chat_v1_conversation_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationCreatedEvent) String() string {
+func (x *ConversationCreated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationCreatedEvent) ProtoMessage() {}
+func (*ConversationCreated) ProtoMessage() {}
 
-func (x *ConversationCreatedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationCreated) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_conversation_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -329,54 +329,54 @@ func (x *ConversationCreatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationCreatedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationCreatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationCreated.ProtoReflect.Descriptor instead.
+func (*ConversationCreated) Descriptor() ([]byte, []int) {
 	return file_chat_v1_conversation_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ConversationCreatedEvent) GetConversationId() string {
+func (x *ConversationCreated) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationCreatedEvent) GetConversation() *Conversation {
+func (x *ConversationCreated) GetConversation() *Conversation {
 	if x != nil {
 		return x.Conversation
 	}
 	return nil
 }
 
-func (x *ConversationCreatedEvent) GetCreatedBy() string {
+func (x *ConversationCreated) GetCreatedBy() string {
 	if x != nil {
 		return x.CreatedBy
 	}
 	return ""
 }
 
-func (x *ConversationCreatedEvent) GetCreatedAt() string {
+func (x *ConversationCreated) GetCreatedAt() string {
 	if x != nil {
 		return x.CreatedAt
 	}
 	return ""
 }
 
-func (x *ConversationCreatedEvent) GetCreator() *v11.User {
+func (x *ConversationCreated) GetCreator() *v11.User {
 	if x != nil {
 		return x.Creator
 	}
 	return nil
 }
 
-func (x *ConversationCreatedEvent) GetWorkspace() *v1.Workspace {
+func (x *ConversationCreated) GetWorkspace() *v1.Workspace {
 	if x != nil {
 		return x.Workspace
 	}
 	return nil
 }
 
-type ConversationUpdatedEvent struct {
+type ConversationUpdated struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	Conversation   *Conversation          `protobuf:"bytes,2,opt,name=conversation,proto3" json:"conversation,omitempty"`
@@ -387,20 +387,20 @@ type ConversationUpdatedEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConversationUpdatedEvent) Reset() {
-	*x = ConversationUpdatedEvent{}
+func (x *ConversationUpdated) Reset() {
+	*x = ConversationUpdated{}
 	mi := &file_chat_v1_conversation_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationUpdatedEvent) String() string {
+func (x *ConversationUpdated) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationUpdatedEvent) ProtoMessage() {}
+func (*ConversationUpdated) ProtoMessage() {}
 
-func (x *ConversationUpdatedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationUpdated) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_conversation_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -412,47 +412,47 @@ func (x *ConversationUpdatedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationUpdatedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationUpdatedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationUpdated.ProtoReflect.Descriptor instead.
+func (*ConversationUpdated) Descriptor() ([]byte, []int) {
 	return file_chat_v1_conversation_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ConversationUpdatedEvent) GetConversationId() string {
+func (x *ConversationUpdated) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationUpdatedEvent) GetConversation() *Conversation {
+func (x *ConversationUpdated) GetConversation() *Conversation {
 	if x != nil {
 		return x.Conversation
 	}
 	return nil
 }
 
-func (x *ConversationUpdatedEvent) GetUpdatedAt() string {
+func (x *ConversationUpdated) GetUpdatedAt() string {
 	if x != nil {
 		return x.UpdatedAt
 	}
 	return ""
 }
 
-func (x *ConversationUpdatedEvent) GetUpdatedByUser() *v11.User {
+func (x *ConversationUpdated) GetUpdatedByUser() *v11.User {
 	if x != nil {
 		return x.UpdatedByUser
 	}
 	return nil
 }
 
-func (x *ConversationUpdatedEvent) GetWorkspace() *v1.Workspace {
+func (x *ConversationUpdated) GetWorkspace() *v1.Workspace {
 	if x != nil {
 		return x.Workspace
 	}
 	return nil
 }
 
-type ConversationDeletedEvent struct {
+type ConversationDeleted struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	ConversationId string                 `protobuf:"bytes,1,opt,name=conversation_id,json=conversationId,proto3" json:"conversation_id,omitempty"`
 	DeletedAt      string                 `protobuf:"bytes,2,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"`
@@ -460,20 +460,20 @@ type ConversationDeletedEvent struct {
 	sizeCache      protoimpl.SizeCache
 }
 
-func (x *ConversationDeletedEvent) Reset() {
-	*x = ConversationDeletedEvent{}
+func (x *ConversationDeleted) Reset() {
+	*x = ConversationDeleted{}
 	mi := &file_chat_v1_conversation_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ConversationDeletedEvent) String() string {
+func (x *ConversationDeleted) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ConversationDeletedEvent) ProtoMessage() {}
+func (*ConversationDeleted) ProtoMessage() {}
 
-func (x *ConversationDeletedEvent) ProtoReflect() protoreflect.Message {
+func (x *ConversationDeleted) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_conversation_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -485,19 +485,19 @@ func (x *ConversationDeletedEvent) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ConversationDeletedEvent.ProtoReflect.Descriptor instead.
-func (*ConversationDeletedEvent) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConversationDeleted.ProtoReflect.Descriptor instead.
+func (*ConversationDeleted) Descriptor() ([]byte, []int) {
 	return file_chat_v1_conversation_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ConversationDeletedEvent) GetConversationId() string {
+func (x *ConversationDeleted) GetConversationId() string {
 	if x != nil {
 		return x.ConversationId
 	}
 	return ""
 }
 
-func (x *ConversationDeletedEvent) GetDeletedAt() string {
+func (x *ConversationDeleted) GetDeletedAt() string {
 	if x != nil {
 		return x.DeletedAt
 	}
@@ -600,7 +600,7 @@ func (x *GetConversationResponse) GetConversation() *Conversation {
 	return nil
 }
 
-type QueryConversationsRequest struct {
+type ListConversationsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	First         *int32                 `protobuf:"varint,2,opt,name=first,proto3,oneof" json:"first,omitempty"`
@@ -611,20 +611,20 @@ type QueryConversationsRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryConversationsRequest) Reset() {
-	*x = QueryConversationsRequest{}
+func (x *ListConversationsRequest) Reset() {
+	*x = ListConversationsRequest{}
 	mi := &file_chat_v1_conversation_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryConversationsRequest) String() string {
+func (x *ListConversationsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryConversationsRequest) ProtoMessage() {}
+func (*ListConversationsRequest) ProtoMessage() {}
 
-func (x *QueryConversationsRequest) ProtoReflect() protoreflect.Message {
+func (x *ListConversationsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_conversation_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -636,47 +636,47 @@ func (x *QueryConversationsRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryConversationsRequest.ProtoReflect.Descriptor instead.
-func (*QueryConversationsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListConversationsRequest.ProtoReflect.Descriptor instead.
+func (*ListConversationsRequest) Descriptor() ([]byte, []int) {
 	return file_chat_v1_conversation_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *QueryConversationsRequest) GetUserId() string {
+func (x *ListConversationsRequest) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *QueryConversationsRequest) GetFirst() int32 {
+func (x *ListConversationsRequest) GetFirst() int32 {
 	if x != nil && x.First != nil {
 		return *x.First
 	}
 	return 0
 }
 
-func (x *QueryConversationsRequest) GetAfter() string {
+func (x *ListConversationsRequest) GetAfter() string {
 	if x != nil && x.After != nil {
 		return *x.After
 	}
 	return ""
 }
 
-func (x *QueryConversationsRequest) GetLast() int32 {
+func (x *ListConversationsRequest) GetLast() int32 {
 	if x != nil && x.Last != nil {
 		return *x.Last
 	}
 	return 0
 }
 
-func (x *QueryConversationsRequest) GetBefore() string {
+func (x *ListConversationsRequest) GetBefore() string {
 	if x != nil && x.Before != nil {
 		return *x.Before
 	}
 	return ""
 }
 
-type QueryConversationsResponse struct {
+type ListConversationsResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Edges         []*ConversationEdge    `protobuf:"bytes,1,rep,name=edges,proto3" json:"edges,omitempty"`
 	PageInfo      *ConversationPageInfo  `protobuf:"bytes,2,opt,name=page_info,json=pageInfo,proto3" json:"page_info,omitempty"`
@@ -684,20 +684,20 @@ type QueryConversationsResponse struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *QueryConversationsResponse) Reset() {
-	*x = QueryConversationsResponse{}
+func (x *ListConversationsResponse) Reset() {
+	*x = ListConversationsResponse{}
 	mi := &file_chat_v1_conversation_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *QueryConversationsResponse) String() string {
+func (x *ListConversationsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryConversationsResponse) ProtoMessage() {}
+func (*ListConversationsResponse) ProtoMessage() {}
 
-func (x *QueryConversationsResponse) ProtoReflect() protoreflect.Message {
+func (x *ListConversationsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_chat_v1_conversation_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -709,19 +709,19 @@ func (x *QueryConversationsResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use QueryConversationsResponse.ProtoReflect.Descriptor instead.
-func (*QueryConversationsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListConversationsResponse.ProtoReflect.Descriptor instead.
+func (*ListConversationsResponse) Descriptor() ([]byte, []int) {
 	return file_chat_v1_conversation_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *QueryConversationsResponse) GetEdges() []*ConversationEdge {
+func (x *ListConversationsResponse) GetEdges() []*ConversationEdge {
 	if x != nil {
 		return x.Edges
 	}
 	return nil
 }
 
-func (x *QueryConversationsResponse) GetPageInfo() *ConversationPageInfo {
+func (x *ListConversationsResponse) GetPageInfo() *ConversationPageInfo {
 	if x != nil {
 		return x.PageInfo
 	}
@@ -891,8 +891,8 @@ const file_chat_v1_conversation_proto_rawDesc = "" +
 	"\n" +
 	"_workspaceB\n" +
 	"\n" +
-	"\b_creator\"\xc0\x02\n" +
-	"\x18ConversationCreatedEvent\x12'\n" +
+	"\b_creator\"\xbb\x02\n" +
+	"\x13ConversationCreated\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x129\n" +
 	"\fconversation\x18\x02 \x01(\v2\x15.chat.v1.ConversationR\fconversation\x12\x1d\n" +
 	"\n" +
@@ -904,8 +904,8 @@ const file_chat_v1_conversation_proto_rawDesc = "" +
 	"\n" +
 	"\b_creatorB\f\n" +
 	"\n" +
-	"_workspace\"\xb7\x02\n" +
-	"\x18ConversationUpdatedEvent\x12'\n" +
+	"_workspace\"\xb2\x02\n" +
+	"\x13ConversationUpdated\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x129\n" +
 	"\fconversation\x18\x02 \x01(\v2\x15.chat.v1.ConversationR\fconversation\x12\x1d\n" +
 	"\n" +
@@ -914,8 +914,8 @@ const file_chat_v1_conversation_proto_rawDesc = "" +
 	"\tworkspace\x18\x05 \x01(\v2\x17.workspace.v1.WorkspaceH\x01R\tworkspace\x88\x01\x01B\x12\n" +
 	"\x10_updated_by_userB\f\n" +
 	"\n" +
-	"_workspace\"b\n" +
-	"\x18ConversationDeletedEvent\x12'\n" +
+	"_workspace\"]\n" +
+	"\x13ConversationDeleted\x12'\n" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x1d\n" +
 	"\n" +
 	"deleted_at\x18\x02 \x01(\tR\tdeletedAt\"Z\n" +
@@ -923,8 +923,8 @@ const file_chat_v1_conversation_proto_rawDesc = "" +
 	"\x0fconversation_id\x18\x01 \x01(\tR\x0econversationId\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\"T\n" +
 	"\x17GetConversationResponse\x129\n" +
-	"\fconversation\x18\x01 \x01(\v2\x15.chat.v1.ConversationR\fconversation\"\xc8\x01\n" +
-	"\x19QueryConversationsRequest\x12\x17\n" +
+	"\fconversation\x18\x01 \x01(\v2\x15.chat.v1.ConversationR\fconversation\"\xc7\x01\n" +
+	"\x18ListConversationsRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
 	"\x05first\x18\x02 \x01(\x05H\x00R\x05first\x88\x01\x01\x12\x19\n" +
 	"\x05after\x18\x03 \x01(\tH\x01R\x05after\x88\x01\x01\x12\x17\n" +
@@ -933,8 +933,8 @@ const file_chat_v1_conversation_proto_rawDesc = "" +
 	"\x06_firstB\b\n" +
 	"\x06_afterB\a\n" +
 	"\x05_lastB\t\n" +
-	"\a_before\"\x89\x01\n" +
-	"\x1aQueryConversationsResponse\x12/\n" +
+	"\a_before\"\x88\x01\n" +
+	"\x19ListConversationsResponse\x12/\n" +
 	"\x05edges\x18\x01 \x03(\v2\x19.chat.v1.ConversationEdgeR\x05edges\x12:\n" +
 	"\tpage_info\x18\x02 \x01(\v2\x1d.chat.v1.ConversationPageInfoR\bpageInfo\"U\n" +
 	"\x10ConversationEdge\x12\x16\n" +
@@ -974,33 +974,33 @@ func file_chat_v1_conversation_proto_rawDescGZIP() []byte {
 var file_chat_v1_conversation_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_chat_v1_conversation_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_chat_v1_conversation_proto_goTypes = []any{
-	(ConversationType)(0),              // 0: chat.v1.ConversationType
-	(ConversationStatus)(0),            // 1: chat.v1.ConversationStatus
-	(*Conversation)(nil),               // 2: chat.v1.Conversation
-	(*ConversationCreatedEvent)(nil),   // 3: chat.v1.ConversationCreatedEvent
-	(*ConversationUpdatedEvent)(nil),   // 4: chat.v1.ConversationUpdatedEvent
-	(*ConversationDeletedEvent)(nil),   // 5: chat.v1.ConversationDeletedEvent
-	(*GetConversationRequest)(nil),     // 6: chat.v1.GetConversationRequest
-	(*GetConversationResponse)(nil),    // 7: chat.v1.GetConversationResponse
-	(*QueryConversationsRequest)(nil),  // 8: chat.v1.QueryConversationsRequest
-	(*QueryConversationsResponse)(nil), // 9: chat.v1.QueryConversationsResponse
-	(*ConversationEdge)(nil),           // 10: chat.v1.ConversationEdge
-	(*ConversationPageInfo)(nil),       // 11: chat.v1.ConversationPageInfo
-	(*v1.Workspace)(nil),               // 12: workspace.v1.Workspace
-	(*v11.User)(nil),                   // 13: user.v1.User
+	(ConversationType)(0),             // 0: chat.v1.ConversationType
+	(ConversationStatus)(0),           // 1: chat.v1.ConversationStatus
+	(*Conversation)(nil),              // 2: chat.v1.Conversation
+	(*ConversationCreated)(nil),       // 3: chat.v1.ConversationCreated
+	(*ConversationUpdated)(nil),       // 4: chat.v1.ConversationUpdated
+	(*ConversationDeleted)(nil),       // 5: chat.v1.ConversationDeleted
+	(*GetConversationRequest)(nil),    // 6: chat.v1.GetConversationRequest
+	(*GetConversationResponse)(nil),   // 7: chat.v1.GetConversationResponse
+	(*ListConversationsRequest)(nil),  // 8: chat.v1.ListConversationsRequest
+	(*ListConversationsResponse)(nil), // 9: chat.v1.ListConversationsResponse
+	(*ConversationEdge)(nil),          // 10: chat.v1.ConversationEdge
+	(*ConversationPageInfo)(nil),      // 11: chat.v1.ConversationPageInfo
+	(*v1.Workspace)(nil),              // 12: workspace.v1.Workspace
+	(*v11.User)(nil),                  // 13: user.v1.User
 }
 var file_chat_v1_conversation_proto_depIdxs = []int32{
 	12, // 0: chat.v1.Conversation.workspace:type_name -> workspace.v1.Workspace
 	13, // 1: chat.v1.Conversation.creator:type_name -> user.v1.User
-	2,  // 2: chat.v1.ConversationCreatedEvent.conversation:type_name -> chat.v1.Conversation
-	13, // 3: chat.v1.ConversationCreatedEvent.creator:type_name -> user.v1.User
-	12, // 4: chat.v1.ConversationCreatedEvent.workspace:type_name -> workspace.v1.Workspace
-	2,  // 5: chat.v1.ConversationUpdatedEvent.conversation:type_name -> chat.v1.Conversation
-	13, // 6: chat.v1.ConversationUpdatedEvent.updated_by_user:type_name -> user.v1.User
-	12, // 7: chat.v1.ConversationUpdatedEvent.workspace:type_name -> workspace.v1.Workspace
+	2,  // 2: chat.v1.ConversationCreated.conversation:type_name -> chat.v1.Conversation
+	13, // 3: chat.v1.ConversationCreated.creator:type_name -> user.v1.User
+	12, // 4: chat.v1.ConversationCreated.workspace:type_name -> workspace.v1.Workspace
+	2,  // 5: chat.v1.ConversationUpdated.conversation:type_name -> chat.v1.Conversation
+	13, // 6: chat.v1.ConversationUpdated.updated_by_user:type_name -> user.v1.User
+	12, // 7: chat.v1.ConversationUpdated.workspace:type_name -> workspace.v1.Workspace
 	2,  // 8: chat.v1.GetConversationResponse.conversation:type_name -> chat.v1.Conversation
-	10, // 9: chat.v1.QueryConversationsResponse.edges:type_name -> chat.v1.ConversationEdge
-	11, // 10: chat.v1.QueryConversationsResponse.page_info:type_name -> chat.v1.ConversationPageInfo
+	10, // 9: chat.v1.ListConversationsResponse.edges:type_name -> chat.v1.ConversationEdge
+	11, // 10: chat.v1.ListConversationsResponse.page_info:type_name -> chat.v1.ConversationPageInfo
 	2,  // 11: chat.v1.ConversationEdge.node:type_name -> chat.v1.Conversation
 	12, // [12:12] is the sub-list for method output_type
 	12, // [12:12] is the sub-list for method input_type

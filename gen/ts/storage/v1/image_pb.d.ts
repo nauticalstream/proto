@@ -220,9 +220,9 @@ export declare const HasImageBatchResponseSchema: GenMessage<HasImageBatchRespon
 /**
  * Event: Image uploaded (status = PENDING, processing not started yet)
  *
- * @generated from message storage.v1.ImageUploadedEvent
+ * @generated from message storage.v1.ImageUploaded
  */
-export declare type ImageUploadedEvent = Message<"storage.v1.ImageUploadedEvent"> & {
+export declare type ImageUploaded = Message<"storage.v1.ImageUploaded"> & {
   /**
    * @generated from field: string image_id = 1;
    */
@@ -230,17 +230,17 @@ export declare type ImageUploadedEvent = Message<"storage.v1.ImageUploadedEvent"
 };
 
 /**
- * Describes the message storage.v1.ImageUploadedEvent.
- * Use `create(ImageUploadedEventSchema)` to create a new message.
+ * Describes the message storage.v1.ImageUploaded.
+ * Use `create(ImageUploadedSchema)` to create a new message.
  */
-export declare const ImageUploadedEventSchema: GenMessage<ImageUploadedEvent>;
+export declare const ImageUploadedSchema: GenMessage<ImageUploaded>;
 
 /**
  * Event: Image processed (status = ACTIVE, variants ready)
  *
- * @generated from message storage.v1.ImageProcessedEvent
+ * @generated from message storage.v1.ImageProcessed
  */
-export declare type ImageProcessedEvent = Message<"storage.v1.ImageProcessedEvent"> & {
+export declare type ImageProcessed = Message<"storage.v1.ImageProcessed"> & {
   /**
    * @generated from field: string image_id = 1;
    */
@@ -248,17 +248,17 @@ export declare type ImageProcessedEvent = Message<"storage.v1.ImageProcessedEven
 };
 
 /**
- * Describes the message storage.v1.ImageProcessedEvent.
- * Use `create(ImageProcessedEventSchema)` to create a new message.
+ * Describes the message storage.v1.ImageProcessed.
+ * Use `create(ImageProcessedSchema)` to create a new message.
  */
-export declare const ImageProcessedEventSchema: GenMessage<ImageProcessedEvent>;
+export declare const ImageProcessedSchema: GenMessage<ImageProcessed>;
 
 /**
  * Event: Image deleted
  *
- * @generated from message storage.v1.ImageDeletedEvent
+ * @generated from message storage.v1.ImageDeleted
  */
-export declare type ImageDeletedEvent = Message<"storage.v1.ImageDeletedEvent"> & {
+export declare type ImageDeleted = Message<"storage.v1.ImageDeleted"> & {
   /**
    * @generated from field: string image_id = 1;
    */
@@ -266,8 +266,8 @@ export declare type ImageDeletedEvent = Message<"storage.v1.ImageDeletedEvent"> 
 };
 
 /**
- * Describes the message storage.v1.ImageDeletedEvent.
- * Use `create(ImageDeletedEventSchema)` to create a new message.
+ * Describes the message storage.v1.ImageDeleted.
+ * Use `create(ImageDeletedSchema)` to create a new message.
  */
-export declare const ImageDeletedEventSchema: GenMessage<ImageDeletedEvent>;
+export declare const ImageDeletedSchema: GenMessage<ImageDeleted>;
 

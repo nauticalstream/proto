@@ -42,7 +42,7 @@ message Conversation {
   optional user.v1.User creator = 15;
 }
 
-message ConversationCreatedEvent {
+message ConversationCreated {
   string conversation_id = 1;
   Conversation conversation = 2;
   string created_by = 3;
@@ -51,7 +51,7 @@ message ConversationCreatedEvent {
   optional workspace.v1.Workspace workspace = 6;
 }
 
-message ConversationUpdatedEvent {
+message ConversationUpdated {
   string conversation_id = 1;
   Conversation conversation = 2;
   string updated_at = 3;
@@ -59,7 +59,7 @@ message ConversationUpdatedEvent {
   optional workspace.v1.Workspace workspace = 5;
 }
 
-message ConversationDeletedEvent {
+message ConversationDeleted {
   string conversation_id = 1;
   string deleted_at = 2;
 }
@@ -73,7 +73,7 @@ message GetConversationResponse {
   Conversation conversation = 1;
 }
 
-message QueryConversationsRequest {
+message ListConversationsRequest {
   string user_id = 1;
   optional int32 first = 2;
   optional string after = 3;
@@ -81,7 +81,7 @@ message QueryConversationsRequest {
   optional string before = 5;
 }
 
-message QueryConversationsResponse {
+message ListConversationsResponse {
   repeated ConversationEdge edges = 1;
   ConversationPageInfo page_info = 2;
 }
