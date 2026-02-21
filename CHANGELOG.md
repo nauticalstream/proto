@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/nauticalstream/proto/compare/v1.0.4...v1.0.5) (2026-02-21)
+
+
+### Bug Fixes
+
+* sync workspace protos with Prisma schema ([7cbcbc0](https://github.com/nauticalstream/proto/commit/7cbcbc058f8a1abf5a871128944f8bd0082e28f1))
+
 ## [1.0.4](https://github.com/nauticalstream/proto/compare/v1.0.3...v1.0.4) (2026-02-21)
 
 
