@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/nauticalstream/proto/compare/v1.0.3...v1.0.4) (2026-02-21)
+
+
+### Bug Fixes
+
+* remove npm provenance for private package publication ([e2482a4](https://github.com/nauticalstream/proto/commit/e2482a4ed6a777c3861d1cc36c13154af9398ebd))
+
 ## [1.0.3](https://github.com/nauticalstream/proto/compare/v1.0.2...v1.0.3) (2026-02-21)
 
 
