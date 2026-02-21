@@ -2,8 +2,9 @@
 // @generated from file workspace/v1/member.proto (package workspace.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
+import type { WorkspaceRole } from "../../permissions/v1/permissions_pb";
 
 /**
  * Describes the file workspace/v1/member.proto.
@@ -32,9 +33,9 @@ export declare type WorkspaceMember = Message<"workspace.v1.WorkspaceMember"> & 
   userId: string;
 
   /**
-   * @generated from field: workspace.v1.WorkspaceMemberRole role = 4;
+   * @generated from field: permissions.v1.WorkspaceRole role = 4;
    */
-  role: WorkspaceMemberRole;
+  role: WorkspaceRole;
 
   /**
    * @generated from field: string created_by = 5;
@@ -183,34 +184,4 @@ export declare type WorkspaceMemberRemoved = Message<"workspace.v1.WorkspaceMemb
  * Use `create(WorkspaceMemberRemovedSchema)` to create a new message.
  */
 export declare const WorkspaceMemberRemovedSchema: GenMessage<WorkspaceMemberRemoved>;
-
-/**
- * @generated from enum workspace.v1.WorkspaceMemberRole
- */
-export enum WorkspaceMemberRole {
-  /**
-   * @generated from enum value: WORKSPACE_MEMBER_ROLE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: WORKSPACE_MEMBER_ROLE_OWNER = 1;
-   */
-  OWNER = 1,
-
-  /**
-   * @generated from enum value: WORKSPACE_MEMBER_ROLE_ADMIN = 2;
-   */
-  ADMIN = 2,
-
-  /**
-   * @generated from enum value: WORKSPACE_MEMBER_ROLE_MEMBER = 3;
-   */
-  MEMBER = 3,
-}
-
-/**
- * Describes the enum workspace.v1.WorkspaceMemberRole.
- */
-export declare const WorkspaceMemberRoleSchema: GenEnum<WorkspaceMemberRole>;
 

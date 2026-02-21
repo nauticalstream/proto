@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v1 "github.com/nauticalstream/proto/gen/go/permissions/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -21,65 +22,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type WorkspaceMemberRole int32
-
-const (
-	WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_UNSPECIFIED WorkspaceMemberRole = 0
-	WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_OWNER       WorkspaceMemberRole = 1
-	WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_ADMIN       WorkspaceMemberRole = 2
-	WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_MEMBER      WorkspaceMemberRole = 3
-)
-
-// Enum value maps for WorkspaceMemberRole.
-var (
-	WorkspaceMemberRole_name = map[int32]string{
-		0: "WORKSPACE_MEMBER_ROLE_UNSPECIFIED",
-		1: "WORKSPACE_MEMBER_ROLE_OWNER",
-		2: "WORKSPACE_MEMBER_ROLE_ADMIN",
-		3: "WORKSPACE_MEMBER_ROLE_MEMBER",
-	}
-	WorkspaceMemberRole_value = map[string]int32{
-		"WORKSPACE_MEMBER_ROLE_UNSPECIFIED": 0,
-		"WORKSPACE_MEMBER_ROLE_OWNER":       1,
-		"WORKSPACE_MEMBER_ROLE_ADMIN":       2,
-		"WORKSPACE_MEMBER_ROLE_MEMBER":      3,
-	}
-)
-
-func (x WorkspaceMemberRole) Enum() *WorkspaceMemberRole {
-	p := new(WorkspaceMemberRole)
-	*p = x
-	return p
-}
-
-func (x WorkspaceMemberRole) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (WorkspaceMemberRole) Descriptor() protoreflect.EnumDescriptor {
-	return file_workspace_v1_member_proto_enumTypes[0].Descriptor()
-}
-
-func (WorkspaceMemberRole) Type() protoreflect.EnumType {
-	return &file_workspace_v1_member_proto_enumTypes[0]
-}
-
-func (x WorkspaceMemberRole) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use WorkspaceMemberRole.Descriptor instead.
-func (WorkspaceMemberRole) EnumDescriptor() ([]byte, []int) {
-	return file_workspace_v1_member_proto_rawDescGZIP(), []int{0}
-}
-
 // Full member model (matches Prisma schema and used for enrichment)
 type WorkspaceMember struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
 	UserId        string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Role          WorkspaceMemberRole    `protobuf:"varint,4,opt,name=role,proto3,enum=workspace.v1.WorkspaceMemberRole" json:"role,omitempty"`
+	Role          v1.WorkspaceRole       `protobuf:"varint,4,opt,name=role,proto3,enum=permissions.v1.WorkspaceRole" json:"role,omitempty"`
 	CreatedBy     string                 `protobuf:"bytes,5,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
 	CreatedAt     string                 `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601 datetime string
 	UpdatedAt     string                 `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
@@ -138,11 +87,11 @@ func (x *WorkspaceMember) GetUserId() string {
 	return ""
 }
 
-func (x *WorkspaceMember) GetRole() WorkspaceMemberRole {
+func (x *WorkspaceMember) GetRole() v1.WorkspaceRole {
 	if x != nil {
 		return x.Role
 	}
-	return WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_UNSPECIFIED
+	return v1.WorkspaceRole(0)
 }
 
 func (x *WorkspaceMember) GetCreatedBy() string {
@@ -401,12 +350,12 @@ var File_workspace_v1_member_proto protoreflect.FileDescriptor
 
 const file_workspace_v1_member_proto_rawDesc = "" +
 	"\n" +
-	"\x19workspace/v1/member.proto\x12\fworkspace.v1\"\xf1\x01\n" +
+	"\x19workspace/v1/member.proto\x12\fworkspace.v1\x1a permissions/v1/permissions.proto\"\xed\x01\n" +
 	"\x0fWorkspaceMember\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
-	"\auser_id\x18\x03 \x01(\tR\x06userId\x125\n" +
-	"\x04role\x18\x04 \x01(\x0e2!.workspace.v1.WorkspaceMemberRoleR\x04role\x12\x1d\n" +
+	"\auser_id\x18\x03 \x01(\tR\x06userId\x121\n" +
+	"\x04role\x18\x04 \x01(\x0e2\x1d.permissions.v1.WorkspaceRoleR\x04role\x12\x1d\n" +
 	"\n" +
 	"created_by\x18\x05 \x01(\tR\tcreatedBy\x12\x1d\n" +
 	"\n" +
@@ -434,12 +383,7 @@ const file_workspace_v1_member_proto_rawDesc = "" +
 	"\n" +
 	"removed_by\x18\x04 \x01(\tR\tremovedBy\x12\x1d\n" +
 	"\n" +
-	"removed_at\x18\x05 \x01(\tR\tremovedAt*\xa0\x01\n" +
-	"\x13WorkspaceMemberRole\x12%\n" +
-	"!WORKSPACE_MEMBER_ROLE_UNSPECIFIED\x10\x00\x12\x1f\n" +
-	"\x1bWORKSPACE_MEMBER_ROLE_OWNER\x10\x01\x12\x1f\n" +
-	"\x1bWORKSPACE_MEMBER_ROLE_ADMIN\x10\x02\x12 \n" +
-	"\x1cWORKSPACE_MEMBER_ROLE_MEMBER\x10\x03B5Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3"
+	"removed_at\x18\x05 \x01(\tR\tremovedAtB5Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3"
 
 var (
 	file_workspace_v1_member_proto_rawDescOnce sync.Once
@@ -453,17 +397,16 @@ func file_workspace_v1_member_proto_rawDescGZIP() []byte {
 	return file_workspace_v1_member_proto_rawDescData
 }
 
-var file_workspace_v1_member_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_workspace_v1_member_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_workspace_v1_member_proto_goTypes = []any{
-	(WorkspaceMemberRole)(0),       // 0: workspace.v1.WorkspaceMemberRole
-	(*WorkspaceMember)(nil),        // 1: workspace.v1.WorkspaceMember
-	(*WorkspaceMemberAdded)(nil),   // 2: workspace.v1.WorkspaceMemberAdded
-	(*WorkspaceMemberUpdated)(nil), // 3: workspace.v1.WorkspaceMemberUpdated
-	(*WorkspaceMemberRemoved)(nil), // 4: workspace.v1.WorkspaceMemberRemoved
+	(*WorkspaceMember)(nil),        // 0: workspace.v1.WorkspaceMember
+	(*WorkspaceMemberAdded)(nil),   // 1: workspace.v1.WorkspaceMemberAdded
+	(*WorkspaceMemberUpdated)(nil), // 2: workspace.v1.WorkspaceMemberUpdated
+	(*WorkspaceMemberRemoved)(nil), // 3: workspace.v1.WorkspaceMemberRemoved
+	(v1.WorkspaceRole)(0),          // 4: permissions.v1.WorkspaceRole
 }
 var file_workspace_v1_member_proto_depIdxs = []int32{
-	0, // 0: workspace.v1.WorkspaceMember.role:type_name -> workspace.v1.WorkspaceMemberRole
+	4, // 0: workspace.v1.WorkspaceMember.role:type_name -> permissions.v1.WorkspaceRole
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -482,14 +425,13 @@ func file_workspace_v1_member_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_workspace_v1_member_proto_rawDesc), len(file_workspace_v1_member_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_workspace_v1_member_proto_goTypes,
 		DependencyIndexes: file_workspace_v1_member_proto_depIdxs,
-		EnumInfos:         file_workspace_v1_member_proto_enumTypes,
 		MessageInfos:      file_workspace_v1_member_proto_msgTypes,
 	}.Build()
 	File_workspace_v1_member_proto = out.File

@@ -2,18 +2,9 @@ syntax = "proto3";
 
 package workspace.v1;
 
+import "permissions/v1/permissions.proto";
+
 option go_package = "github.com/nauticalstream/proto/gen/go/workspace/v1";
-
-// ============================================
-// ENUMS
-// ============================================
-
-enum WorkspaceMemberRole {
-  WORKSPACE_MEMBER_ROLE_UNSPECIFIED = 0;
-  WORKSPACE_MEMBER_ROLE_OWNER = 1;
-  WORKSPACE_MEMBER_ROLE_ADMIN = 2;
-  WORKSPACE_MEMBER_ROLE_MEMBER = 3;
-}
 
 // ============================================
 // MEMBER FULL MODEL
@@ -24,7 +15,7 @@ message WorkspaceMember {
   string id = 1;
   string workspace_id = 2;
   string user_id = 3;
-  WorkspaceMemberRole role = 4;
+  permissions.v1.WorkspaceRole role = 4;
   string created_by = 5;
   string created_at = 6; // ISO 8601 datetime string
   string updated_at = 7; // ISO 8601 datetime string

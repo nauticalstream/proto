@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package permissions.v1;
+
+option go_package = "github.com/nauticalstream/proto/gen/go/permissions/v1";
+
+// Platform-level roles for system-wide access control
+enum PlatformRole {
+  PLATFORM_ROLE_UNSPECIFIED = 0;
+  PLATFORM_ROLE_ADMIN = 1;
+  PLATFORM_ROLE_SUPPORT = 2;
+}
+
+// Workspace-level roles for organization/team access control
+enum WorkspaceRole {
+  WORKSPACE_ROLE_UNSPECIFIED = 0;
+  WORKSPACE_ROLE_OWNER = 1;
+  WORKSPACE_ROLE_ADMIN = 2;
+  WORKSPACE_ROLE_MEMBER = 3;
+  WORKSPACE_ROLE_VIEWER = 4;
+}
+
+// Resource-level permissions for fine-grained access control
+enum ResourcePermission {
+  RESOURCE_PERMISSION_UNSPECIFIED = 0;
+  RESOURCE_PERMISSION_VIEW = 1;
+  RESOURCE_PERMISSION_EDIT = 2;
+  RESOURCE_PERMISSION_DELETE = 3;
+  RESOURCE_PERMISSION_SHARE = 4;
+}

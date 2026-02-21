@@ -2,13 +2,14 @@
 // @generated from file workspace/v1/member.proto (package workspace.v1, syntax proto3)
 /* eslint-disable */
 
-import { enumDesc, fileDesc, messageDesc, tsEnum } from "@bufbuild/protobuf/codegenv2";
+import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import { file_permissions_v1_permissions } from "../../permissions/v1/permissions_pb";
 
 /**
  * Describes the file workspace/v1/member.proto.
  */
 export const file_workspace_v1_member = /*@__PURE__*/
-  fileDesc("Chl3b3Jrc3BhY2UvdjEvbWVtYmVyLnByb3RvEgx3b3Jrc3BhY2UudjEisQEKD1dvcmtzcGFjZU1lbWJlchIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIvCgRyb2xlGAQgASgOMiEud29ya3NwYWNlLnYxLldvcmtzcGFjZU1lbWJlclJvbGUSEgoKY3JlYXRlZF9ieRgFIAEoCRISCgpjcmVhdGVkX2F0GAYgASgJEhIKCnVwZGF0ZWRfYXQYByABKAkiaQoUV29ya3NwYWNlTWVtYmVyQWRkZWQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSDAoEcm9sZRgEIAEoCRIQCghhZGRlZF9hdBgFIAEoCSJ7ChZXb3Jrc3BhY2VNZW1iZXJVcGRhdGVkEgoKAmlkGAEgASgJEhQKDHdvcmtzcGFjZV9pZBgCIAEoCRIPCgd1c2VyX2lkGAMgASgJEhEKBHJvbGUYBCABKAlIAIgBARISCgp1cGRhdGVkX2F0GAUgASgJQgcKBV9yb2xlInMKFldvcmtzcGFjZU1lbWJlclJlbW92ZWQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSEgoKcmVtb3ZlZF9ieRgEIAEoCRISCgpyZW1vdmVkX2F0GAUgASgJKqABChNXb3Jrc3BhY2VNZW1iZXJSb2xlEiUKIVdPUktTUEFDRV9NRU1CRVJfUk9MRV9VTlNQRUNJRklFRBAAEh8KG1dPUktTUEFDRV9NRU1CRVJfUk9MRV9PV05FUhABEh8KG1dPUktTUEFDRV9NRU1CRVJfUk9MRV9BRE1JThACEiAKHFdPUktTUEFDRV9NRU1CRVJfUk9MRV9NRU1CRVIQA0I1WjNnaXRodWIuY29tL25hdXRpY2Fsc3RyZWFtL3Byb3RvL2dlbi9nby93b3Jrc3BhY2UvdjFiBnByb3RvMw");
+  fileDesc("Chl3b3Jrc3BhY2UvdjEvbWVtYmVyLnByb3RvEgx3b3Jrc3BhY2UudjEirQEKD1dvcmtzcGFjZU1lbWJlchIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIrCgRyb2xlGAQgASgOMh0ucGVybWlzc2lvbnMudjEuV29ya3NwYWNlUm9sZRISCgpjcmVhdGVkX2J5GAUgASgJEhIKCmNyZWF0ZWRfYXQYBiABKAkSEgoKdXBkYXRlZF9hdBgHIAEoCSJpChRXb3Jrc3BhY2VNZW1iZXJBZGRlZBIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRIMCgRyb2xlGAQgASgJEhAKCGFkZGVkX2F0GAUgASgJInsKFldvcmtzcGFjZU1lbWJlclVwZGF0ZWQSCgoCaWQYASABKAkSFAoMd29ya3NwYWNlX2lkGAIgASgJEg8KB3VzZXJfaWQYAyABKAkSEQoEcm9sZRgEIAEoCUgAiAEBEhIKCnVwZGF0ZWRfYXQYBSABKAlCBwoFX3JvbGUicwoWV29ya3NwYWNlTWVtYmVyUmVtb3ZlZBIKCgJpZBgBIAEoCRIUCgx3b3Jrc3BhY2VfaWQYAiABKAkSDwoHdXNlcl9pZBgDIAEoCRISCgpyZW1vdmVkX2J5GAQgASgJEhIKCnJlbW92ZWRfYXQYBSABKAlCNVozZ2l0aHViLmNvbS9uYXV0aWNhbHN0cmVhbS9wcm90by9nZW4vZ28vd29ya3NwYWNlL3YxYgZwcm90bzM", [file_permissions_v1_permissions]);
 
 /**
  * Describes the message workspace.v1.WorkspaceMember.
@@ -37,16 +38,4 @@ export const WorkspaceMemberUpdatedSchema = /*@__PURE__*/
  */
 export const WorkspaceMemberRemovedSchema = /*@__PURE__*/
   messageDesc(file_workspace_v1_member, 3);
-
-/**
- * Describes the enum workspace.v1.WorkspaceMemberRole.
- */
-export const WorkspaceMemberRoleSchema = /*@__PURE__*/
-  enumDesc(file_workspace_v1_member, 0);
-
-/**
- * @generated from enum workspace.v1.WorkspaceMemberRole
- */
-export const WorkspaceMemberRole = /*@__PURE__*/
-  tsEnum(WorkspaceMemberRoleSchema);
 
