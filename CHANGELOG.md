@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/nauticalstream/proto/compare/v1.0.5...v1.0.6) (2026-02-21)
+
+
+### Bug Fixes
+
+* update user and address protos with verification enum, nationality, optional address fields and regenerate ([0b6d290](https://github.com/nauticalstream/proto/commit/0b6d29022a3c4984831970c94d09f024d7b7151e))
+
 ## [1.0.5](https://github.com/nauticalstream/proto/compare/v1.0.4...v1.0.5) (2026-02-21)
 
 
