@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/nauticalstream/proto/compare/v1.0.7...v1.1.0) (2026-02-21)
+
+
+### Features
+
+* **proto:** add permissions/v1 schema with platform and workspace roles ([4e72459](https://github.com/nauticalstream/proto/commit/4e724596e7e0d54171171d8d8968fe36b3eaf428))
+
 ## [1.0.7](https://github.com/nauticalstream/proto/compare/v1.0.6...v1.0.7) (2026-02-21)
 
 
