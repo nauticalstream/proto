@@ -16,12 +16,6 @@ enum WorkspaceStatus {
   WORKSPACE_STATUS_SUSPENDED = 4;
 }
 
-enum WorkspaceType {
-  WORKSPACE_TYPE_UNSPECIFIED = 0;
-  WORKSPACE_TYPE_INDIVIDUAL = 1;
-  WORKSPACE_TYPE_COMPANY = 2;
-}
-
 // ============================================
 // WORKSPACE FULL MODEL
 // ============================================
@@ -33,15 +27,15 @@ message Workspace {
   string handle = 3;
   optional string description = 4;
   WorkspaceStatus status = 5;
-  WorkspaceType type = 6;
-  optional int32 category_id = 7;
-  string created_by = 8;
-  string created_at = 9; // ISO 8601 datetime string
-  string updated_at = 10; // ISO 8601 datetime string
-  optional string website = 11;
-  optional string avatar = 14; // For enrichment display
-  optional double latitude = 15; // Workspace location latitude
-  optional double longitude = 16; // Workspace location longitude
+  optional int32 category_id = 6;
+  string created_by = 7;
+  string created_at = 8; // ISO 8601 datetime string
+  string updated_at = 9; // ISO 8601 datetime string
+  optional string website = 10;
+  optional string avatar = 11; // For enrichment display
+  optional double latitude = 12; // Workspace location latitude
+  optional double longitude = 13; // Workspace location longitude
+  optional string tenant_id = 14; // Multi-tenant isolation
 }
 
 // ============================================
@@ -103,10 +97,4 @@ message WorkspaceUnpublished {
 message WorkspaceSuspended {
   string id = 1;
   string suspended_at = 2; // ISO 8601 datetime string
-}
-
-// Event: Company info updated
-message WorkspaceCompanyInfoUpdated {
-  string id = 1;
-  string updated_at = 2; // ISO 8601 datetime string
 }

@@ -25,11 +25,9 @@ message WorkspaceMember {
   string workspace_id = 2;
   string user_id = 3;
   WorkspaceMemberRole role = 4;
-  optional string title = 5; // Job title for Stripe representative
-  bool representative = 6; // Stripe representative flag
-  string created_by = 7;
-  string created_at = 8; // ISO 8601 datetime string
-  string updated_at = 9; // ISO 8601 datetime string
+  string created_by = 5;
+  string created_at = 6; // ISO 8601 datetime string
+  string updated_at = 7; // ISO 8601 datetime string
 }
 
 // ============================================

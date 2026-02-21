@@ -42,59 +42,61 @@ export declare type Workspace = Message<"workspace.v1.Workspace"> & {
   status: WorkspaceStatus;
 
   /**
-   * @generated from field: workspace.v1.WorkspaceType type = 6;
-   */
-  type: WorkspaceType;
-
-  /**
-   * @generated from field: optional int32 category_id = 7;
+   * @generated from field: optional int32 category_id = 6;
    */
   categoryId?: number;
 
   /**
-   * @generated from field: string created_by = 8;
+   * @generated from field: string created_by = 7;
    */
   createdBy: string;
 
   /**
    * ISO 8601 datetime string
    *
-   * @generated from field: string created_at = 9;
+   * @generated from field: string created_at = 8;
    */
   createdAt: string;
 
   /**
    * ISO 8601 datetime string
    *
-   * @generated from field: string updated_at = 10;
+   * @generated from field: string updated_at = 9;
    */
   updatedAt: string;
 
   /**
-   * @generated from field: optional string website = 11;
+   * @generated from field: optional string website = 10;
    */
   website?: string;
 
   /**
    * For enrichment display
    *
-   * @generated from field: optional string avatar = 14;
+   * @generated from field: optional string avatar = 11;
    */
   avatar?: string;
 
   /**
    * Workspace location latitude
    *
-   * @generated from field: optional double latitude = 15;
+   * @generated from field: optional double latitude = 12;
    */
   latitude?: number;
 
   /**
    * Workspace location longitude
    *
-   * @generated from field: optional double longitude = 16;
+   * @generated from field: optional double longitude = 13;
    */
   longitude?: number;
+
+  /**
+   * Multi-tenant isolation
+   *
+   * @generated from field: optional string tenant_id = 14;
+   */
+  tenantId?: string;
 };
 
 /**
@@ -313,31 +315,6 @@ export declare type WorkspaceSuspended = Message<"workspace.v1.WorkspaceSuspende
 export declare const WorkspaceSuspendedSchema: GenMessage<WorkspaceSuspended>;
 
 /**
- * Event: Company info updated
- *
- * @generated from message workspace.v1.WorkspaceCompanyInfoUpdated
- */
-export declare type WorkspaceCompanyInfoUpdated = Message<"workspace.v1.WorkspaceCompanyInfoUpdated"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-
-  /**
-   * ISO 8601 datetime string
-   *
-   * @generated from field: string updated_at = 2;
-   */
-  updatedAt: string;
-};
-
-/**
- * Describes the message workspace.v1.WorkspaceCompanyInfoUpdated.
- * Use `create(WorkspaceCompanyInfoUpdatedSchema)` to create a new message.
- */
-export declare const WorkspaceCompanyInfoUpdatedSchema: GenMessage<WorkspaceCompanyInfoUpdated>;
-
-/**
  * @generated from enum workspace.v1.WorkspaceStatus
  */
 export enum WorkspaceStatus {
@@ -371,29 +348,4 @@ export enum WorkspaceStatus {
  * Describes the enum workspace.v1.WorkspaceStatus.
  */
 export declare const WorkspaceStatusSchema: GenEnum<WorkspaceStatus>;
-
-/**
- * @generated from enum workspace.v1.WorkspaceType
- */
-export enum WorkspaceType {
-  /**
-   * @generated from enum value: WORKSPACE_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: WORKSPACE_TYPE_INDIVIDUAL = 1;
-   */
-  INDIVIDUAL = 1,
-
-  /**
-   * @generated from enum value: WORKSPACE_TYPE_COMPANY = 2;
-   */
-  COMPANY = 2,
-}
-
-/**
- * Describes the enum workspace.v1.WorkspaceType.
- */
-export declare const WorkspaceTypeSchema: GenEnum<WorkspaceType>;
 

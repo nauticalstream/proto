@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cworkspace/v1/workspace.proto\x12\x0cworkspace.v1\"\xab\x04\n\tWorkspace\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06handle\x18\x03 \x01(\tR\x06handle\x12%\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x35\n\x06status\x18\x05 \x01(\x0e\x32\x1d.workspace.v1.WorkspaceStatusR\x06status\x12/\n\x04type\x18\x06 \x01(\x0e\x32\x1b.workspace.v1.WorkspaceTypeR\x04type\x12$\n\x0b\x63\x61tegory_id\x18\x07 \x01(\x05H\x01R\ncategoryId\x88\x01\x01\x12\x1d\n\ncreated_by\x18\x08 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\t \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\n \x01(\tR\tupdatedAt\x12\x1d\n\x07website\x18\x0b \x01(\tH\x02R\x07website\x88\x01\x01\x12\x1b\n\x06\x61vatar\x18\x0e \x01(\tH\x03R\x06\x61vatar\x88\x01\x01\x12\x1f\n\x08latitude\x18\x0f \x01(\x01H\x04R\x08latitude\x88\x01\x01\x12!\n\tlongitude\x18\x10 \x01(\x01H\x05R\tlongitude\x88\x01\x01\x42\x0e\n\x0c_descriptionB\x0e\n\x0c_category_idB\n\n\x08_websiteB\t\n\x07_avatarB\x0b\n\t_latitudeB\x0c\n\n_longitude\"1\n\x13GetWorkspaceRequest\x12\x13\n\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x42\x05\n\x03_id\"`\n\x14GetWorkspaceResponse\x12:\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceH\x00R\tworkspace\x88\x01\x01\x42\x0c\n\n_workspace\")\n\x15ListWorkspacesRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"Q\n\x16ListWorkspacesResponse\x12\x37\n\nworkspaces\x18\x01 \x03(\x0b\x32\x17.workspace.v1.WorkspaceR\nworkspaces\"I\n\x10WorkspaceCreated\x12\x35\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceR\tworkspace\"I\n\x10WorkspaceUpdated\x12\x35\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceR\tworkspace\"`\n\x10WorkspaceDeleted\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"G\n\x12WorkspacePublished\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cpublished_at\x18\x02 \x01(\tR\x0bpublishedAt\"M\n\x14WorkspaceUnpublished\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0eunpublished_at\x18\x02 \x01(\tR\runpublishedAt\"G\n\x12WorkspaceSuspended\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0csuspended_at\x18\x02 \x01(\tR\x0bsuspendedAt\"L\n\x1bWorkspaceCompanyInfoUpdated\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\nupdated_at\x18\x02 \x01(\tR\tupdatedAt*\xb1\x01\n\x0fWorkspaceStatus\x12 \n\x1cWORKSPACE_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n\x16WORKSPACE_STATUS_DRAFT\x10\x01\x12\x1e\n\x1aWORKSPACE_STATUS_PUBLISHED\x10\x02\x12 \n\x1cWORKSPACE_STATUS_UNPUBLISHED\x10\x03\x12\x1e\n\x1aWORKSPACE_STATUS_SUSPENDED\x10\x04*j\n\rWorkspaceType\x12\x1e\n\x1aWORKSPACE_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19WORKSPACE_TYPE_INDIVIDUAL\x10\x01\x12\x1a\n\x16WORKSPACE_TYPE_COMPANY\x10\x02\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cworkspace/v1/workspace.proto\x12\x0cworkspace.v1\"\xaa\x04\n\tWorkspace\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n\x06handle\x18\x03 \x01(\tR\x06handle\x12%\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x00R\x0b\x64\x65scription\x88\x01\x01\x12\x35\n\x06status\x18\x05 \x01(\x0e\x32\x1d.workspace.v1.WorkspaceStatusR\x06status\x12$\n\x0b\x63\x61tegory_id\x18\x06 \x01(\x05H\x01R\ncategoryId\x88\x01\x01\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAt\x12\x1d\n\x07website\x18\n \x01(\tH\x02R\x07website\x88\x01\x01\x12\x1b\n\x06\x61vatar\x18\x0b \x01(\tH\x03R\x06\x61vatar\x88\x01\x01\x12\x1f\n\x08latitude\x18\x0c \x01(\x01H\x04R\x08latitude\x88\x01\x01\x12!\n\tlongitude\x18\r \x01(\x01H\x05R\tlongitude\x88\x01\x01\x12 \n\ttenant_id\x18\x0e \x01(\tH\x06R\x08tenantId\x88\x01\x01\x42\x0e\n\x0c_descriptionB\x0e\n\x0c_category_idB\n\n\x08_websiteB\t\n\x07_avatarB\x0b\n\t_latitudeB\x0c\n\n_longitudeB\x0c\n\n_tenant_id\"1\n\x13GetWorkspaceRequest\x12\x13\n\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x42\x05\n\x03_id\"`\n\x14GetWorkspaceResponse\x12:\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceH\x00R\tworkspace\x88\x01\x01\x42\x0c\n\n_workspace\")\n\x15ListWorkspacesRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"Q\n\x16ListWorkspacesResponse\x12\x37\n\nworkspaces\x18\x01 \x03(\x0b\x32\x17.workspace.v1.WorkspaceR\nworkspaces\"I\n\x10WorkspaceCreated\x12\x35\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceR\tworkspace\"I\n\x10WorkspaceUpdated\x12\x35\n\tworkspace\x18\x01 \x01(\x0b\x32\x17.workspace.v1.WorkspaceR\tworkspace\"`\n\x10WorkspaceDeleted\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n\ndeleted_by\x18\x02 \x01(\tR\tdeletedBy\x12\x1d\n\ndeleted_at\x18\x03 \x01(\tR\tdeletedAt\"G\n\x12WorkspacePublished\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cpublished_at\x18\x02 \x01(\tR\x0bpublishedAt\"M\n\x14WorkspaceUnpublished\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12%\n\x0eunpublished_at\x18\x02 \x01(\tR\runpublishedAt\"G\n\x12WorkspaceSuspended\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0csuspended_at\x18\x02 \x01(\tR\x0bsuspendedAt*\xb1\x01\n\x0fWorkspaceStatus\x12 \n\x1cWORKSPACE_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n\x16WORKSPACE_STATUS_DRAFT\x10\x01\x12\x1e\n\x1aWORKSPACE_STATUS_PUBLISHED\x10\x02\x12 \n\x1cWORKSPACE_STATUS_UNPUBLISHED\x10\x03\x12\x1e\n\x1aWORKSPACE_STATUS_SUSPENDED\x10\x04\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,32 +32,28 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'workspace.v1.workspace_pb2'
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/nauticalstream/proto/gen/go/workspace/v1'
-  _globals['_WORKSPACESTATUS']._serialized_start=1431
-  _globals['_WORKSPACESTATUS']._serialized_end=1608
-  _globals['_WORKSPACETYPE']._serialized_start=1610
-  _globals['_WORKSPACETYPE']._serialized_end=1716
+  _globals['_WORKSPACESTATUS']._serialized_start=1352
+  _globals['_WORKSPACESTATUS']._serialized_end=1529
   _globals['_WORKSPACE']._serialized_start=47
-  _globals['_WORKSPACE']._serialized_end=602
-  _globals['_GETWORKSPACEREQUEST']._serialized_start=604
-  _globals['_GETWORKSPACEREQUEST']._serialized_end=653
-  _globals['_GETWORKSPACERESPONSE']._serialized_start=655
-  _globals['_GETWORKSPACERESPONSE']._serialized_end=751
-  _globals['_LISTWORKSPACESREQUEST']._serialized_start=753
-  _globals['_LISTWORKSPACESREQUEST']._serialized_end=794
-  _globals['_LISTWORKSPACESRESPONSE']._serialized_start=796
-  _globals['_LISTWORKSPACESRESPONSE']._serialized_end=877
-  _globals['_WORKSPACECREATED']._serialized_start=879
-  _globals['_WORKSPACECREATED']._serialized_end=952
-  _globals['_WORKSPACEUPDATED']._serialized_start=954
-  _globals['_WORKSPACEUPDATED']._serialized_end=1027
-  _globals['_WORKSPACEDELETED']._serialized_start=1029
-  _globals['_WORKSPACEDELETED']._serialized_end=1125
-  _globals['_WORKSPACEPUBLISHED']._serialized_start=1127
-  _globals['_WORKSPACEPUBLISHED']._serialized_end=1198
-  _globals['_WORKSPACEUNPUBLISHED']._serialized_start=1200
-  _globals['_WORKSPACEUNPUBLISHED']._serialized_end=1277
-  _globals['_WORKSPACESUSPENDED']._serialized_start=1279
-  _globals['_WORKSPACESUSPENDED']._serialized_end=1350
-  _globals['_WORKSPACECOMPANYINFOUPDATED']._serialized_start=1352
-  _globals['_WORKSPACECOMPANYINFOUPDATED']._serialized_end=1428
+  _globals['_WORKSPACE']._serialized_end=601
+  _globals['_GETWORKSPACEREQUEST']._serialized_start=603
+  _globals['_GETWORKSPACEREQUEST']._serialized_end=652
+  _globals['_GETWORKSPACERESPONSE']._serialized_start=654
+  _globals['_GETWORKSPACERESPONSE']._serialized_end=750
+  _globals['_LISTWORKSPACESREQUEST']._serialized_start=752
+  _globals['_LISTWORKSPACESREQUEST']._serialized_end=793
+  _globals['_LISTWORKSPACESRESPONSE']._serialized_start=795
+  _globals['_LISTWORKSPACESRESPONSE']._serialized_end=876
+  _globals['_WORKSPACECREATED']._serialized_start=878
+  _globals['_WORKSPACECREATED']._serialized_end=951
+  _globals['_WORKSPACEUPDATED']._serialized_start=953
+  _globals['_WORKSPACEUPDATED']._serialized_end=1026
+  _globals['_WORKSPACEDELETED']._serialized_start=1028
+  _globals['_WORKSPACEDELETED']._serialized_end=1124
+  _globals['_WORKSPACEPUBLISHED']._serialized_start=1126
+  _globals['_WORKSPACEPUBLISHED']._serialized_end=1197
+  _globals['_WORKSPACEUNPUBLISHED']._serialized_start=1199
+  _globals['_WORKSPACEUNPUBLISHED']._serialized_end=1276
+  _globals['_WORKSPACESUSPENDED']._serialized_start=1278
+  _globals['_WORKSPACESUSPENDED']._serialized_end=1349
 # @@protoc_insertion_point(module_scope)

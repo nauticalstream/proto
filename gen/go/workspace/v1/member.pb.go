@@ -75,18 +75,16 @@ func (WorkspaceMemberRole) EnumDescriptor() ([]byte, []int) {
 
 // Full member model (matches Prisma schema and used for enrichment)
 type WorkspaceMember struct {
-	state          protoimpl.MessageState `protogen:"open.v1"`
-	Id             string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	WorkspaceId    string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
-	UserId         string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Role           WorkspaceMemberRole    `protobuf:"varint,4,opt,name=role,proto3,enum=workspace.v1.WorkspaceMemberRole" json:"role,omitempty"`
-	Title          *string                `protobuf:"bytes,5,opt,name=title,proto3,oneof" json:"title,omitempty"`              // Job title for Stripe representative
-	Representative bool                   `protobuf:"varint,6,opt,name=representative,proto3" json:"representative,omitempty"` // Stripe representative flag
-	CreatedBy      string                 `protobuf:"bytes,7,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
-	CreatedAt      string                 `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601 datetime string
-	UpdatedAt      string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
-	unknownFields  protoimpl.UnknownFields
-	sizeCache      protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	WorkspaceId   string                 `protobuf:"bytes,2,opt,name=workspace_id,json=workspaceId,proto3" json:"workspace_id,omitempty"`
+	UserId        string                 `protobuf:"bytes,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Role          WorkspaceMemberRole    `protobuf:"varint,4,opt,name=role,proto3,enum=workspace.v1.WorkspaceMemberRole" json:"role,omitempty"`
+	CreatedBy     string                 `protobuf:"bytes,5,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
+	CreatedAt     string                 `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601 datetime string
+	UpdatedAt     string                 `protobuf:"bytes,7,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *WorkspaceMember) Reset() {
@@ -145,20 +143,6 @@ func (x *WorkspaceMember) GetRole() WorkspaceMemberRole {
 		return x.Role
 	}
 	return WorkspaceMemberRole_WORKSPACE_MEMBER_ROLE_UNSPECIFIED
-}
-
-func (x *WorkspaceMember) GetTitle() string {
-	if x != nil && x.Title != nil {
-		return *x.Title
-	}
-	return ""
-}
-
-func (x *WorkspaceMember) GetRepresentative() bool {
-	if x != nil {
-		return x.Representative
-	}
-	return false
 }
 
 func (x *WorkspaceMember) GetCreatedBy() string {
@@ -417,21 +401,18 @@ var File_workspace_v1_member_proto protoreflect.FileDescriptor
 
 const file_workspace_v1_member_proto_rawDesc = "" +
 	"\n" +
-	"\x19workspace/v1/member.proto\x12\fworkspace.v1\"\xbe\x02\n" +
+	"\x19workspace/v1/member.proto\x12\fworkspace.v1\"\xf1\x01\n" +
 	"\x0fWorkspaceMember\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
 	"\auser_id\x18\x03 \x01(\tR\x06userId\x125\n" +
-	"\x04role\x18\x04 \x01(\x0e2!.workspace.v1.WorkspaceMemberRoleR\x04role\x12\x19\n" +
-	"\x05title\x18\x05 \x01(\tH\x00R\x05title\x88\x01\x01\x12&\n" +
-	"\x0erepresentative\x18\x06 \x01(\bR\x0erepresentative\x12\x1d\n" +
+	"\x04role\x18\x04 \x01(\x0e2!.workspace.v1.WorkspaceMemberRoleR\x04role\x12\x1d\n" +
 	"\n" +
-	"created_by\x18\a \x01(\tR\tcreatedBy\x12\x1d\n" +
+	"created_by\x18\x05 \x01(\tR\tcreatedBy\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\b \x01(\tR\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\t \x01(\tR\tupdatedAtB\b\n" +
-	"\x06_title\"\x91\x01\n" +
+	"updated_at\x18\a \x01(\tR\tupdatedAt\"\x91\x01\n" +
 	"\x14WorkspaceMemberAdded\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
 	"\fworkspace_id\x18\x02 \x01(\tR\vworkspaceId\x12\x17\n" +
@@ -495,7 +476,6 @@ func file_workspace_v1_member_proto_init() {
 	if File_workspace_v1_member_proto != nil {
 		return
 	}
-	file_workspace_v1_member_proto_msgTypes[0].OneofWrappers = []any{}
 	file_workspace_v1_member_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

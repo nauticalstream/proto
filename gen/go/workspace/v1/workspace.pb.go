@@ -76,55 +76,6 @@ func (WorkspaceStatus) EnumDescriptor() ([]byte, []int) {
 	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{0}
 }
 
-type WorkspaceType int32
-
-const (
-	WorkspaceType_WORKSPACE_TYPE_UNSPECIFIED WorkspaceType = 0
-	WorkspaceType_WORKSPACE_TYPE_INDIVIDUAL  WorkspaceType = 1
-	WorkspaceType_WORKSPACE_TYPE_COMPANY     WorkspaceType = 2
-)
-
-// Enum value maps for WorkspaceType.
-var (
-	WorkspaceType_name = map[int32]string{
-		0: "WORKSPACE_TYPE_UNSPECIFIED",
-		1: "WORKSPACE_TYPE_INDIVIDUAL",
-		2: "WORKSPACE_TYPE_COMPANY",
-	}
-	WorkspaceType_value = map[string]int32{
-		"WORKSPACE_TYPE_UNSPECIFIED": 0,
-		"WORKSPACE_TYPE_INDIVIDUAL":  1,
-		"WORKSPACE_TYPE_COMPANY":     2,
-	}
-)
-
-func (x WorkspaceType) Enum() *WorkspaceType {
-	p := new(WorkspaceType)
-	*p = x
-	return p
-}
-
-func (x WorkspaceType) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (WorkspaceType) Descriptor() protoreflect.EnumDescriptor {
-	return file_workspace_v1_workspace_proto_enumTypes[1].Descriptor()
-}
-
-func (WorkspaceType) Type() protoreflect.EnumType {
-	return &file_workspace_v1_workspace_proto_enumTypes[1]
-}
-
-func (x WorkspaceType) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use WorkspaceType.Descriptor instead.
-func (WorkspaceType) EnumDescriptor() ([]byte, []int) {
-	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{1}
-}
-
 // Full workspace model (matches Prisma schema and used for enrichment)
 type Workspace struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -133,15 +84,15 @@ type Workspace struct {
 	Handle        string                 `protobuf:"bytes,3,opt,name=handle,proto3" json:"handle,omitempty"`
 	Description   *string                `protobuf:"bytes,4,opt,name=description,proto3,oneof" json:"description,omitempty"`
 	Status        WorkspaceStatus        `protobuf:"varint,5,opt,name=status,proto3,enum=workspace.v1.WorkspaceStatus" json:"status,omitempty"`
-	Type          WorkspaceType          `protobuf:"varint,6,opt,name=type,proto3,enum=workspace.v1.WorkspaceType" json:"type,omitempty"`
-	CategoryId    *int32                 `protobuf:"varint,7,opt,name=category_id,json=categoryId,proto3,oneof" json:"category_id,omitempty"`
-	CreatedBy     string                 `protobuf:"bytes,8,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
-	CreatedAt     string                 `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`  // ISO 8601 datetime string
-	UpdatedAt     string                 `protobuf:"bytes,10,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
-	Website       *string                `protobuf:"bytes,11,opt,name=website,proto3,oneof" json:"website,omitempty"`
-	Avatar        *string                `protobuf:"bytes,14,opt,name=avatar,proto3,oneof" json:"avatar,omitempty"`         // For enrichment display
-	Latitude      *float64               `protobuf:"fixed64,15,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`   // Workspace location latitude
-	Longitude     *float64               `protobuf:"fixed64,16,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"` // Workspace location longitude
+	CategoryId    *int32                 `protobuf:"varint,6,opt,name=category_id,json=categoryId,proto3,oneof" json:"category_id,omitempty"`
+	CreatedBy     string                 `protobuf:"bytes,7,opt,name=created_by,json=createdBy,proto3" json:"created_by,omitempty"`
+	CreatedAt     string                 `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601 datetime string
+	UpdatedAt     string                 `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
+	Website       *string                `protobuf:"bytes,10,opt,name=website,proto3,oneof" json:"website,omitempty"`
+	Avatar        *string                `protobuf:"bytes,11,opt,name=avatar,proto3,oneof" json:"avatar,omitempty"`                     // For enrichment display
+	Latitude      *float64               `protobuf:"fixed64,12,opt,name=latitude,proto3,oneof" json:"latitude,omitempty"`               // Workspace location latitude
+	Longitude     *float64               `protobuf:"fixed64,13,opt,name=longitude,proto3,oneof" json:"longitude,omitempty"`             // Workspace location longitude
+	TenantId      *string                `protobuf:"bytes,14,opt,name=tenant_id,json=tenantId,proto3,oneof" json:"tenant_id,omitempty"` // Multi-tenant isolation
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -211,13 +162,6 @@ func (x *Workspace) GetStatus() WorkspaceStatus {
 	return WorkspaceStatus_WORKSPACE_STATUS_UNSPECIFIED
 }
 
-func (x *Workspace) GetType() WorkspaceType {
-	if x != nil {
-		return x.Type
-	}
-	return WorkspaceType_WORKSPACE_TYPE_UNSPECIFIED
-}
-
 func (x *Workspace) GetCategoryId() int32 {
 	if x != nil && x.CategoryId != nil {
 		return *x.CategoryId
@@ -272,6 +216,13 @@ func (x *Workspace) GetLongitude() float64 {
 		return *x.Longitude
 	}
 	return 0
+}
+
+func (x *Workspace) GetTenantId() string {
+	if x != nil && x.TenantId != nil {
+		return *x.TenantId
+	}
+	return ""
 }
 
 // Get workspace by ID
@@ -762,84 +713,31 @@ func (x *WorkspaceSuspended) GetSuspendedAt() string {
 	return ""
 }
 
-// Event: Company info updated
-type WorkspaceCompanyInfoUpdated struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	UpdatedAt     string                 `protobuf:"bytes,2,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *WorkspaceCompanyInfoUpdated) Reset() {
-	*x = WorkspaceCompanyInfoUpdated{}
-	mi := &file_workspace_v1_workspace_proto_msgTypes[11]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *WorkspaceCompanyInfoUpdated) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*WorkspaceCompanyInfoUpdated) ProtoMessage() {}
-
-func (x *WorkspaceCompanyInfoUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_workspace_v1_workspace_proto_msgTypes[11]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use WorkspaceCompanyInfoUpdated.ProtoReflect.Descriptor instead.
-func (*WorkspaceCompanyInfoUpdated) Descriptor() ([]byte, []int) {
-	return file_workspace_v1_workspace_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *WorkspaceCompanyInfoUpdated) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *WorkspaceCompanyInfoUpdated) GetUpdatedAt() string {
-	if x != nil {
-		return x.UpdatedAt
-	}
-	return ""
-}
-
 var File_workspace_v1_workspace_proto protoreflect.FileDescriptor
 
 const file_workspace_v1_workspace_proto_rawDesc = "" +
 	"\n" +
-	"\x1cworkspace/v1/workspace.proto\x12\fworkspace.v1\"\xab\x04\n" +
+	"\x1cworkspace/v1/workspace.proto\x12\fworkspace.v1\"\xaa\x04\n" +
 	"\tWorkspace\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x16\n" +
 	"\x06handle\x18\x03 \x01(\tR\x06handle\x12%\n" +
 	"\vdescription\x18\x04 \x01(\tH\x00R\vdescription\x88\x01\x01\x125\n" +
-	"\x06status\x18\x05 \x01(\x0e2\x1d.workspace.v1.WorkspaceStatusR\x06status\x12/\n" +
-	"\x04type\x18\x06 \x01(\x0e2\x1b.workspace.v1.WorkspaceTypeR\x04type\x12$\n" +
-	"\vcategory_id\x18\a \x01(\x05H\x01R\n" +
+	"\x06status\x18\x05 \x01(\x0e2\x1d.workspace.v1.WorkspaceStatusR\x06status\x12$\n" +
+	"\vcategory_id\x18\x06 \x01(\x05H\x01R\n" +
 	"categoryId\x88\x01\x01\x12\x1d\n" +
 	"\n" +
-	"created_by\x18\b \x01(\tR\tcreatedBy\x12\x1d\n" +
+	"created_by\x18\a \x01(\tR\tcreatedBy\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\t \x01(\tR\tcreatedAt\x12\x1d\n" +
+	"created_at\x18\b \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\n" +
-	" \x01(\tR\tupdatedAt\x12\x1d\n" +
-	"\awebsite\x18\v \x01(\tH\x02R\awebsite\x88\x01\x01\x12\x1b\n" +
-	"\x06avatar\x18\x0e \x01(\tH\x03R\x06avatar\x88\x01\x01\x12\x1f\n" +
-	"\blatitude\x18\x0f \x01(\x01H\x04R\blatitude\x88\x01\x01\x12!\n" +
-	"\tlongitude\x18\x10 \x01(\x01H\x05R\tlongitude\x88\x01\x01B\x0e\n" +
+	"updated_at\x18\t \x01(\tR\tupdatedAt\x12\x1d\n" +
+	"\awebsite\x18\n" +
+	" \x01(\tH\x02R\awebsite\x88\x01\x01\x12\x1b\n" +
+	"\x06avatar\x18\v \x01(\tH\x03R\x06avatar\x88\x01\x01\x12\x1f\n" +
+	"\blatitude\x18\f \x01(\x01H\x04R\blatitude\x88\x01\x01\x12!\n" +
+	"\tlongitude\x18\r \x01(\x01H\x05R\tlongitude\x88\x01\x01\x12 \n" +
+	"\ttenant_id\x18\x0e \x01(\tH\x06R\btenantId\x88\x01\x01B\x0e\n" +
 	"\f_descriptionB\x0e\n" +
 	"\f_category_idB\n" +
 	"\n" +
@@ -847,7 +745,9 @@ const file_workspace_v1_workspace_proto_rawDesc = "" +
 	"\a_avatarB\v\n" +
 	"\t_latitudeB\f\n" +
 	"\n" +
-	"_longitude\"1\n" +
+	"_longitudeB\f\n" +
+	"\n" +
+	"_tenant_id\"1\n" +
 	"\x13GetWorkspaceRequest\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01B\x05\n" +
 	"\x03_id\"`\n" +
@@ -879,21 +779,13 @@ const file_workspace_v1_workspace_proto_rawDesc = "" +
 	"\x0eunpublished_at\x18\x02 \x01(\tR\runpublishedAt\"G\n" +
 	"\x12WorkspaceSuspended\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
-	"\fsuspended_at\x18\x02 \x01(\tR\vsuspendedAt\"L\n" +
-	"\x1bWorkspaceCompanyInfoUpdated\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
-	"\n" +
-	"updated_at\x18\x02 \x01(\tR\tupdatedAt*\xb1\x01\n" +
+	"\fsuspended_at\x18\x02 \x01(\tR\vsuspendedAt*\xb1\x01\n" +
 	"\x0fWorkspaceStatus\x12 \n" +
 	"\x1cWORKSPACE_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16WORKSPACE_STATUS_DRAFT\x10\x01\x12\x1e\n" +
 	"\x1aWORKSPACE_STATUS_PUBLISHED\x10\x02\x12 \n" +
 	"\x1cWORKSPACE_STATUS_UNPUBLISHED\x10\x03\x12\x1e\n" +
-	"\x1aWORKSPACE_STATUS_SUSPENDED\x10\x04*j\n" +
-	"\rWorkspaceType\x12\x1e\n" +
-	"\x1aWORKSPACE_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n" +
-	"\x19WORKSPACE_TYPE_INDIVIDUAL\x10\x01\x12\x1a\n" +
-	"\x16WORKSPACE_TYPE_COMPANY\x10\x02B5Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3"
+	"\x1aWORKSPACE_STATUS_SUSPENDED\x10\x04B5Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3"
 
 var (
 	file_workspace_v1_workspace_proto_rawDescOnce sync.Once
@@ -907,36 +799,33 @@ func file_workspace_v1_workspace_proto_rawDescGZIP() []byte {
 	return file_workspace_v1_workspace_proto_rawDescData
 }
 
-var file_workspace_v1_workspace_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_workspace_v1_workspace_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_workspace_v1_workspace_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_workspace_v1_workspace_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
 var file_workspace_v1_workspace_proto_goTypes = []any{
-	(WorkspaceStatus)(0),                // 0: workspace.v1.WorkspaceStatus
-	(WorkspaceType)(0),                  // 1: workspace.v1.WorkspaceType
-	(*Workspace)(nil),                   // 2: workspace.v1.Workspace
-	(*GetWorkspaceRequest)(nil),         // 3: workspace.v1.GetWorkspaceRequest
-	(*GetWorkspaceResponse)(nil),        // 4: workspace.v1.GetWorkspaceResponse
-	(*ListWorkspacesRequest)(nil),       // 5: workspace.v1.ListWorkspacesRequest
-	(*ListWorkspacesResponse)(nil),      // 6: workspace.v1.ListWorkspacesResponse
-	(*WorkspaceCreated)(nil),            // 7: workspace.v1.WorkspaceCreated
-	(*WorkspaceUpdated)(nil),            // 8: workspace.v1.WorkspaceUpdated
-	(*WorkspaceDeleted)(nil),            // 9: workspace.v1.WorkspaceDeleted
-	(*WorkspacePublished)(nil),          // 10: workspace.v1.WorkspacePublished
-	(*WorkspaceUnpublished)(nil),        // 11: workspace.v1.WorkspaceUnpublished
-	(*WorkspaceSuspended)(nil),          // 12: workspace.v1.WorkspaceSuspended
-	(*WorkspaceCompanyInfoUpdated)(nil), // 13: workspace.v1.WorkspaceCompanyInfoUpdated
+	(WorkspaceStatus)(0),           // 0: workspace.v1.WorkspaceStatus
+	(*Workspace)(nil),              // 1: workspace.v1.Workspace
+	(*GetWorkspaceRequest)(nil),    // 2: workspace.v1.GetWorkspaceRequest
+	(*GetWorkspaceResponse)(nil),   // 3: workspace.v1.GetWorkspaceResponse
+	(*ListWorkspacesRequest)(nil),  // 4: workspace.v1.ListWorkspacesRequest
+	(*ListWorkspacesResponse)(nil), // 5: workspace.v1.ListWorkspacesResponse
+	(*WorkspaceCreated)(nil),       // 6: workspace.v1.WorkspaceCreated
+	(*WorkspaceUpdated)(nil),       // 7: workspace.v1.WorkspaceUpdated
+	(*WorkspaceDeleted)(nil),       // 8: workspace.v1.WorkspaceDeleted
+	(*WorkspacePublished)(nil),     // 9: workspace.v1.WorkspacePublished
+	(*WorkspaceUnpublished)(nil),   // 10: workspace.v1.WorkspaceUnpublished
+	(*WorkspaceSuspended)(nil),     // 11: workspace.v1.WorkspaceSuspended
 }
 var file_workspace_v1_workspace_proto_depIdxs = []int32{
 	0, // 0: workspace.v1.Workspace.status:type_name -> workspace.v1.WorkspaceStatus
-	1, // 1: workspace.v1.Workspace.type:type_name -> workspace.v1.WorkspaceType
-	2, // 2: workspace.v1.GetWorkspaceResponse.workspace:type_name -> workspace.v1.Workspace
-	2, // 3: workspace.v1.ListWorkspacesResponse.workspaces:type_name -> workspace.v1.Workspace
-	2, // 4: workspace.v1.WorkspaceCreated.workspace:type_name -> workspace.v1.Workspace
-	2, // 5: workspace.v1.WorkspaceUpdated.workspace:type_name -> workspace.v1.Workspace
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	1, // 1: workspace.v1.GetWorkspaceResponse.workspace:type_name -> workspace.v1.Workspace
+	1, // 2: workspace.v1.ListWorkspacesResponse.workspaces:type_name -> workspace.v1.Workspace
+	1, // 3: workspace.v1.WorkspaceCreated.workspace:type_name -> workspace.v1.Workspace
+	1, // 4: workspace.v1.WorkspaceUpdated.workspace:type_name -> workspace.v1.Workspace
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_workspace_v1_workspace_proto_init() }
@@ -952,8 +841,8 @@ func file_workspace_v1_workspace_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_workspace_v1_workspace_proto_rawDesc), len(file_workspace_v1_workspace_proto_rawDesc)),
-			NumEnums:      2,
-			NumMessages:   12,
+			NumEnums:      1,
+			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

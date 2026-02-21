@@ -37,35 +37,21 @@ export declare type WorkspaceMember = Message<"workspace.v1.WorkspaceMember"> & 
   role: WorkspaceMemberRole;
 
   /**
-   * Job title for Stripe representative
-   *
-   * @generated from field: optional string title = 5;
-   */
-  title?: string;
-
-  /**
-   * Stripe representative flag
-   *
-   * @generated from field: bool representative = 6;
-   */
-  representative: boolean;
-
-  /**
-   * @generated from field: string created_by = 7;
+   * @generated from field: string created_by = 5;
    */
   createdBy: string;
 
   /**
    * ISO 8601 datetime string
    *
-   * @generated from field: string created_at = 8;
+   * @generated from field: string created_at = 6;
    */
   createdAt: string;
 
   /**
    * ISO 8601 datetime string
    *
-   * @generated from field: string updated_at = 9;
+   * @generated from field: string updated_at = 7;
    */
   updatedAt: string;
 };

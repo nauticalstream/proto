@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19workspace/v1/member.proto\x12\x0cworkspace.v1\"\xbe\x02\n\x0fWorkspaceMember\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x35\n\x04role\x18\x04 \x01(\x0e\x32!.workspace.v1.WorkspaceMemberRoleR\x04role\x12\x19\n\x05title\x18\x05 \x01(\tH\x00R\x05title\x88\x01\x01\x12&\n\x0erepresentative\x18\x06 \x01(\x08R\x0erepresentative\x12\x1d\n\ncreated_by\x18\x07 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x08 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\t \x01(\tR\tupdatedAtB\x08\n\x06_title\"\x91\x01\n\x14WorkspaceMemberAdded\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x12\n\x04role\x18\x04 \x01(\tR\x04role\x12\x19\n\x08\x61\x64\x64\x65\x64_at\x18\x05 \x01(\tR\x07\x61\x64\x64\x65\x64\x41t\"\xa5\x01\n\x16WorkspaceMemberUpdated\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x17\n\x04role\x18\x04 \x01(\tH\x00R\x04role\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x05 \x01(\tR\tupdatedAtB\x07\n\x05_role\"\xa2\x01\n\x16WorkspaceMemberRemoved\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x1d\n\nremoved_by\x18\x04 \x01(\tR\tremovedBy\x12\x1d\n\nremoved_at\x18\x05 \x01(\tR\tremovedAt*\xa0\x01\n\x13WorkspaceMemberRole\x12%\n!WORKSPACE_MEMBER_ROLE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bWORKSPACE_MEMBER_ROLE_OWNER\x10\x01\x12\x1f\n\x1bWORKSPACE_MEMBER_ROLE_ADMIN\x10\x02\x12 \n\x1cWORKSPACE_MEMBER_ROLE_MEMBER\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19workspace/v1/member.proto\x12\x0cworkspace.v1\"\xf1\x01\n\x0fWorkspaceMember\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x35\n\x04role\x18\x04 \x01(\x0e\x32!.workspace.v1.WorkspaceMemberRoleR\x04role\x12\x1d\n\ncreated_by\x18\x05 \x01(\tR\tcreatedBy\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAt\x12\x1d\n\nupdated_at\x18\x07 \x01(\tR\tupdatedAt\"\x91\x01\n\x14WorkspaceMemberAdded\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x12\n\x04role\x18\x04 \x01(\tR\x04role\x12\x19\n\x08\x61\x64\x64\x65\x64_at\x18\x05 \x01(\tR\x07\x61\x64\x64\x65\x64\x41t\"\xa5\x01\n\x16WorkspaceMemberUpdated\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x17\n\x04role\x18\x04 \x01(\tH\x00R\x04role\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x05 \x01(\tR\tupdatedAtB\x07\n\x05_role\"\xa2\x01\n\x16WorkspaceMemberRemoved\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12!\n\x0cworkspace_id\x18\x02 \x01(\tR\x0bworkspaceId\x12\x17\n\x07user_id\x18\x03 \x01(\tR\x06userId\x12\x1d\n\nremoved_by\x18\x04 \x01(\tR\tremovedBy\x12\x1d\n\nremoved_at\x18\x05 \x01(\tR\tremovedAt*\xa0\x01\n\x13WorkspaceMemberRole\x12%\n!WORKSPACE_MEMBER_ROLE_UNSPECIFIED\x10\x00\x12\x1f\n\x1bWORKSPACE_MEMBER_ROLE_OWNER\x10\x01\x12\x1f\n\x1bWORKSPACE_MEMBER_ROLE_ADMIN\x10\x02\x12 \n\x1cWORKSPACE_MEMBER_ROLE_MEMBER\x10\x03\x42\x35Z3github.com/nauticalstream/proto/gen/go/workspace/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,14 +32,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'workspace.v1.member_pb2', _
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z3github.com/nauticalstream/proto/gen/go/workspace/v1'
-  _globals['_WORKSPACEMEMBERROLE']._serialized_start=846
-  _globals['_WORKSPACEMEMBERROLE']._serialized_end=1006
+  _globals['_WORKSPACEMEMBERROLE']._serialized_start=769
+  _globals['_WORKSPACEMEMBERROLE']._serialized_end=929
   _globals['_WORKSPACEMEMBER']._serialized_start=44
-  _globals['_WORKSPACEMEMBER']._serialized_end=362
-  _globals['_WORKSPACEMEMBERADDED']._serialized_start=365
-  _globals['_WORKSPACEMEMBERADDED']._serialized_end=510
-  _globals['_WORKSPACEMEMBERUPDATED']._serialized_start=513
-  _globals['_WORKSPACEMEMBERUPDATED']._serialized_end=678
-  _globals['_WORKSPACEMEMBERREMOVED']._serialized_start=681
-  _globals['_WORKSPACEMEMBERREMOVED']._serialized_end=843
+  _globals['_WORKSPACEMEMBER']._serialized_end=285
+  _globals['_WORKSPACEMEMBERADDED']._serialized_start=288
+  _globals['_WORKSPACEMEMBERADDED']._serialized_end=433
+  _globals['_WORKSPACEMEMBERUPDATED']._serialized_start=436
+  _globals['_WORKSPACEMEMBERUPDATED']._serialized_end=601
+  _globals['_WORKSPACEMEMBERREMOVED']._serialized_start=604
+  _globals['_WORKSPACEMEMBERREMOVED']._serialized_end=766
 # @@protoc_insertion_point(module_scope)
