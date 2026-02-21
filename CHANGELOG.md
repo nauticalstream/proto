@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/nauticalstream/proto/compare/v1.0.2...v1.0.3) (2026-02-21)
+
+
+### Bug Fixes
+
+* regenerate proto files with updated schemas ([5542ff2](https://github.com/nauticalstream/proto/commit/5542ff29ee7526e399285143959d24626dda0333))
+
 ## [1.0.2](https://github.com/nauticalstream/proto/compare/v1.0.1...v1.0.2) (2026-02-20)
 
 
