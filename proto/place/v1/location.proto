@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package places.v1;
+package place.v1;
 
 option go_package = "github.com/nauticalstream/proto/gen/go/place/v1";
 

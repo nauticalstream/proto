@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17place/v1/location.proto\x12\tplaces.v1\"\x80\x01\n\x12HasLocationRequest\x12G\n\x0ereference_type\x18\x01 \x01(\x0e\x32 .places.v1.LocationReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\"8\n\x13HasLocationResponse\x12!\n\x0chas_location\x18\x01 \x01(\x08R\x0bhasLocation\"N\n\x17HasLocationBatchRequest\x12\x33\n\x05items\x18\x01 \x03(\x0b\x32\x1d.places.v1.HasLocationRequestR\x05items\"\xa7\x01\n\x16HasLocationBatchResult\x12G\n\x0ereference_type\x18\x01 \x01(\x0e\x32 .places.v1.LocationReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\x12!\n\x0chas_location\x18\x03 \x01(\x08R\x0bhasLocation\"W\n\x18HasLocationBatchResponse\x12;\n\x07results\x18\x01 \x03(\x0b\x32!.places.v1.HasLocationBatchResultR\x07results\"2\n\x0fLocationDeleted\x12\x1f\n\x0blocation_id\x18\x01 \x01(\tR\nlocationId*\xbc\x02\n\x15LocationReferenceType\x12\'\n#LOCATION_REFERENCE_TYPE_UNSPECIFIED\x10\x00\x12 \n\x1cLOCATION_REFERENCE_TYPE_POST\x10\x01\x12!\n\x1dLOCATION_REFERENCE_TYPE_EVENT\x10\x02\x12 \n\x1cLOCATION_REFERENCE_TYPE_BOAT\x10\x03\x12%\n!LOCATION_REFERENCE_TYPE_WORKSPACE\x10\x04\x12&\n\"LOCATION_REFERENCE_TYPE_EXPERIENCE\x10\x05\x12 \n\x1cLOCATION_REFERENCE_TYPE_TOUR\x10\x06\x12\"\n\x1eLOCATION_REFERENCE_TYPE_CRUISE\x10\x07\x42\x31Z/github.com/nauticalstream/proto/gen/go/place/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17place/v1/location.proto\x12\x08place.v1\"\x7f\n\x12HasLocationRequest\x12\x46\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1f.place.v1.LocationReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\"8\n\x13HasLocationResponse\x12!\n\x0chas_location\x18\x01 \x01(\x08R\x0bhasLocation\"M\n\x17HasLocationBatchRequest\x12\x32\n\x05items\x18\x01 \x03(\x0b\x32\x1c.place.v1.HasLocationRequestR\x05items\"\xa6\x01\n\x16HasLocationBatchResult\x12\x46\n\x0ereference_type\x18\x01 \x01(\x0e\x32\x1f.place.v1.LocationReferenceTypeR\rreferenceType\x12!\n\x0creference_id\x18\x02 \x01(\tR\x0breferenceId\x12!\n\x0chas_location\x18\x03 \x01(\x08R\x0bhasLocation\"V\n\x18HasLocationBatchResponse\x12:\n\x07results\x18\x01 \x03(\x0b\x32 .place.v1.HasLocationBatchResultR\x07results\"2\n\x0fLocationDeleted\x12\x1f\n\x0blocation_id\x18\x01 \x01(\tR\nlocationId*\xbc\x02\n\x15LocationReferenceType\x12\'\n#LOCATION_REFERENCE_TYPE_UNSPECIFIED\x10\x00\x12 \n\x1cLOCATION_REFERENCE_TYPE_POST\x10\x01\x12!\n\x1dLOCATION_REFERENCE_TYPE_EVENT\x10\x02\x12 \n\x1cLOCATION_REFERENCE_TYPE_BOAT\x10\x03\x12%\n!LOCATION_REFERENCE_TYPE_WORKSPACE\x10\x04\x12&\n\"LOCATION_REFERENCE_TYPE_EXPERIENCE\x10\x05\x12 \n\x1cLOCATION_REFERENCE_TYPE_TOUR\x10\x06\x12\"\n\x1eLOCATION_REFERENCE_TYPE_CRUISE\x10\x07\x42\x31Z/github.com/nauticalstream/proto/gen/go/place/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,18 +32,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'place.v1.location_pb2', _gl
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z/github.com/nauticalstream/proto/gen/go/place/v1'
-  _globals['_LOCATIONREFERENCETYPE']._serialized_start=619
-  _globals['_LOCATIONREFERENCETYPE']._serialized_end=935
-  _globals['_HASLOCATIONREQUEST']._serialized_start=39
-  _globals['_HASLOCATIONREQUEST']._serialized_end=167
-  _globals['_HASLOCATIONRESPONSE']._serialized_start=169
-  _globals['_HASLOCATIONRESPONSE']._serialized_end=225
-  _globals['_HASLOCATIONBATCHREQUEST']._serialized_start=227
-  _globals['_HASLOCATIONBATCHREQUEST']._serialized_end=305
-  _globals['_HASLOCATIONBATCHRESULT']._serialized_start=308
-  _globals['_HASLOCATIONBATCHRESULT']._serialized_end=475
-  _globals['_HASLOCATIONBATCHRESPONSE']._serialized_start=477
-  _globals['_HASLOCATIONBATCHRESPONSE']._serialized_end=564
-  _globals['_LOCATIONDELETED']._serialized_start=566
-  _globals['_LOCATIONDELETED']._serialized_end=616
+  _globals['_LOCATIONREFERENCETYPE']._serialized_start=613
+  _globals['_LOCATIONREFERENCETYPE']._serialized_end=929
+  _globals['_HASLOCATIONREQUEST']._serialized_start=37
+  _globals['_HASLOCATIONREQUEST']._serialized_end=164
+  _globals['_HASLOCATIONRESPONSE']._serialized_start=166
+  _globals['_HASLOCATIONRESPONSE']._serialized_end=222
+  _globals['_HASLOCATIONBATCHREQUEST']._serialized_start=224
+  _globals['_HASLOCATIONBATCHREQUEST']._serialized_end=301
+  _globals['_HASLOCATIONBATCHRESULT']._serialized_start=304
+  _globals['_HASLOCATIONBATCHRESULT']._serialized_end=470
+  _globals['_HASLOCATIONBATCHRESPONSE']._serialized_start=472
+  _globals['_HASLOCATIONBATCHRESPONSE']._serialized_end=558
+  _globals['_LOCATIONDELETED']._serialized_start=560
+  _globals['_LOCATIONDELETED']._serialized_end=610
 # @@protoc_insertion_point(module_scope)

@@ -13,7 +13,7 @@ import type { DateOfBirth } from "../../common/v1/date_pb";
 export declare const file_user_v1_user: GenFile;
 
 /**
- * User - Minimal user data for event enrichment
+ * User — Kratos identity fields only
  *
  * @generated from message user.v1.User
  */
@@ -24,86 +24,14 @@ export declare type User = Message<"user.v1.User"> & {
   id: string;
 
   /**
-   * @generated from field: string full_name = 2;
+   * @generated from field: optional string email = 2;
    */
-  fullName: string;
+  email?: string;
 
   /**
-   * @generated from field: string username = 3;
+   * @generated from field: optional string username = 3;
    */
-  username: string;
-
-  /**
-   * @generated from field: string email = 4;
-   */
-  email: string;
-
-  /**
-   * @generated from field: optional string avatar = 5;
-   */
-  avatar?: string;
-};
-
-/**
- * Describes the message user.v1.User.
- * Use `create(UserSchema)` to create a new message.
- */
-export declare const UserSchema: GenMessage<User>;
-
-/**
- * Verification metadata (status of verification process)
- * This is embedded metadata for events, not a standalone entity
- *
- * @generated from message user.v1.UserVerification
- */
-export declare type UserVerification = Message<"user.v1.UserVerification"> & {
-  /**
-   * @generated from field: bool onboarding_completed = 1;
-   */
-  onboardingCompleted: boolean;
-
-  /**
-   * @generated from field: repeated string onboarding_missing_fields = 2;
-   */
-  onboardingMissingFields: string[];
-
-  /**
-   * ISO 8601 datetime string
-   *
-   * @generated from field: optional string verified_at = 3;
-   */
-  verifiedAt?: string;
-
-  /**
-   * @generated from field: optional user.v1.VerificationStatus verification_status = 4;
-   */
-  verificationStatus?: VerificationStatus;
-};
-
-/**
- * Describes the message user.v1.UserVerification.
- * Use `create(UserVerificationSchema)` to create a new message.
- */
-export declare const UserVerificationSchema: GenMessage<UserVerification>;
-
-/**
- * @generated from message user.v1.UserDetails
- */
-export declare type UserDetails = Message<"user.v1.UserDetails"> & {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id: string;
-
-  /**
-   * @generated from field: string email = 2;
-   */
-  email: string;
-
-  /**
-   * @generated from field: string username = 3;
-   */
-  username: string;
+  username?: string;
 
   /**
    * @generated from field: optional string first_name = 4;
@@ -121,53 +49,189 @@ export declare type UserDetails = Message<"user.v1.UserDetails"> & {
   fullName?: string;
 
   /**
-   * @generated from field: bool enabled = 7;
+   * @generated from field: optional string avatar = 7;
    */
-  enabled: boolean;
+  avatar?: string;
 
   /**
-   * @generated from field: optional bool email_verified = 8;
+   * @generated from field: optional bool enabled = 8;
+   */
+  enabled?: boolean;
+
+  /**
+   * @generated from field: optional bool email_verified = 9;
    */
   emailVerified?: boolean;
 
   /**
-   * @generated from field: optional string created_at = 9;
+   * ISO 8601
+   *
+   * @generated from field: optional string created_at = 10;
    */
   createdAt?: string;
 
   /**
-   * Identity/KYC data
+   * ISO 8601
    *
-   * @generated from field: optional string phone = 10;
+   * @generated from field: optional string deleted_at = 11;
+   */
+  deletedAt?: string;
+};
+
+/**
+ * Describes the message user.v1.User.
+ * Use `create(UserSchema)` to create a new message.
+ */
+export declare const UserSchema: GenMessage<User>;
+
+/**
+ * UserVerification — Prisma entity (onboarding + KYC status)
+ *
+ * @generated from message user.v1.UserVerification
+ */
+export declare type UserVerification = Message<"user.v1.UserVerification"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * @generated from field: bool onboarding_completed = 3;
+   */
+  onboardingCompleted: boolean;
+
+  /**
+   * @generated from field: repeated string onboarding_missing_fields = 4;
+   */
+  onboardingMissingFields: string[];
+
+  /**
+   * @generated from field: user.v1.VerificationStatus status = 5;
+   */
+  status: VerificationStatus;
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: optional string verified_at = 6;
+   */
+  verifiedAt?: string;
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: optional string created_at = 7;
+   */
+  createdAt?: string;
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: optional string updated_at = 8;
+   */
+  updatedAt?: string;
+};
+
+/**
+ * Describes the message user.v1.UserVerification.
+ * Use `create(UserVerificationSchema)` to create a new message.
+ */
+export declare const UserVerificationSchema: GenMessage<UserVerification>;
+
+/**
+ * UserVerificationEmbedded — lightweight metadata for embedding in events
+ *
+ * @generated from message user.v1.UserVerificationEmbedded
+ */
+export declare type UserVerificationEmbedded = Message<"user.v1.UserVerificationEmbedded"> & {
+  /**
+   * @generated from field: bool onboarding_completed = 1;
+   */
+  onboardingCompleted: boolean;
+
+  /**
+   * @generated from field: repeated string onboarding_missing_fields = 2;
+   */
+  onboardingMissingFields: string[];
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: optional string verified_at = 3;
+   */
+  verifiedAt?: string;
+
+  /**
+   * @generated from field: optional user.v1.VerificationStatus status = 4;
+   */
+  status?: VerificationStatus;
+};
+
+/**
+ * Describes the message user.v1.UserVerificationEmbedded.
+ * Use `create(UserVerificationEmbeddedSchema)` to create a new message.
+ */
+export declare const UserVerificationEmbeddedSchema: GenMessage<UserVerificationEmbedded>;
+
+/**
+ * UserDetails — Prisma entity (KYC / Stripe data)
+ *
+ * @generated from message user.v1.UserDetails
+ */
+export declare type UserDetails = Message<"user.v1.UserDetails"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * @generated from field: optional string phone = 3;
    */
   phone?: string;
 
   /**
-   * @generated from field: optional string nationality = 11;
+   * @generated from field: optional string nationality = 4;
    */
   nationality?: string;
 
   /**
-   * @generated from field: optional common.v1.Address address = 12;
+   * @generated from field: optional common.v1.Address address = 5;
    */
   address?: Address;
 
   /**
-   * @generated from field: optional common.v1.DateOfBirth date_of_birth = 13;
+   * @generated from field: optional common.v1.DateOfBirth date_of_birth = 6;
    */
   dateOfBirth?: DateOfBirth;
 
   /**
-   * @generated from field: optional string ssn_last4 = 14;
+   * @generated from field: optional string ssn_last4 = 7;
    */
   ssnLast4?: string;
 
   /**
-   * Verification status (metadata)
+   * ISO 8601
    *
-   * @generated from field: optional user.v1.UserVerification verification = 15;
+   * @generated from field: optional string created_at = 8;
    */
-  verification?: UserVerification;
+  createdAt?: string;
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: optional string updated_at = 9;
+   */
+  updatedAt?: string;
 };
 
 /**
@@ -177,7 +241,7 @@ export declare type UserDetails = Message<"user.v1.UserDetails"> & {
 export declare const UserDetailsSchema: GenMessage<UserDetails>;
 
 /**
- * Get user by ID or email
+ * GetUser — by id or email
  *
  * @generated from message user.v1.GetUserRequest
  */
@@ -216,7 +280,75 @@ export declare type GetUserResponse = Message<"user.v1.GetUserResponse"> & {
 export declare const GetUserResponseSchema: GenMessage<GetUserResponse>;
 
 /**
- * List multiple users by IDs
+ * GetUserDetails — by userId
+ *
+ * @generated from message user.v1.GetUserDetailsRequest
+ */
+export declare type GetUserDetailsRequest = Message<"user.v1.GetUserDetailsRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+/**
+ * Describes the message user.v1.GetUserDetailsRequest.
+ * Use `create(GetUserDetailsRequestSchema)` to create a new message.
+ */
+export declare const GetUserDetailsRequestSchema: GenMessage<GetUserDetailsRequest>;
+
+/**
+ * @generated from message user.v1.GetUserDetailsResponse
+ */
+export declare type GetUserDetailsResponse = Message<"user.v1.GetUserDetailsResponse"> & {
+  /**
+   * @generated from field: optional user.v1.UserDetails user_details = 1;
+   */
+  userDetails?: UserDetails;
+};
+
+/**
+ * Describes the message user.v1.GetUserDetailsResponse.
+ * Use `create(GetUserDetailsResponseSchema)` to create a new message.
+ */
+export declare const GetUserDetailsResponseSchema: GenMessage<GetUserDetailsResponse>;
+
+/**
+ * GetUserVerification — by userId
+ *
+ * @generated from message user.v1.GetUserVerificationRequest
+ */
+export declare type GetUserVerificationRequest = Message<"user.v1.GetUserVerificationRequest"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+};
+
+/**
+ * Describes the message user.v1.GetUserVerificationRequest.
+ * Use `create(GetUserVerificationRequestSchema)` to create a new message.
+ */
+export declare const GetUserVerificationRequestSchema: GenMessage<GetUserVerificationRequest>;
+
+/**
+ * @generated from message user.v1.GetUserVerificationResponse
+ */
+export declare type GetUserVerificationResponse = Message<"user.v1.GetUserVerificationResponse"> & {
+  /**
+   * @generated from field: optional user.v1.UserVerification user_verification = 1;
+   */
+  userVerification?: UserVerification;
+};
+
+/**
+ * Describes the message user.v1.GetUserVerificationResponse.
+ * Use `create(GetUserVerificationResponseSchema)` to create a new message.
+ */
+export declare const GetUserVerificationResponseSchema: GenMessage<GetUserVerificationResponse>;
+
+/**
+ * ListUsers — by ids
  *
  * @generated from message user.v1.ListUsersRequest
  */
@@ -250,8 +382,6 @@ export declare type ListUsersResponse = Message<"user.v1.ListUsersResponse"> & {
 export declare const ListUsersResponseSchema: GenMessage<ListUsersResponse>;
 
 /**
- * Event: User created
- *
  * @generated from message user.v1.UserCreated
  */
 export declare type UserCreated = Message<"user.v1.UserCreated"> & {
@@ -281,7 +411,7 @@ export declare type UserCreated = Message<"user.v1.UserCreated"> & {
   lastName?: string;
 
   /**
-   * ISO 8601 datetime string
+   * ISO 8601
    *
    * @generated from field: string created_at = 6;
    */
@@ -295,8 +425,6 @@ export declare type UserCreated = Message<"user.v1.UserCreated"> & {
 export declare const UserCreatedSchema: GenMessage<UserCreated>;
 
 /**
- * Event: User updated
- *
  * @generated from message user.v1.UserUpdated
  */
 export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
@@ -321,7 +449,7 @@ export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
   lastName?: string;
 
   /**
-   * Identity/KYC data updates
+   * KYC data updates
    *
    * @generated from field: optional string phone = 5;
    */
@@ -350,11 +478,13 @@ export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
   /**
    * Verification updates
    *
-   * @generated from field: optional user.v1.UserVerification verification = 10;
+   * @generated from field: optional user.v1.UserVerificationEmbedded verification = 10;
    */
-  verification?: UserVerification;
+  verification?: UserVerificationEmbedded;
 
   /**
+   * ISO 8601
+   *
    * @generated from field: string updated_at = 11;
    */
   updatedAt: string;
@@ -367,8 +497,6 @@ export declare type UserUpdated = Message<"user.v1.UserUpdated"> & {
 export declare const UserUpdatedSchema: GenMessage<UserUpdated>;
 
 /**
- * Event: User deleted
- *
  * @generated from message user.v1.UserDeleted
  */
 export declare type UserDeleted = Message<"user.v1.UserDeleted"> & {
@@ -378,7 +506,7 @@ export declare type UserDeleted = Message<"user.v1.UserDeleted"> & {
   userId: string;
 
   /**
-   * ISO 8601 datetime string
+   * ISO 8601
    *
    * @generated from field: string deleted_at = 2;
    */
@@ -392,8 +520,6 @@ export declare type UserDeleted = Message<"user.v1.UserDeleted"> & {
 export declare const UserDeletedSchema: GenMessage<UserDeleted>;
 
 /**
- * Event: User profile updated
- *
  * @generated from message user.v1.UserProfileUpdated
  */
 export declare type UserProfileUpdated = Message<"user.v1.UserProfileUpdated"> & {
@@ -408,7 +534,7 @@ export declare type UserProfileUpdated = Message<"user.v1.UserProfileUpdated"> &
   avatar?: string;
 
   /**
-   * ISO 8601 datetime string
+   * ISO 8601
    *
    * @generated from field: string updated_at = 3;
    */
@@ -422,42 +548,62 @@ export declare type UserProfileUpdated = Message<"user.v1.UserProfileUpdated"> &
 export declare const UserProfileUpdatedSchema: GenMessage<UserProfileUpdated>;
 
 /**
- * Event: Onboarding status changed
+ * Event: User account enabled (reactivated)
  *
- * @generated from message user.v1.UserOnboardingStatus
+ * @generated from message user.v1.UserEnabled
  */
-export declare type UserOnboardingStatus = Message<"user.v1.UserOnboardingStatus"> & {
+export declare type UserEnabled = Message<"user.v1.UserEnabled"> & {
   /**
    * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
-   * @generated from field: bool onboarding_completed = 2;
-   */
-  onboardingCompleted: boolean;
-
-  /**
-   * @generated from field: repeated string missing_fields = 3;
-   */
-  missingFields: string[];
-
-  /**
-   * ISO 8601 datetime string
+   * ISO 8601
    *
-   * @generated from field: string updated_at = 4;
+   * @generated from field: string enabled_at = 2;
    */
-  updatedAt: string;
+  enabledAt: string;
 };
 
 /**
- * Describes the message user.v1.UserOnboardingStatus.
- * Use `create(UserOnboardingStatusSchema)` to create a new message.
+ * Describes the message user.v1.UserEnabled.
+ * Use `create(UserEnabledSchema)` to create a new message.
  */
-export declare const UserOnboardingStatusSchema: GenMessage<UserOnboardingStatus>;
+export declare const UserEnabledSchema: GenMessage<UserEnabled>;
 
 /**
- * Verification status enum
+ * Event: User account disabled (suspended)
+ *
+ * @generated from message user.v1.UserDisabled
+ */
+export declare type UserDisabled = Message<"user.v1.UserDisabled"> & {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * ISO 8601
+   *
+   * @generated from field: string disabled_at = 2;
+   */
+  disabledAt: string;
+
+  /**
+   * @generated from field: optional string reason = 3;
+   */
+  reason?: string;
+};
+
+/**
+ * Describes the message user.v1.UserDisabled.
+ * Use `create(UserDisabledSchema)` to create a new message.
+ */
+export declare const UserDisabledSchema: GenMessage<UserDisabled>;
+
+/**
+ * VerificationStatus enum — shared across messages and events
  *
  * @generated from enum user.v1.VerificationStatus
  */

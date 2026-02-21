@@ -26,7 +26,7 @@ from common.v1 import address_pb2 as common_dot_v1_dot_address__pb2
 from common.v1 import date_pb2 as common_dot_v1_dot_date__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user/v1/user.proto\x12\x07user.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x14\x63ommon/v1/date.proto\"\x8d\x01\n\x04User\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n\tfull_name\x18\x02 \x01(\tR\x08\x66ullName\x12\x1a\n\x08username\x18\x03 \x01(\tR\x08username\x12\x14\n\x05\x65mail\x18\x04 \x01(\tR\x05\x65mail\x12\x1b\n\x06\x61vatar\x18\x05 \x01(\tH\x00R\x06\x61vatar\x88\x01\x01\x42\t\n\x07_avatar\"\xa2\x02\n\x10UserVerification\x12\x31\n\x14onboarding_completed\x18\x01 \x01(\x08R\x13onboardingCompleted\x12:\n\x19onboarding_missing_fields\x18\x02 \x03(\tR\x17onboardingMissingFields\x12$\n\x0bverified_at\x18\x03 \x01(\tH\x00R\nverifiedAt\x88\x01\x01\x12Q\n\x13verification_status\x18\x04 \x01(\x0e\x32\x1b.user.v1.VerificationStatusH\x01R\x12verificationStatus\x88\x01\x01\x42\x0e\n\x0c_verified_atB\x16\n\x14_verification_status\"\xe1\x05\n\x0bUserDetails\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n\x05\x65mail\x18\x02 \x01(\tR\x05\x65mail\x12\x1a\n\x08username\x18\x03 \x01(\tR\x08username\x12\"\n\nfirst_name\x18\x04 \x01(\tH\x00R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x05 \x01(\tH\x01R\x08lastName\x88\x01\x01\x12 \n\tfull_name\x18\x06 \x01(\tH\x02R\x08\x66ullName\x88\x01\x01\x12\x18\n\x07\x65nabled\x18\x07 \x01(\x08R\x07\x65nabled\x12*\n\x0e\x65mail_verified\x18\x08 \x01(\x08H\x03R\remailVerified\x88\x01\x01\x12\"\n\ncreated_at\x18\t \x01(\tH\x04R\tcreatedAt\x88\x01\x01\x12\x19\n\x05phone\x18\n \x01(\tH\x05R\x05phone\x88\x01\x01\x12%\n\x0bnationality\x18\x0b \x01(\tH\x06R\x0bnationality\x88\x01\x01\x12\x31\n\x07\x61\x64\x64ress\x18\x0c \x01(\x0b\x32\x12.common.v1.AddressH\x07R\x07\x61\x64\x64ress\x88\x01\x01\x12?\n\rdate_of_birth\x18\r \x01(\x0b\x32\x16.common.v1.DateOfBirthH\x08R\x0b\x64\x61teOfBirth\x88\x01\x01\x12 \n\tssn_last4\x18\x0e \x01(\tH\tR\x08ssnLast4\x88\x01\x01\x12\x42\n\x0cverification\x18\x0f \x01(\x0b\x32\x19.user.v1.UserVerificationH\nR\x0cverification\x88\x01\x01\x42\r\n\x0b_first_nameB\x0c\n\n_last_nameB\x0c\n\n_full_nameB\x11\n\x0f_email_verifiedB\r\n\x0b_created_atB\x08\n\x06_phoneB\x0e\n\x0c_nationalityB\n\n\x08_addressB\x10\n\x0e_date_of_birthB\x0c\n\n_ssn_last4B\x0f\n\r_verification\"Q\n\x0eGetUserRequest\x12\x13\n\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x19\n\x05\x65mail\x18\x02 \x01(\tH\x01R\x05\x65mail\x88\x01\x01\x42\x05\n\x03_idB\x08\n\x06_email\"B\n\x0fGetUserResponse\x12&\n\x04user\x18\x01 \x01(\x0b\x32\r.user.v1.UserH\x00R\x04user\x88\x01\x01\x42\x07\n\x05_user\"$\n\x10ListUsersRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"8\n\x11ListUsersResponse\x12#\n\x05users\x18\x01 \x03(\x0b\x32\r.user.v1.UserR\x05users\"\xda\x01\n\x0bUserCreated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08username\x18\x02 \x01(\tR\x08username\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\"\n\nfirst_name\x18\x04 \x01(\tH\x00R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x05 \x01(\tH\x01R\x08lastName\x88\x01\x01\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAtB\r\n\x0b_first_nameB\x0c\n\n_last_name\"\xc9\x04\n\x0bUserUpdated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n\x08username\x18\x02 \x01(\tH\x00R\x08username\x88\x01\x01\x12\"\n\nfirst_name\x18\x03 \x01(\tH\x01R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x04 \x01(\tH\x02R\x08lastName\x88\x01\x01\x12\x19\n\x05phone\x18\x05 \x01(\tH\x03R\x05phone\x88\x01\x01\x12%\n\x0bnationality\x18\x06 \x01(\tH\x04R\x0bnationality\x88\x01\x01\x12\x31\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x12.common.v1.AddressH\x05R\x07\x61\x64\x64ress\x88\x01\x01\x12?\n\rdate_of_birth\x18\x08 \x01(\x0b\x32\x16.common.v1.DateOfBirthH\x06R\x0b\x64\x61teOfBirth\x88\x01\x01\x12 \n\tssn_last4\x18\t \x01(\tH\x07R\x08ssnLast4\x88\x01\x01\x12\x42\n\x0cverification\x18\n \x01(\x0b\x32\x19.user.v1.UserVerificationH\x08R\x0cverification\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x0b \x01(\tR\tupdatedAtB\x0b\n\t_usernameB\r\n\x0b_first_nameB\x0c\n\n_last_nameB\x08\n\x06_phoneB\x0e\n\x0c_nationalityB\n\n\x08_addressB\x10\n\x0e_date_of_birthB\x0c\n\n_ssn_last4B\x0f\n\r_verification\"E\n\x0bUserDeleted\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\ndeleted_at\x18\x02 \x01(\tR\tdeletedAt\"t\n\x12UserProfileUpdated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n\x06\x61vatar\x18\x02 \x01(\tH\x00R\x06\x61vatar\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x03 \x01(\tR\tupdatedAtB\t\n\x07_avatar\"\xa8\x01\n\x14UserOnboardingStatus\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x31\n\x14onboarding_completed\x18\x02 \x01(\x08R\x13onboardingCompleted\x12%\n\x0emissing_fields\x18\x03 \x03(\tR\rmissingFields\x12\x1d\n\nupdated_at\x18\x04 \x01(\tR\tupdatedAt*\xc4\x01\n\x12VerificationStatus\x12#\n\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n\x1cVERIFICATION_STATUS_VERIFIED\x10\x02\x12 \n\x1cVERIFICATION_STATUS_REJECTED\x10\x03\x12$\n VERIFICATION_STATUS_NEEDS_UPDATE\x10\x04\x42\x30Z.github.com/nauticalstream/proto/gen/go/user/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12user/v1/user.proto\x12\x07user.v1\x1a\x17\x63ommon/v1/address.proto\x1a\x14\x63ommon/v1/date.proto\"\xf4\x03\n\x04User\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n\x05\x65mail\x18\x02 \x01(\tH\x00R\x05\x65mail\x88\x01\x01\x12\x1f\n\x08username\x18\x03 \x01(\tH\x01R\x08username\x88\x01\x01\x12\"\n\nfirst_name\x18\x04 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x05 \x01(\tH\x03R\x08lastName\x88\x01\x01\x12 \n\tfull_name\x18\x06 \x01(\tH\x04R\x08\x66ullName\x88\x01\x01\x12\x1b\n\x06\x61vatar\x18\x07 \x01(\tH\x05R\x06\x61vatar\x88\x01\x01\x12\x1d\n\x07\x65nabled\x18\x08 \x01(\x08H\x06R\x07\x65nabled\x88\x01\x01\x12*\n\x0e\x65mail_verified\x18\t \x01(\x08H\x07R\remailVerified\x88\x01\x01\x12\"\n\ncreated_at\x18\n \x01(\tH\x08R\tcreatedAt\x88\x01\x01\x12\"\n\ndeleted_at\x18\x0b \x01(\tH\tR\tdeletedAt\x88\x01\x01\x42\x08\n\x06_emailB\x0b\n\t_usernameB\r\n\x0b_first_nameB\x0c\n\n_last_nameB\x0c\n\n_full_nameB\t\n\x07_avatarB\n\n\x08_enabledB\x11\n\x0f_email_verifiedB\r\n\x0b_created_atB\r\n\x0b_deleted_at\"\xfb\x02\n\x10UserVerification\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x31\n\x14onboarding_completed\x18\x03 \x01(\x08R\x13onboardingCompleted\x12:\n\x19onboarding_missing_fields\x18\x04 \x03(\tR\x17onboardingMissingFields\x12\x33\n\x06status\x18\x05 \x01(\x0e\x32\x1b.user.v1.VerificationStatusR\x06status\x12$\n\x0bverified_at\x18\x06 \x01(\tH\x00R\nverifiedAt\x88\x01\x01\x12\"\n\ncreated_at\x18\x07 \x01(\tH\x01R\tcreatedAt\x88\x01\x01\x12\"\n\nupdated_at\x18\x08 \x01(\tH\x02R\tupdatedAt\x88\x01\x01\x42\x0e\n\x0c_verified_atB\r\n\x0b_created_atB\r\n\x0b_updated_at\"\x84\x02\n\x18UserVerificationEmbedded\x12\x31\n\x14onboarding_completed\x18\x01 \x01(\x08R\x13onboardingCompleted\x12:\n\x19onboarding_missing_fields\x18\x02 \x03(\tR\x17onboardingMissingFields\x12$\n\x0bverified_at\x18\x03 \x01(\tH\x00R\nverifiedAt\x88\x01\x01\x12\x38\n\x06status\x18\x04 \x01(\x0e\x32\x1b.user.v1.VerificationStatusH\x01R\x06status\x88\x01\x01\x42\x0e\n\x0c_verified_atB\t\n\x07_status\"\xba\x03\n\x0bUserDetails\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n\x07user_id\x18\x02 \x01(\tR\x06userId\x12\x19\n\x05phone\x18\x03 \x01(\tH\x00R\x05phone\x88\x01\x01\x12%\n\x0bnationality\x18\x04 \x01(\tH\x01R\x0bnationality\x88\x01\x01\x12\x31\n\x07\x61\x64\x64ress\x18\x05 \x01(\x0b\x32\x12.common.v1.AddressH\x02R\x07\x61\x64\x64ress\x88\x01\x01\x12?\n\rdate_of_birth\x18\x06 \x01(\x0b\x32\x16.common.v1.DateOfBirthH\x03R\x0b\x64\x61teOfBirth\x88\x01\x01\x12 \n\tssn_last4\x18\x07 \x01(\tH\x04R\x08ssnLast4\x88\x01\x01\x12\"\n\ncreated_at\x18\x08 \x01(\tH\x05R\tcreatedAt\x88\x01\x01\x12\"\n\nupdated_at\x18\t \x01(\tH\x06R\tupdatedAt\x88\x01\x01\x42\x08\n\x06_phoneB\x0e\n\x0c_nationalityB\n\n\x08_addressB\x10\n\x0e_date_of_birthB\x0c\n\n_ssn_last4B\r\n\x0b_created_atB\r\n\x0b_updated_at\"Q\n\x0eGetUserRequest\x12\x13\n\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x19\n\x05\x65mail\x18\x02 \x01(\tH\x01R\x05\x65mail\x88\x01\x01\x42\x05\n\x03_idB\x08\n\x06_email\"B\n\x0fGetUserResponse\x12&\n\x04user\x18\x01 \x01(\x0b\x32\r.user.v1.UserH\x00R\x04user\x88\x01\x01\x42\x07\n\x05_user\"0\n\x15GetUserDetailsRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"g\n\x16GetUserDetailsResponse\x12<\n\x0cuser_details\x18\x01 \x01(\x0b\x32\x14.user.v1.UserDetailsH\x00R\x0buserDetails\x88\x01\x01\x42\x0f\n\r_user_details\"5\n\x1aGetUserVerificationRequest\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\"\x80\x01\n\x1bGetUserVerificationResponse\x12K\n\x11user_verification\x18\x01 \x01(\x0b\x32\x19.user.v1.UserVerificationH\x00R\x10userVerification\x88\x01\x01\x42\x14\n\x12_user_verification\"$\n\x10ListUsersRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"8\n\x11ListUsersResponse\x12#\n\x05users\x18\x01 \x03(\x0b\x32\r.user.v1.UserR\x05users\"\xda\x01\n\x0bUserCreated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1a\n\x08username\x18\x02 \x01(\tR\x08username\x12\x14\n\x05\x65mail\x18\x03 \x01(\tR\x05\x65mail\x12\"\n\nfirst_name\x18\x04 \x01(\tH\x00R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x05 \x01(\tH\x01R\x08lastName\x88\x01\x01\x12\x1d\n\ncreated_at\x18\x06 \x01(\tR\tcreatedAtB\r\n\x0b_first_nameB\x0c\n\n_last_name\"\xd1\x04\n\x0bUserUpdated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n\x08username\x18\x02 \x01(\tH\x00R\x08username\x88\x01\x01\x12\"\n\nfirst_name\x18\x03 \x01(\tH\x01R\tfirstName\x88\x01\x01\x12 \n\tlast_name\x18\x04 \x01(\tH\x02R\x08lastName\x88\x01\x01\x12\x19\n\x05phone\x18\x05 \x01(\tH\x03R\x05phone\x88\x01\x01\x12%\n\x0bnationality\x18\x06 \x01(\tH\x04R\x0bnationality\x88\x01\x01\x12\x31\n\x07\x61\x64\x64ress\x18\x07 \x01(\x0b\x32\x12.common.v1.AddressH\x05R\x07\x61\x64\x64ress\x88\x01\x01\x12?\n\rdate_of_birth\x18\x08 \x01(\x0b\x32\x16.common.v1.DateOfBirthH\x06R\x0b\x64\x61teOfBirth\x88\x01\x01\x12 \n\tssn_last4\x18\t \x01(\tH\x07R\x08ssnLast4\x88\x01\x01\x12J\n\x0cverification\x18\n \x01(\x0b\x32!.user.v1.UserVerificationEmbeddedH\x08R\x0cverification\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x0b \x01(\tR\tupdatedAtB\x0b\n\t_usernameB\r\n\x0b_first_nameB\x0c\n\n_last_nameB\x08\n\x06_phoneB\x0e\n\x0c_nationalityB\n\n\x08_addressB\x10\n\x0e_date_of_birthB\x0c\n\n_ssn_last4B\x0f\n\r_verification\"E\n\x0bUserDeleted\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\ndeleted_at\x18\x02 \x01(\tR\tdeletedAt\"t\n\x12UserProfileUpdated\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1b\n\x06\x61vatar\x18\x02 \x01(\tH\x00R\x06\x61vatar\x88\x01\x01\x12\x1d\n\nupdated_at\x18\x03 \x01(\tR\tupdatedAtB\t\n\x07_avatar\"E\n\x0bUserEnabled\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nenabled_at\x18\x02 \x01(\tR\tenabledAt\"p\n\x0cUserDisabled\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n\x0b\x64isabled_at\x18\x02 \x01(\tR\ndisabledAt\x12\x1b\n\x06reason\x18\x03 \x01(\tH\x00R\x06reason\x88\x01\x01\x42\t\n\x07_reason*\xc4\x01\n\x12VerificationStatus\x12#\n\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n\x1cVERIFICATION_STATUS_VERIFIED\x10\x02\x12 \n\x1cVERIFICATION_STATUS_REJECTED\x10\x03\x12$\n VERIFICATION_STATUS_NEEDS_UPDATE\x10\x04\x42\x30Z.github.com/nauticalstream/proto/gen/go/user/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,30 +34,42 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'user.v1.user_pb2', _globals
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'Z.github.com/nauticalstream/proto/gen/go/user/v1'
-  _globals['_VERIFICATIONSTATUS']._serialized_start=2672
-  _globals['_VERIFICATIONSTATUS']._serialized_end=2868
+  _globals['_VERIFICATIONSTATUS']._serialized_start=3451
+  _globals['_VERIFICATIONSTATUS']._serialized_end=3647
   _globals['_USER']._serialized_start=79
-  _globals['_USER']._serialized_end=220
-  _globals['_USERVERIFICATION']._serialized_start=223
-  _globals['_USERVERIFICATION']._serialized_end=513
-  _globals['_USERDETAILS']._serialized_start=516
-  _globals['_USERDETAILS']._serialized_end=1253
-  _globals['_GETUSERREQUEST']._serialized_start=1255
-  _globals['_GETUSERREQUEST']._serialized_end=1336
-  _globals['_GETUSERRESPONSE']._serialized_start=1338
-  _globals['_GETUSERRESPONSE']._serialized_end=1404
-  _globals['_LISTUSERSREQUEST']._serialized_start=1406
-  _globals['_LISTUSERSREQUEST']._serialized_end=1442
-  _globals['_LISTUSERSRESPONSE']._serialized_start=1444
-  _globals['_LISTUSERSRESPONSE']._serialized_end=1500
-  _globals['_USERCREATED']._serialized_start=1503
-  _globals['_USERCREATED']._serialized_end=1721
-  _globals['_USERUPDATED']._serialized_start=1724
-  _globals['_USERUPDATED']._serialized_end=2309
-  _globals['_USERDELETED']._serialized_start=2311
-  _globals['_USERDELETED']._serialized_end=2380
-  _globals['_USERPROFILEUPDATED']._serialized_start=2382
-  _globals['_USERPROFILEUPDATED']._serialized_end=2498
-  _globals['_USERONBOARDINGSTATUS']._serialized_start=2501
-  _globals['_USERONBOARDINGSTATUS']._serialized_end=2669
+  _globals['_USER']._serialized_end=579
+  _globals['_USERVERIFICATION']._serialized_start=582
+  _globals['_USERVERIFICATION']._serialized_end=961
+  _globals['_USERVERIFICATIONEMBEDDED']._serialized_start=964
+  _globals['_USERVERIFICATIONEMBEDDED']._serialized_end=1224
+  _globals['_USERDETAILS']._serialized_start=1227
+  _globals['_USERDETAILS']._serialized_end=1669
+  _globals['_GETUSERREQUEST']._serialized_start=1671
+  _globals['_GETUSERREQUEST']._serialized_end=1752
+  _globals['_GETUSERRESPONSE']._serialized_start=1754
+  _globals['_GETUSERRESPONSE']._serialized_end=1820
+  _globals['_GETUSERDETAILSREQUEST']._serialized_start=1822
+  _globals['_GETUSERDETAILSREQUEST']._serialized_end=1870
+  _globals['_GETUSERDETAILSRESPONSE']._serialized_start=1872
+  _globals['_GETUSERDETAILSRESPONSE']._serialized_end=1975
+  _globals['_GETUSERVERIFICATIONREQUEST']._serialized_start=1977
+  _globals['_GETUSERVERIFICATIONREQUEST']._serialized_end=2030
+  _globals['_GETUSERVERIFICATIONRESPONSE']._serialized_start=2033
+  _globals['_GETUSERVERIFICATIONRESPONSE']._serialized_end=2161
+  _globals['_LISTUSERSREQUEST']._serialized_start=2163
+  _globals['_LISTUSERSREQUEST']._serialized_end=2199
+  _globals['_LISTUSERSRESPONSE']._serialized_start=2201
+  _globals['_LISTUSERSRESPONSE']._serialized_end=2257
+  _globals['_USERCREATED']._serialized_start=2260
+  _globals['_USERCREATED']._serialized_end=2478
+  _globals['_USERUPDATED']._serialized_start=2481
+  _globals['_USERUPDATED']._serialized_end=3074
+  _globals['_USERDELETED']._serialized_start=3076
+  _globals['_USERDELETED']._serialized_end=3145
+  _globals['_USERPROFILEUPDATED']._serialized_start=3147
+  _globals['_USERPROFILEUPDATED']._serialized_end=3263
+  _globals['_USERENABLED']._serialized_start=3265
+  _globals['_USERENABLED']._serialized_end=3334
+  _globals['_USERDISABLED']._serialized_start=3336
+  _globals['_USERDISABLED']._serialized_end=3448
 # @@protoc_insertion_point(module_scope)

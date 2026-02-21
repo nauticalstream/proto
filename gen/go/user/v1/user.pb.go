@@ -22,7 +22,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Verification status enum
+// VerificationStatus enum — shared across messages and events
 type VerificationStatus int32
 
 const (
@@ -78,14 +78,20 @@ func (VerificationStatus) EnumDescriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{0}
 }
 
-// User - Minimal user data for event enrichment
+// User — Kratos identity fields only
 type User struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	FullName      string                 `protobuf:"bytes,2,opt,name=full_name,json=fullName,proto3" json:"full_name,omitempty"`
-	Username      string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
-	Email         string                 `protobuf:"bytes,4,opt,name=email,proto3" json:"email,omitempty"`
-	Avatar        *string                `protobuf:"bytes,5,opt,name=avatar,proto3,oneof" json:"avatar,omitempty"`
+	Email         *string                `protobuf:"bytes,2,opt,name=email,proto3,oneof" json:"email,omitempty"`
+	Username      *string                `protobuf:"bytes,3,opt,name=username,proto3,oneof" json:"username,omitempty"`
+	FirstName     *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
+	LastName      *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
+	FullName      *string                `protobuf:"bytes,6,opt,name=full_name,json=fullName,proto3,oneof" json:"full_name,omitempty"`
+	Avatar        *string                `protobuf:"bytes,7,opt,name=avatar,proto3,oneof" json:"avatar,omitempty"`
+	Enabled       *bool                  `protobuf:"varint,8,opt,name=enabled,proto3,oneof" json:"enabled,omitempty"`
+	EmailVerified *bool                  `protobuf:"varint,9,opt,name=email_verified,json=emailVerified,proto3,oneof" json:"email_verified,omitempty"`
+	CreatedAt     *string                `protobuf:"bytes,10,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"` // ISO 8601
+	DeletedAt     *string                `protobuf:"bytes,11,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -127,23 +133,37 @@ func (x *User) GetId() string {
 	return ""
 }
 
-func (x *User) GetFullName() string {
-	if x != nil {
-		return x.FullName
+func (x *User) GetEmail() string {
+	if x != nil && x.Email != nil {
+		return *x.Email
 	}
 	return ""
 }
 
 func (x *User) GetUsername() string {
-	if x != nil {
-		return x.Username
+	if x != nil && x.Username != nil {
+		return *x.Username
 	}
 	return ""
 }
 
-func (x *User) GetEmail() string {
-	if x != nil {
-		return x.Email
+func (x *User) GetFirstName() string {
+	if x != nil && x.FirstName != nil {
+		return *x.FirstName
+	}
+	return ""
+}
+
+func (x *User) GetLastName() string {
+	if x != nil && x.LastName != nil {
+		return *x.LastName
+	}
+	return ""
+}
+
+func (x *User) GetFullName() string {
+	if x != nil && x.FullName != nil {
+		return *x.FullName
 	}
 	return ""
 }
@@ -155,14 +175,45 @@ func (x *User) GetAvatar() string {
 	return ""
 }
 
-// Verification metadata (status of verification process)
-// This is embedded metadata for events, not a standalone entity
+func (x *User) GetEnabled() bool {
+	if x != nil && x.Enabled != nil {
+		return *x.Enabled
+	}
+	return false
+}
+
+func (x *User) GetEmailVerified() bool {
+	if x != nil && x.EmailVerified != nil {
+		return *x.EmailVerified
+	}
+	return false
+}
+
+func (x *User) GetCreatedAt() string {
+	if x != nil && x.CreatedAt != nil {
+		return *x.CreatedAt
+	}
+	return ""
+}
+
+func (x *User) GetDeletedAt() string {
+	if x != nil && x.DeletedAt != nil {
+		return *x.DeletedAt
+	}
+	return ""
+}
+
+// UserVerification — Prisma entity (onboarding + KYC status)
 type UserVerification struct {
 	state                   protoimpl.MessageState `protogen:"open.v1"`
-	OnboardingCompleted     bool                   `protobuf:"varint,1,opt,name=onboarding_completed,json=onboardingCompleted,proto3" json:"onboarding_completed,omitempty"`
-	OnboardingMissingFields []string               `protobuf:"bytes,2,rep,name=onboarding_missing_fields,json=onboardingMissingFields,proto3" json:"onboarding_missing_fields,omitempty"`
-	VerifiedAt              *string                `protobuf:"bytes,3,opt,name=verified_at,json=verifiedAt,proto3,oneof" json:"verified_at,omitempty"` // ISO 8601 datetime string
-	VerificationStatus      *VerificationStatus    `protobuf:"varint,4,opt,name=verification_status,json=verificationStatus,proto3,enum=user.v1.VerificationStatus,oneof" json:"verification_status,omitempty"`
+	Id                      string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	UserId                  string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	OnboardingCompleted     bool                   `protobuf:"varint,3,opt,name=onboarding_completed,json=onboardingCompleted,proto3" json:"onboarding_completed,omitempty"`
+	OnboardingMissingFields []string               `protobuf:"bytes,4,rep,name=onboarding_missing_fields,json=onboardingMissingFields,proto3" json:"onboarding_missing_fields,omitempty"`
+	Status                  VerificationStatus     `protobuf:"varint,5,opt,name=status,proto3,enum=user.v1.VerificationStatus" json:"status,omitempty"`
+	VerifiedAt              *string                `protobuf:"bytes,6,opt,name=verified_at,json=verifiedAt,proto3,oneof" json:"verified_at,omitempty"` // ISO 8601
+	CreatedAt               *string                `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`    // ISO 8601
+	UpdatedAt               *string                `protobuf:"bytes,8,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`    // ISO 8601
 	unknownFields           protoimpl.UnknownFields
 	sizeCache               protoimpl.SizeCache
 }
@@ -197,6 +248,20 @@ func (*UserVerification) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{1}
 }
 
+func (x *UserVerification) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *UserVerification) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
 func (x *UserVerification) GetOnboardingCompleted() bool {
 	if x != nil {
 		return x.OnboardingCompleted
@@ -211,6 +276,13 @@ func (x *UserVerification) GetOnboardingMissingFields() []string {
 	return nil
 }
 
+func (x *UserVerification) GetStatus() VerificationStatus {
+	if x != nil {
+		return x.Status
+	}
+	return VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED
+}
+
 func (x *UserVerification) GetVerifiedAt() string {
 	if x != nil && x.VerifiedAt != nil {
 		return *x.VerifiedAt
@@ -218,39 +290,108 @@ func (x *UserVerification) GetVerifiedAt() string {
 	return ""
 }
 
-func (x *UserVerification) GetVerificationStatus() VerificationStatus {
-	if x != nil && x.VerificationStatus != nil {
-		return *x.VerificationStatus
+func (x *UserVerification) GetCreatedAt() string {
+	if x != nil && x.CreatedAt != nil {
+		return *x.CreatedAt
+	}
+	return ""
+}
+
+func (x *UserVerification) GetUpdatedAt() string {
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
+	}
+	return ""
+}
+
+// UserVerificationEmbedded — lightweight metadata for embedding in events
+type UserVerificationEmbedded struct {
+	state                   protoimpl.MessageState `protogen:"open.v1"`
+	OnboardingCompleted     bool                   `protobuf:"varint,1,opt,name=onboarding_completed,json=onboardingCompleted,proto3" json:"onboarding_completed,omitempty"`
+	OnboardingMissingFields []string               `protobuf:"bytes,2,rep,name=onboarding_missing_fields,json=onboardingMissingFields,proto3" json:"onboarding_missing_fields,omitempty"`
+	VerifiedAt              *string                `protobuf:"bytes,3,opt,name=verified_at,json=verifiedAt,proto3,oneof" json:"verified_at,omitempty"` // ISO 8601
+	Status                  *VerificationStatus    `protobuf:"varint,4,opt,name=status,proto3,enum=user.v1.VerificationStatus,oneof" json:"status,omitempty"`
+	unknownFields           protoimpl.UnknownFields
+	sizeCache               protoimpl.SizeCache
+}
+
+func (x *UserVerificationEmbedded) Reset() {
+	*x = UserVerificationEmbedded{}
+	mi := &file_user_v1_user_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserVerificationEmbedded) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserVerificationEmbedded) ProtoMessage() {}
+
+func (x *UserVerificationEmbedded) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserVerificationEmbedded.ProtoReflect.Descriptor instead.
+func (*UserVerificationEmbedded) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *UserVerificationEmbedded) GetOnboardingCompleted() bool {
+	if x != nil {
+		return x.OnboardingCompleted
+	}
+	return false
+}
+
+func (x *UserVerificationEmbedded) GetOnboardingMissingFields() []string {
+	if x != nil {
+		return x.OnboardingMissingFields
+	}
+	return nil
+}
+
+func (x *UserVerificationEmbedded) GetVerifiedAt() string {
+	if x != nil && x.VerifiedAt != nil {
+		return *x.VerifiedAt
+	}
+	return ""
+}
+
+func (x *UserVerificationEmbedded) GetStatus() VerificationStatus {
+	if x != nil && x.Status != nil {
+		return *x.Status
 	}
 	return VerificationStatus_VERIFICATION_STATUS_UNSPECIFIED
 }
 
+// UserDetails — Prisma entity (KYC / Stripe data)
 type UserDetails struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	Username      string                 `protobuf:"bytes,3,opt,name=username,proto3" json:"username,omitempty"`
-	FirstName     *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
-	LastName      *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
-	FullName      *string                `protobuf:"bytes,6,opt,name=full_name,json=fullName,proto3,oneof" json:"full_name,omitempty"`
-	Enabled       bool                   `protobuf:"varint,7,opt,name=enabled,proto3" json:"enabled,omitempty"`
-	EmailVerified *bool                  `protobuf:"varint,8,opt,name=email_verified,json=emailVerified,proto3,oneof" json:"email_verified,omitempty"`
-	CreatedAt     *string                `protobuf:"bytes,9,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
-	// Identity/KYC data
-	Phone       *string         `protobuf:"bytes,10,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
-	Nationality *string         `protobuf:"bytes,11,opt,name=nationality,proto3,oneof" json:"nationality,omitempty"`
-	Address     *v1.Address     `protobuf:"bytes,12,opt,name=address,proto3,oneof" json:"address,omitempty"`
-	DateOfBirth *v1.DateOfBirth `protobuf:"bytes,13,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
-	SsnLast4    *string         `protobuf:"bytes,14,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
-	// Verification status (metadata)
-	Verification  *UserVerification `protobuf:"bytes,15,opt,name=verification,proto3,oneof" json:"verification,omitempty"`
+	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Phone         *string                `protobuf:"bytes,3,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
+	Nationality   *string                `protobuf:"bytes,4,opt,name=nationality,proto3,oneof" json:"nationality,omitempty"`
+	Address       *v1.Address            `protobuf:"bytes,5,opt,name=address,proto3,oneof" json:"address,omitempty"`
+	DateOfBirth   *v1.DateOfBirth        `protobuf:"bytes,6,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
+	SsnLast4      *string                `protobuf:"bytes,7,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
+	CreatedAt     *string                `protobuf:"bytes,8,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"` // ISO 8601
+	UpdatedAt     *string                `protobuf:"bytes,9,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserDetails) Reset() {
 	*x = UserDetails{}
-	mi := &file_user_v1_user_proto_msgTypes[2]
+	mi := &file_user_v1_user_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -262,7 +403,7 @@ func (x *UserDetails) String() string {
 func (*UserDetails) ProtoMessage() {}
 
 func (x *UserDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[2]
+	mi := &file_user_v1_user_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +416,7 @@ func (x *UserDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserDetails.ProtoReflect.Descriptor instead.
 func (*UserDetails) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{2}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UserDetails) GetId() string {
@@ -285,58 +426,9 @@ func (x *UserDetails) GetId() string {
 	return ""
 }
 
-func (x *UserDetails) GetEmail() string {
+func (x *UserDetails) GetUserId() string {
 	if x != nil {
-		return x.Email
-	}
-	return ""
-}
-
-func (x *UserDetails) GetUsername() string {
-	if x != nil {
-		return x.Username
-	}
-	return ""
-}
-
-func (x *UserDetails) GetFirstName() string {
-	if x != nil && x.FirstName != nil {
-		return *x.FirstName
-	}
-	return ""
-}
-
-func (x *UserDetails) GetLastName() string {
-	if x != nil && x.LastName != nil {
-		return *x.LastName
-	}
-	return ""
-}
-
-func (x *UserDetails) GetFullName() string {
-	if x != nil && x.FullName != nil {
-		return *x.FullName
-	}
-	return ""
-}
-
-func (x *UserDetails) GetEnabled() bool {
-	if x != nil {
-		return x.Enabled
-	}
-	return false
-}
-
-func (x *UserDetails) GetEmailVerified() bool {
-	if x != nil && x.EmailVerified != nil {
-		return *x.EmailVerified
-	}
-	return false
-}
-
-func (x *UserDetails) GetCreatedAt() string {
-	if x != nil && x.CreatedAt != nil {
-		return *x.CreatedAt
+		return x.UserId
 	}
 	return ""
 }
@@ -376,14 +468,21 @@ func (x *UserDetails) GetSsnLast4() string {
 	return ""
 }
 
-func (x *UserDetails) GetVerification() *UserVerification {
-	if x != nil {
-		return x.Verification
+func (x *UserDetails) GetCreatedAt() string {
+	if x != nil && x.CreatedAt != nil {
+		return *x.CreatedAt
 	}
-	return nil
+	return ""
 }
 
-// Get user by ID or email
+func (x *UserDetails) GetUpdatedAt() string {
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
+	}
+	return ""
+}
+
+// GetUser — by id or email
 type GetUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
@@ -394,7 +493,7 @@ type GetUserRequest struct {
 
 func (x *GetUserRequest) Reset() {
 	*x = GetUserRequest{}
-	mi := &file_user_v1_user_proto_msgTypes[3]
+	mi := &file_user_v1_user_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -406,7 +505,7 @@ func (x *GetUserRequest) String() string {
 func (*GetUserRequest) ProtoMessage() {}
 
 func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[3]
+	mi := &file_user_v1_user_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -419,7 +518,7 @@ func (x *GetUserRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserRequest.ProtoReflect.Descriptor instead.
 func (*GetUserRequest) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{3}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetUserRequest) GetId() string {
@@ -445,7 +544,7 @@ type GetUserResponse struct {
 
 func (x *GetUserResponse) Reset() {
 	*x = GetUserResponse{}
-	mi := &file_user_v1_user_proto_msgTypes[4]
+	mi := &file_user_v1_user_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -457,7 +556,7 @@ func (x *GetUserResponse) String() string {
 func (*GetUserResponse) ProtoMessage() {}
 
 func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[4]
+	mi := &file_user_v1_user_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -470,7 +569,7 @@ func (x *GetUserResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetUserResponse.ProtoReflect.Descriptor instead.
 func (*GetUserResponse) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{4}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetUserResponse) GetUser() *User {
@@ -480,7 +579,185 @@ func (x *GetUserResponse) GetUser() *User {
 	return nil
 }
 
-// List multiple users by IDs
+// GetUserDetails — by userId
+type GetUserDetailsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserDetailsRequest) Reset() {
+	*x = GetUserDetailsRequest{}
+	mi := &file_user_v1_user_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserDetailsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserDetailsRequest) ProtoMessage() {}
+
+func (x *GetUserDetailsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserDetailsRequest.ProtoReflect.Descriptor instead.
+func (*GetUserDetailsRequest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *GetUserDetailsRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetUserDetailsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserDetails   *UserDetails           `protobuf:"bytes,1,opt,name=user_details,json=userDetails,proto3,oneof" json:"user_details,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserDetailsResponse) Reset() {
+	*x = GetUserDetailsResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserDetailsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserDetailsResponse) ProtoMessage() {}
+
+func (x *GetUserDetailsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserDetailsResponse.ProtoReflect.Descriptor instead.
+func (*GetUserDetailsResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *GetUserDetailsResponse) GetUserDetails() *UserDetails {
+	if x != nil {
+		return x.UserDetails
+	}
+	return nil
+}
+
+// GetUserVerification — by userId
+type GetUserVerificationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GetUserVerificationRequest) Reset() {
+	*x = GetUserVerificationRequest{}
+	mi := &file_user_v1_user_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserVerificationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserVerificationRequest) ProtoMessage() {}
+
+func (x *GetUserVerificationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserVerificationRequest.ProtoReflect.Descriptor instead.
+func (*GetUserVerificationRequest) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *GetUserVerificationRequest) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+type GetUserVerificationResponse struct {
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	UserVerification *UserVerification      `protobuf:"bytes,1,opt,name=user_verification,json=userVerification,proto3,oneof" json:"user_verification,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *GetUserVerificationResponse) Reset() {
+	*x = GetUserVerificationResponse{}
+	mi := &file_user_v1_user_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GetUserVerificationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GetUserVerificationResponse) ProtoMessage() {}
+
+func (x *GetUserVerificationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GetUserVerificationResponse.ProtoReflect.Descriptor instead.
+func (*GetUserVerificationResponse) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *GetUserVerificationResponse) GetUserVerification() *UserVerification {
+	if x != nil {
+		return x.UserVerification
+	}
+	return nil
+}
+
+// ListUsers — by ids
 type ListUsersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Ids           []string               `protobuf:"bytes,1,rep,name=ids,proto3" json:"ids,omitempty"`
@@ -490,7 +767,7 @@ type ListUsersRequest struct {
 
 func (x *ListUsersRequest) Reset() {
 	*x = ListUsersRequest{}
-	mi := &file_user_v1_user_proto_msgTypes[5]
+	mi := &file_user_v1_user_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -502,7 +779,7 @@ func (x *ListUsersRequest) String() string {
 func (*ListUsersRequest) ProtoMessage() {}
 
 func (x *ListUsersRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[5]
+	mi := &file_user_v1_user_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -515,7 +792,7 @@ func (x *ListUsersRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUsersRequest.ProtoReflect.Descriptor instead.
 func (*ListUsersRequest) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{5}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListUsersRequest) GetIds() []string {
@@ -534,7 +811,7 @@ type ListUsersResponse struct {
 
 func (x *ListUsersResponse) Reset() {
 	*x = ListUsersResponse{}
-	mi := &file_user_v1_user_proto_msgTypes[6]
+	mi := &file_user_v1_user_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -546,7 +823,7 @@ func (x *ListUsersResponse) String() string {
 func (*ListUsersResponse) ProtoMessage() {}
 
 func (x *ListUsersResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[6]
+	mi := &file_user_v1_user_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -559,7 +836,7 @@ func (x *ListUsersResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListUsersResponse.ProtoReflect.Descriptor instead.
 func (*ListUsersResponse) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{6}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListUsersResponse) GetUsers() []*User {
@@ -569,7 +846,6 @@ func (x *ListUsersResponse) GetUsers() []*User {
 	return nil
 }
 
-// Event: User created
 type UserCreated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -577,14 +853,14 @@ type UserCreated struct {
 	Email         string                 `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
 	FirstName     *string                `protobuf:"bytes,4,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
 	LastName      *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
-	CreatedAt     string                 `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601 datetime string
+	CreatedAt     string                 `protobuf:"bytes,6,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserCreated) Reset() {
 	*x = UserCreated{}
-	mi := &file_user_v1_user_proto_msgTypes[7]
+	mi := &file_user_v1_user_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -596,7 +872,7 @@ func (x *UserCreated) String() string {
 func (*UserCreated) ProtoMessage() {}
 
 func (x *UserCreated) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[7]
+	mi := &file_user_v1_user_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -609,7 +885,7 @@ func (x *UserCreated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserCreated.ProtoReflect.Descriptor instead.
 func (*UserCreated) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{7}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UserCreated) GetUserId() string {
@@ -654,29 +930,28 @@ func (x *UserCreated) GetCreatedAt() string {
 	return ""
 }
 
-// Event: User updated
 type UserUpdated struct {
 	state     protoimpl.MessageState `protogen:"open.v1"`
 	UserId    string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Username  *string                `protobuf:"bytes,2,opt,name=username,proto3,oneof" json:"username,omitempty"`
 	FirstName *string                `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
 	LastName  *string                `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
-	// Identity/KYC data updates
+	// KYC data updates
 	Phone       *string         `protobuf:"bytes,5,opt,name=phone,proto3,oneof" json:"phone,omitempty"`
 	Nationality *string         `protobuf:"bytes,6,opt,name=nationality,proto3,oneof" json:"nationality,omitempty"`
 	Address     *v1.Address     `protobuf:"bytes,7,opt,name=address,proto3,oneof" json:"address,omitempty"`
 	DateOfBirth *v1.DateOfBirth `protobuf:"bytes,8,opt,name=date_of_birth,json=dateOfBirth,proto3,oneof" json:"date_of_birth,omitempty"`
 	SsnLast4    *string         `protobuf:"bytes,9,opt,name=ssn_last4,json=ssnLast4,proto3,oneof" json:"ssn_last4,omitempty"`
 	// Verification updates
-	Verification  *UserVerification `protobuf:"bytes,10,opt,name=verification,proto3,oneof" json:"verification,omitempty"`
-	UpdatedAt     string            `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	Verification  *UserVerificationEmbedded `protobuf:"bytes,10,opt,name=verification,proto3,oneof" json:"verification,omitempty"`
+	UpdatedAt     string                    `protobuf:"bytes,11,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserUpdated) Reset() {
 	*x = UserUpdated{}
-	mi := &file_user_v1_user_proto_msgTypes[8]
+	mi := &file_user_v1_user_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -688,7 +963,7 @@ func (x *UserUpdated) String() string {
 func (*UserUpdated) ProtoMessage() {}
 
 func (x *UserUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[8]
+	mi := &file_user_v1_user_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -701,7 +976,7 @@ func (x *UserUpdated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserUpdated.ProtoReflect.Descriptor instead.
 func (*UserUpdated) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{8}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UserUpdated) GetUserId() string {
@@ -767,7 +1042,7 @@ func (x *UserUpdated) GetSsnLast4() string {
 	return ""
 }
 
-func (x *UserUpdated) GetVerification() *UserVerification {
+func (x *UserUpdated) GetVerification() *UserVerificationEmbedded {
 	if x != nil {
 		return x.Verification
 	}
@@ -781,18 +1056,17 @@ func (x *UserUpdated) GetUpdatedAt() string {
 	return ""
 }
 
-// Event: User deleted
 type UserDeleted struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	DeletedAt     string                 `protobuf:"bytes,2,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"` // ISO 8601 datetime string
+	DeletedAt     string                 `protobuf:"bytes,2,opt,name=deleted_at,json=deletedAt,proto3" json:"deleted_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserDeleted) Reset() {
 	*x = UserDeleted{}
-	mi := &file_user_v1_user_proto_msgTypes[9]
+	mi := &file_user_v1_user_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -804,7 +1078,7 @@ func (x *UserDeleted) String() string {
 func (*UserDeleted) ProtoMessage() {}
 
 func (x *UserDeleted) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[9]
+	mi := &file_user_v1_user_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -817,7 +1091,7 @@ func (x *UserDeleted) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserDeleted.ProtoReflect.Descriptor instead.
 func (*UserDeleted) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{9}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UserDeleted) GetUserId() string {
@@ -834,19 +1108,18 @@ func (x *UserDeleted) GetDeletedAt() string {
 	return ""
 }
 
-// Event: User profile updated
 type UserProfileUpdated struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Avatar        *string                `protobuf:"bytes,2,opt,name=avatar,proto3,oneof" json:"avatar,omitempty"`
-	UpdatedAt     string                 `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
+	UpdatedAt     string                 `protobuf:"bytes,3,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UserProfileUpdated) Reset() {
 	*x = UserProfileUpdated{}
-	mi := &file_user_v1_user_proto_msgTypes[10]
+	mi := &file_user_v1_user_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -858,7 +1131,7 @@ func (x *UserProfileUpdated) String() string {
 func (*UserProfileUpdated) ProtoMessage() {}
 
 func (x *UserProfileUpdated) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[10]
+	mi := &file_user_v1_user_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -871,7 +1144,7 @@ func (x *UserProfileUpdated) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UserProfileUpdated.ProtoReflect.Descriptor instead.
 func (*UserProfileUpdated) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{10}
+	return file_user_v1_user_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *UserProfileUpdated) GetUserId() string {
@@ -895,32 +1168,30 @@ func (x *UserProfileUpdated) GetUpdatedAt() string {
 	return ""
 }
 
-// Event: Onboarding status changed
-type UserOnboardingStatus struct {
-	state               protoimpl.MessageState `protogen:"open.v1"`
-	UserId              string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	OnboardingCompleted bool                   `protobuf:"varint,2,opt,name=onboarding_completed,json=onboardingCompleted,proto3" json:"onboarding_completed,omitempty"`
-	MissingFields       []string               `protobuf:"bytes,3,rep,name=missing_fields,json=missingFields,proto3" json:"missing_fields,omitempty"`
-	UpdatedAt           string                 `protobuf:"bytes,4,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"` // ISO 8601 datetime string
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+// Event: User account enabled (reactivated)
+type UserEnabled struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	EnabledAt     string                 `protobuf:"bytes,2,opt,name=enabled_at,json=enabledAt,proto3" json:"enabled_at,omitempty"` // ISO 8601
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UserOnboardingStatus) Reset() {
-	*x = UserOnboardingStatus{}
-	mi := &file_user_v1_user_proto_msgTypes[11]
+func (x *UserEnabled) Reset() {
+	*x = UserEnabled{}
+	mi := &file_user_v1_user_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UserOnboardingStatus) String() string {
+func (x *UserEnabled) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UserOnboardingStatus) ProtoMessage() {}
+func (*UserEnabled) ProtoMessage() {}
 
-func (x *UserOnboardingStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[11]
+func (x *UserEnabled) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -931,35 +1202,82 @@ func (x *UserOnboardingStatus) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UserOnboardingStatus.ProtoReflect.Descriptor instead.
-func (*UserOnboardingStatus) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{11}
+// Deprecated: Use UserEnabled.ProtoReflect.Descriptor instead.
+func (*UserEnabled) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *UserOnboardingStatus) GetUserId() string {
+func (x *UserEnabled) GetUserId() string {
 	if x != nil {
 		return x.UserId
 	}
 	return ""
 }
 
-func (x *UserOnboardingStatus) GetOnboardingCompleted() bool {
+func (x *UserEnabled) GetEnabledAt() string {
 	if x != nil {
-		return x.OnboardingCompleted
+		return x.EnabledAt
 	}
-	return false
+	return ""
 }
 
-func (x *UserOnboardingStatus) GetMissingFields() []string {
-	if x != nil {
-		return x.MissingFields
-	}
-	return nil
+// Event: User account disabled (suspended)
+type UserDisabled struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	DisabledAt    string                 `protobuf:"bytes,2,opt,name=disabled_at,json=disabledAt,proto3" json:"disabled_at,omitempty"` // ISO 8601
+	Reason        *string                `protobuf:"bytes,3,opt,name=reason,proto3,oneof" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UserOnboardingStatus) GetUpdatedAt() string {
+func (x *UserDisabled) Reset() {
+	*x = UserDisabled{}
+	mi := &file_user_v1_user_proto_msgTypes[17]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserDisabled) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserDisabled) ProtoMessage() {}
+
+func (x *UserDisabled) ProtoReflect() protoreflect.Message {
+	mi := &file_user_v1_user_proto_msgTypes[17]
 	if x != nil {
-		return x.UpdatedAt
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserDisabled.ProtoReflect.Descriptor instead.
+func (*UserDisabled) Descriptor() ([]byte, []int) {
+	return file_user_v1_user_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *UserDisabled) GetUserId() string {
+	if x != nil {
+		return x.UserId
+	}
+	return ""
+}
+
+func (x *UserDisabled) GetDisabledAt() string {
+	if x != nil {
+		return x.DisabledAt
+	}
+	return ""
+}
+
+func (x *UserDisabled) GetReason() string {
+	if x != nil && x.Reason != nil {
+		return *x.Reason
 	}
 	return ""
 }
@@ -968,57 +1286,80 @@ var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\x1a\x17common/v1/address.proto\x1a\x14common/v1/date.proto\"\x8d\x01\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\x1a\x17common/v1/address.proto\x1a\x14common/v1/date.proto\"\xf4\x03\n" +
 	"\x04User\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1b\n" +
-	"\tfull_name\x18\x02 \x01(\tR\bfullName\x12\x1a\n" +
-	"\busername\x18\x03 \x01(\tR\busername\x12\x14\n" +
-	"\x05email\x18\x04 \x01(\tR\x05email\x12\x1b\n" +
-	"\x06avatar\x18\x05 \x01(\tH\x00R\x06avatar\x88\x01\x01B\t\n" +
-	"\a_avatar\"\xa2\x02\n" +
-	"\x10UserVerification\x121\n" +
-	"\x14onboarding_completed\x18\x01 \x01(\bR\x13onboardingCompleted\x12:\n" +
-	"\x19onboarding_missing_fields\x18\x02 \x03(\tR\x17onboardingMissingFields\x12$\n" +
-	"\vverified_at\x18\x03 \x01(\tH\x00R\n" +
-	"verifiedAt\x88\x01\x01\x12Q\n" +
-	"\x13verification_status\x18\x04 \x01(\x0e2\x1b.user.v1.VerificationStatusH\x01R\x12verificationStatus\x88\x01\x01B\x0e\n" +
-	"\f_verified_atB\x16\n" +
-	"\x14_verification_status\"\xe1\x05\n" +
-	"\vUserDetails\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
-	"\busername\x18\x03 \x01(\tR\busername\x12\"\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
+	"\x05email\x18\x02 \x01(\tH\x00R\x05email\x88\x01\x01\x12\x1f\n" +
+	"\busername\x18\x03 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"first_name\x18\x04 \x01(\tH\x00R\tfirstName\x88\x01\x01\x12 \n" +
-	"\tlast_name\x18\x05 \x01(\tH\x01R\blastName\x88\x01\x01\x12 \n" +
-	"\tfull_name\x18\x06 \x01(\tH\x02R\bfullName\x88\x01\x01\x12\x18\n" +
-	"\aenabled\x18\a \x01(\bR\aenabled\x12*\n" +
-	"\x0eemail_verified\x18\b \x01(\bH\x03R\remailVerified\x88\x01\x01\x12\"\n" +
+	"first_name\x18\x04 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12 \n" +
+	"\tlast_name\x18\x05 \x01(\tH\x03R\blastName\x88\x01\x01\x12 \n" +
+	"\tfull_name\x18\x06 \x01(\tH\x04R\bfullName\x88\x01\x01\x12\x1b\n" +
+	"\x06avatar\x18\a \x01(\tH\x05R\x06avatar\x88\x01\x01\x12\x1d\n" +
+	"\aenabled\x18\b \x01(\bH\x06R\aenabled\x88\x01\x01\x12*\n" +
+	"\x0eemail_verified\x18\t \x01(\bH\aR\remailVerified\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"created_at\x18\t \x01(\tH\x04R\tcreatedAt\x88\x01\x01\x12\x19\n" +
-	"\x05phone\x18\n" +
-	" \x01(\tH\x05R\x05phone\x88\x01\x01\x12%\n" +
-	"\vnationality\x18\v \x01(\tH\x06R\vnationality\x88\x01\x01\x121\n" +
-	"\aaddress\x18\f \x01(\v2\x12.common.v1.AddressH\aR\aaddress\x88\x01\x01\x12?\n" +
-	"\rdate_of_birth\x18\r \x01(\v2\x16.common.v1.DateOfBirthH\bR\vdateOfBirth\x88\x01\x01\x12 \n" +
-	"\tssn_last4\x18\x0e \x01(\tH\tR\bssnLast4\x88\x01\x01\x12B\n" +
-	"\fverification\x18\x0f \x01(\v2\x19.user.v1.UserVerificationH\n" +
-	"R\fverification\x88\x01\x01B\r\n" +
+	"created_at\x18\n" +
+	" \x01(\tH\bR\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"deleted_at\x18\v \x01(\tH\tR\tdeletedAt\x88\x01\x01B\b\n" +
+	"\x06_emailB\v\n" +
+	"\t_usernameB\r\n" +
 	"\v_first_nameB\f\n" +
 	"\n" +
 	"_last_nameB\f\n" +
 	"\n" +
-	"_full_nameB\x11\n" +
+	"_full_nameB\t\n" +
+	"\a_avatarB\n" +
+	"\n" +
+	"\b_enabledB\x11\n" +
 	"\x0f_email_verifiedB\r\n" +
-	"\v_created_atB\b\n" +
+	"\v_created_atB\r\n" +
+	"\v_deleted_at\"\xfb\x02\n" +
+	"\x10UserVerification\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x121\n" +
+	"\x14onboarding_completed\x18\x03 \x01(\bR\x13onboardingCompleted\x12:\n" +
+	"\x19onboarding_missing_fields\x18\x04 \x03(\tR\x17onboardingMissingFields\x123\n" +
+	"\x06status\x18\x05 \x01(\x0e2\x1b.user.v1.VerificationStatusR\x06status\x12$\n" +
+	"\vverified_at\x18\x06 \x01(\tH\x00R\n" +
+	"verifiedAt\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"created_at\x18\a \x01(\tH\x01R\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"updated_at\x18\b \x01(\tH\x02R\tupdatedAt\x88\x01\x01B\x0e\n" +
+	"\f_verified_atB\r\n" +
+	"\v_created_atB\r\n" +
+	"\v_updated_at\"\x84\x02\n" +
+	"\x18UserVerificationEmbedded\x121\n" +
+	"\x14onboarding_completed\x18\x01 \x01(\bR\x13onboardingCompleted\x12:\n" +
+	"\x19onboarding_missing_fields\x18\x02 \x03(\tR\x17onboardingMissingFields\x12$\n" +
+	"\vverified_at\x18\x03 \x01(\tH\x00R\n" +
+	"verifiedAt\x88\x01\x01\x128\n" +
+	"\x06status\x18\x04 \x01(\x0e2\x1b.user.v1.VerificationStatusH\x01R\x06status\x88\x01\x01B\x0e\n" +
+	"\f_verified_atB\t\n" +
+	"\a_status\"\xba\x03\n" +
+	"\vUserDetails\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
+	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x19\n" +
+	"\x05phone\x18\x03 \x01(\tH\x00R\x05phone\x88\x01\x01\x12%\n" +
+	"\vnationality\x18\x04 \x01(\tH\x01R\vnationality\x88\x01\x01\x121\n" +
+	"\aaddress\x18\x05 \x01(\v2\x12.common.v1.AddressH\x02R\aaddress\x88\x01\x01\x12?\n" +
+	"\rdate_of_birth\x18\x06 \x01(\v2\x16.common.v1.DateOfBirthH\x03R\vdateOfBirth\x88\x01\x01\x12 \n" +
+	"\tssn_last4\x18\a \x01(\tH\x04R\bssnLast4\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"created_at\x18\b \x01(\tH\x05R\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"\n" +
+	"updated_at\x18\t \x01(\tH\x06R\tupdatedAt\x88\x01\x01B\b\n" +
 	"\x06_phoneB\x0e\n" +
 	"\f_nationalityB\n" +
 	"\n" +
 	"\b_addressB\x10\n" +
 	"\x0e_date_of_birthB\f\n" +
 	"\n" +
-	"_ssn_last4B\x0f\n" +
-	"\r_verification\"Q\n" +
+	"_ssn_last4B\r\n" +
+	"\v_created_atB\r\n" +
+	"\v_updated_at\"Q\n" +
 	"\x0eGetUserRequest\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x19\n" +
 	"\x05email\x18\x02 \x01(\tH\x01R\x05email\x88\x01\x01B\x05\n" +
@@ -1026,7 +1367,17 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x06_email\"B\n" +
 	"\x0fGetUserResponse\x12&\n" +
 	"\x04user\x18\x01 \x01(\v2\r.user.v1.UserH\x00R\x04user\x88\x01\x01B\a\n" +
-	"\x05_user\"$\n" +
+	"\x05_user\"0\n" +
+	"\x15GetUserDetailsRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"g\n" +
+	"\x16GetUserDetailsResponse\x12<\n" +
+	"\fuser_details\x18\x01 \x01(\v2\x14.user.v1.UserDetailsH\x00R\vuserDetails\x88\x01\x01B\x0f\n" +
+	"\r_user_details\"5\n" +
+	"\x1aGetUserVerificationRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\"\x80\x01\n" +
+	"\x1bGetUserVerificationResponse\x12K\n" +
+	"\x11user_verification\x18\x01 \x01(\v2\x19.user.v1.UserVerificationH\x00R\x10userVerification\x88\x01\x01B\x14\n" +
+	"\x12_user_verification\"$\n" +
 	"\x10ListUsersRequest\x12\x10\n" +
 	"\x03ids\x18\x01 \x03(\tR\x03ids\"8\n" +
 	"\x11ListUsersResponse\x12#\n" +
@@ -1042,7 +1393,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"created_at\x18\x06 \x01(\tR\tcreatedAtB\r\n" +
 	"\v_first_nameB\f\n" +
 	"\n" +
-	"_last_name\"\xc9\x04\n" +
+	"_last_name\"\xd1\x04\n" +
 	"\vUserUpdated\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x00R\busername\x88\x01\x01\x12\"\n" +
@@ -1053,9 +1404,9 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\vnationality\x18\x06 \x01(\tH\x04R\vnationality\x88\x01\x01\x121\n" +
 	"\aaddress\x18\a \x01(\v2\x12.common.v1.AddressH\x05R\aaddress\x88\x01\x01\x12?\n" +
 	"\rdate_of_birth\x18\b \x01(\v2\x16.common.v1.DateOfBirthH\x06R\vdateOfBirth\x88\x01\x01\x12 \n" +
-	"\tssn_last4\x18\t \x01(\tH\aR\bssnLast4\x88\x01\x01\x12B\n" +
+	"\tssn_last4\x18\t \x01(\tH\aR\bssnLast4\x88\x01\x01\x12J\n" +
 	"\fverification\x18\n" +
-	" \x01(\v2\x19.user.v1.UserVerificationH\bR\fverification\x88\x01\x01\x12\x1d\n" +
+	" \x01(\v2!.user.v1.UserVerificationEmbeddedH\bR\fverification\x88\x01\x01\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\v \x01(\tR\tupdatedAtB\v\n" +
 	"\t_usernameB\r\n" +
@@ -1079,13 +1430,17 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x06avatar\x18\x02 \x01(\tH\x00R\x06avatar\x88\x01\x01\x12\x1d\n" +
 	"\n" +
 	"updated_at\x18\x03 \x01(\tR\tupdatedAtB\t\n" +
-	"\a_avatar\"\xa8\x01\n" +
-	"\x14UserOnboardingStatus\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x121\n" +
-	"\x14onboarding_completed\x18\x02 \x01(\bR\x13onboardingCompleted\x12%\n" +
-	"\x0emissing_fields\x18\x03 \x03(\tR\rmissingFields\x12\x1d\n" +
+	"\a_avatar\"E\n" +
+	"\vUserEnabled\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\x04 \x01(\tR\tupdatedAt*\xc4\x01\n" +
+	"enabled_at\x18\x02 \x01(\tR\tenabledAt\"p\n" +
+	"\fUserDisabled\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x1f\n" +
+	"\vdisabled_at\x18\x02 \x01(\tR\n" +
+	"disabledAt\x12\x1b\n" +
+	"\x06reason\x18\x03 \x01(\tH\x00R\x06reason\x88\x01\x01B\t\n" +
+	"\a_reason*\xc4\x01\n" +
 	"\x12VerificationStatus\x12#\n" +
 	"\x1fVERIFICATION_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n" +
 	"\x1bVERIFICATION_STATUS_PENDING\x10\x01\x12 \n" +
@@ -1106,39 +1461,47 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 }
 
 var file_user_v1_user_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_user_v1_user_proto_goTypes = []any{
-	(VerificationStatus)(0),      // 0: user.v1.VerificationStatus
-	(*User)(nil),                 // 1: user.v1.User
-	(*UserVerification)(nil),     // 2: user.v1.UserVerification
-	(*UserDetails)(nil),          // 3: user.v1.UserDetails
-	(*GetUserRequest)(nil),       // 4: user.v1.GetUserRequest
-	(*GetUserResponse)(nil),      // 5: user.v1.GetUserResponse
-	(*ListUsersRequest)(nil),     // 6: user.v1.ListUsersRequest
-	(*ListUsersResponse)(nil),    // 7: user.v1.ListUsersResponse
-	(*UserCreated)(nil),          // 8: user.v1.UserCreated
-	(*UserUpdated)(nil),          // 9: user.v1.UserUpdated
-	(*UserDeleted)(nil),          // 10: user.v1.UserDeleted
-	(*UserProfileUpdated)(nil),   // 11: user.v1.UserProfileUpdated
-	(*UserOnboardingStatus)(nil), // 12: user.v1.UserOnboardingStatus
-	(*v1.Address)(nil),           // 13: common.v1.Address
-	(*v1.DateOfBirth)(nil),       // 14: common.v1.DateOfBirth
+	(VerificationStatus)(0),             // 0: user.v1.VerificationStatus
+	(*User)(nil),                        // 1: user.v1.User
+	(*UserVerification)(nil),            // 2: user.v1.UserVerification
+	(*UserVerificationEmbedded)(nil),    // 3: user.v1.UserVerificationEmbedded
+	(*UserDetails)(nil),                 // 4: user.v1.UserDetails
+	(*GetUserRequest)(nil),              // 5: user.v1.GetUserRequest
+	(*GetUserResponse)(nil),             // 6: user.v1.GetUserResponse
+	(*GetUserDetailsRequest)(nil),       // 7: user.v1.GetUserDetailsRequest
+	(*GetUserDetailsResponse)(nil),      // 8: user.v1.GetUserDetailsResponse
+	(*GetUserVerificationRequest)(nil),  // 9: user.v1.GetUserVerificationRequest
+	(*GetUserVerificationResponse)(nil), // 10: user.v1.GetUserVerificationResponse
+	(*ListUsersRequest)(nil),            // 11: user.v1.ListUsersRequest
+	(*ListUsersResponse)(nil),           // 12: user.v1.ListUsersResponse
+	(*UserCreated)(nil),                 // 13: user.v1.UserCreated
+	(*UserUpdated)(nil),                 // 14: user.v1.UserUpdated
+	(*UserDeleted)(nil),                 // 15: user.v1.UserDeleted
+	(*UserProfileUpdated)(nil),          // 16: user.v1.UserProfileUpdated
+	(*UserEnabled)(nil),                 // 17: user.v1.UserEnabled
+	(*UserDisabled)(nil),                // 18: user.v1.UserDisabled
+	(*v1.Address)(nil),                  // 19: common.v1.Address
+	(*v1.DateOfBirth)(nil),              // 20: common.v1.DateOfBirth
 }
 var file_user_v1_user_proto_depIdxs = []int32{
-	0,  // 0: user.v1.UserVerification.verification_status:type_name -> user.v1.VerificationStatus
-	13, // 1: user.v1.UserDetails.address:type_name -> common.v1.Address
-	14, // 2: user.v1.UserDetails.date_of_birth:type_name -> common.v1.DateOfBirth
-	2,  // 3: user.v1.UserDetails.verification:type_name -> user.v1.UserVerification
+	0,  // 0: user.v1.UserVerification.status:type_name -> user.v1.VerificationStatus
+	0,  // 1: user.v1.UserVerificationEmbedded.status:type_name -> user.v1.VerificationStatus
+	19, // 2: user.v1.UserDetails.address:type_name -> common.v1.Address
+	20, // 3: user.v1.UserDetails.date_of_birth:type_name -> common.v1.DateOfBirth
 	1,  // 4: user.v1.GetUserResponse.user:type_name -> user.v1.User
-	1,  // 5: user.v1.ListUsersResponse.users:type_name -> user.v1.User
-	13, // 6: user.v1.UserUpdated.address:type_name -> common.v1.Address
-	14, // 7: user.v1.UserUpdated.date_of_birth:type_name -> common.v1.DateOfBirth
-	2,  // 8: user.v1.UserUpdated.verification:type_name -> user.v1.UserVerification
-	9,  // [9:9] is the sub-list for method output_type
-	9,  // [9:9] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	4,  // 5: user.v1.GetUserDetailsResponse.user_details:type_name -> user.v1.UserDetails
+	2,  // 6: user.v1.GetUserVerificationResponse.user_verification:type_name -> user.v1.UserVerification
+	1,  // 7: user.v1.ListUsersResponse.users:type_name -> user.v1.User
+	19, // 8: user.v1.UserUpdated.address:type_name -> common.v1.Address
+	20, // 9: user.v1.UserUpdated.date_of_birth:type_name -> common.v1.DateOfBirth
+	3,  // 10: user.v1.UserUpdated.verification:type_name -> user.v1.UserVerificationEmbedded
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_user_v1_user_proto_init() }
@@ -1151,16 +1514,20 @@ func file_user_v1_user_proto_init() {
 	file_user_v1_user_proto_msgTypes[2].OneofWrappers = []any{}
 	file_user_v1_user_proto_msgTypes[3].OneofWrappers = []any{}
 	file_user_v1_user_proto_msgTypes[4].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[5].OneofWrappers = []any{}
 	file_user_v1_user_proto_msgTypes[7].OneofWrappers = []any{}
-	file_user_v1_user_proto_msgTypes[8].OneofWrappers = []any{}
-	file_user_v1_user_proto_msgTypes[10].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[9].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[12].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[13].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[15].OneofWrappers = []any{}
+	file_user_v1_user_proto_msgTypes[17].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   12,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

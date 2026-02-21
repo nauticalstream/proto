@@ -89,7 +89,7 @@ func (LocationReferenceType) EnumDescriptor() ([]byte, []int) {
 // Request: Check if an entity has a location assigned
 type HasLocationRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReferenceType LocationReferenceType  `protobuf:"varint,1,opt,name=reference_type,json=referenceType,proto3,enum=places.v1.LocationReferenceType" json:"reference_type,omitempty"`
+	ReferenceType LocationReferenceType  `protobuf:"varint,1,opt,name=reference_type,json=referenceType,proto3,enum=place.v1.LocationReferenceType" json:"reference_type,omitempty"`
 	ReferenceId   string                 `protobuf:"bytes,2,opt,name=reference_id,json=referenceId,proto3" json:"reference_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -232,7 +232,7 @@ func (x *HasLocationBatchRequest) GetItems() []*HasLocationRequest {
 // Single result entry for batch response
 type HasLocationBatchResult struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	ReferenceType LocationReferenceType  `protobuf:"varint,1,opt,name=reference_type,json=referenceType,proto3,enum=places.v1.LocationReferenceType" json:"reference_type,omitempty"`
+	ReferenceType LocationReferenceType  `protobuf:"varint,1,opt,name=reference_type,json=referenceType,proto3,enum=place.v1.LocationReferenceType" json:"reference_type,omitempty"`
 	ReferenceId   string                 `protobuf:"bytes,2,opt,name=reference_id,json=referenceId,proto3" json:"reference_id,omitempty"`
 	HasLocation   bool                   `protobuf:"varint,3,opt,name=has_location,json=hasLocation,proto3" json:"has_location,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -384,20 +384,20 @@ var File_place_v1_location_proto protoreflect.FileDescriptor
 
 const file_place_v1_location_proto_rawDesc = "" +
 	"\n" +
-	"\x17place/v1/location.proto\x12\tplaces.v1\"\x80\x01\n" +
-	"\x12HasLocationRequest\x12G\n" +
-	"\x0ereference_type\x18\x01 \x01(\x0e2 .places.v1.LocationReferenceTypeR\rreferenceType\x12!\n" +
+	"\x17place/v1/location.proto\x12\bplace.v1\"\x7f\n" +
+	"\x12HasLocationRequest\x12F\n" +
+	"\x0ereference_type\x18\x01 \x01(\x0e2\x1f.place.v1.LocationReferenceTypeR\rreferenceType\x12!\n" +
 	"\freference_id\x18\x02 \x01(\tR\vreferenceId\"8\n" +
 	"\x13HasLocationResponse\x12!\n" +
-	"\fhas_location\x18\x01 \x01(\bR\vhasLocation\"N\n" +
-	"\x17HasLocationBatchRequest\x123\n" +
-	"\x05items\x18\x01 \x03(\v2\x1d.places.v1.HasLocationRequestR\x05items\"\xa7\x01\n" +
-	"\x16HasLocationBatchResult\x12G\n" +
-	"\x0ereference_type\x18\x01 \x01(\x0e2 .places.v1.LocationReferenceTypeR\rreferenceType\x12!\n" +
+	"\fhas_location\x18\x01 \x01(\bR\vhasLocation\"M\n" +
+	"\x17HasLocationBatchRequest\x122\n" +
+	"\x05items\x18\x01 \x03(\v2\x1c.place.v1.HasLocationRequestR\x05items\"\xa6\x01\n" +
+	"\x16HasLocationBatchResult\x12F\n" +
+	"\x0ereference_type\x18\x01 \x01(\x0e2\x1f.place.v1.LocationReferenceTypeR\rreferenceType\x12!\n" +
 	"\freference_id\x18\x02 \x01(\tR\vreferenceId\x12!\n" +
-	"\fhas_location\x18\x03 \x01(\bR\vhasLocation\"W\n" +
-	"\x18HasLocationBatchResponse\x12;\n" +
-	"\aresults\x18\x01 \x03(\v2!.places.v1.HasLocationBatchResultR\aresults\"2\n" +
+	"\fhas_location\x18\x03 \x01(\bR\vhasLocation\"V\n" +
+	"\x18HasLocationBatchResponse\x12:\n" +
+	"\aresults\x18\x01 \x03(\v2 .place.v1.HasLocationBatchResultR\aresults\"2\n" +
 	"\x0fLocationDeleted\x12\x1f\n" +
 	"\vlocation_id\x18\x01 \x01(\tR\n" +
 	"locationId*\xbc\x02\n" +
@@ -426,19 +426,19 @@ func file_place_v1_location_proto_rawDescGZIP() []byte {
 var file_place_v1_location_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_place_v1_location_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_place_v1_location_proto_goTypes = []any{
-	(LocationReferenceType)(0),       // 0: places.v1.LocationReferenceType
-	(*HasLocationRequest)(nil),       // 1: places.v1.HasLocationRequest
-	(*HasLocationResponse)(nil),      // 2: places.v1.HasLocationResponse
-	(*HasLocationBatchRequest)(nil),  // 3: places.v1.HasLocationBatchRequest
-	(*HasLocationBatchResult)(nil),   // 4: places.v1.HasLocationBatchResult
-	(*HasLocationBatchResponse)(nil), // 5: places.v1.HasLocationBatchResponse
-	(*LocationDeleted)(nil),          // 6: places.v1.LocationDeleted
+	(LocationReferenceType)(0),       // 0: place.v1.LocationReferenceType
+	(*HasLocationRequest)(nil),       // 1: place.v1.HasLocationRequest
+	(*HasLocationResponse)(nil),      // 2: place.v1.HasLocationResponse
+	(*HasLocationBatchRequest)(nil),  // 3: place.v1.HasLocationBatchRequest
+	(*HasLocationBatchResult)(nil),   // 4: place.v1.HasLocationBatchResult
+	(*HasLocationBatchResponse)(nil), // 5: place.v1.HasLocationBatchResponse
+	(*LocationDeleted)(nil),          // 6: place.v1.LocationDeleted
 }
 var file_place_v1_location_proto_depIdxs = []int32{
-	0, // 0: places.v1.HasLocationRequest.reference_type:type_name -> places.v1.LocationReferenceType
-	1, // 1: places.v1.HasLocationBatchRequest.items:type_name -> places.v1.HasLocationRequest
-	0, // 2: places.v1.HasLocationBatchResult.reference_type:type_name -> places.v1.LocationReferenceType
-	4, // 3: places.v1.HasLocationBatchResponse.results:type_name -> places.v1.HasLocationBatchResult
+	0, // 0: place.v1.HasLocationRequest.reference_type:type_name -> place.v1.LocationReferenceType
+	1, // 1: place.v1.HasLocationBatchRequest.items:type_name -> place.v1.HasLocationRequest
+	0, // 2: place.v1.HasLocationBatchResult.reference_type:type_name -> place.v1.LocationReferenceType
+	4, // 3: place.v1.HasLocationBatchResponse.results:type_name -> place.v1.HasLocationBatchResult
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
 	4, // [4:4] is the sub-list for extension type_name
